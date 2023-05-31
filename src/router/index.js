@@ -6,6 +6,7 @@ import SeedOfLove from "@/pages/SeedOfLove.vue";
 import FoodBasketDistribution from "@/pages/FoodBasketDistribution.vue";
 import FeedbackBeneficiaries from "@/pages/FeedbackBeneficiaries.vue";
 import OurPartners from "@/pages/OurPartners.vue";
+import Login from "@/pages/Login.vue";
 
 const routes = [
   {
@@ -42,6 +43,11 @@ const routes = [
     path: "/our-partners",
     name: "OurPartners",
     component: OurPartners,
+  },
+  {
+    path: "/login",
+    name: "Login",
+    component: Login,
   },
 ];
 
