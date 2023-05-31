@@ -172,9 +172,9 @@
           </div>
           <div class="project-content-seed-of-love">
             <span class="project__name">Semente do amor</span>
-            <a class="project__link" href="">
-              <button class="project__button">Saber mais</button>
-            </a>
+            <router-link class="project__link" to="/seed-of-love"
+              ><button class="project__button">Saber mais</button></router-link
+            >
           </div>
           <div class="project-content-food-distribution">
             <span class="project__name">Distribuição de alimentos</span>
