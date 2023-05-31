@@ -4,6 +4,8 @@ import Volunteers from "@/pages/Volunteers.vue";
 import EveryDropCounts from "@/pages/EveryDropCounts.vue";
 import SeedOfLove from "@/pages/SeedOfLove.vue";
 import FoodBasketDistribution from "@/pages/FoodBasketDistribution.vue";
+import FeedbackBeneficiaries from "@/pages/FeedbackBeneficiaries.vue";
+import OurPartners from "@/pages/OurPartners.vue";
 
 const routes = [
   {
@@ -30,6 +32,16 @@ const routes = [
     path: "/food-basket-distribution",
     name: "FoodBasketDistribution",
     component: FoodBasketDistribution,
+  },
+  {
+    path: "/feedback-beneficiaries",
+    name: "FeedbackBeneficiaries",
+    component: FeedbackBeneficiaries,
+  },
+  {
+    path: "/our-partners",
+    name: "OurPartners",
+    component: OurPartners,
   },
 ];
 
