@@ -178,9 +178,9 @@
           </div>
           <div class="project-content-food-distribution">
             <span class="project__name">Distribuição de alimentos</span>
-            <a class="project__link" href="">
-              <button class="project__button">Saber mais</button>
-            </a>
+            <router-link class="project__link" to="/food-basket-distribution"
+              ><button class="project__button">Saber mais</button></router-link
+            >
           </div>
         </div>
       </section>
