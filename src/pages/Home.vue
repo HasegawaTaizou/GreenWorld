@@ -39,7 +39,9 @@
       <section id="home">
         <div class="content-presenting-company">
           <h1 class="title-home">Green World</h1>
-          <h2 class="caption-home">Cultivando a terra com respeito e responsabilidade</h2>
+          <h2 class="caption-home">
+            Cultivando a terra com respeito e responsabilidade
+          </h2>
           <a href="#company-management" class="know-more-home__link">
             <button class="know-more-home__button">Saiba mais</button>
           </a>
@@ -48,7 +50,11 @@
       <section id="company-management">
         <article class="article-mission">
           <div class="article-title">
-            <img class="article-title__icon" src="../assets/img/icon-mission-article.png" alt />
+            <img
+              class="article-title__icon"
+              src="../assets/img/icon-mission-article.png"
+              alt
+            />
             <span class="article-title__span">Missão</span>
           </div>
           <p class="article-text">
@@ -58,7 +64,11 @@
         </article>
         <article class="article-vision">
           <div class="article-title">
-            <img class="article-title__icon" src="../assets/img/icon-vision-article.png" alt />
+            <img
+              class="article-title__icon"
+              src="../assets/img/icon-vision-article.png"
+              alt
+            />
             <span class="article-title__span">Visão</span>
           </div>
           <p class="article-text">
@@ -68,7 +78,11 @@
         </article>
         <article class="article-values">
           <div class="article-title">
-            <img class="article-title__icon" src="../assets/img/icon-mission-article.png" alt />
+            <img
+              class="article-title__icon"
+              src="../assets/img/icon-mission-article.png"
+              alt
+            />
             <span class="article-title__span">Valores</span>
           </div>
           <p class="article-text">
@@ -79,7 +93,33 @@
       </section>
 
       <section id="who-we-are">
-        <img class="teste" src="../assets/img/rufus-o-dea-p3Loavrv6z8-unsplash.jpg" alt />
+        <div class="who-we-are-images">
+          <img
+            class="who-we-are__image fade"
+            src="../assets/img/rufus-o-dea-p3Loavrv6z8-unsplash.jpg"
+            alt
+          />
+          <img
+              class="who-we-are__image"
+              src="../assets/img/avatar-woman.png"
+              alt
+            />
+          <img
+            class="who-we-are__image fade"
+            src="../assets/img/rufus-o-dea-p3Loavrv6z8-unsplash.jpg"
+            alt
+          />
+          <img
+              class="who-we-are__image"
+              src="../assets/img/avatar-woman.png"
+              alt
+            />
+          <img
+            class="who-we-are__image fade"
+            src="../assets/img/rufus-o-dea-p3Loavrv6z8-unsplash.jpg"
+            alt
+          />
+        </div>
         <article class="who-we-are-content">
           <h3 class="who-we-are__title">Quem somos?</h3>
           <p class="who-we-are__text">
@@ -129,7 +169,11 @@
             recusandae quisquam nulla voluptatibus error aperiam?
           </p>
         </article>
-        <img class="our-cause__image" src="../assets/img/farmer-image.png" alt />
+        <img
+          class="our-cause__image"
+          src="../assets/img/farmer-image.png"
+          alt
+        />
       </section>
 
       <section id="projects">
@@ -172,13 +216,18 @@
       </section>
       <section id="family">
         <h3 class="family-title">Famílias</h3>
-        <p class="family-text">Acompanhe os relatos das famílias beneficiadas pelos nossos projetos:</p>
+        <p class="family-text">
+          Acompanhe os relatos das famílias beneficiadas pelos nossos projetos:
+        </p>
         <div class="familys-imagens">
           <img src="../assets/img/family1.png" alt />
           <img src="../assets/img/family2.png" alt />
           <img src="../assets/img/family3.png" alt />
         </div>
-        <router-link class="family-know-more__link" to="/feedback-beneficiaries">
+        <router-link
+          class="family-know-more__link"
+          to="/feedback-beneficiaries"
+        >
           <button class="family-know-more__button">Saber mais</button>
         </router-link>
       </section>
@@ -219,7 +268,11 @@
         <h3 class="founders-title">Fundadores</h3>
         <div class="founders-content">
           <article class="founder-container">
-            <img class="founder__image" src="../assets/img/avatar-woman.png" alt />
+            <img
+              class="founder__image"
+              src="../assets/img/avatar-woman.png"
+              alt
+            />
             <span class="founder__name">Mabel</span>
             <span class="founder__office">Lorem ipsum dolor sit amet</span>
             <nav class="social-media-founder-container">
@@ -243,7 +296,11 @@
             </nav>
           </article>
           <article class="founder-container">
-            <img class="founder__image" src="../assets/img/avatar-man.png" alt />
+            <img
+              class="founder__image"
+              src="../assets/img/avatar-man.png"
+              alt
+            />
             <span class="founder__name">Maycon</span>
             <span class="founder__office">Lorem ipsum dolor sit amet</span>
             <nav class="social-media-founder-container">
@@ -267,7 +324,11 @@
             </nav>
           </article>
           <article class="founder-container">
-            <img class="founder__image" src="../assets/img/avatar-woman.png" alt />
+            <img
+              class="founder__image"
+              src="../assets/img/avatar-woman.png"
+              alt
+            />
             <span class="founder__name">Brenda</span>
             <span class="founder__office">Lorem ipsum dolor sit amet</span>
             <nav class="social-media-founder-container">
@@ -325,7 +386,9 @@
         <span class="support__title">Suporte</span>
         <div class="support__links">
           <router-link class="support__link" to="/faq">FAQ</router-link>
-          <router-link class="support__link" to="/privacy-policy">Política de privacidade</router-link>
+          <router-link class="support__link" to="/privacy-policy"
+            >Política de privacidade</router-link
+          >
         </div>
       </div>
       <div class="contact-content">
@@ -336,18 +399,31 @@
           <li class="contact">Alagoas</li>
         </ul>
       </div>
-      <p class="copyright">Copyright © 2023 | Todos os direitos reservados Green World</p>
+      <p class="copyright">
+        Copyright © 2023 | Todos os direitos reservados Green World
+      </p>
     </footer>
   </div>
 </template>
 
 <script>
+import showSlides from "../assets/js/slider.js";
+
 export default {
-  name: "Home"
+  name: "Home",
+  mounted() {
+    this.runShowSlides();
+  },
+  methods: {
+    runShowSlides() {
+      showSlides();
+    },
+  },
 };
 </script>
 
 <style scoped>
+@import url("../assets/css/index/fadeStyle.css");
 @import url("../assets/css/index/indexStyle.css");
 @import url("../assets/css/index/homeStyle.css");
 @import url("../assets/css/index/companyManagementStyle.css");
