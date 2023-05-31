@@ -9,7 +9,7 @@
           <li class="navigation"><a href="#family">Famílias</a></li>
           <li class="navigation"><a href="#our-partners">Parcerias</a></li>
           <li class="navigation">
-            <router-link to="/volunteers">Voluntários</router-link> 
+            <router-link to="/volunteers">Voluntários</router-link>
           </li>
         </ul>
       </nav>
@@ -156,56 +156,48 @@
               Curabitur commodo enim bibendum, condimentum augue id, elementum
               magna. Etiam in lacus placerat, faucibus felis sed, congue elit.
             </p>
-            <a class="be-a-volunteer__link" href="./volunteers.html">
-              <button class="be-a-volunteer__button">Ser um voluntário</button>
-            </a>
+            <router-link class="be-a-volunteer__link" to="/volunteers"
+              ><button class="be-a-volunteer__button">
+                Ser um voluntário
+              </button></router-link
+            >
           </div>
         </div>
-
         <div class="projects-container">
           <div class="project-content-every-drop-counts">
             <span class="project__name">Cada gota conta</span>
-
-            <a class="project__link" href="">
-              <button class="project__button">Saber mais</button>
-            </a>
+            <router-link class="project__link" to="/every-drop-counts"
+              ><button class="project__button">Saber mais</button></router-link
+            >
           </div>
-
           <div class="project-content-seed-of-love">
             <span class="project__name">Semente do amor</span>
-
             <a class="project__link" href="">
               <button class="project__button">Saber mais</button>
             </a>
           </div>
-
           <div class="project-content-food-distribution">
             <span class="project__name">Distribuição de alimentos</span>
-
             <a class="project__link" href="">
               <button class="project__button">Saber mais</button>
             </a>
           </div>
         </div>
       </section>
-
       <section id="family">
         <h3 class="family-title">Famílias</h3>
         <p class="family-text">
           Acompanhe os relatos das famílias beneficiadas pelos nossos projetos:
         </p>
-
         <div class="familys-imagens">
           <img src="../assets/img/family1.png" alt="" />
           <img src="../assets/img/family2.png" alt="" />
           <img src="../assets/img/family3.png" alt="" />
         </div>
-
         <a class="family-know-more__link" href="./feedback_beneficiaries.html">
           <button class="family-know-more__button">Saber mais</button>
         </a>
       </section>
-
       <section id="our-partners">
         <h3 class="our-partners-title">Nossos parceiros</h3>
         <ul class="partners-content">
@@ -231,7 +223,6 @@
             <img src="../assets/img/our-partner-image.png" alt="" />
           </li>
         </ul>
-
         <p class="partner-text">
           Está interessado em ser um de nossos parceiros? Clique em “saber
           mais”.
@@ -242,7 +233,6 @@
       </section>
       <section id="founders">
         <h3 class="founders-title">Fundadores</h3>
-
         <div class="founders-content">
           <article class="founder-container">
             <img
