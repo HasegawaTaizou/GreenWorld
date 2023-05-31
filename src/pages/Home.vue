@@ -9,7 +9,7 @@
           <li class="navigation"><a href="#family">Famílias</a></li>
           <li class="navigation"><a href="#our-partners">Parcerias</a></li>
           <li class="navigation">
-            <a href="./volunteers.html">Voluntários</a>
+            <router-link to="/volunteers">Voluntários</router-link> 
           </li>
         </ul>
       </nav>
@@ -26,21 +26,17 @@
       <a class="back-top" href="#">
         <i class="fas fa-arrow-circle-left"></i>
       </a>
-
       <section id="home">
         <div class="content-presenting-company">
           <h1 class="title-home">Green World</h1>
           <h2 class="caption-home">
             Cultivando a terra com respeito e responsabilidade
           </h2>
-
           <a href="#company-management" class="know-more-home__link">
             <button class="know-more-home__button">Saiba mais</button>
           </a>
         </div>
-        <!-- <img class="green-world-logo" src="./img/green-world-logo.png" alt=""> -->
       </section>
-
       <section id="company-management">
         <article class="article-mission">
           <div class="article-title">
@@ -397,14 +393,3 @@ export default {
 @import url("../assets/css/index/foundersStyle.css");
 @import url("../assets/css/index/footerStyle.css");
 </style>
-
-<!-- <link rel="stylesheet" href="./css/homeStyle.css" />
-    <link rel="stylesheet" href="./css/companyManagementStyle.css" />
-    <link rel="stylesheet" href="./css/whoWeAreStyle.css" />
-    <link rel="stylesheet" href="./css/ourCauseStyle.css" />
-    <link rel="stylesheet" href="./css/projectsStyle.css" />
-    <link rel="stylesheet" href="./css/familyStyle.css" />
-    <link rel="stylesheet" href="./css/projectsStyle.css" />
-    <link rel="stylesheet" href="./css/partnersStyle.css" />
-    <link rel="stylesheet" href="./css/foundersStyle.css" />
-    <link rel="stylesheet" href="./css/footerStyle.css" /> -->

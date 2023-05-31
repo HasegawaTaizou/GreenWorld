@@ -22,8 +22,8 @@
   body {
     font-family: "Abel", sans-serif;
     min-height: 100vh;
-    /* display: grid; */
-    /* justify-items: center; */
+    display: grid; 
+    justify-items: center;
   }
   
   h1,
