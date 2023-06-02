@@ -1,12 +1,11 @@
-import Vuex from "vuex";
-import { reactive } from "vue";
+import Vuex from 'vuex';
 
 export default new Vuex.Store({
-  state: reactive({
+  state: {
     formData: {
-      fullName: "",
+      fullName: '',
     },
-  }),
+  },
   mutations: {
     updateFormData(state, payload) {
       state.formData = { ...state.formData, ...payload };

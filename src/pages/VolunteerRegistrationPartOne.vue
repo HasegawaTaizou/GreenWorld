@@ -12,7 +12,7 @@
         alt="Volunteer Registration Image"
         class="volunteer-registration__image"
       />
-      <form @submit.prevent="submitForm" class="volunteer-registration-part-one-form">
+      <form class="volunteer-registration-part-one-form">
         <div class="form__full-name-container">
           <label for="full-name" class="full-name__label">Nome completo:</label>
           <input type="text" class="full-name__input" id="fullName" v-model="inputFullName" />
@@ -37,7 +37,7 @@
           <label for="email" class="email__label">E-mail:</label>
           <input type="text" class="email__input" />
         </div>
-        <button type="submit" class="volunteer-registration__button">Continuar</button>
+        <button type="button" @click="submitForm" class="volunteer-registration__button">Continuar</button>
       </form>
     </main>
     <footer>
@@ -61,12 +61,9 @@ export default {
   },
   methods: {
     submitForm() {
-      console.log(this.inputFullName);
-      console.log(this.formData);
-
       this.$store.commit("updateFormData", { fullName: this.inputFullName });
+      console.log('formdata', this.formData);
       this.$router.push("/volunteer-registration-part-two");
-      console.log(this.inputFullName);
     }
   }
 };
