@@ -102,3 +102,7 @@
 .navigation:hover{
     border-color: var(--section-background-color);
 }
+/* 
+.registerDefault{
+    display: block;
+} */
