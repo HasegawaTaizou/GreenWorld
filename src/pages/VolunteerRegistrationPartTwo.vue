@@ -1,15 +1,10 @@
 <template>
   <div class="content">
     <header>
-      <h1 class="volunteer-registration-part-two__title">
-        CADASTRO VOLUNTÁRIO
-      </h1>
-      <router-link class="return__link" to="/volunteer-registration-part-one"
-        ><img
-          src="../assets/img/return-icon.png"
-          alt="Return Icon"
-          class="return__icon"
-      /></router-link>
+      <h1 class="volunteer-registration-part-two__title">CADASTRO VOLUNTÁRIO</h1>
+      <router-link class="return__link" to="/volunteer-registration-part-one">
+        <img src="../assets/img/return-icon.png" alt="Return Icon" class="return__icon" />
+      </router-link>
     </header>
     <main>
       <img
@@ -17,7 +12,7 @@
         alt="Volunteer Registration Image"
         class="volunteer-registration__image"
       />
-      <form action="" class="volunteer-registration-part-two-form">
+      <form @submit.prevent="submitForm" class="volunteer-registration-part-two-form">
         <div class="form__cep-container">
           <label for="cep" class="cep__label">CEP:</label>
           <input type="text" class="cep__input" id="cep" v-model="formData.cep" />
@@ -46,9 +41,7 @@
       </form>
     </main>
     <footer>
-      <p class="footer__text">
-        Copyright © 2023 | Todos os direitos reservados Green World
-      </p>
+      <p class="footer__text">Copyright © 2023 | Todos os direitos reservados Green World</p>
     </footer>
   </div>
 </template>
@@ -59,16 +52,17 @@ export default {
   data() {
     return {
       formData: {
-        cep: "",
-      },
+        cep: ""
+      }
     };
   },
   methods: {
     submitForm() {
       this.$store.commit("updateFormData", this.formData);
       this.$router.push("/volunteer-registration-part-three");
-    },
-  },
+      console.log("formData Vue 2: ", formData);
+    }
+  }
 };
 </script>
 

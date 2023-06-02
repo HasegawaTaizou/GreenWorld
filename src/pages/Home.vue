@@ -24,13 +24,12 @@
         </ul>
       </nav>
       <div class="content-buttons">
-        <!-- <router-link class="sign-up__link" to="/register"> -->
-        <select class="sign-up__button" name="Cadastre-se">
-          <option class="registerDefault" selected="selected">Cadastre-se</option>
-          <option value>Voluntários</option>
-          <option value>Beneficiados</option>
-        </select>
-        <!-- </router-link> -->
+        <router-link class="log-in__link" to="/login">
+          <button class="log-in__button">Log In</button>
+        </router-link>
+        <router-link class="sign-up__link" to="/volunteer-registration-part-one">
+          <button class="sign-up__button">Cadastre-se</button>
+        </router-link>
       </div>
     </header>
     <main>
