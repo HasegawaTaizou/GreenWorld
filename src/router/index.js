@@ -7,6 +7,9 @@ import FoodBasketDistribution from "@/pages/FoodBasketDistribution.vue";
 import FeedbackBeneficiaries from "@/pages/FeedbackBeneficiaries.vue";
 import OurPartners from "@/pages/OurPartners.vue";
 import Login from "@/pages/Login.vue";
+import VolunteerRegistrationPartOne from "@/pages/VolunteerRegistrationPartOne.vue";
+import VolunteerRegistrationPartTwo from "@/pages/VolunteerRegistrationPartTwo.vue";
+import VolunteerRegistrationPartThree from "@/pages/VolunteerRegistrationPartThree.vue";
 
 const routes = [
   {
@@ -48,6 +51,21 @@ const routes = [
     path: "/login",
     name: "Login",
     component: Login,
+  },
+  {
+    path: "/volunteer-registration-part-one",
+    name: "VolunteerRegistrationPartOne",
+    component: VolunteerRegistrationPartOne
+  },
+  {
+    path: "/volunteer-registration-part-two",
+    name: "VolunteerRegistrationPartTwo",
+    component: VolunteerRegistrationPartTwo
+  },
+  {
+    path: "/volunteer-registration-part-three",
+    name: "VolunteerRegistrationPartThree",
+    component: VolunteerRegistrationPartThree
   },
 ];
 
