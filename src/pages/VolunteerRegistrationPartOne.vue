@@ -1,15 +1,10 @@
 <template>
   <div class="content">
     <header>
-      <h1 class="volunteer-registration-part-one__title">
-        CADASTRO VOLUNTÁRIO
-      </h1>
-      <router-link class="return__link" to="/"
-        ><img
-          src="../assets/img/return-icon.png"
-          alt="Return Icon"
-          class="return__icon"
-      /></router-link>
+      <h1 class="volunteer-registration-part-one__title">CADASTRO VOLUNTÁRIO</h1>
+      <router-link class="return__link" to="/">
+        <img src="../assets/img/return-icon.png" alt="Return Icon" class="return__icon" />
+      </router-link>
     </header>
     <main>
       <img
@@ -17,23 +12,13 @@
         alt="Volunteer Registration Image"
         class="volunteer-registration__image"
       />
-      <form
-        @submit.prevent="submitForm"
-        class="volunteer-registration-part-one-form"
-      >
+      <form @submit.prevent="submitForm" class="volunteer-registration-part-one-form">
         <div class="form__full-name-container">
           <label for="full-name" class="full-name__label">Nome completo:</label>
-          <input
-            type="text"
-            class="full-name__input"
-            id="full_name"
-            v-model="formData.fullName"
-          />
+          <input type="text" class="full-name__input" id="fullName" v-model="inputFullName" />
         </div>
         <div class="form__date-birth-container">
-          <label for="date-birth" class="date-birth__label"
-            >Data de nascimento:</label
-          >
+          <label for="date-birth" class="date-birth__label">Data de nascimento:</label>
           <input type="text" class="date-birth__input" />
         </div>
         <div class="form__rg-container">
@@ -56,9 +41,7 @@
       </form>
     </main>
     <footer>
-      <p class="footer__text">
-        Copyright © 2023 | Todos os direitos reservados Green World
-      </p>
+      <p class="footer__text">Copyright © 2023 | Todos os direitos reservados Green World</p>
     </footer>
   </div>
 </template>
@@ -68,17 +51,24 @@ export default {
   name: "VolunteerRegistrationPartOne",
   data() {
     return {
-      formData: {
-        fullName: "",
-      },
+      inputFullName: ""
     };
+  },
+  computed: {
+    formData() {
+      return this.$store.state.formData;
+    }
   },
   methods: {
     submitForm() {
-      this.$store.commit("updateFormData", this.formData);
+      console.log(this.inputFullName);
+      console.log(this.formData);
+
+      this.$store.commit("updateFormData", { fullName: this.inputFullName });
       this.$router.push("/volunteer-registration-part-two");
-    },
-  },
+      console.log(this.inputFullName);
+    }
+  }
 };
 </script>
 

@@ -27,7 +27,7 @@
         <router-link class="log-in__link" to="/login">
           <button class="log-in__button">Log In</button>
         </router-link>
-        <router-link class="sign-up__link" to="/register">
+        <router-link class="sign-up__link" to="/volunteer-registration-part-one">
           <button class="sign-up__button">Cadastre-se</button>
         </router-link>
       </div>
