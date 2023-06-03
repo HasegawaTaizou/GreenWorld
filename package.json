@@ -13,6 +13,7 @@
     "bcryptjs": "^2.4.3",
     "firebase": "^9.22.1",
     "firebase-store": "^0.4.0",
+    "maska": "^2.1.9",
     "vue": "^3.3.4",
     "vue-router": "^4.2.1",
     "vuex": "^4.1.0"
