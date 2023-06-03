@@ -11,6 +11,7 @@ import VolunteerRegistrationPartOne from "@/pages/VolunteerRegistrationPartOne.v
 import VolunteerRegistrationPartTwo from "@/pages/VolunteerRegistrationPartTwo.vue";
 import VolunteerRegistrationPartThree from "@/pages/VolunteerRegistrationPartThree.vue";
 import Teste from "@/pages/Teste.vue";
+import Firebase from "@/pages/Firebase.vue";
 
 const routes = [
   {
@@ -72,6 +73,11 @@ const routes = [
     path: "/teste",
     name: "Teste",
     component: Teste
+  },
+  {
+    path: "/firebase",
+    name: "Firebase",
+    component: Firebase
   },
 ];
 

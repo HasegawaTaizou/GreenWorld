@@ -1,62 +1,38 @@
 <template>
-  <div>
-    <button @click="getData">Fazer Requisição GET</button>
-    <div v-if="getResponse">
-      <h2>Resposta:</h2>
-      <pre>{{ getResponse }}</pre>
-    </div>
-  </div>
-  <div>
-    <button @click="postData">Fazer Requisição POST</button>
-    <div v-if="postResponse">
-      <h2>Resposta:</h2>
-      <pre>{{ postResponse }}</pre>
-    </div>
-  </div>
+  <!-- Seu código de template vai aqui -->
+  <input type="file" @change="uploadImage" />
 </template>
-  
-<script>
-import axios from "axios";
-import firebase from 'firebase/app';
-import 'firebase/storage';
 
+<script>
+import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { initializeApp } from "firebase/app";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDofRds_OjtPBMabg4-lS82cRWdLjXA4Zk",
+  authDomain: "greenworld-f2763.firebaseapp.com",
+  projectId: "greenworld-f2763",
+  storageBucket: "greenworld-f2763.appspot.com",
+  messagingSenderId: "549856611550",
+  appId: "1:549856611550:web:ca75f1092264f9d607864f"
+};
+
+const app = initializeApp(firebaseConfig);
+const storage = getStorage(app);
 
 export default {
-  name: "VolunteerRegistrationPartOne",
-  data() {
-    return {
-      getResponse: null,
-    };
-  },
+  name: "Firebase",
   methods: {
-    getData() {
-      axios
-        .get("http://localhost:3000/enterprise")
-        .then((response) => {
-          this.getResponse = response.data;
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-    },
-    postData() {
-      axios
-        .post("http://seuservidor.com/endpoint", this.formData)
-        .then((response) => {
-          // Manipular a resposta do servidor
-          console.log(response.data);
+    async uploadImage(event) {
+      const file = event.target.files[0];
+      const storageRef = ref(storage, "images/" + file.name);
 
-          // Limpar dados do formulário ou reiniciar o cadastro
-          this.formData.address = "";
+      await uploadBytes(storageRef, file);
 
-          // Redirecionar para a primeira tela do cadastro
-          this.$router.push("/");
-        })
-        .catch((error) => {
-          // Tratar erros na requisição
-          console.error(error);
-        });
-    },
-  },
+      const downloadURL = await getDownloadURL(storageRef);
+
+      // Lógica para lidar com a URL de download da imagem
+      console.log("URL da imagem:", downloadURL);
+    }
+  }
 };
 </script>
