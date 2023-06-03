@@ -10,6 +10,7 @@ import Login from "@/pages/Login.vue";
 import VolunteerRegistrationPartOne from "@/pages/VolunteerRegistrationPartOne.vue";
 import VolunteerRegistrationPartTwo from "@/pages/VolunteerRegistrationPartTwo.vue";
 import VolunteerRegistrationPartThree from "@/pages/VolunteerRegistrationPartThree.vue";
+import Teste from "@/pages/Teste.vue";
 
 const routes = [
   {
@@ -66,6 +67,11 @@ const routes = [
     path: "/volunteer-registration-part-three",
     name: "VolunteerRegistrationPartThree",
     component: VolunteerRegistrationPartThree
+  },
+  {
+    path: "/teste",
+    name: "Teste",
+    component: Teste
   },
 ];
 
