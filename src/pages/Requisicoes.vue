@@ -19,7 +19,7 @@
 import axios from "axios";
 
 export default {
-  name: "VolunteerRegistrationPartOne",
+  name: "Requisicoes",
   data() {
     return {
       getResponse: null,

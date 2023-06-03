@@ -10,8 +10,9 @@ import Login from "@/pages/Login.vue";
 import VolunteerRegistrationPartOne from "@/pages/VolunteerRegistrationPartOne.vue";
 import VolunteerRegistrationPartTwo from "@/pages/VolunteerRegistrationPartTwo.vue";
 import VolunteerRegistrationPartThree from "@/pages/VolunteerRegistrationPartThree.vue";
-import Teste from "@/pages/Teste.vue";
+import Requisicoes from "@/pages/Requisicoes.vue";
 import Firebase from "@/pages/Firebase.vue";
+import Criptografia from "@/pages/Criptografia.vue";
 
 const routes = [
   {
@@ -70,14 +71,19 @@ const routes = [
     component: VolunteerRegistrationPartThree
   },
   {
-    path: "/teste",
-    name: "Teste",
-    component: Teste
+    path: "/requisicoes",
+    name: "Requisicoes",
+    component: Requisicoes
   },
   {
     path: "/firebase",
     name: "Firebase",
     component: Firebase
+  },
+  {
+    path: "/criptografia",
+    name: "Criptografia",
+    component: Criptografia
   },
 ];
 
