@@ -10,6 +10,9 @@ import Login from "@/pages/Login.vue";
 import VolunteerRegistrationPartOne from "@/pages/VolunteerRegistrationPartOne.vue";
 import VolunteerRegistrationPartTwo from "@/pages/VolunteerRegistrationPartTwo.vue";
 import VolunteerRegistrationPartThree from "@/pages/VolunteerRegistrationPartThree.vue";
+import BeneficiaryRegistrationPartOne from "@/pages/BeneficiaryRegistrationPartOne.vue";
+import BeneficiaryRegistrationPartTwo from "@/pages/BeneficiaryRegistrationPartTwo.vue";
+import BeneficiaryRegistrationPartThree from "@/pages/BeneficiaryRegistrationPartThree.vue";
 import Requisicoes from "@/pages/Requisicoes.vue";
 import Firebase from "@/pages/Firebase.vue";
 import Criptografia from "@/pages/Criptografia.vue";
@@ -69,6 +72,21 @@ const routes = [
     path: "/volunteer-registration-part-three",
     name: "VolunteerRegistrationPartThree",
     component: VolunteerRegistrationPartThree
+  },
+  {
+    path: "/beneficiary-registration-part-one",
+    name: "BeneficiaryRegistrationPartOne",
+    component: BeneficiaryRegistrationPartOne
+  },
+  {
+    path: "/beneficiary-registration-part-two",
+    name: "BeneficiaryRegistrationPartTwo",
+    component: BeneficiaryRegistrationPartTwo
+  },
+  {
+    path: "/beneficiary-registration-part-three",
+    name: "BeneficiaryRegistrationPartThree",
+    component: BeneficiaryRegistrationPartThree
   },
   {
     path: "/requisicoes",
