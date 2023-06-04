@@ -18,10 +18,7 @@
         alt="Volunteer Registration Image"
         class="volunteer-registration__image"
       />
-      <form
-        @submit.prevent="submitForm"
-        class="volunteer-registration-part-three-form"
-      >
+      <form class="volunteer-registration-part-three-form">
         <div class="form__reason-container">
           <label for="reason" class="reason__label">Motivo:</label>
           <textarea

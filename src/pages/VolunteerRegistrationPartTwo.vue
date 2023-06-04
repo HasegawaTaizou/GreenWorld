@@ -18,10 +18,7 @@
         alt="Volunteer Registration Image"
         class="volunteer-registration__image"
       />
-      <form
-        @submit.prevent="submitForm"
-        class="volunteer-registration-part-two-form"
-      >
+      <form class="volunteer-registration-part-two-form">
         <div class="form__cep-container">
           <label for="cep" class="cep__label">CEP:</label>
           <input
@@ -52,7 +49,11 @@
           <label for="city" class="city__label">Cidade:</label>
           <input type="text" class="city__input" readonly />
         </div>
-        <button type="submit" class="volunteer-registration__button">
+        <button
+          type="button"
+          @click="submitForm"
+          class="volunteer-registration__button"
+        >
           Continuar
         </button>
       </form>
