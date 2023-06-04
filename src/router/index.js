@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
+
 import Home from "@/pages/Home.vue";
 import Volunteers from "@/pages/Volunteers.vue";
 import EveryDropCounts from "@/pages/EveryDropCounts.vue";
@@ -15,6 +16,7 @@ import BeneficiaryRegistrationPartTwo from "@/pages/BeneficiaryRegistrationPartT
 import BeneficiaryRegistrationPartThree from "@/pages/BeneficiaryRegistrationPartThree.vue";
 import CheckYourEmail from "@/pages/CheckYourEmail.vue";
 import RedefinePassword from "@/pages/RedefinePassword.vue";
+import RedefinePasswordConfirmation from "@/pages/RedefinePasswordConfirmation.vue";
 import Requisicoes from "@/pages/Requisicoes.vue";
 import Firebase from "@/pages/Firebase.vue";
 import Criptografia from "@/pages/Criptografia.vue";
@@ -99,6 +101,11 @@ const routes = [
     path: "/redefine-password",
     name: "RedefinePassword",
     component: RedefinePassword
+  },
+  {
+    path: "/redefine-password-confirmation",
+    name: "RedefinePasswordConfirmation",
+    component: RedefinePasswordConfirmation
   },
   {
     path: "/requisicoes",
