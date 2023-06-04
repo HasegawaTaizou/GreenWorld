@@ -251,8 +251,8 @@ export default {
 </script>
       
 <style scoped>
-@import url("../assets/css/privacyPolicy/generalStyle.css");
-@import url("../assets/css/privacyPolicy/privacyPolicyStyle.css");
-@import url("../assets/css/privacyPolicy/privacyPolicyResponsiveStyle.css");
+@import url("../assets/css/faq/generalStyle.css");
+@import url("../assets/css/faq/faqStyle.css");
+@import url("../assets/css/faq/faqResponsiveStyle.css");
 </style>
       
