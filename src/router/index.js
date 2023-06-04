@@ -13,6 +13,7 @@ import VolunteerRegistrationPartThree from "@/pages/VolunteerRegistrationPartThr
 import BeneficiaryRegistrationPartOne from "@/pages/BeneficiaryRegistrationPartOne.vue";
 import BeneficiaryRegistrationPartTwo from "@/pages/BeneficiaryRegistrationPartTwo.vue";
 import BeneficiaryRegistrationPartThree from "@/pages/BeneficiaryRegistrationPartThree.vue";
+import CheckYourEmail from "@/pages/CheckYourEmail.vue";
 import Requisicoes from "@/pages/Requisicoes.vue";
 import Firebase from "@/pages/Firebase.vue";
 import Criptografia from "@/pages/Criptografia.vue";
@@ -87,6 +88,11 @@ const routes = [
     path: "/beneficiary-registration-part-three",
     name: "BeneficiaryRegistrationPartThree",
     component: BeneficiaryRegistrationPartThree
+  },
+  {
+    path: "/check-your-email",
+    name: "CheckYourEmail",
+    component: CheckYourEmail
   },
   {
     path: "/requisicoes",
