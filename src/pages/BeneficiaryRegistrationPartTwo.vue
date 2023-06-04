@@ -130,6 +130,11 @@ export default {
           console.error(error);
         });
     },
+    submitForm() {
+      this.$store.commit("updateFormData", { fullName: this.inputFullName });
+      console.log("formdata", this.formData);
+      this.$router.push("/beneficiary-registration-part-three");
+    },
   },
 };
 </script>

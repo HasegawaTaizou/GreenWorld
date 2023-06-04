@@ -35,7 +35,17 @@
           <label for="type-residence" class="type-residence__label"
             >Tipo de residência:</label
           >
-          <input type="text" class="type-residence__input" />
+          <select class="type-residence__select">
+            <option class="type-residence__default" value="">
+              Selecione o tipo de residência
+            </option>
+            <option class="type-residence__option" value="house">
+              Casa
+            </option>
+            <option class="type-residence__option" value="farm">
+              Fazenda
+            </option>
+          </select>
         </div>
         <div class="form__square-meters-residence-container">
           <label
