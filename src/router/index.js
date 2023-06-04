@@ -14,6 +14,7 @@ import BeneficiaryRegistrationPartOne from "@/pages/BeneficiaryRegistrationPartO
 import BeneficiaryRegistrationPartTwo from "@/pages/BeneficiaryRegistrationPartTwo.vue";
 import BeneficiaryRegistrationPartThree from "@/pages/BeneficiaryRegistrationPartThree.vue";
 import CheckYourEmail from "@/pages/CheckYourEmail.vue";
+import RedefinePassword from "@/pages/RedefinePassword.vue";
 import Requisicoes from "@/pages/Requisicoes.vue";
 import Firebase from "@/pages/Firebase.vue";
 import Criptografia from "@/pages/Criptografia.vue";
@@ -93,6 +94,11 @@ const routes = [
     path: "/check-your-email",
     name: "CheckYourEmail",
     component: CheckYourEmail
+  },
+  {
+    path: "/redefine-password",
+    name: "RedefinePassword",
+    component: RedefinePassword
   },
   {
     path: "/requisicoes",
