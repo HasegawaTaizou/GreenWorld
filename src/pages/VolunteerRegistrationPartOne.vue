@@ -19,6 +19,16 @@
         class="volunteer-registration__image"
       />
       <form class="volunteer-registration-part-one-form">
+        <div class="form__photo-container">
+          <input type="file" class="photo__label" id="photo"/>
+          <label for="photo">
+            <img
+              src="../assets/img/photo-icon.png"
+              alt="Photo Icon"
+              class="photo__icon"
+            />
+          </label>
+        </div>
         <div class="form__full-name-container">
           <label for="full-name" class="full-name__label">Nome completo:</label>
           <input
