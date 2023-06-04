@@ -25,6 +25,7 @@
             type="text"
             class="full-name__input"
             id="fullName"
+            maxlength="150"
             v-model="inputFullName"
           />
         </div>
@@ -36,19 +37,19 @@
         </div>
         <div class="form__rg-container">
           <label for="rg" class="rg__label">RG:</label>
-          <input type="text" class="rg__input" />
+          <input type="text" class="rg__input" v-mask="'##.###.###-#'" />
         </div>
         <div class="form__cpf-container">
           <label for="cpf" class="cpf__label">CPF:</label>
-          <input type="text" class="cpf__input" />
+          <input type="text" class="cpf__input" v-mask="'###.###.###-##'" />
         </div>
         <div class="form__phone-container">
           <label for="phone" class="phone__label">Telefone:</label>
-          <input type="text" class="phone__input" />
+          <input type="text" class="phone__input" v-mask="'(##) #####-####'" />
         </div>
         <div class="form__email-container">
           <label for="email" class="email__label">E-mail:</label>
-          <input type="text" class="email__input" />
+          <input type="email" class="email__input" maxlength="256" />
         </div>
         <button
           type="button"

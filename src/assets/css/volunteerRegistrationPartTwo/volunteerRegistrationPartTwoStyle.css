@@ -43,7 +43,7 @@ label {
   grid-template-rows: auto auto;
   grid-template-areas:
     "cep road"
-    "neighborhood number"
+    "neighborhood complement"
     "state city"
     "button button";
   justify-items: center;
@@ -72,14 +72,14 @@ label {
   background-color: var(--input-background-color);
 }
 
-.form__number-container {
-  grid-area: number;
+.form__complement-container {
+  grid-area: complement;
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
 
-.number__input {
+.complement__input {
   background-color: var(--input-background-color);
 }
 

@@ -42,6 +42,32 @@
             id="have-experience"
             v-model="formData.haveExperience"
           />
+          <select class="have-experience__select">
+            <option class="have-experience__default" value="">
+              Selecione o tempo de experiência
+            </option>
+            <option class="have-experiencie__item" value="less_than_a_year">
+              Menos de 1 ano
+            </option>
+            <option
+              class="have-experiencie__item"
+              value="between_one_to_five_years"
+            >
+              Entre 1 a 5 anos
+            </option>
+            <option
+              class="have-experiencie__item"
+              value="between_one_to_twenty_years"
+            >
+              Entre 5 a 20 anos
+            </option>
+            <option
+              class="have-experiencie__item"
+              value="more_than_twenty_years"
+            >
+              Mais de 20 anos
+            </option>
+          </select>
         </div>
         <button
           type="button"

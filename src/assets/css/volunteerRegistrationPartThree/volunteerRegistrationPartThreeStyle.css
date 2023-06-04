@@ -48,14 +48,11 @@ label {
   gap: 32px;
 }
 
-.form__have-experience-container {
+.have-experience__select {
   grid-area: have-experience;
   display: flex;
   flex-direction: column;
   gap: 14px;
-}
-
-.have-experience__input {
   background-color: var(--input-background-color);
 }
 
