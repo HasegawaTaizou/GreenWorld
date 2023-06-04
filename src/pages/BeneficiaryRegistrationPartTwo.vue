@@ -27,27 +27,54 @@
             id="cep"
             v-mask="'#####-###'"
             v-model="formData.cep"
+            @blur="getData()"
+            @keydown.enter="getData()"
           />
         </div>
         <div class="form__road-container">
           <label for="road" class="road__label">Rua:</label>
-          <input type="text" class="road__input" readonly />
+          <input
+            type="text"
+            class="road__input"
+            disabled
+            v-model="formData.road"
+          />
         </div>
         <div class="form__neighborhood-container">
           <label for="neighborhood" class="neighborhood__label">Bairro:</label>
-          <input type="text" class="neighborhood__input" readonly />
+          <input
+            type="text"
+            class="neighborhood__input"
+            disabled
+            v-model="formData.neighborhood"
+          />
         </div>
         <div class="form__complement-container">
           <label for="complement" class="complement__label">Complemento:</label>
-          <input type="text" class="complement__input" readonly />
+          <input
+            type="text"
+            class="complement__input"
+            disabled
+            v-model="formData.complement"
+          />
         </div>
         <div class="form__state-container">
           <label for="state" class="state__label">Estado:</label>
-          <input type="text" class="state__input" readonly />
+          <input
+            type="text"
+            class="state__input"
+            disabled
+            v-model="formData.state"
+          />
         </div>
         <div class="form__city-container">
           <label for="city" class="city__label">Cidade:</label>
-          <input type="text" class="city__input" readonly />
+          <input
+            type="text"
+            class="city__input"
+            disabled
+            v-model="formData.city"
+          />
         </div>
         <button
           type="button"
@@ -71,19 +98,37 @@ export default {
   name: "BeneficiaryRegistrationPartTwo",
   data() {
     return {
-      inputFullName: "",
+      formData: {
+        cep: "",
+        road: "",
+        neighborhood: "",
+        complement: "",
+        state: "",
+        city: "",
+      },
     };
   },
-  computed: {
-    formData() {
-      return this.$store.state.formData;
-    },
-  },
   methods: {
-    submitForm() {
-      this.$store.commit("updateFormData", { fullName: this.inputFullName });
-      console.log("formdata", this.formData);
-      this.$router.push("/beneficiary-registration-part-three");
+    getData() {
+      //Remove the "-" from CEP input
+      this.formData.cep = this.formData.cep.replace("-", "");
+
+      axios
+        .get(`https://viacep.com.br/ws/${this.formData.cep}/json/`)
+        .then((response) => {
+          this.formData.road = response.data.logradouro;
+
+          this.formData.neighborhood = response.data.bairro;
+
+          this.formData.complement = response.data.complemento;
+
+          this.formData.state = response.data.uf;
+
+          this.formData.city = response.data.localidade;
+        })
+        .catch((error) => {
+          console.error(error);
+        });
     },
   },
 };
