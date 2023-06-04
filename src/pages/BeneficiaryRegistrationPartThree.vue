@@ -39,12 +39,8 @@
             <option class="type-residence__default" value="">
               Selecione o tipo de residência
             </option>
-            <option class="type-residence__option" value="house">
-              Casa
-            </option>
-            <option class="type-residence__option" value="farm">
-              Fazenda
-            </option>
+            <option class="type-residence__option" value="house">Casa</option>
+            <option class="type-residence__option" value="farm">Fazenda</option>
           </select>
         </div>
         <div class="form__square-meters-residence-container">
@@ -55,6 +51,21 @@
           >
           <input type="text" class="square-meters-residence__input" />
         </div>
+        <div class="form__comments-container">
+          <label for="comments" class="comments__label">Observações:</label>
+          <textarea
+            name="comments"
+            id
+            cols="30"
+            rows="10"
+            class="comments__textarea"
+          ></textarea>
+        </div>
+        <router-link to="/beneficiary-registration-part-two">
+          <button type="button" class="beneficiary-registration__button-return">
+            Voltar
+          </button>
+        </router-link>
         <button
           type="button"
           @click="submitForm"

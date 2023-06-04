@@ -44,8 +44,10 @@ label {
   grid-template-areas:
     "amount-residents per-capita-income"
     "type-residence square-meters-residence"
-    "button button";
+    "comments comments"
+    "button-return button-continue";
   gap: 32px;
+  justify-items: center;
 }
 
 .form__amount-residents-container {
@@ -102,9 +104,42 @@ label {
   background-color: var(--input-background-color);
 }
 
+.form__comments-container {
+  grid-area: comments;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.comments__textarea {
+  border-radius: 5px;
+  background-color: var(--input-background-color);
+  resize: none;
+  width: 670px;
+  height: 194px;
+  padding: 12px 12px;
+  font-family: "Abel";
+  font-size: 1.25rem;
+}
+
+.beneficiary-registration__button-return {
+  grid-area: button-return;
+  width: 160px;
+  height: 46px;
+  background: transparent;
+  border: 1px solid #000;
+  border-radius: 5px;
+  color: #000;
+  font-family: "Abel";
+  font-size: 1.125rem;
+  cursor: pointer;
+  margin-top: 32px;
+  margin-bottom: 128px;
+}
+
 .beneficiary-registration__button {
-  grid-area: button;
-  width: 314px;
+  grid-area: button-continue;
+  width: 160px;
   height: 46px;
   background: #408d7b;
   border-radius: 5px;
@@ -112,6 +147,6 @@ label {
   font-family: "Abel";
   font-size: 1.125rem;
   cursor: pointer;
-  margin: 32px auto auto auto;
+  margin-top: 32px;
   margin-bottom: 128px;
 }

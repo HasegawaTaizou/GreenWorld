@@ -51,26 +51,6 @@ label {
   gap: 32px;
 }
 
-/* .form__photo-container {
-  grid-area: photo;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.form__photo-container > label {
-  padding: 10px 15px;
-  background-color: #e91e63;
-  color: #fff;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.photo__input {
-  display: none;
-  background-color: var(--input-background-color);
-} */
-
 .form__photo-container {
   grid-area: photo;
   margin: 112px 0px;
@@ -161,7 +141,7 @@ label {
 
 .volunteer-registration__button {
   grid-area: button;
-  width: 314px;
+  width: 160px;
   height: 46px;
   background: #408d7b;
   border-radius: 5px;

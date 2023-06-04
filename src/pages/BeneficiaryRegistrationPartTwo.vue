@@ -76,6 +76,11 @@
             v-model="formData.city"
           />
         </div>
+        <router-link to="/beneficiary-registration-part-one">
+          <button type="button" class="beneficiary-registration__button-return">
+            Voltar
+          </button>
+        </router-link>
         <button
           type="button"
           @click="submitForm"

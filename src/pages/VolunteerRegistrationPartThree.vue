@@ -60,6 +60,11 @@
             </option>
           </select>
         </div>
+        <router-link to="/voluntary-registration-part-two">
+          <button type="button" class="volunteer-registration__button-return">
+            Voltar
+          </button>
+        </router-link>
         <button
           type="button"
           @click="submitForm"

@@ -45,7 +45,7 @@ label {
     "cep road"
     "neighborhood complement"
     "state city"
-    "button button";
+    "button-return button-continue";
   justify-items: center;
   gap: 32px;
 }
@@ -116,9 +116,24 @@ label {
   background-color: var(--input-background-color);
 }
 
+.beneficiary-registration__button-return {
+  grid-area: button-return;
+  width: 160px;
+  height: 46px;
+  background: transparent;
+  border: 1px solid #000;
+  border-radius: 5px;
+  color: #000;
+  font-family: "Abel";
+  font-size: 1.125rem;
+  cursor: pointer;
+  margin-top: 32px;
+  margin-bottom: 128px;
+}
+
 .beneficiary-registration__button {
-  grid-area: button;
-  width: 314px;
+  grid-area: button-continue;
+  width: 160px;
   height: 46px;
   background: #408d7b;
   border-radius: 5px;
@@ -129,3 +144,4 @@ label {
   margin-top: 32px;
   margin-bottom: 128px;
 }
+
