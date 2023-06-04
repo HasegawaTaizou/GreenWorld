@@ -18,6 +18,7 @@ import CheckYourEmail from "@/pages/CheckYourEmail.vue";
 import RedefinePassword from "@/pages/RedefinePassword.vue";
 import RedefinePasswordConfirmation from "@/pages/RedefinePasswordConfirmation.vue";
 import PrivacyPolicy from "@/pages/PrivacyPolicy.vue";
+import Faq from "@/pages/Faq.vue";
 import Requisicoes from "@/pages/Requisicoes.vue";
 import Firebase from "@/pages/Firebase.vue";
 import Criptografia from "@/pages/Criptografia.vue";
@@ -107,6 +108,11 @@ const routes = [
     path: "/redefine-password-confirmation",
     name: "RedefinePasswordConfirmation",
     component: RedefinePasswordConfirmation
+  },
+  {
+    path: "/faq",
+    name: "Faq",
+    component: Faq
   },
   {
     path: "/privacy-policy",
