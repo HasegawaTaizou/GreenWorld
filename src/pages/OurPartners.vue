@@ -8,41 +8,13 @@
     </header>
     <main>
       <div class="our-partners-images-container">
-        <img
-          src="../assets/img/our-partner-image.png"
-          alt="Our Partner Image"
-          class="our-partner-image"
-        />
-        <img
-          src="../assets/img/our-partner-image.png"
-          alt="Our Partner Image"
-          class="our-partner-image"
-        />
-        <img
-          src="../assets/img/our-partner-image.png"
-          alt="Our Partner Image"
-          class="our-partner-image"
-        />
-        <img
-          src="../assets/img/our-partner-image.png"
-          alt="Our Partner Image"
-          class="our-partner-image"
-        />
-        <img
-          src="../assets/img/our-partner-image.png"
-          alt="Our Partner Image"
-          class="our-partner-image"
-        />
-        <img
-          src="../assets/img/our-partner-image.png"
-          alt="Our Partner Image"
-          class="our-partner-image"
-        />
-        <img
-          src="../assets/img/our-partner-image.png"
-          alt="Our Partner Image"
-          class="our-partner-image"
-        />
+        <img src="../assets/img/our-partner-image.png" alt="Our Partner Image" class="our-partner-image" />
+        <img src="../assets/img/our-partner-image.png" alt="Our Partner Image" class="our-partner-image" />
+        <img src="../assets/img/our-partner-image.png" alt="Our Partner Image" class="our-partner-image" />
+        <img src="../assets/img/our-partner-image.png" alt="Our Partner Image" class="our-partner-image" />
+        <img src="../assets/img/our-partner-image.png" alt="Our Partner Image" class="our-partner-image" />
+        <img src="../assets/img/our-partner-image.png" alt="Our Partner Image" class="our-partner-image" />
+        <img src="../assets/img/our-partner-image.png" alt="Our Partner Image" class="our-partner-image" />
       </div>
       <div class="why-contribute">
         <h2 class="why-contribute__title">Por que contribuir?</h2>
@@ -57,18 +29,10 @@
           congue eros malesuada. Duis sollicitudin turpis sit amet mi
           sagittis, eu luctus massa posuere. Duis tincidunt dignissim rhoncus.
         </p>
-        <img
-          src="../assets/img/why-contribute-image.png"
-          alt="How Contribute Image"
-          class="why-contribute__image"
-        />
+        <img src="../assets/img/why-contribute-image.png" alt="How Contribute Image" class="why-contribute__image" />
       </div>
       <div class="how-contribute">
-        <img
-          src="../assets/img/how-contribute-image.png"
-          alt="How Contribute Image"
-          class="how-contribute__image"
-        />
+        <img src="../assets/img/how-contribute-image.png" alt="How Contribute Image" class="how-contribute__image" />
         <h2 class="how-contribute__title">Como contribuir?</h2>
         <p class="how-contribute__text">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at
@@ -87,7 +51,45 @@
       </div>
     </main>
     <footer>
-      <p class="footer__text">Copyright © 2023 | Todos os direitos reservados Green World</p>
+      <div class="meaning-of-agriculture-content">
+        <span class="meaning-of-agriculture__title">Agricultura</span>
+        <p class="meaning-of-agriculture__text">
+          A agricultura é uma prática econômica que consiste no uso dos solos para
+          cultivo de vegetais a fim de garantir a subsistência alimentar do ser
+          humano.
+        </p>
+      </div>
+      <nav class="social-media-container">
+        <ul class="social-media__footer">
+          <li>
+            <a href="#" class="social__footer"><i class="fab fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="#" class="social__footer"><i class="fab fa-instagram"></i></a>
+          </li>
+          <li>
+            <a href="#" class="social__footer"><i class="fab fa-facebook-f"></i></a>
+          </li>
+        </ul>
+      </nav>
+      <div class="support-content">
+        <span class="support__title">Suporte</span>
+        <div class="support__links">
+          <a class="support__link" href="./faq.html">FAQ</a>
+          <a class="support__link" href="#">Política de privacidade</a>
+        </div>
+      </div>
+      <div class="contact-content">
+        <span class="contact__title">Contate-nos</span>
+        <ul class="contacts">
+          <li class="contact">greenworld@gmail.com</li>
+          <li class="contact">(11) 4774-4700</li>
+          <li class="contact">Alagoas</li>
+        </ul>
+      </div>
+      <p class="copyright">
+        Copyright © 2023 | Todos os direitos reservados Green World
+      </p>
     </footer>
   </div>
 </template>
@@ -101,5 +103,6 @@ export default {
 <style scoped>
 @import url("../assets/css/ourPartners/ourPartnersStyle.css");
 @import url("../assets/css/ourPartners/ourPartnersResponsiveStyle.css");
-@import url("../assets/css/ourPartners/footerStyle.css");
+@import url("../assets/css/footer/footerStyle.css");
+@import url("../assets/css/footer/footerResponsiveStyle.css");
 </style>

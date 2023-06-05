@@ -15,22 +15,6 @@ header {
   gap: 60px;
 }
 
-/* .privacy-policy__content-text{
-    padding: 112px 98px 100px 98px;
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-template-areas:
-        "text image";
-    gap: 32px;
-}
-
-.privacy-policy__content-text__text{
-    grid-area: text;
-}
-.privacy-policy__content-text__image{
-    grid-area: image;
-} */
-
 main {
   display: flex;
   flex-direction: column;
