@@ -76,7 +76,7 @@
             v-model="formData.city"
           />
         </div>
-        <router-link to="/voluntary-registration-part-one">
+        <router-link to="/volunteer-registration-part-one">
           <button type="button" class="volunteer-registration__button-return">
             Voltar
           </button>
@@ -124,13 +124,9 @@ export default {
         .get(`https://viacep.com.br/ws/${this.formData.cep}/json/`)
         .then((response) => {
           this.formData.road = response.data.logradouro;
-
           this.formData.neighborhood = response.data.bairro;
-
           this.formData.complement = response.data.complemento;
-
           this.formData.state = response.data.uf;
-
           this.formData.city = response.data.localidade;
         })
         .catch((error) => {
@@ -138,9 +134,9 @@ export default {
         });
     },
     submitForm() {
+      console.log('formData 2: ', this.formData);
       this.$store.commit("updateFormData", this.formData);
       this.$router.push("/volunteer-registration-part-three");
-      console.log("formData Vue 2: ", formData);
     },
   },
 };

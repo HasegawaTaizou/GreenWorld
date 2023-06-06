@@ -60,7 +60,7 @@
             </option>
           </select>
         </div>
-        <router-link to="/voluntary-registration-part-two">
+        <router-link to="/volunteer-registration-part-two">
           <button type="button" class="volunteer-registration__button-return">
             Voltar
           </button>
@@ -88,12 +88,16 @@ export default {
   data() {
     return {
       formData: {
+        reason: "",
         haveExperience: "",
       },
     };
   },
   methods: {
     submitForm() {
+      this.formData.reason = this.inputReason,
+      this.formData.haveExperience = this.inputHaveExperience,
+
       this.$store.commit("updateFormData", this.formData);
 
       // Enviar dados para o servidor

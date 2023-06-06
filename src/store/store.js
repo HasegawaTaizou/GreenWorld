@@ -1,9 +1,28 @@
-import Vuex from 'vuex';
+import Vuex from "vuex";
+
+// para acessar uma propriedade em outra tela é o comando abaixo
+// console.log(this.$store.state.formData.cep);
 
 export default new Vuex.Store({
   state: {
     formData: {
-      fullName: '',
+      // GENERIC DATA
+      fullName: "",
+      dateBirth: "",
+      rg: "",
+      cpf: "",
+      phone: "",
+      email: "",
+      cep: "",
+      road: "",
+      neighborhood: "",
+      state: "",
+
+      //VOLUNTEER DATA
+      reason: "",
+      haveExperience: "",
+
+      // BENEFICIARY DATA
     },
   },
   mutations: {

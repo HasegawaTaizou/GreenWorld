@@ -20,7 +20,7 @@
       />
       <form class="volunteer-registration-part-one-form">
         <div class="form__photo-container">
-          <input type="file" class="photo__label" id="photo"/>
+          <input type="file" class="photo__label" id="photo" />
           <label for="photo">
             <img
               src="../assets/img/photo-icon.png"
@@ -43,23 +43,48 @@
           <label for="date-birth" class="date-birth__label"
             >Data de nascimento:</label
           >
-          <input type="text" class="date-birth__input" v-mask="'##/##/####'" />
+          <input
+            type="text"
+            class="date-birth__input"
+            v-mask="'##/##/####'"
+            v-model="inputDateBirth"
+          />
         </div>
         <div class="form__rg-container">
           <label for="rg" class="rg__label">RG:</label>
-          <input type="text" class="rg__input" v-mask="'##.###.###-#'" />
+          <input
+            type="text"
+            class="rg__input"
+            v-mask="'##.###.###-#'"
+            v-model="inputRg"
+          />
         </div>
         <div class="form__cpf-container">
           <label for="cpf" class="cpf__label">CPF:</label>
-          <input type="text" class="cpf__input" v-mask="'###.###.###-##'" />
+          <input
+            type="text"
+            class="cpf__input"
+            v-mask="'###.###.###-##'"
+            v-model="inputCpf"
+          />
         </div>
         <div class="form__phone-container">
           <label for="phone" class="phone__label">Telefone:</label>
-          <input type="text" class="phone__input" v-mask="'(##) #####-####'" />
+          <input
+            type="text"
+            class="phone__input"
+            v-mask="'(##) #####-####'"
+            v-model="inputPhone"
+          />
         </div>
         <div class="form__email-container">
           <label for="email" class="email__label">E-mail:</label>
-          <input type="email" class="email__input" maxlength="256" />
+          <input
+            type="email"
+            class="email__input"
+            maxlength="256"
+            v-model="inputEmail"
+          />
         </div>
         <button
           type="button"
@@ -84,6 +109,19 @@ export default {
   data() {
     return {
       inputFullName: "",
+      inputDateBirth: "",
+      inputRg: "",
+      inputCpf: "",
+      inputPhone: "",
+      inputEmail: "",
+      formData: {
+        fullName: "",
+        dateBirth: "",
+        rg: "",
+        cpf: "",
+        phone: "",
+        email: "",
+      },
     };
   },
   computed: {
@@ -93,8 +131,16 @@ export default {
   },
   methods: {
     submitForm() {
-      this.$store.commit("updateFormData", { fullName: this.inputFullName });
-      console.log("formdata", this.formData);
+
+      (this.formData.fullName = this.inputFullName),
+        (this.formData.dateBirth = this.inputDateBirth),
+        (this.formData.rg = this.inputRg),
+        (this.formData.cpf = this.inputCpf),
+        (this.formData.phone = this.inputPhone),
+        (this.formData.email = this.inputEmail),
+        console.log(this.formData);
+
+      this.$store.commit("updateFormData", this.formData);
       this.$router.push("/volunteer-registration-part-two");
     },
   },
