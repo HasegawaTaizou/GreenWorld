@@ -28,8 +28,6 @@
         <button class="login__button">Entrar</button>
         <a href="#" class="login__forgot-password">Esqueceu a senha?</a>
       </form>
-      <span class="another-option">Ou</span>
-      <button class="login__register">Cadastre-se</button>
     </main>
     <footer>
       <p class="footer__text">
