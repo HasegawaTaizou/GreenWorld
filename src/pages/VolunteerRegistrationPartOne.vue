@@ -20,7 +20,12 @@
       />
       <form class="volunteer-registration-part-one-form">
         <div class="form__photo-container">
-          <input type="file" class="photo__label" id="photo" />
+          <input
+            type="file"
+            class="photo__label"
+            id="photo"
+            @change="uploadImage"
+          />
           <label for="photo">
             <img
               src="../assets/img/photo-icon.png"
@@ -104,10 +109,26 @@
 </template>
 
 <script>
+import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { initializeApp } from "firebase/app";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDofRds_OjtPBMabg4-lS82cRWdLjXA4Zk",
+  authDomain: "greenworld-f2763.firebaseapp.com",
+  projectId: "greenworld-f2763",
+  storageBucket: "greenworld-f2763.appspot.com",
+  messagingSenderId: "549856611550",
+  appId: "1:549856611550:web:ca75f1092264f9d607864f",
+};
+
+const app = initializeApp(firebaseConfig);
+const storage = getStorage(app);
+
 export default {
   name: "VolunteerRegistrationPartOne",
   data() {
     return {
+      downloadURL: "",
       inputFullName: "",
       inputDateBirth: "",
       inputRg: "",
@@ -115,7 +136,7 @@ export default {
       inputPhone: "",
       inputEmail: "",
       formData: {
-        fullName: "",
+        photo: "",
         dateBirth: "",
         rg: "",
         cpf: "",
@@ -124,15 +145,20 @@ export default {
       },
     };
   },
-  computed: {
-    formData() {
-      return this.$store.state.formData;
-    },
-  },
   methods: {
-    submitForm() {
+    async uploadImage(event) {
+      const file = event.target.files[0];
+      const storageRef = ref(storage, "images/" + file.name);
 
-      (this.formData.fullName = this.inputFullName),
+      await uploadBytes(storageRef, file);
+
+      this.downloadURL = await getDownloadURL(storageRef);
+
+      console.log("URL da imagem:", this.downloadURL);
+    },
+    submitForm() {
+      (this.formData.photo = this.downloadURL),
+        (this.formData.fullName = this.inputFullName),
         (this.formData.dateBirth = this.inputDateBirth),
         (this.formData.rg = this.inputRg),
         (this.formData.cpf = this.inputCpf),

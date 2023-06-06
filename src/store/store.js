@@ -7,6 +7,7 @@ export default new Vuex.Store({
   state: {
     formData: {
       // GENERIC DATA
+      photo: "",
       fullName: "",
       dateBirth: "",
       rg: "",
