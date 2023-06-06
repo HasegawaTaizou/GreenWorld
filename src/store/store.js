@@ -23,6 +23,11 @@ export default new Vuex.Store({
       haveExperience: "",
 
       // BENEFICIARY DATA
+      amountResidents: "",
+      familyIncome: "",
+      typeResidence: "",
+      squareMetersResidence: "",
+      comments: "",
     },
   },
   mutations: {
