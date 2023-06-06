@@ -98,7 +98,9 @@
   </div>
 </template>
   
-  <script>
+<script>
+import axios from "axios";
+
 export default {
   name: "BeneficiaryRegistrationPartTwo",
   data() {
@@ -122,13 +124,9 @@ export default {
         .get(`https://viacep.com.br/ws/${this.formData.cep}/json/`)
         .then((response) => {
           this.formData.road = response.data.logradouro;
-
           this.formData.neighborhood = response.data.bairro;
-
           this.formData.complement = response.data.complemento;
-
           this.formData.state = response.data.uf;
-
           this.formData.city = response.data.localidade;
         })
         .catch((error) => {

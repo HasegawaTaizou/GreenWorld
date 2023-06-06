@@ -1,9 +1,15 @@
 <template>
   <div class="content">
     <header>
-      <h1 class="beneficiary-registration-part-three__title">CADASTRO BENEFICIADO</h1>
+      <h1 class="beneficiary-registration-part-three__title">
+        CADASTRO BENEFICIADO
+      </h1>
       <router-link class="return__link" to="/beneficiary-registration-part-two">
-        <img src="../assets/img/return-icon.png" alt="Return Icon" class="return__icon" />
+        <img
+          src="../assets/img/return-icon.png"
+          alt="Return Icon"
+          class="return__icon"
+        />
       </router-link>
     </header>
     <main>
@@ -14,7 +20,9 @@
       />
       <form class="beneficiary-registration-part-three-form">
         <div class="form__amount-residents-container">
-          <label for="amount-residents" class="amount-residents__label">Quantidade de moradores:</label>
+          <label for="amount-residents" class="amount-residents__label"
+            >Quantidade de moradores:</label
+          >
           <input
             type="text"
             class="amount-residents__input"
@@ -23,22 +31,35 @@
           />
         </div>
         <div class="form__per-capita-income-container">
-          <label for="per-capita-income" class="per-capita-income__label">Renda familiar:</label>
-          <input type="text" class="per-capita-income__input" v-model="inputFamilyIncome" />
+          <label for="per-capita-income" class="per-capita-income__label"
+            >Renda familiar:</label
+          >
+          <input
+            type="text"
+            class="per-capita-income__input"
+            v-model="inputFamilyIncome"
+          />
         </div>
         <div class="form__type-residence-container">
-          <label for="type-residence" class="type-residence__label">Tipo de residência:</label>
+          <label for="type-residence" class="type-residence__label"
+            >Tipo de residência:</label
+          >
           <select class="type-residence__select" v-model="selectTypeResidence">
-            <option class="type-residence__default" value>Selecione o tipo de residência</option>
+            <option class="type-residence__default" value>
+              Selecione o tipo de residência
+            </option>
             <option class="type-residence__option" value="Casa">Casa</option>
-            <option class="type-residence__option" value="Fazenda">Fazenda</option>
+            <option class="type-residence__option" value="Fazenda">
+              Fazenda
+            </option>
           </select>
         </div>
         <div class="form__square-meters-residence-container">
           <label
             for="square-meters-residence"
             class="square-meters-residence__label"
-          >Metros quadrados da residência:</label>
+            >Metros quadrados da residência:</label
+          >
           <input
             type="text"
             class="square-meters-residence__input"
@@ -57,13 +78,23 @@
           ></textarea>
         </div>
         <router-link to="/beneficiary-registration-part-two">
-          <button type="button" class="beneficiary-registration__button-return">Voltar</button>
+          <button type="button" class="beneficiary-registration__button-return">
+            Voltar
+          </button>
         </router-link>
-        <button type="button" @click="submitForm" class="beneficiary-registration__button">Continuar</button>
+        <button
+          type="button"
+          @click="submitForm"
+          class="beneficiary-registration__button"
+        >
+          Continuar
+        </button>
       </form>
     </main>
     <footer>
-      <p class="footer__text">Copyright © 2023 | Todos os direitos reservados Green World</p>
+      <p class="footer__text">
+        Copyright © 2023 | Todos os direitos reservados Green World
+      </p>
     </footer>
   </div>
 </template>
@@ -81,21 +112,39 @@ export default {
       inputSquareMetersResidence: "",
       textareaComments: "",
       formData: {
-        amountResidents: "",
-        familyIncome: "",
-        typeResidence: "",
-        squareMetersResidence: "",
-        comments: ""
-      }
+        userData: {
+          photo: this.$store.state.formData.photo,
+          dateBirth: this.$store.state.formData.dateBirth,
+          rg: this.$store.state.formData.rg,
+          cpf: this.$store.state.formData.cpf,
+          phone: this.$store.state.formData.phone,
+          email: this.$store.state.formData.email,
+        },
+        addressData: {
+          cep: this.$store.state.formData.cep,
+          road: this.$store.state.formData.road,
+          neighborhood: this.$store.state.formData.neighborhood,
+          complement: this.$store.state.formData.complement,
+          state: this.$store.state.formData.state,
+          city: this.$store.state.formData.city,
+        },
+        additionalData: {
+          amountResidents: "",
+          familyIncome: "",
+          typeResidence: "",
+          squareMetersResidence: "",
+          comments: "",
+        },
+      },
     };
   },
   methods: {
     submitForm() {
-      this.formData.amountResidents = this.inputAmountResidents;
-      this.formData.familyIncome = this.inputFamilyIncome;
-      this.formData.typeResidence = this.selectTypeResidence;
-      this.formData.squareMetersResidence = this.inputSquareMetersResidence;
-      this.formData.comments = this.textareaComments;
+      this.formData.additionalData.amountResidents = this.inputAmountResidents;
+      this.formData.additionalData.familyIncome = this.inputFamilyIncome;
+      this.formData.additionalData.typeResidence = this.selectTypeResidence;
+      this.formData.additionalData.squareMetersResidence = this.inputSquareMetersResidence;
+      this.formData.additionalData.comments = this.textareaComments;
 
       console.log("form 3: ", this.formData);
 
@@ -104,7 +153,7 @@ export default {
       // Enviar dados para o servidor
       axios
         .post("http://seuservidor.com/endpoint", this.formData)
-        .then(response => {
+        .then((response) => {
           // Manipular a resposta do servidor
           console.log(response.data);
 
@@ -114,12 +163,12 @@ export default {
           // Redirecionar para a primeira tela do cadastro
           this.$router.push("/");
         })
-        .catch(error => {
+        .catch((error) => {
           // Tratar erros na requisição
           console.error(error);
         });
-    }
-  }
+    },
+  },
 };
 </script>
 

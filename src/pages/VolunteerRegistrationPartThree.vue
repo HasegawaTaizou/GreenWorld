@@ -114,9 +114,9 @@ export default {
     submitForm() {
       console.log("TESTE CEP: ", this.$store.state.formData.cep);
 
-      (this.formData.additionalData.reason = this.inputReason),
-        (this.formData.additionalData.haveExperience = this.selectHaveExperience),
-        this.$store.commit("updateFormData", this.formData);
+      this.formData.additionalData.reason = this.inputReason;
+      this.formData.additionalData.haveExperience = this.selectHaveExperience;
+      this.$store.commit("updateFormData", this.formData);
 
       console.log("form 3: ", this.formData);
 
