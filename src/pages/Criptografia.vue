@@ -17,7 +17,12 @@
       <input type="email" id="loginEmail" v-model="loginEmail" required />
       <br />
       <label for="loginPassword">Senha:</label>
-      <input type="password" id="loginPassword" v-model="loginPassword" required />
+      <input
+        type="password"
+        id="loginPassword"
+        v-model="loginPassword"
+        required
+      />
       <br />
       <button type="submit">Login</button>
     </form>
@@ -35,18 +40,18 @@ export default {
       password: "",
       loginEmail: "",
       loginPassword: "",
-      hashedPassword: "" // Adicione esta linha
+      hashedPassword: "", // Adicione esta linha
     };
   },
   methods: {
     register() {
       const password = this.password;
       console.log(password);
-      
+
       const saltRounds = 10;
       this.hashedPassword = bcrypt.hashSync(password, saltRounds); // Atualize esta linha
       console.log(this.hashedPassword);
-      
+
       // Envie o 'hashedPassword' para o backend para armazenamento
       // ...
     },
@@ -56,16 +61,31 @@ export default {
       const isPasswordMatch = bcrypt.compareSync(password, this.hashedPassword); // Atualize esta linha
       if (isPasswordMatch) {
         // Senha correta, faça o login
-        console.log('senha correta');
-        
+        console.log("senha correta");
+
         // ...
       } else {
         // Senha incorreta, exiba uma mensagem de erro
-        console.log('senha incorreta');
-        
+        console.log("senha incorreta");
+
         // ...
       }
+    },
+    loginBackend() {
+      axios.post('/api/login', {
+        username: this.username,
+        password: this.password
+      })
+      .then(response => {
+        //aqui se o status for igual a 200, faz um $route para o /dashboard 
+        //com o JWT token
+        
+        // Lógica para lidar com a resposta do servidor
+      })
+      .catch(error => {
+        // Lógica para lidar com erros
+      });
     }
-  }
+  },
 };
 </script>

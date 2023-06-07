@@ -60,8 +60,10 @@
     <div class="support-content">
       <span class="support__title">Suporte</span>
       <div class="support__links">
-        <a class="support__link" href="./faq.html">FAQ</a>
-        <a class="support__link" href="#">Política de privacidade</a>
+        <router-link class="support__link" to="/faq"> FAQ </router-link>
+        <router-link class="support__link" to="/privacy-policy">
+          Política de privacidade
+        </router-link>
       </div>
     </div>
     <div class="contact-content">

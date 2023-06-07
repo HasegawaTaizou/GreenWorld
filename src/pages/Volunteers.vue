@@ -2,8 +2,12 @@
   <div class="content">
     <header>
       <h1 class="volunteers__title">Voluntários</h1>
-      <router-link class="return__link" to="/"><img src="../assets/img/return-icon.png" alt="Return Icon"
-          class="return__icon" /></router-link>
+      <router-link class="return__link" to="/"
+        ><img
+          src="../assets/img/return-icon.png"
+          alt="Return Icon"
+          class="return__icon"
+      /></router-link>
     </header>
     <main>
       <div class="why-contribute">
@@ -19,10 +23,18 @@
           malesuada. Duis sollicitudin turpis sit amet mi sagittis, eu luctus
           massa posuere. Duis tincidunt dignissim rhoncus.
         </p>
-        <img src="../assets/img/why-contribute-image.png" alt="How Contribute Image" class="why-contribute__image" />
+        <img
+          src="../assets/img/why-contribute-image.png"
+          alt="How Contribute Image"
+          class="why-contribute__image"
+        />
       </div>
       <div class="how-contribute">
-        <img src="../assets/img/how-contribute-image.png" alt="How Contribute Image" class="how-contribute__image" />
+        <img
+          src="../assets/img/how-contribute-image.png"
+          alt="How Contribute Image"
+          class="how-contribute__image"
+        />
         <h2 class="how-contribute__title">Como contribuir?</h2>
         <p class="how-contribute__text">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at
@@ -35,9 +47,12 @@
           malesuada. Duis sollicitudin turpis sit amet mi sagittis, eu luctus
           massa posuere. Duis tincidunt dignissim rhoncus.
         </p>
-        <a href="#" class="how-contribute__link">
+        <router-link
+          class="how-contribute__link"
+          to="/volunteer-registration-part-one"
+        >
           <button class="how-contribute__button">Estou interessado</button>
-        </a>
+        </router-link>
       </div>
     </main>
   </div>
@@ -56,18 +71,24 @@
           <a href="#" class="social__footer"><i class="fab fa-twitter"></i></a>
         </li>
         <li>
-          <a href="#" class="social__footer"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social__footer"
+            ><i class="fab fa-instagram"></i
+          ></a>
         </li>
         <li>
-          <a href="#" class="social__footer"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social__footer"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
         </li>
       </ul>
     </nav>
     <div class="support-content">
       <span class="support__title">Suporte</span>
       <div class="support__links">
-        <a class="support__link" href="./faq.html">FAQ</a>
-        <a class="support__link" href="#">Política de privacidade</a>
+        <router-link class="support__link" to="/faq"> FAQ </router-link>
+        <router-link class="support__link" to="/privacy-policy">
+          Política de privacidade
+        </router-link>
       </div>
     </div>
     <div class="contact-content">

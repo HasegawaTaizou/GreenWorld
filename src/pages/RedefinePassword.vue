@@ -2,8 +2,12 @@
   <div class="content">
     <header>
       <h1 class="redefine-password__title">REDEFINIR SENHA</h1>
-      <router-link class="return__link" to="/">
-        <img src="../assets/img/return-icon.png" alt="Return Icon" class="return__icon" />
+      <router-link class="return__link" to="/login">
+        <img
+          src="../assets/img/return-icon.png"
+          alt="Return Icon"
+          class="return__icon"
+        />
       </router-link>
     </header>
     <main>
@@ -20,11 +24,13 @@
           <label for="email" class="email__label">Email:</label>
           <input type="email" class="email__input" />
         </div>
-        <button class="redefine-password__enter-button">Entrar</button>
-        <button class="redefine-password__return-button">Voltar</button>
-        <a href="#" class="redefine-password__forgot-password"
-          >Esqueceu a senha?</a
-        >
+        <button class="redefine-password__enter-button">Enviar</button>
+        <router-link to="/login">
+          <button class="redefine-password__return-button">Voltar</button>
+        </router-link>
+        <router-link class="redefine-password__forgot-password" to="/login">
+          Já é cadastrado?
+        </router-link>
       </form>
     </main>
     <footer>

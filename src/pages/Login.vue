@@ -26,7 +26,9 @@
           <input type="text" class="password__input" />
         </div>
         <button class="login__button">Entrar</button>
-        <a href="#" class="login__forgot-password">Esqueceu a senha?</a>
+        <router-link class="login__forgot-password" to="/redefine-password">
+          Esqueceu a senha?
+        </router-link>
       </form>
     </main>
     <footer>

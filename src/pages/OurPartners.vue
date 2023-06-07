@@ -3,18 +3,50 @@
     <header>
       <h1 class="our-partners__title">Nossos Parceiros</h1>
       <router-link class="return__link" to="/">
-        <img src="../assets/img/return-icon.png" alt="Return Icon" class="return__icon" />
+        <img
+          src="../assets/img/return-icon.png"
+          alt="Return Icon"
+          class="return__icon"
+        />
       </router-link>
     </header>
     <main>
       <div class="our-partners-images-container">
-        <img src="../assets/img/our-partner-image.png" alt="Our Partner Image" class="our-partner-image" />
-        <img src="../assets/img/our-partner-image.png" alt="Our Partner Image" class="our-partner-image" />
-        <img src="../assets/img/our-partner-image.png" alt="Our Partner Image" class="our-partner-image" />
-        <img src="../assets/img/our-partner-image.png" alt="Our Partner Image" class="our-partner-image" />
-        <img src="../assets/img/our-partner-image.png" alt="Our Partner Image" class="our-partner-image" />
-        <img src="../assets/img/our-partner-image.png" alt="Our Partner Image" class="our-partner-image" />
-        <img src="../assets/img/our-partner-image.png" alt="Our Partner Image" class="our-partner-image" />
+        <img
+          src="../assets/img/our-partner-image.png"
+          alt="Our Partner Image"
+          class="our-partner-image"
+        />
+        <img
+          src="../assets/img/our-partner-image.png"
+          alt="Our Partner Image"
+          class="our-partner-image"
+        />
+        <img
+          src="../assets/img/our-partner-image.png"
+          alt="Our Partner Image"
+          class="our-partner-image"
+        />
+        <img
+          src="../assets/img/our-partner-image.png"
+          alt="Our Partner Image"
+          class="our-partner-image"
+        />
+        <img
+          src="../assets/img/our-partner-image.png"
+          alt="Our Partner Image"
+          class="our-partner-image"
+        />
+        <img
+          src="../assets/img/our-partner-image.png"
+          alt="Our Partner Image"
+          class="our-partner-image"
+        />
+        <img
+          src="../assets/img/our-partner-image.png"
+          alt="Our Partner Image"
+          class="our-partner-image"
+        />
       </div>
       <div class="why-contribute">
         <h2 class="why-contribute__title">Por que contribuir?</h2>
@@ -23,27 +55,35 @@
           finibus diam. Nulla efficitur neque eget est lacinia, pellentesque
           rhoncus velit porta. Etiam dapibus tempus tellus et volutpat.
           Curabitur commodo enim bibendum, condimentum augue id, elementum
-          magna. Etiam in lacus placerat, faucibus felis sed, congue elit.
-          Etiam eu lacus sit amet justo sagittis facilisis. Morbi tincidunt et
-          felis eget facilisis. In imperdiet est non eros ornare, auctor
-          congue eros malesuada. Duis sollicitudin turpis sit amet mi
-          sagittis, eu luctus massa posuere. Duis tincidunt dignissim rhoncus.
+          magna. Etiam in lacus placerat, faucibus felis sed, congue elit. Etiam
+          eu lacus sit amet justo sagittis facilisis. Morbi tincidunt et felis
+          eget facilisis. In imperdiet est non eros ornare, auctor congue eros
+          malesuada. Duis sollicitudin turpis sit amet mi sagittis, eu luctus
+          massa posuere. Duis tincidunt dignissim rhoncus.
         </p>
-        <img src="../assets/img/why-contribute-image.png" alt="How Contribute Image" class="why-contribute__image" />
+        <img
+          src="../assets/img/why-contribute-image.png"
+          alt="How Contribute Image"
+          class="why-contribute__image"
+        />
       </div>
       <div class="how-contribute">
-        <img src="../assets/img/how-contribute-image.png" alt="How Contribute Image" class="how-contribute__image" />
+        <img
+          src="../assets/img/how-contribute-image.png"
+          alt="How Contribute Image"
+          class="how-contribute__image"
+        />
         <h2 class="how-contribute__title">Como contribuir?</h2>
         <p class="how-contribute__text">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at
           finibus diam. Nulla efficitur neque eget est lacinia, pellentesque
           rhoncus velit porta. Etiam dapibus tempus tellus et volutpat.
           Curabitur commodo enim bibendum, condimentum augue id, elementum
-          magna. Etiam in lacus placerat, faucibus felis sed, congue elit.
-          Etiam eu lacus sit amet justo sagittis facilisis. Morbi tincidunt et
-          felis eget facilisis. In imperdiet est non eros ornare, auctor
-          congue eros malesuada. Duis sollicitudin turpis sit amet mi
-          sagittis, eu luctus massa posuere. Duis tincidunt dignissim rhoncus.
+          magna. Etiam in lacus placerat, faucibus felis sed, congue elit. Etiam
+          eu lacus sit amet justo sagittis facilisis. Morbi tincidunt et felis
+          eget facilisis. In imperdiet est non eros ornare, auctor congue eros
+          malesuada. Duis sollicitudin turpis sit amet mi sagittis, eu luctus
+          massa posuere. Duis tincidunt dignissim rhoncus.
         </p>
         <a href="#" class="how-contribute__link">
           <button class="how-contribute__button">Estou interessado</button>
@@ -54,29 +94,37 @@
       <div class="meaning-of-agriculture-content">
         <span class="meaning-of-agriculture__title">Agricultura</span>
         <p class="meaning-of-agriculture__text">
-          A agricultura é uma prática econômica que consiste no uso dos solos para
-          cultivo de vegetais a fim de garantir a subsistência alimentar do ser
-          humano.
+          A agricultura é uma prática econômica que consiste no uso dos solos
+          para cultivo de vegetais a fim de garantir a subsistência alimentar do
+          ser humano.
         </p>
       </div>
       <nav class="social-media-container">
         <ul class="social-media__footer">
           <li>
-            <a href="#" class="social__footer"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social__footer"
+              ><i class="fab fa-twitter"></i
+            ></a>
           </li>
           <li>
-            <a href="#" class="social__footer"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social__footer"
+              ><i class="fab fa-instagram"></i
+            ></a>
           </li>
           <li>
-            <a href="#" class="social__footer"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social__footer"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
           </li>
         </ul>
       </nav>
       <div class="support-content">
         <span class="support__title">Suporte</span>
         <div class="support__links">
-          <a class="support__link" href="./faq.html">FAQ</a>
-          <a class="support__link" href="#">Política de privacidade</a>
+          <router-link class="support__link" to="/faq"> FAQ </router-link>
+          <router-link class="support__link" to="/privacy-policy">
+            Política de privacidade
+          </router-link>
         </div>
       </div>
       <div class="contact-content">
@@ -96,7 +144,7 @@
 
 <script>
 export default {
-  name: "OurPartners"
+  name: "OurPartners",
 };
 </script>
 
