@@ -10,7 +10,7 @@
 
     <div class="container-image-log-out">
       <img
-        src="../assets/../img/profile_administrator.png"
+        src="../../assets/img/profile_administrator.png"
         alt="Image profile"
       />
       <a href="#" class="log-out-content">

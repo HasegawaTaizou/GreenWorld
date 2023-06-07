@@ -3,7 +3,7 @@
     <nav>
       <img
         onclick="openNavFull"
-        src="../assets/img/menu_image.png"
+        src="../../assets/img/menu_image.png"
         alt="Menu"
       />
     </nav>
