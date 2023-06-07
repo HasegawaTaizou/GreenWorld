@@ -13,8 +13,8 @@ export default {
 </script>
 
 <style scoped>
-@import url("../assets/css/variables.css");
-@import url("../assets/css/reset.css");
-@import url("../assets/css/generalStyle.css");
-@import url("../assets/css/help/createHelpStyle.css");
+@import url("../../assets/css/variables.css");
+@import url("../../assets/css/reset.css");
+@import url("../../assets/css/generalStyle.css");
+@import url("../../assets/css/dashboard/help/createHelpStyle.css");
 </style>

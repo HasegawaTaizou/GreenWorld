@@ -19,6 +19,27 @@ import RedefinePassword from "@/pages/RedefinePassword.vue";
 import RedefinePasswordConfirmation from "@/pages/RedefinePasswordConfirmation.vue";
 import PrivacyPolicy from "@/pages/PrivacyPolicy.vue";
 import Faq from "@/pages/Faq.vue";
+// DASHBOARD
+import Dashboard from "@/pages/dashboard/Dashboard.vue";
+import Seeds from "@/pages/dashboard/Seeds.vue";
+import Seed from "@/pages/dashboard/Seed.vue";
+import AllHelp from "@/pages/dashboard/AllHelp.vue";
+import AllVolunteers from "@/pages/dashboard/AllVolunteers.vue";
+import Volunteer from "@/pages/dashboard/Volunteer.vue";
+import VolunteerRequests from "@/pages/dashboard/VolunteerRequests.vue";
+import DataVolunteerRequest from "@/pages/dashboard/DataVolunteerRequest.vue";
+import AllBeneficiaries from "@/pages/dashboard/AllBeneficiaries.vue";
+import BeneficiarieRequests from "@/pages/dashboard/BeneficiarieRequests.vue";
+import DataBeneficiarieRequest from "@/pages/dashboard/DataBeneficiarieRequest.vue";
+import Beneficiarie from "@/pages/dashboard/Beneficiarie.vue";
+import Administrator from "@/pages/dashboard/Administrator.vue";
+import UpdateAdministrator from "@/pages/dashboard/UpdateAdministrator.vue";
+import UpdateBeneficiarie from "@/pages/dashboard/UpdateBeneficiarie.vue";
+import UpdateVolunteer from "@/pages/dashboard/UpdateVolunteer.vue";
+import UpdateHelp from "@/pages/dashboard/UpdateHelp.vue";
+import Help from "@/pages/dashboard/Help.vue";
+import CreateHelp from "@/pages/dashboard/CreateHelp.vue";
+// TELAS DE TESTE
 import Requisicoes from "@/pages/Requisicoes.vue";
 import Firebase from "@/pages/Firebase.vue";
 import Criptografia from "@/pages/Criptografia.vue";

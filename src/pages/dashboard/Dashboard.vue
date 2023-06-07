@@ -34,8 +34,8 @@ export default {
 </script>
 
 <style scoped>
-@import url("../assets/css/home/homeStyle.css");
-@import url("../assets/css/variables.css");
-@import url("../assets/css/reset.css");
-@import url("../assets/css/generalStyle.css");
+@import url("../../assets/css/variables.css");
+@import url("../../assets/css/reset.css");
+@import url("../../assets/css/generalStyle.css");
+@import url("../../assets/css/dashboard/home/homeStyle.css");
 </style>
