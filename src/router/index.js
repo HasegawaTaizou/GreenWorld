@@ -67,72 +67,171 @@ const routes = [
   {
     path: "/volunteer-registration-part-one",
     name: "VolunteerRegistrationPartOne",
-    component: VolunteerRegistrationPartOne
+    component: VolunteerRegistrationPartOne,
   },
   {
     path: "/volunteer-registration-part-two",
     name: "VolunteerRegistrationPartTwo",
-    component: VolunteerRegistrationPartTwo
+    component: VolunteerRegistrationPartTwo,
   },
   {
     path: "/volunteer-registration-part-three",
     name: "VolunteerRegistrationPartThree",
-    component: VolunteerRegistrationPartThree
+    component: VolunteerRegistrationPartThree,
   },
   {
     path: "/beneficiary-registration-part-one",
     name: "BeneficiaryRegistrationPartOne",
-    component: BeneficiaryRegistrationPartOne
+    component: BeneficiaryRegistrationPartOne,
   },
   {
     path: "/beneficiary-registration-part-two",
     name: "BeneficiaryRegistrationPartTwo",
-    component: BeneficiaryRegistrationPartTwo
+    component: BeneficiaryRegistrationPartTwo,
   },
   {
     path: "/beneficiary-registration-part-three",
     name: "BeneficiaryRegistrationPartThree",
-    component: BeneficiaryRegistrationPartThree
+    component: BeneficiaryRegistrationPartThree,
   },
   {
     path: "/check-your-email",
     name: "CheckYourEmail",
-    component: CheckYourEmail
+    component: CheckYourEmail,
   },
   {
     path: "/redefine-password",
     name: "RedefinePassword",
-    component: RedefinePassword
+    component: RedefinePassword,
   },
   {
     path: "/redefine-password-confirmation",
     name: "RedefinePasswordConfirmation",
-    component: RedefinePasswordConfirmation
+    component: RedefinePasswordConfirmation,
   },
   {
     path: "/faq",
     name: "Faq",
-    component: Faq
+    component: Faq,
   },
   {
     path: "/privacy-policy",
     name: "PrivacyPolicy",
-    component: PrivacyPolicy
+    component: PrivacyPolicy,
   },
+
+  // PÁGINAS DO DASHBOARD
+  {
+    path: "/dashboard",
+    name: "Dashboard",
+    component: Dashboard,
+  },
+  {
+    path: "/dashboard/all-help",
+    name: "AllHelp",
+    component: AllHelp,
+  },
+  {
+    path: "/dashboard/seeds",
+    name: "Seeds",
+    component: Seeds,
+  },
+  {
+    path: "/dashboard/seed",
+    name: "Seed",
+    component: Seed,
+  },
+  {
+    path: "/dashboard/all-volunteers",
+    name: "AllVolunteers",
+    component: AllVolunteers,
+  },
+  {
+    path: "/dashboard/volunteer-requests",
+    name: "VolunteerRequests",
+    component: VolunteerRequests,
+  },
+  {
+    path: "/dashboard/data-volunteer-request",
+    name: "DataVolunteerRequest",
+    component: DataVolunteerRequest,
+  },
+  {
+    path: "/dashboard/volunteer",
+    name: "Volunteer",
+    component: Volunteer,
+  },
+  {
+    path: "/dashboard/all-beneficiaries",
+    name: "AllBeneficiaries",
+    component: AllBeneficiaries,
+  },
+  {
+    path: "/dashboard/beneficiarie-requests",
+    name: "BeneficiarieRequests",
+    component: BeneficiarieRequests,
+  },
+  {
+    path: "/dashboard/data-beneficiarie-request",
+    name: "DataBeneficiarieRequest",
+    component: DataBeneficiarieRequest,
+  },
+  {
+    path: "/dashboard/beneficiarie",
+    name: "Beneficiarie",
+    component: Beneficiarie,
+  },
+  {
+    path: "/dashboard/administrator",
+    name: "Administrator",
+    component: Administrator,
+  },
+  {
+    path: "/dashboard/update-administrator",
+    name: "UpdateAdministrator",
+    component: UpdateAdministrator,
+  },
+  {
+    path: "/dashboard/update-beneficiarie",
+    name: "UpdateBeneficiarie",
+    component: UpdateBeneficiarie,
+  },
+  {
+    path: "/dashboard/update-volunteer",
+    name: "UpdateVolunteer",
+    component: UpdateVolunteer,
+  },
+  {
+    path: "/dashboard/update-help",
+    name: "UpdateHelp",
+    component: UpdateHelp,
+  },
+  {
+    path: "/dashboard/help",
+    name: "Help",
+    component: Help,
+  },
+  {
+    path: "/dashboard/create-help",
+    name: "CreateHelp",
+    component: CreateHelp,
+  },
+
+  // TESTES DE FUNCIONALIDADES
   {
     path: "/requisicoes",
     name: "Requisicoes",
-    component: Requisicoes
+    component: Requisicoes,
   },
   {
     path: "/firebase",
     name: "Firebase",
-    component: Firebase
+    component: Firebase,
   },
   {
     path: "/criptografia",
     name: "Criptografia",
-    component: Criptografia
+    component: Criptografia,
   },
 ];
 
