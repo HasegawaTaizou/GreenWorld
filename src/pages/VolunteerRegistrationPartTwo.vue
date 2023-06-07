@@ -106,12 +106,12 @@ export default {
   data() {
     return {
       formData: {
-        cep: "",
-        road: "",
-        neighborhood: "",
-        complement: "",
-        state: "",
-        city: "",
+        cep: this.$store.state.formData.cep,
+        road: this.$store.state.formData.road,
+        neighborhood: this.$store.state.formData.neighborhood,
+        complement: this.$store.state.formData.complement,
+        state: this.$store.state.formData.state,
+        city: this.$store.state.formData.city,
       },
     };
   },

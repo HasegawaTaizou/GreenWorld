@@ -19,7 +19,7 @@
         class="volunteer-registration__image"
       />
       <form class="volunteer-registration-part-one-form">
-        <div class="form__photo-container">
+        <div v-if="!isSelectedImage" class="form__photo-container">
           <input
             type="file"
             class="photo__label"
@@ -33,6 +33,13 @@
               class="photo__icon"
             />
           </label>
+        </div>
+        <div v-else class="form__photo-selected-container">
+          <img
+            :src="downloadURL"
+            alt="User Photo"
+            class="photo__photo"
+          />
         </div>
         <div class="form__full-name-container">
           <label for="full-name" class="full-name__label">Nome completo:</label>
@@ -128,15 +135,17 @@ export default {
   name: "VolunteerRegistrationPartOne",
   data() {
     return {
-      downloadURL: "",
-      inputFullName: "",
-      inputDateBirth: "",
-      inputRg: "",
-      inputCpf: "",
-      inputPhone: "",
-      inputEmail: "",
+      isSelectedImage: false,
+      downloadURL: this.$store.state.formData.photo,
+      inputFullName: this.$store.state.formData.fullName,
+      inputDateBirth: this.$store.state.formData.dateBirth,
+      inputRg: this.$store.state.formData.rg,
+      inputCpf: this.$store.state.formData.cpf,
+      inputPhone: this.$store.state.formData.phone,
+      inputEmail: this.$store.state.formData.email,
       formData: {
         photo: "",
+        fullName: "",
         dateBirth: "",
         rg: "",
         cpf: "",
@@ -153,8 +162,8 @@ export default {
       await uploadBytes(storageRef, file);
 
       this.downloadURL = await getDownloadURL(storageRef);
-
-      console.log("URL da imagem:", this.downloadURL);
+      
+      this.isSelectedImage = true;
     },
     submitForm() {
       this.formData.photo = this.downloadURL;

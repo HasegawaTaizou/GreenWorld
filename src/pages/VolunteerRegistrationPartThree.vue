@@ -84,8 +84,8 @@ export default {
   name: "VolunteerRegistrationPartThree",
   data() {
     return {
-      selectHaveExperience: "",
-      inputReason: "",
+      selectHaveExperience: this.$store.state.formData.haveExperience,
+      inputReason: this.$store.state.formData.reason,
       formData: {
         userData: {
           photo: this.$store.state.formData.photo,
@@ -112,8 +112,6 @@ export default {
   },
   methods: {
     submitForm() {
-      console.log("TESTE CEP: ", this.$store.state.formData.cep);
-
       this.formData.additionalData.reason = this.inputReason;
       this.formData.additionalData.haveExperience = this.selectHaveExperience;
       this.$store.commit("updateFormData", this.formData);

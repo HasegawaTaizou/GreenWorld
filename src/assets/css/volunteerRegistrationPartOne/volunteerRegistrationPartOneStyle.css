@@ -53,7 +53,7 @@ label {
 
 .form__photo-container {
   grid-area: photo;
-  margin: 112px 0px;
+  margin: 112px auto;
 }
 
 .form__photo-container input[type="file"] {
@@ -70,7 +70,18 @@ label {
 }
 
 .form__photo-container label::after {
-  content: '';
+  content: "";
+}
+
+.form__photo-selected-container {
+  grid-area: photo;
+  margin: 112px auto;
+  width: 600px;
+}
+
+.photo__photo {
+  max-width: 100%;
+  height: auto;
 }
 
 .form__full-name-container {
