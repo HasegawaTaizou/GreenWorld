@@ -1,14 +1,14 @@
 <template>
     <header>
        <nav>
-         <img onclick="openNavFull" src="../assets/img/menu_image.png" alt="Menu" />
+         <img onclick="openNavFull" src="../../assets/img/menu_image.png" alt="Menu" />
        </nav>
  
        <div class="container-image-log-out">
-         <img src="../assets/img/profile_administrator.png" alt="Image profile" />
+         <img src="../../assets/img/profile_administrator.png" alt="Image profile" />
          <a href="#" class="log-out-content">
            <button class="log-out__button">
-             <img src="../assets/img/logout_image.png" alt="Image log out" />
+             <img src="../../assets/img/logout_image.png" alt="Image log out" />
              <span class="log-out__text">Log out</span>
            </button>
          </a>
@@ -116,7 +116,7 @@ export default {
 
 <style scoped>
 @import url("../../assets/css/variables.css");
-@import url("../../assets/css/reset.css");
+@import url("../../assets/css/dashboard/reset.css");
 @import url("../../assets/css/generalStyle.css");
 @import url("../../assets/css/dashboard/seeds/seedsStyle.css");
 </style>

@@ -16,6 +16,6 @@ export default {
 
 <style scoped>
 @import url("../../assets/css/variables.css");
-@import url("../../assets/css/reset.css");
+@import url("../../assets/css/dashboard/reset.css");
 @import url("../../assets/css/generalStyle.css");
 </style>

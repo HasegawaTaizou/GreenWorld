@@ -1,27 +1,37 @@
 <template>
   <header>
     <nav>
-      <img onclick="openNavFull" src="../assets/img/menu_image.png" alt="Menu" />
+      <img
+        onclick="openNavFull"
+        src="../../assets/img/menu_image.png"
+        alt="Menu"
+      />
     </nav>
 
     <div class="container-image-log-out">
-      <img src="../assets/img/profile_administrator.png" alt="Image profile" />
+      <img
+        src="../../assets/img/profile_administrator.png"
+        alt="Image profile"
+      />
       <a href="#" class="log-out-content">
         <button class="log-out__button">
-          <img src="../assets/img/logout_image.png" alt="Image log out" />
+          <img src="../../assets/img/logout_image.png" alt="Image log out" />
           <span class="log-out__text">Log out</span>
         </button>
       </a>
     </div>
   </header>
   <main>
-
     <section id="seeds">
       <div class="seed-content">
         <div class="help-content__image">
           <input type="file" class="photo__label" id="photo" />
           <label for="photo">
-            <img src="../assets/img/add_image.png" alt="Photo Icon" class="photo__icon" />
+            <img
+              src="../../assets/img/add_image.png"
+              alt="Photo Icon"
+              class="photo__icon"
+            />
           </label>
         </div>
 
@@ -58,17 +68,13 @@
                     <i class="fa-regular fa-clipboard"></i>
                   </router-link>
                 </div>
-
               </div>
             </li>
           </ul>
         </div>
-
       </div>
 
       <div class="seed-information">
-
-
         <div class="seed-information__content-data">
           <h2 class="seed-information__title">Contato</h2>
           <div class="seed-information__data">
@@ -77,7 +83,9 @@
           </div>
           <div class="seed-information__data">
             <span class="seed-information__data_question">E-mail:</span>
-            <span class="seed-information__data_result">mabel.santos@gmail.com</span>
+            <span class="seed-information__data_result"
+              >mabel.santos@gmail.com</span
+            >
           </div>
         </div>
 
@@ -87,9 +95,7 @@
           </router-link>
           <button class="delete__button">Excluir</button>
         </div>
-
       </div>
-
     </section>
   </main>
 </template>
@@ -99,16 +105,14 @@
 
 export default {
   name: "Help",
-  mounted() {
-  },
-  methods: {
-  }
+  mounted() {},
+  methods: {},
 };
 </script>
 
 <style scoped>
 @import url("../../assets/css/variables.css");
-@import url("../../assets/css/reset.css");
+@import url("../../assets/css/dashboard/reset.css");
 @import url("../../assets/css/generalStyle.css");
 @import url("../../assets/css/dashboard/help/helpStyle.css");
 </style>
