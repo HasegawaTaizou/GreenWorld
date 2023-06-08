@@ -50,7 +50,7 @@
           />
           <div v-if="v$.inputFullName.$error">
             <p v-if="v$.inputFullName.required" class="error-text">
-              Preencha no nome completo!
+              Preencha o nome completo!
             </p>
           </div>
         </div>
@@ -63,7 +63,17 @@
             class="date-birth__input"
             v-mask="'##/##/####'"
             v-model="inputDateBirth"
+            :class="{ error: v$.inputDateBirth.$error }"
+            ref="inputDateBirth"
           />
+          <div v-if="v$.inputDateBirth.$error">
+            <p
+              v-if="v$.inputDateBirth.required && v$.inputDateBirth.minLength"
+              class="error-text"
+            >
+              Preencha uma data de nascimento válida!
+            </p>
+          </div>
         </div>
         <div class="form__rg-container">
           <label for="rg" class="rg__label">RG:</label>
@@ -124,7 +134,7 @@ import uploadImage from "../assets/js/methods/upload-image.js";
 import dataPartOne from "../assets/js/data/data-form-part-one.js";
 
 import { useVuelidate } from "@vuelidate/core";
-import { required, email } from "@vuelidate/validators";
+import { required, email, minLength } from "@vuelidate/validators";
 
 export default {
   name: "VolunteerRegistrationPartOne",
@@ -139,18 +149,10 @@ export default {
       ...data,
     };
   },
-  watch: {
-    "v$.inputFullName.$error"(newVal) {
-      if (newVal) {
-        this.$nextTick(() => {
-          this.$refs.inputFullName.focus();
-        });
-      }
-    },
-  },
   validations() {
     return {
       inputFullName: { required },
+      inputDateBirth: { required, minLength: minLength(10) },
       // inputEmail: { required, email },
     };
   },
@@ -173,6 +175,20 @@ export default {
       if (isFormCorrect) {
         this.$store.commit("updateFormData", this.formData);
         this.$router.push("/volunteer-registration-part-two");
+      } else {
+        const fields = [
+          { key: "inputFullName", ref: "inputFullName" },
+          { key: "inputDateBirth", ref: "inputDateBirth" },
+        ];
+
+        for (const field of fields) {
+          if (this.v$[field.key].$error) {
+            this.$nextTick(() => {
+              this.$refs[field.ref].focus();
+            });
+            break;
+          }
+        }
       }
     },
   },
