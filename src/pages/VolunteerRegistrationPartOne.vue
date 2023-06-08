@@ -35,11 +35,7 @@
           </label>
         </div>
         <div v-else class="form__photo-selected-container">
-          <img
-            :src="downloadURL"
-            alt="User Photo"
-            class="photo__photo"
-          />
+          <img :src="downloadURL" alt="User Photo" class="photo__photo" />
         </div>
         <div class="form__full-name-container">
           <label for="full-name" class="full-name__label">Nome completo:</label>
@@ -118,6 +114,8 @@
 <script>
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { initializeApp } from "firebase/app";
+// import { useVuelidate } from '@vuelidate/core'
+// import { required } from '@vuelidate/validators'
 
 const firebaseConfig = {
   apiKey: "AIzaSyDofRds_OjtPBMabg4-lS82cRWdLjXA4Zk",
@@ -133,27 +131,42 @@ const storage = getStorage(app);
 
 export default {
   name: "VolunteerRegistrationPartOne",
+  // setup () {
+  //   return {
+  //     v$: useVuelidate()
+  //   }
+  // },
   data() {
+    const formData = this.$store.state.formData;
+
     return {
-      isSelectedImage: this.$store.state.formData.isSelectedImage,
-      downloadURL: this.$store.state.formData.photo,
-      inputFullName: this.$store.state.formData.fullName,
-      inputDateBirth: this.$store.state.formData.dateBirth,
-      inputRg: this.$store.state.formData.rg,
-      inputCpf: this.$store.state.formData.cpf,
-      inputPhone: this.$store.state.formData.phone,
-      inputEmail: this.$store.state.formData.email,
+      isSelectedImage: formData.isSelectedImage,
+      downloadURL: formData.photo,
+      inputFullName: formData.fullName,
+      inputDateBirth: formData.dateBirth,
+      inputRg: formData.rg,
+      inputCpf: formData.cpf,
+      inputPhone: formData.phone,
+      inputEmail: formData.email,
       formData: {
-        photo: "",
-        fullName: "",
-        dateBirth: "",
-        rg: "",
-        cpf: "",
-        phone: "",
-        email: "",
+        photo: formData.photo,
+        fullName: formData.fullName,
+        dateBirth: formData.dateBirth,
+        rg: formData.rg,
+        cpf: formData.cpf,
+        phone: formData.phone,
+        email: formData.email,
       },
     };
   },
+  // validations: {
+  //   inputFullName: { required },
+  //   inputDateBirth: { required },
+  //   inputRg: { required },
+  //   inputCpf: { required },
+  //   inputPhone: { required },
+  //   inputEmail: { required, email },
+  // },
   methods: {
     async uploadImage(event) {
       const file = event.target.files[0];
@@ -162,7 +175,7 @@ export default {
       await uploadBytes(storageRef, file);
 
       this.downloadURL = await getDownloadURL(storageRef);
-      
+
       this.isSelectedImage = true;
       this.$store.state.formData.isSelectedImage = true;
     },
@@ -176,6 +189,10 @@ export default {
       this.formData.email = this.inputEmail;
       console.log(this.formData);
 
+      // if (!this.$v.$invalid) {
+      //   this.$store.commit("updateFormData", this.formData);
+      //   this.$router.push("/volunteer-registration-part-two");
+      // }
       this.$store.commit("updateFormData", this.formData);
       this.$router.push("/volunteer-registration-part-two");
     },
