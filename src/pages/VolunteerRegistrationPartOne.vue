@@ -44,8 +44,15 @@
             class="full-name__input"
             id="fullName"
             maxlength="150"
-            v-model="inputFullName"
+            v-model.trim="v$.inputFullName.$model"
+            :class="{ error: v$.inputFullName.$error }"
+            ref="inputFullName"
           />
+          <div v-if="v$.inputFullName.$error">
+            <p v-if="v$.inputFullName.required" class="error-text">
+              Preencha no nome completo!
+            </p>
+          </div>
         </div>
         <div class="form__date-birth-container">
           <label for="date-birth" class="date-birth__label"
@@ -112,38 +119,62 @@
 </template>
 
 <script>
-// import { useVuelidate } from '@vuelidate/core'
-// import { required } from '@vuelidate/validators'
-import submitFormVolunteerPartOne from "../assets/js/methods/submit-form-volunteer-part-one.js";
+// import submitFormVolunteerPartOne from "../assets/js/methods/submit-form-volunteer-part-one.js";
 import uploadImage from "../assets/js/methods/upload-image.js";
 import dataPartOne from "../assets/js/data/data-form-part-one.js";
 
+import { useVuelidate } from "@vuelidate/core";
+import { required, email } from "@vuelidate/validators";
+
 export default {
   name: "VolunteerRegistrationPartOne",
-  // setup () {
-  //   return {
-  //     v$: useVuelidate()
-  //   }
-  // },
+  setup() {
+    return { v$: useVuelidate() };
+  },
   data() {
     const formData = this.$store.state.formData;
     const data = dataPartOne(formData);
-    
+
     return {
-      ...data
+      ...data,
     };
   },
-  // validations: {
-  //   inputFullName: { required },
-  //   inputDateBirth: { required },
-  //   inputRg: { required },
-  //   inputCpf: { required },
-  //   inputPhone: { required },
-  //   inputEmail: { required, email },
-  // },
+  watch: {
+    "v$.inputFullName.$error"(newVal) {
+      if (newVal) {
+        this.$nextTick(() => {
+          this.$refs.inputFullName.focus();
+        });
+      }
+    },
+  },
+  validations() {
+    return {
+      inputFullName: { required },
+      // inputEmail: { required, email },
+    };
+  },
   methods: {
     uploadImage,
-    submitFormVolunteerPartOne,
+    async submitFormVolunteerPartOne() {
+      this.formData.photo = this.downloadURL;
+      this.formData.fullName = this.inputFullName;
+      this.formData.dateBirth = this.inputDateBirth;
+      this.formData.rg = this.inputRg;
+      this.formData.cpf = this.inputCpf;
+      this.formData.phone = this.inputPhone;
+      this.formData.email = this.inputEmail;
+      console.log(this.formData);
+
+      this.v$.$touch();
+
+      const isFormCorrect = await this.v$.$validate();
+
+      if (isFormCorrect) {
+        this.$store.commit("updateFormData", this.formData);
+        this.$router.push("/volunteer-registration-part-two");
+      }
+    },
   },
 };
 </script>
