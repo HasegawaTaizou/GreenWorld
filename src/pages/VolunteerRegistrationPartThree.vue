@@ -62,7 +62,7 @@
         </router-link>
         <button
           type="button"
-          @click="submitForm"
+          @click="submitFormVolunteerPartThree"
           class="volunteer-registration__button"
         >
           Continuar
@@ -78,64 +78,20 @@
 </template>
 
 <script>
-import axios from "axios";
+import submitFormVolunteerPartThree from "../assets/js/methods/submit-form-volunteer-part-three.js";
+import dataFormPartThree from "../assets/js/data/data-form-part-three.js";
 
 export default {
   name: "VolunteerRegistrationPartThree",
   data() {
+    const formData = this.$store.state.formData;
+    const data = dataFormPartThree(formData);
     return {
-      selectHaveExperience: this.$store.state.formData.haveExperience,
-      inputReason: this.$store.state.formData.reason,
-      formData: {
-        userData: {
-          photo: this.$store.state.formData.photo,
-          dateBirth: this.$store.state.formData.dateBirth,
-          rg: this.$store.state.formData.rg,
-          cpf: this.$store.state.formData.cpf,
-          phone: this.$store.state.formData.phone,
-          email: this.$store.state.formData.email,
-        },
-        addressData: {
-          cep: this.$store.state.formData.cep,
-          road: this.$store.state.formData.road,
-          neighborhood: this.$store.state.formData.neighborhood,
-          complement: this.$store.state.formData.complement,
-          state: this.$store.state.formData.state,
-          city: this.$store.state.formData.city,
-        },
-        additionalData: {
-          reason: "",
-          haveExperience: "",
-        },
-      },
+      ...data,
     };
   },
   methods: {
-    submitForm() {
-      this.formData.additionalData.reason = this.inputReason;
-      this.formData.additionalData.haveExperience = this.selectHaveExperience;
-      this.$store.commit("updateFormData", this.formData);
-
-      console.log("form 3: ", this.formData);
-
-      // Enviar dados para o servidor
-      axios
-        .post("http://seuservidor.com/endpoint", this.formData)
-        .then((response) => {
-          // Manipular a resposta do servidor
-          console.log(response.data);
-
-          // Limpar dados do formulário ou reiniciar o cadastro
-          this.formData.address = "";
-
-          // Redirecionar para a primeira tela do cadastro
-          this.$router.push("/");
-        })
-        .catch((error) => {
-          // Tratar erros na requisição
-          console.error(error);
-        });
-    },
+    submitFormVolunteerPartThree,
   },
 };
 </script>
