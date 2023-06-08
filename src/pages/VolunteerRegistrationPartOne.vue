@@ -96,7 +96,7 @@
         </div>
         <button
           type="button"
-          @click="submitForm"
+          @click="submitFormPartOne"
           class="volunteer-registration__button"
         >
           Continuar
@@ -112,22 +112,11 @@
 </template>
 
 <script>
-import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
-import { initializeApp } from "firebase/app";
 // import { useVuelidate } from '@vuelidate/core'
 // import { required } from '@vuelidate/validators'
-
-const firebaseConfig = {
-  apiKey: "AIzaSyDofRds_OjtPBMabg4-lS82cRWdLjXA4Zk",
-  authDomain: "greenworld-f2763.firebaseapp.com",
-  projectId: "greenworld-f2763",
-  storageBucket: "greenworld-f2763.appspot.com",
-  messagingSenderId: "549856611550",
-  appId: "1:549856611550:web:ca75f1092264f9d607864f",
-};
-
-const app = initializeApp(firebaseConfig);
-const storage = getStorage(app);
+import submitFormPartOne from "../assets/js/methods/submit-form-part-one.js";
+import uploadImage from "../assets/js/methods/upload-image.js";
+import dataPartOne from "../assets/js/data/data-form-part-one.js";
 
 export default {
   name: "VolunteerRegistrationPartOne",
@@ -138,25 +127,10 @@ export default {
   // },
   data() {
     const formData = this.$store.state.formData;
-
+    const data = dataPartOne(formData);
+    
     return {
-      isSelectedImage: formData.isSelectedImage,
-      downloadURL: formData.photo,
-      inputFullName: formData.fullName,
-      inputDateBirth: formData.dateBirth,
-      inputRg: formData.rg,
-      inputCpf: formData.cpf,
-      inputPhone: formData.phone,
-      inputEmail: formData.email,
-      formData: {
-        photo: formData.photo,
-        fullName: formData.fullName,
-        dateBirth: formData.dateBirth,
-        rg: formData.rg,
-        cpf: formData.cpf,
-        phone: formData.phone,
-        email: formData.email,
-      },
+      ...data
     };
   },
   // validations: {
@@ -168,34 +142,8 @@ export default {
   //   inputEmail: { required, email },
   // },
   methods: {
-    async uploadImage(event) {
-      const file = event.target.files[0];
-      const storageRef = ref(storage, "images/" + file.name);
-
-      await uploadBytes(storageRef, file);
-
-      this.downloadURL = await getDownloadURL(storageRef);
-
-      this.isSelectedImage = true;
-      this.$store.state.formData.isSelectedImage = true;
-    },
-    submitForm() {
-      this.formData.photo = this.downloadURL;
-      this.formData.fullName = this.inputFullName;
-      this.formData.dateBirth = this.inputDateBirth;
-      this.formData.rg = this.inputRg;
-      this.formData.cpf = this.inputCpf;
-      this.formData.phone = this.inputPhone;
-      this.formData.email = this.inputEmail;
-      console.log(this.formData);
-
-      // if (!this.$v.$invalid) {
-      //   this.$store.commit("updateFormData", this.formData);
-      //   this.$router.push("/volunteer-registration-part-two");
-      // }
-      this.$store.commit("updateFormData", this.formData);
-      this.$router.push("/volunteer-registration-part-two");
-    },
+    uploadImage,
+    submitFormPartOne,
   },
 };
 </script>
