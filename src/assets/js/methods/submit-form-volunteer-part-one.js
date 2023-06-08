@@ -1,4 +1,4 @@
-export default function submitFormPartOne() {
+export default function submitFormVolunteerPartOne() {
   this.formData.photo = this.downloadURL;
   this.formData.fullName = this.inputFullName;
   this.formData.dateBirth = this.inputDateBirth;

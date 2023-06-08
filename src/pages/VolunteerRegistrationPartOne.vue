@@ -96,7 +96,7 @@
         </div>
         <button
           type="button"
-          @click="submitFormPartOne"
+          @click="submitFormVolunteerPartOne"
           class="volunteer-registration__button"
         >
           Continuar
@@ -114,7 +114,7 @@
 <script>
 // import { useVuelidate } from '@vuelidate/core'
 // import { required } from '@vuelidate/validators'
-import submitFormPartOne from "../assets/js/methods/submit-form-part-one.js";
+import submitFormVolunteerPartOne from "../assets/js/methods/submit-form-volunteer-part-one.js";
 import uploadImage from "../assets/js/methods/upload-image.js";
 import dataPartOne from "../assets/js/data/data-form-part-one.js";
 
@@ -143,7 +143,7 @@ export default {
   // },
   methods: {
     uploadImage,
-    submitFormPartOne,
+    submitFormVolunteerPartOne,
   },
 };
 </script>

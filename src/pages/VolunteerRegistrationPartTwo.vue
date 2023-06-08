@@ -27,8 +27,8 @@
             id="cep"
             v-mask="'#####-###'"
             v-model="formData.cep"
-            @blur="getData()"
-            @keydown.enter="getData()"
+            @blur="fillAdrress"
+            @keydown.enter="fillAdrress"
           />
         </div>
         <div class="form__road-container">
@@ -83,7 +83,7 @@
         </router-link>
         <button
           type="button"
-          @click="submitForm"
+          @click="submitFormVolunteerPartTwo"
           class="volunteer-registration__button"
         >
           Continuar
@@ -99,45 +99,22 @@
 </template>
 
 <script>
-import axios from "axios";
+import fillAdrress from "../assets/js/methods/fill-address.js";
+import submitFormVolunteerPartTwo from "../assets/js/methods/submit-form-volunteer-part-two.js";
+import dataFormPartTwo from "../assets/js/data/data-form-part-two.js";
 
 export default {
-  name: "VolunteerRegistrationPartOne",
+  name: "VolunteerRegistrationPartTwo",
   data() {
+    const formData = this.$store.state.formData;
+    const data = dataFormPartTwo(formData);
     return {
-      formData: {
-        cep: this.$store.state.formData.cep,
-        road: this.$store.state.formData.road,
-        neighborhood: this.$store.state.formData.neighborhood,
-        complement: this.$store.state.formData.complement,
-        state: this.$store.state.formData.state,
-        city: this.$store.state.formData.city,
-      },
+      ...data,
     };
   },
   methods: {
-    getData() {
-      //Remove the "-" from CEP input
-      this.formData.cep = this.formData.cep.replace("-", "");
-
-      axios
-        .get(`https://viacep.com.br/ws/${this.formData.cep}/json/`)
-        .then((response) => {
-          this.formData.road = response.data.logradouro;
-          this.formData.neighborhood = response.data.bairro;
-          this.formData.complement = response.data.complemento;
-          this.formData.state = response.data.uf;
-          this.formData.city = response.data.localidade;
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-    },
-    submitForm() {
-      console.log('formData 2: ', this.formData);
-      this.$store.commit("updateFormData", this.formData);
-      this.$router.push("/volunteer-registration-part-three");
-    },
+    fillAdrress,
+    submitFormVolunteerPartTwo,
   },
 };
 </script>
