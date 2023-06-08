@@ -135,7 +135,7 @@ export default {
   name: "VolunteerRegistrationPartOne",
   data() {
     return {
-      isSelectedImage: false,
+      isSelectedImage: this.$store.state.formData.isSelectedImage,
       downloadURL: this.$store.state.formData.photo,
       inputFullName: this.$store.state.formData.fullName,
       inputDateBirth: this.$store.state.formData.dateBirth,
@@ -164,6 +164,7 @@ export default {
       this.downloadURL = await getDownloadURL(storageRef);
       
       this.isSelectedImage = true;
+      this.$store.state.formData.isSelectedImage = true;
     },
     submitForm() {
       this.formData.photo = this.downloadURL;
