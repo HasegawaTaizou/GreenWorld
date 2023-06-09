@@ -41,12 +41,43 @@
       </div>
       <nav class="navigation">
         <ul class="navigation-fields-content">
-          <!-- TESTE DE MENUUUUUUUU -->
-          <li class="navigation-field" v-for="item in menuItems" :key="item.id">
-            <router-link :to="`/dashboard/${item.route}`">
-              <img :src="item.image" alt="Item icon" />
-              <span class="navigation-field__name">{{ item.title }}</span>
-            </router-link>
+          <li v-for="item in menuItems" :key="item.id">
+            <template v-if="!item.subMenu">
+              <li class="navigation-field">
+                <router-link :to="`/dashboard/${item.route}`">
+                  <span>
+                    <img :src="item.image" alt="Item icon" />
+                    <span class="navigation-field__name">{{ item.title }}</span>
+                  </span>
+                </router-link>
+              </li>
+            </template>
+            <template v-else>
+              <li class="navigation-field">
+                <span @click="toggleSubMenu(item)">
+                  <img :src="item.image" alt="Item icon" />
+                  <span class="navigation-field__name">{{ item.title }}</span>
+                  <i
+                    v-if="item.subMenu"
+                    :class="{
+                      'fa fa-angle-down': !item.showSubMenu,
+                      'fa fa-angle-up': item.showSubMenu,
+                    }"
+                  ></i>
+                </span>
+                <ul v-if="item.showSubMenu" :key="`submenu-${item.id}`">
+                  <li
+                    v-for="subItem in item.subMenu"
+                    :key="subItem.id"
+                    @click="selectMenuItem(subItem)"
+                  >
+                    <router-link :to="`/dashboard/${subItem.route}`">{{
+                      subItem.title
+                    }}</router-link>
+                  </li>
+                </ul>
+              </li>
+            </template>
           </li>
         </ul>
       </nav>
@@ -82,7 +113,15 @@ export default {
     return {
       menuItems: [
         { id: 1, title: "Home", image: homeIcon, route: "" },
-        { id: 2, title: "Ajudas", image: helpsIcon, route: "pagina1" },
+        {
+          id: 2,
+          title: "Ajudas",
+          image: helpsIcon,
+          subMenu: [
+            { id: 21, title: "Subpágina 2.1", route: "/pagina2/subpagina1" },
+            { id: 22, title: "Subpágina 2.2", route: "/pagina2/subpagina2" },
+          ],
+        },
         { id: 3, title: "Voluntários", image: volunteerIcon, route: "pagina1" },
         { id: 4, title: "Beneficiados", image: homeIcon, route: "pagina1" },
         { id: 5, title: "Sementes", image: seedsIcon, route: "pagina1" },
@@ -93,6 +132,9 @@ export default {
   methods: {
     toggleSubMenu(item) {
       item.showSubMenu = !item.showSubMenu;
+    },
+    selectMenuItem(item) {
+      this.$router.push(item.route);
     },
   },
 };
