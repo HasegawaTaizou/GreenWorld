@@ -41,44 +41,36 @@
       </div>
       <nav class="navigation">
         <ul class="navigation-fields-content">
-          <li v-for="item in menuItems" :key="item.id">
-            <template v-if="!item.subMenu">
-              <li class="navigation-field">
-                <router-link :to="`/dashboard/${item.route}`">
-                  <span>
-                    <img :src="item.image" alt="Item icon" />
-                    <span class="navigation-field__name">{{ item.title }}</span>
-                  </span>
-                </router-link>
-              </li>
-            </template>
-            <template v-else>
-              <li class="navigation-field">
-                <span @click="toggleSubMenu(item)">
-                  <img :src="item.image" alt="Item icon" />
-                  <span class="navigation-field__name">{{ item.title }}</span>
-                  <i
-                    v-if="item.subMenu"
-                    :class="{
-                      'fa fa-angle-down': !item.showSubMenu,
-                      'fa fa-angle-up': item.showSubMenu,
-                    }"
-                  ></i>
-                </span>
-                <ul v-if="item.showSubMenu" :key="`submenu-${item.id}`">
-                  <li
-                    v-for="subItem in item.subMenu"
-                    :key="subItem.id"
-                    @click="selectMenuItem(subItem)"
-                  >
+          <template v-for="item in menuItems" :key="item.id">
+            <li v-if="!item.subMenu" class="navigation-field">
+              <router-link :to="`/dashboard/${item.route}`">
+                <img :src="item.image" alt="Item icon" />
+                <span class="navigation-field__name">{{ item.title }}</span>
+              </router-link>
+            </li>
+            <li v-else class="navigation-field">
+              <span @click="toggleSubMenu(item)">
+                <img :src="item.image" alt="Item icon" />
+                <span class="navigation-field__name">{{ item.title }}</span>
+                <i
+                  v-if="item.subMenu"
+                  :class="{
+                    'fa fa-angle-down': !item.showSubMenu,
+                    'fa fa-angle-up': item.showSubMenu,
+                  }"
+                ></i>
+              </span>
+              <ul v-if="item.showSubMenu">
+                <template v-for="subItem in item.subMenu" :key="subItem.id">
+                  <li @click="selectMenuItem(subItem)">
                     <router-link :to="`/dashboard/${subItem.route}`">{{
                       subItem.title
                     }}</router-link>
                   </li>
-                </ul>
-              </li>
-            </template>
-          </li>
+                </template>
+              </ul>
+            </li>
+          </template>
         </ul>
       </nav>
       <div class="log-out-content">
@@ -118,12 +110,28 @@ export default {
           title: "Ajudas",
           image: helpsIcon,
           subMenu: [
-            { id: 21, title: "Subpágina 2.1", route: "/pagina2/subpagina1" },
-            { id: 22, title: "Subpágina 2.2", route: "/pagina2/subpagina2" },
+            { id: 21, title: "Criar ajuda", route: "subpagina1" },
+            { id: 22, title: "Todas as ajudas", route: "subpagina2" },
           ],
         },
-        { id: 3, title: "Voluntários", image: volunteerIcon, route: "pagina1" },
-        { id: 4, title: "Beneficiados", image: homeIcon, route: "pagina1" },
+        {
+          id: 3,
+          title: "Voluntários",
+          image: volunteerIcon,
+          subMenu: [
+            { id: 31, title: "Solicitação voluntários", route: "subpagina1" },
+            { id: 32, title: "Todos os voluntários", route: "subpagina2" },
+          ],
+        },
+        {
+          id: 4,
+          title: "Beneficiados",
+          image: homeIcon,
+          subMenu: [
+            { id: 41, title: "Para aprovar", route: "subpagina1" },
+            { id: 42, title: "Todos os beneficiados", route: "subpagina2" },
+          ],
+        },
         { id: 5, title: "Sementes", image: seedsIcon, route: "pagina1" },
       ],
       showSidenav: false,
