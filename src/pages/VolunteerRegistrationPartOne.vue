@@ -47,6 +47,7 @@
             v-model.trim="v$.inputFullName.$model"
             :class="{ error: v$.inputFullName.$error }"
             ref="inputFullName"
+            @input="filtrarTexto"
           />
           <div v-if="v$.inputFullName.$error">
             <p v-if="v$.inputFullName.required" class="error-text">
@@ -65,10 +66,15 @@
             v-model="inputDateBirth"
             :class="{ error: v$.inputDateBirth.$error }"
             ref="inputDateBirth"
+            @input="v$.inputDateBirth.$touch()"
           />
           <div v-if="v$.inputDateBirth.$error">
             <p
-              v-if="v$.inputDateBirth.required && v$.inputDateBirth.minLength"
+              v-if="
+                v$.inputDateBirth.required &&
+                v$.inputDateBirth.minLength &&
+                v$.inputDateBirth.validDate
+              "
               class="error-text"
             >
               Preencha uma data de nascimento válida!
@@ -108,8 +114,18 @@
             type="email"
             class="email__input"
             maxlength="256"
-            v-model="inputEmail"
+            v-model.trim="v$.inputEmail.$model"
+            :class="{ error: v$.inputEmail.$error }"
+            ref="inputEmail"
           />
+          <div v-if="v$.inputEmail.$error">
+            <p
+              v-if="v$.inputEmail.required && v$.inputEmail.email"
+              class="error-text"
+            >
+              Preencha o e-mail!
+            </p>
+          </div>
         </div>
         <button
           type="button"
@@ -146,14 +162,22 @@ export default {
     const data = dataPartOne(formData);
 
     return {
+      validDate: true,
       ...data,
     };
   },
   validations() {
     return {
       inputFullName: { required },
-      inputDateBirth: { required, minLength: minLength(10) },
-      // inputEmail: { required, email },
+      inputDateBirth: {
+        required,
+        minLength: minLength(10),
+        validDate() {
+          var regex = /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/([0-9]{4})$/;
+          return regex.test(this.inputDateBirth);
+        },
+      },
+      inputEmail: { required, email },
     };
   },
   methods: {
@@ -179,6 +203,7 @@ export default {
         const fields = [
           { key: "inputFullName", ref: "inputFullName" },
           { key: "inputDateBirth", ref: "inputDateBirth" },
+          { key: "inputEmail", ref: "inputEmail" },
         ];
 
         for (const field of fields) {
@@ -190,6 +215,10 @@ export default {
           }
         }
       }
+    },
+    filtrarTexto() {
+      // Remove qualquer caractere que não seja uma letra
+      this.inputFullName = this.inputFullName.replace(/[^a-zA-Z]/g, "");
     },
   },
 };
