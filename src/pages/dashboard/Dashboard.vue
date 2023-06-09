@@ -41,38 +41,12 @@
       </div>
       <nav class="navigation">
         <ul class="navigation-fields-content">
-          <li class="navigation-field">
-            <a href="#">
-              <img src="../../assets/img/home_icon.png" alt="Image home" />
-              <span class="navigation-field__name">Home</span>
-            </a>
-          </li>
-          <li class="navigation-field">
-            <a href="#">
-              <img src="../../assets/img/helps_icon.png" alt="Image list" />
-              <span class="navigation-field__name">Ajudas</span>
-            </a>
-          </li>
-          <li class="navigation-field">
-            <a href="#">
-              <img
-                src="../../assets/img/volunteer-beneficiarie_icon.png"
-                alt="Image people"
-              />
-              <span class="navigation-field__name">Voluntários</span>
-            </a>
-          </li>
-          <li class="navigation-field">
-            <a href="#">
-              <img src="../../assets/img/home_icon.png" alt="Image home" />
-              <span class="navigation-field__name">Beneficiados</span>
-            </a>
-          </li>
-          <li class="navigation-field">
-            <a href="#">
-              <img src="../../assets/img/seeds_icon.png" alt="Image home" />
-              <span class="navigation-field__name">Sementes</span>
-            </a>
+          <!-- TESTE DE MENUUUUUUUU -->
+          <li class="navigation-field" v-for="item in menuItems" :key="item.id">
+            <router-link :to="`/dashboard/${item.route}`">
+              <img :src="item.image" alt="Item icon" />
+              <span class="navigation-field__name">{{ item.title }}</span>
+            </router-link>
           </li>
         </ul>
       </nav>
@@ -97,12 +71,29 @@
 </template>
 
 <script>
+import homeIcon from "@/assets/img/home_icon.png";
+import helpsIcon from "@/assets/img/helps_icon.png";
+import volunteerIcon from "@/assets/img/volunteer-beneficiarie_icon.png";
+import seedsIcon from "@/assets/img/seeds_icon.png";
+
 export default {
   name: "Dashboard",
   data() {
     return {
+      menuItems: [
+        { id: 1, title: "Home", image: homeIcon, route: "" },
+        { id: 2, title: "Ajudas", image: helpsIcon, route: "pagina1" },
+        { id: 3, title: "Voluntários", image: volunteerIcon, route: "pagina1" },
+        { id: 4, title: "Beneficiados", image: homeIcon, route: "pagina1" },
+        { id: 5, title: "Sementes", image: seedsIcon, route: "pagina1" },
+      ],
       showSidenav: false,
     };
+  },
+  methods: {
+    toggleSubMenu(item) {
+      item.showSubMenu = !item.showSubMenu;
+    },
   },
 };
 </script>
