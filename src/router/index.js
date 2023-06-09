@@ -43,6 +43,7 @@ import CreateHelp from "@/pages/dashboard/CreateHelp.vue";
 import Requisicoes from "@/pages/Requisicoes.vue";
 import Firebase from "@/pages/Firebase.vue";
 import Criptografia from "@/pages/Criptografia.vue";
+import Menu from "@/pages/Menu.vue";
 
 const routes = [
   {
@@ -253,6 +254,11 @@ const routes = [
     path: "/criptografia",
     name: "Criptografia",
     component: Criptografia,
+  },
+  {
+    path: "/menu",
+    name: "Menu",
+    component: Menu,
   },
 ];
 
