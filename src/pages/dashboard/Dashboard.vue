@@ -48,18 +48,16 @@
                 <span class="navigation-field__name">{{ item.title }}</span>
               </router-link>
             </li>
-            <li v-else class="navigation-field">
-              <span @click="toggleSubMenu(item)">
-                <img :src="item.image" alt="Item icon" />
-                <span class="navigation-field__name">{{ item.title }}</span>
-                <i
-                  v-if="item.subMenu"
-                  :class="{
-                    'fa fa-angle-down': !item.showSubMenu,
-                    'fa fa-angle-up': item.showSubMenu,
-                  }"
-                ></i>
-              </span>
+            <li v-else class="navigation-field" @click="toggleSubMenu(item)">
+              <img :src="item.image" alt="Item icon" />
+              <span class="navigation-field__name">{{ item.title }}</span>
+              <i
+                v-if="item.subMenu"
+                :class="{
+                  'fa fa-angle-down': !item.showSubMenu,
+                  'fa fa-angle-up': item.showSubMenu,
+                }"
+              ></i>
               <ul v-if="item.showSubMenu">
                 <template v-for="subItem in item.subMenu" :key="subItem.id">
                   <li @click="selectMenuItem(subItem)">
