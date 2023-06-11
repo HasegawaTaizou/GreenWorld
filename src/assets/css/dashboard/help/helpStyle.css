@@ -132,14 +132,14 @@ header {
     font-weight: 600;
 }
 
-#seeds {
+#help {
     display: flex;
     flex-direction: column;
-    align-items: center;
+
     width: 80vw;
     gap: 80px;
     padding: 30px 100px 50px 100px;
-    height: 90vh;
+    height: autp;
 }
 
 
@@ -189,7 +189,22 @@ header {
     gap: 28px;
 }
 
-.seed__title {
+.status-pending{
+    color: var(--section-background-color);
+    font-weight: 600;
+    font-size: 1.125rem;
+}
+
+.seeds-list{
+ 
+}
+
+.seed__item{
+    font-size: 1.188rem;
+    padding-top: 20px;
+}
+
+.help__title {
     font-weight: 600;
     font-size: 2.188rem;
 }
@@ -232,8 +247,15 @@ header {
     gap: 8px;
 }
 
-.update-data__link{
+.help__comments{
+    max-width: 30vw;
+}
 
+
+.help-information{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 100px;
 }
 
 .update-data__button{
