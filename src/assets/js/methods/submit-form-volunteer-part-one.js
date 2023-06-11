@@ -1,5 +1,4 @@
 import cleanInput from "../input/clean-input.js";
-import validateFieldsVolunteerPartOne from "../validations/validation-fields-volunteer-part-one.js";
 
 export default async function submitFormVolunteerPartOne() {
   this.formData.foto = this.downloadURL;
