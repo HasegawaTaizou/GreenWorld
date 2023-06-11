@@ -159,7 +159,7 @@ const routes = [
         component: Seeds,
       },
       {
-        path: "/dashboard/seed",
+        path: "/dashborad/seeds/seed",
         name: "Seed",
         component: Seed,
       },
