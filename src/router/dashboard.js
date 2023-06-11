@@ -2,7 +2,8 @@ import { createRouter, createWebHistory } from "vue-router";
 
 // DASHBOARD
 import Dashboard from "@/pages/dashboard/Dashboard.vue";
-import Seeds from "@/pages/dashboard/Seeds.vue";
+// import Seeds from "@/pages/dashboard/Seeds.vue";
+import Seeds from '../pages/dashboard/Seeds.vue';
 import Seed from "@/pages/dashboard/Seed.vue";
 import AllHelp from "@/pages/dashboard/AllHelp.vue";
 import AllVolunteers from "@/pages/dashboard/AllVolunteers.vue";
@@ -34,87 +35,87 @@ const dashboardRoutes = [
     component: AllHelp,
   },
   {
-    path: "/seeds",
+    path: "/dashboard/seeds",
     name: "Seeds",
     component: Seeds,
   },
   {
-    path: "/seed",
+    path: "/dashboard/seed",
     name: "Seed",
     component: Seed,
   },
   {
-    path: "/all-volunteers",
+    path: "/dashboard/all-volunteers",
     name: "AllVolunteers",
     component: AllVolunteers,
   },
   {
-    path: "/volunteer-requests",
+    path: "/dashboard/volunteer-requests",
     name: "VolunteerRequests",
     component: VolunteerRequests,
   },
   {
-    path: "/data-volunteer-request",
+    path: "/dashboard/data-volunteer-request",
     name: "DataVolunteerRequest",
     component: DataVolunteerRequest,
   },
   {
-    path: "/volunteer",
+    path: "/dashboard/volunteer",
     name: "Volunteer",
     component: Volunteer,
   },
   {
-    path: "/all-beneficiaries",
+    path: "/dashboard/all-beneficiaries",
     name: "AllBeneficiaries",
     component: AllBeneficiaries,
   },
   {
-    path: "/beneficiarie-requests",
+    path: "/dashboard/beneficiarie-requests",
     name: "BeneficiarieRequests",
     component: BeneficiarieRequests,
   },
   {
-    path: "/data-beneficiarie-request",
+    path: "/dashboard/data-beneficiarie-request",
     name: "DataBeneficiarieRequest",
     component: DataBeneficiarieRequest,
   },
   {
-    path: "/beneficiarie",
+    path: "/dashboard/beneficiarie",
     name: "Beneficiarie",
     component: Beneficiarie,
   },
   {
-    path: "/administrator",
+    path: "/dashboard/administrator",
     name: "Administrator",
     component: Administrator,
   },
   {
-    path: "/update-administrator",
+    path: "/dashboard/update-administrator",
     name: "UpdateAdministrator",
     component: UpdateAdministrator,
   },
   {
-    path: "/update-beneficiarie",
+    path: "/dashboard/update-beneficiarie",
     name: "UpdateBeneficiarie",
     component: UpdateBeneficiarie,
   },
   {
-    path: "/update-volunteer",
+    path: "/dashboard/update-volunteer",
     name: "UpdateVolunteer",
     component: UpdateVolunteer,
   },
   {
-    path: "/update-help",
+    path: "/dashboard/update-help",
     name: "UpdateHelp",
     component: UpdateHelp,
   },
   {
-    path: "/help",
+    path: "/dashboard/help",
     name: "Help",
     component: Help,
   },
   {
-    path: "/create-help",
+    path: "/dashboard/create-help",
     name: "CreateHelp",
     component: CreateHelp,
   },
