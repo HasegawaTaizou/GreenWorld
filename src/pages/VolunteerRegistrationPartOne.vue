@@ -171,6 +171,8 @@ import dataPartOne from "../assets/js/data/data-form-part-one.js";
 import { useVuelidate } from "@vuelidate/core";
 import { required, email, minLength } from "@vuelidate/validators";
 
+import cleanInput from '../assets/js/input/clean-input.js'
+
 import axios from "axios";
 
 export default {
@@ -213,10 +215,7 @@ export default {
       this.formData.telefone = this.inputPhone;
       this.formData.email = this.inputEmail;
 
-      this.formData.cpf = this.formData.cpf
-        .replace("-", "")
-        .replace(".", "")
-        .replace(".", "");
+      this.formData.cpf = cleanInput(this.formData.cpf)
 
       console.log(this.formData);
 
