@@ -29,6 +29,13 @@ export default async function submitFormVolunteerPartOne() {
     this.$store.commit("updateFormData", this.formData);
     this.$router.push("/volunteer-registration-part-two");
   } else {
-    validateFieldsVolunteerPartOne(fields)
+    for (const field of fields) {
+      if (this.v$[field.key].$error) {
+        this.$nextTick(() => {
+          this.$refs[field.ref].focus();
+        });
+        break;
+      }
+    }
   }
 }

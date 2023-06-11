@@ -148,7 +148,7 @@
         </div>
         <button
           type="button"
-          @click="submitFormVolunteerPartOne"
+          @click="submitFormVolunteerPartOne()"
           class="volunteer-registration__button"
         >
           Continuar
