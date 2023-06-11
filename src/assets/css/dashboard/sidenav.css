@@ -60,11 +60,11 @@
 }
 
 .navigation-field {
-  gap: 12px;
+  gap: 22px;
   align-items: center;
   min-height: 58px;
+  display: flex;
 }
-
 
 .navigation-field a {
   display: flex;
