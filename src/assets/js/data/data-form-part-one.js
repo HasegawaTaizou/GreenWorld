@@ -6,6 +6,7 @@ export default function dataPartOne(formData) {
     inputDateBirth: formData.dateBirth,
     inputRg: formData.rg,
     inputCpf: formData.cpf,
+    selectPhysicalLimitation: formData.physicalLimitation,
     inputPhone: formData.phone,
     inputEmail: formData.email,
     formData: {

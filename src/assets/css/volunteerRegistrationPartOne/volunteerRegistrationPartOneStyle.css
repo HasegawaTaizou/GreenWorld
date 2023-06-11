@@ -40,12 +40,13 @@ label {
 .volunteer-registration-part-one-form {
   display: grid;
   grid-template-columns: auto auto;
-  grid-template-rows: auto auto auto auto auto;
+  grid-template-rows: auto auto auto auto auto auto;
   grid-template-areas:
     "photo photo"
     "full-name date-birth"
     "rg cpf"
-    "phone email"
+    "physical-limitation phone"
+    "email ."
     "button button";
   justify-items: center;
   gap: 32px;
@@ -126,6 +127,28 @@ label {
 
 .cpf__input {
   background-color: var(--input-background-color);
+}
+
+.form__physical-limitation-container {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  grid-area: physical-limitation;
+}
+
+.physical-limitation__select {
+  background-color: var(--input-background-color);
+  width: 314px;
+  height: 46px;
+  border-radius: 5px;
+  border: 0;
+  font-family: "Abel";
+  font-size: 1rem;
+  padding-left: 12px;
+}
+
+.physical-limitation__select option {
+  background-color: #408d7b;
 }
 
 .form__phone-container {

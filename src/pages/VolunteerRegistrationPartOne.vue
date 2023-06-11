@@ -99,6 +99,25 @@
             v-model="inputCpf"
           />
         </div>
+        <div class="form__physical-limitation-container">
+          <label for="physical-limitation" class="physical-limitation__label"
+            >Limitação física:</label
+          >
+          <select
+            class="physical-limitation__select"
+            v-model="selectPhysicalLimitation"
+          >
+            <option class="physical-limitation__default" value>
+              Selecione a limitação física
+            </option>
+            <option class="physical-limitation__option" value="Não tenho">
+              Não tenho
+            </option>
+            <option class="physical-limitation__option" value="Tenho">
+              Tenho
+            </option>
+          </select>
+        </div>
         <div class="form__phone-container">
           <label for="phone" class="phone__label">Telefone:</label>
           <input
@@ -188,6 +207,7 @@ export default {
       this.formData.dateBirth = this.inputDateBirth;
       this.formData.rg = this.inputRg;
       this.formData.cpf = this.inputCpf;
+      this.formData.physicalLimitation = this.selectPhysicalLimitation;
       this.formData.phone = this.inputPhone;
       this.formData.email = this.inputEmail;
       console.log(this.formData);
