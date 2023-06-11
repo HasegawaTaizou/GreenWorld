@@ -1,22 +1,23 @@
 export default function dataPartOne(formData) {
   return {
     isSelectedImage: formData.isSelectedImage,
-    downloadURL: formData.photo,
-    inputFullName: formData.fullName,
-    inputDateBirth: formData.dateBirth,
+    downloadURL: formData.foto,
+    inputFullName: formData.nome_completo,
+    inputDateBirth: formData.data_nascimento,
     inputRg: formData.rg,
     inputCpf: formData.cpf,
-    selectPhysicalLimitation: formData.physicalLimitation,
-    inputPhone: formData.phone,
+    selectPhysicalLimitation: formData.limitacao_fisica,
+    inputPhone: formData.telefone,
     inputEmail: formData.email,
     formData: {
-      photo: formData.photo,
-      fullName: formData.fullName,
-      dateBirth: formData.dateBirth,
+      foto: formData.foto,
+      nome_completo: formData.nome_completo,
+      data_nascimento: formData.data_nascimento,
       rg: formData.rg,
       cpf: formData.cpf,
-      phone: formData.phone,
+      telefone: formData.telefone,
       email: formData.email,
+      limitacao_fisica: formData.limitacao_fisica,
     },
   };
 }

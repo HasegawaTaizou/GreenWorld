@@ -37,7 +37,7 @@
             type="text"
             class="road__input"
             disabled
-            v-model="formData.road"
+            v-model="formData.logradouro"
           />
         </div>
         <div class="form__neighborhood-container">
@@ -46,7 +46,7 @@
             type="text"
             class="neighborhood__input"
             disabled
-            v-model="formData.neighborhood"
+            v-model="formData.bairro"
           />
         </div>
         <div class="form__complement-container">
@@ -55,7 +55,7 @@
             type="text"
             class="complement__input"
             disabled
-            v-model="formData.complement"
+            v-model="formData.complemento"
           />
         </div>
         <div class="form__state-container">
@@ -64,7 +64,7 @@
             type="text"
             class="state__input"
             disabled
-            v-model="formData.state"
+            v-model="formData.estado"
           />
         </div>
         <div class="form__city-container">
@@ -73,7 +73,7 @@
             type="text"
             class="city__input"
             disabled
-            v-model="formData.city"
+            v-model="formData.cidade"
           />
         </div>
         <router-link to="/volunteer-registration-part-one">

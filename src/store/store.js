@@ -8,22 +8,23 @@ export default new Vuex.Store({
     formData: {
       // GENERIC DATA
       isSelectedImage: false,
-      photo: "",
-      fullName: "",
-      dateBirth: "",
+      foto: "",
+      nome_completo: "",
+      data_nascimento: "",
       rg: "",
       cpf: "",
-      phone: "",
+      telefone: "",
       email: "",
       cep: "",
-      road: "",
-      neighborhood: "",
-      state: "",
+      logradouro: "",
+      bairro: "",
+      estado: "",
+      cidade: "",
 
       //VOLUNTEER DATA
-      physicalLimitation: "",
-      reason: "",
-      haveExperience: "",
+      limitacao_fisica: "",
+      motivo: "",
+      experiencia: "",
 
       // BENEFICIARY DATA
       amountResidents: "",

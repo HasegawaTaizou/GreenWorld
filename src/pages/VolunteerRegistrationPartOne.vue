@@ -171,6 +171,8 @@ import dataPartOne from "../assets/js/data/data-form-part-one.js";
 import { useVuelidate } from "@vuelidate/core";
 import { required, email, minLength } from "@vuelidate/validators";
 
+import axios from "axios";
+
 export default {
   name: "VolunteerRegistrationPartOne",
   setup() {
@@ -202,14 +204,20 @@ export default {
   methods: {
     uploadImage,
     async submitFormVolunteerPartOne() {
-      this.formData.photo = this.downloadURL;
-      this.formData.fullName = this.inputFullName;
-      this.formData.dateBirth = this.inputDateBirth;
+      this.formData.foto = this.downloadURL;
+      this.formData.nome_completo = this.inputFullName;
+      this.formData.data_nascimento = this.inputDateBirth;
       this.formData.rg = this.inputRg;
       this.formData.cpf = this.inputCpf;
-      this.formData.physicalLimitation = this.selectPhysicalLimitation;
-      this.formData.phone = this.inputPhone;
+      this.formData.limitacao_fisica = this.selectPhysicalLimitation;
+      this.formData.telefone = this.inputPhone;
       this.formData.email = this.inputEmail;
+
+      this.formData.cpf = this.formData.cpf
+        .replace("-", "")
+        .replace(".", "")
+        .replace(".", "");
+
       console.log(this.formData);
 
       this.v$.$touch();

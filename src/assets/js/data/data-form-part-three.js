@@ -1,28 +1,17 @@
 export default function dataPartThree(formData) {
   return {
-    selectHaveExperience: formData.haveExperience,
-    inputReason: formData.reason,
+    selectHaveExperience: formData.experiencia,
+    inputReason: formData.motivo,
     formData: {
-      userData: {
-        photo: formData.photo,
-        dateBirth: formData.dateBirth,
-        rg: formData.rg,
-        cpf: formData.cpf,
-        phone: formData.phone,
-        email: formData.email,
-      },
-      addressData: {
-        cep: formData.cep,
-        road: formData.road,
-        neighborhood: formData.neighborhood,
-        complement: formData.complement,
-        state: formData.state,
-        city: formData.city,
-      },
-      additionalData: {
-        reason: "",
-        haveExperience: "",
-      },
+      nome_completo: formData.nome_completo,
+      foto: formData.foto,
+      data_nascimento: formData.data_nascimento,
+      rg: formData.rg,
+      cpf: formData.cpf,
+      telefone: formData.telefone,
+      email: formData.email,
+      motivo: "",
+      experiencia: "",
     },
   };
 }

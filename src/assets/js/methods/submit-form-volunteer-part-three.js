@@ -1,11 +1,11 @@
-import postData from "./post-data.js";
+import postDataPartThree from "./post-data-part-three.js";
 
 export default function submitFormVolunteerPartThree() {
-  this.formData.additionalData.reason = this.inputReason;
-  this.formData.additionalData.haveExperience = this.selectHaveExperience;
+  this.formData.motivo = this.inputReason;
+  this.formData.experiencia = this.selectHaveExperience;
   this.$store.commit("updateFormData", this.formData);
 
   console.log("form 3: ", this.formData);
 
-  postData(this.formData);
+  postDataPartThree(this.formData);
 }
