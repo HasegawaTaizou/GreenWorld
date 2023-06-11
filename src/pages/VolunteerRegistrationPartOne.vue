@@ -164,16 +164,13 @@
 </template>
 
 <script>
-// import submitFormVolunteerPartOne from "../assets/js/methods/submit-form-volunteer-part-one.js";
+import submitFormVolunteerPartOne from "../assets/js/methods/submit-form-volunteer-part-one.js";
 import uploadImage from "../assets/js/methods/input/upload-image.js";
 import onlyLetters from "../assets/js/methods/input/only-letters.js";
 import dataPartOne from "../assets/js/data/data-form-part-one.js";
-
+import validationsVolunteerPartOne from '../assets/js/validations/validations-volunteer-part-one.js'
 import { useVuelidate } from "@vuelidate/core";
 
-import submitFormVolunteerPartOne from "../assets/js/methods/submit-form-volunteer-part-one.js";
-
-import validationsVolunteerPartOne from '../assets/js/validations/validations-volunteer-part-one.js'
 
 import axios from "axios";
 

@@ -80,13 +80,14 @@
         </a>
       </div>
     </div>
-    <div class="dashboard-content">
-      <img
+    <div id="dashboard" class="dashboard-content">
+      <router-view></router-view>
+      <!-- <img
         class="welcome__image"
         src="../../assets/img/welcome_image.png"
         alt="Welcome"
       />
-      <h1 class="welcome__title">Bem vindo</h1>
+      <h1 class="welcome__title">Bem vindo</h1> -->
     </div>
   </main>
 </template>
@@ -108,8 +109,8 @@ export default {
           title: "Ajudas",
           image: helpsIcon,
           subMenu: [
-            { id: 21, title: "Criar ajuda", route: "subpagina1" },
-            { id: 22, title: "Todas as ajudas", route: "subpagina2" },
+            { id: 21, title: "Criar ajuda", route: "create-help" },
+            { id: 22, title: "Todas as ajudas", route: "all-help" },
           ],
         },
         {
@@ -117,8 +118,8 @@ export default {
           title: "Voluntários",
           image: volunteerIcon,
           subMenu: [
-            { id: 31, title: "Solicitação voluntários", route: "subpagina1" },
-            { id: 32, title: "Todos os voluntários", route: "subpagina2" },
+            { id: 31, title: "Solicitação voluntários", route: "volunteer-requests" },
+            { id: 32, title: "Todos os voluntários", route: "all-volunteers" },
           ],
         },
         {
@@ -126,11 +127,11 @@ export default {
           title: "Beneficiados",
           image: homeIcon,
           subMenu: [
-            { id: 41, title: "Para aprovar", route: "subpagina1" },
-            { id: 42, title: "Todos os beneficiados", route: "subpagina2" },
+            { id: 41, title: "Para aprovar", route: "beneficiarie-requests" },
+            { id: 42, title: "Todos os beneficiados", route: "all-beneficiaries" },
           ],
         },
-        { id: 5, title: "Sementes", image: seedsIcon, route: "pagina1" },
+        { id: 5, title: "Sementes", image: seedsIcon, route: "seeds" },
       ],
       showSidenav: false,
     };
