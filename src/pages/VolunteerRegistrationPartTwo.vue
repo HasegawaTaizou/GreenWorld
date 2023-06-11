@@ -99,7 +99,7 @@
 </template>
 
 <script>
-import fillAdrress from "../assets/js/methods/fill-address.js";
+import fillAdrress from "../assets/js/methods/input/fill-address.js";
 import submitFormVolunteerPartTwo from "../assets/js/methods/submit-form-volunteer-part-two.js";
 import dataFormPartTwo from "../assets/js/data/data-form-part-two.js";
 

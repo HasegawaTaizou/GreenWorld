@@ -47,7 +47,7 @@
             v-model.trim="v$.inputFullName.$model"
             :class="{ error: v$.inputFullName.$error }"
             ref="inputFullName"
-            @input="filtrarTexto"
+            @input="this.inputFullName = onlyLetters(this.inputFullName)"
           />
           <div v-if="v$.inputFullName.$error">
             <p v-if="v$.inputFullName.required" class="error-text">
@@ -165,13 +165,15 @@
 
 <script>
 // import submitFormVolunteerPartOne from "../assets/js/methods/submit-form-volunteer-part-one.js";
-import uploadImage from "../assets/js/methods/upload-image.js";
+import uploadImage from "../assets/js/methods/input/upload-image.js";
+import onlyLetters from "../assets/js/methods/input/only-letters.js";
 import dataPartOne from "../assets/js/data/data-form-part-one.js";
 
 import { useVuelidate } from "@vuelidate/core";
-import { required, email, minLength } from "@vuelidate/validators";
 
-import cleanInput from '../assets/js/input/clean-input.js'
+import submitFormVolunteerPartOne from "../assets/js/methods/submit-form-volunteer-part-one.js";
+
+import validationsVolunteerPartOne from '../assets/js/validations/validations-volunteer-part-one.js'
 
 import axios from "axios";
 
@@ -190,63 +192,15 @@ export default {
     };
   },
   validations() {
+    const validations = validationsVolunteerPartOne();
     return {
-      inputFullName: { required },
-      inputDateBirth: {
-        required,
-        minLength: minLength(10),
-        validDate() {
-          var regex = /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/([0-9]{4})$/;
-          return regex.test(this.inputDateBirth);
-        },
-      },
-      inputEmail: { required, email },
+      ...validations
     };
   },
   methods: {
     uploadImage,
-    async submitFormVolunteerPartOne() {
-      this.formData.foto = this.downloadURL;
-      this.formData.nome_completo = this.inputFullName;
-      this.formData.data_nascimento = this.inputDateBirth;
-      this.formData.rg = this.inputRg;
-      this.formData.cpf = this.inputCpf;
-      this.formData.limitacao_fisica = this.selectPhysicalLimitation;
-      this.formData.telefone = this.inputPhone;
-      this.formData.email = this.inputEmail;
-
-      this.formData.cpf = cleanInput(this.formData.cpf)
-
-      console.log(this.formData);
-
-      this.v$.$touch();
-
-      const isFormCorrect = await this.v$.$validate();
-
-      if (isFormCorrect) {
-        this.$store.commit("updateFormData", this.formData);
-        this.$router.push("/volunteer-registration-part-two");
-      } else {
-        const fields = [
-          { key: "inputFullName", ref: "inputFullName" },
-          { key: "inputDateBirth", ref: "inputDateBirth" },
-          { key: "inputEmail", ref: "inputEmail" },
-        ];
-
-        for (const field of fields) {
-          if (this.v$[field.key].$error) {
-            this.$nextTick(() => {
-              this.$refs[field.ref].focus();
-            });
-            break;
-          }
-        }
-      }
-    },
-    filtrarTexto() {
-      // Remove qualquer caractere que não seja uma letra
-      this.inputFullName = this.inputFullName.replace(/[^a-zA-Z]/g, "");
-    },
+    submitFormVolunteerPartOne,
+    onlyLetters,
   },
 };
 </script>
