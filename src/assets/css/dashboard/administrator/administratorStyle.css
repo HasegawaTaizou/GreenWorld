@@ -170,6 +170,7 @@ header {
 }
 
 .seed-content__tag {
+    width: fit-content;
     padding: 8px 35px;
     display: flex;
     align-items: center;
@@ -227,6 +228,7 @@ header {
 
 .personal-data{
     display: flex;
+    align-items: center;
     gap: 8px;
 }
 
