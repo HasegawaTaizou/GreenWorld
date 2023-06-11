@@ -1,4 +1,5 @@
 import cleanInput from "../input/clean-input.js";
+import fieldsVolunteerPartOne from '../validations/fields/fields-volunteer-part-one.js'
 
 export default async function submitFormVolunteerPartOne() {
   this.formData.foto = this.downloadURL;
@@ -18,17 +19,11 @@ export default async function submitFormVolunteerPartOne() {
 
   const isFormCorrect = await this.v$.$validate();
 
-  const fields = [
-    { key: "inputFullName", ref: "inputFullName" },
-    { key: "inputDateBirth", ref: "inputDateBirth" },
-    { key: "inputEmail", ref: "inputEmail" },
-  ];
-
   if (isFormCorrect) {
     this.$store.commit("updateFormData", this.formData);
     this.$router.push("/volunteer-registration-part-two");
   } else {
-    for (const field of fields) {
+    for (const field of fieldsVolunteerPartOne) {
       if (this.v$[field.key].$error) {
         this.$nextTick(() => {
           this.$refs[field.ref].focus();

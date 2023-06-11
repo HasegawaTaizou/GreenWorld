@@ -5,8 +5,6 @@ import store from "./store/store";
 import VueTheMask from 'vue-the-mask';
 import { useVuelidate } from "@vuelidate/core";
 
-
-
 const app = createApp(App);
 app.use(router);
 app.use(store);
