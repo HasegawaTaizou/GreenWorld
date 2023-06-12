@@ -1,138 +1,166 @@
 <template>
-  <header>
-    <nav>
-      <img onclick="openNavFull" src="./img/menu_image.png" alt="Menu" />
-    </nav>
+  <div class="volunteer-content">
+    <img
+      class="volunteer__image"
+      src="./img/volunteer-image.webp"
+      alt="Volunteer image"
+    />
 
-    <div class="container-image-log-out">
-      <img src="./img/profile_administrator.png" alt="Image profile" />
-      <a href="#" class="log-out-content">
-        <button class="log-out__button">
-          <img src="./img/logout_image.png" alt="Image log out" />
-          <span class="log-out__text">Log out</span>
-        </button>
-      </a>
+    <div class="volunteer__tag-name-data">
+      <span class="volunteer__tag">Voluntário</span>
+      <h1 class="volunteer__name">{{ volunteer.nome_completo }}</h1>
+      <ul class="volunteer__personal-data">
+        <li class="personal-data">
+          <span class="uppercase personal-data__type">cpf:</span>
+          <span class="personal-data__value">{{ volunteer.cpf }}</span>
+        </li>
+        <li class="personal-data">
+          <span class="uppercase personal-data__type">rg:</span>
+          <span class="personal-data__value">{{ volunteer.rg }}</span>
+        </li>
+        <li class="personal-data">
+          <span class="personal-data__type">Data de nascimento:</span>
+          <span class="personal-data__value">{{
+            volunteer.data_nascimento
+          }}</span>
+        </li>
+      </ul>
     </div>
-  </header>
-  <main>
-
-    <div class="volunteer-content">
-      <img class="volunteer__image" src="./img/volunteer-image.webp" alt="Volunteer image">
-
-      <div class="volunteer__tag-name-data">
-        <span class="volunteer__tag">Voluntário</span>
-        <h1 class="volunteer__name">Irineu Aparecido</h1>
-        <ul class="volunteer__personal-data">
-          <li class="personal-data">
-            <span class="uppercase personal-data__type">cpf:</span>
-            <span class="personal-data__value">549.033.548-32</span>
-          </li>
-          <li class="personal-data">
-            <span class="uppercase personal-data__type">rg:</span>
-            <span class="personal-data__value">60.222.547-8</span>
-          </li>
-          <li class="personal-data">
-            <span class="personal-data__type">Data de nascimento:</span>
-            <span class="personal-data__value">24/02/2001</span>
-          </li>
-
-        </ul>
+  </div>
+  <div class="volunteer-information">
+    <div class="volunteer-content__address">
+      <h3 class="address__title">Endereço</h3>
+      <div class="volunteer__address">
+        <span class="information">CEP:</span>
+        <span class="information__value">{{ volunteer.endereco.cep }}</span>
+      </div>
+      <div class="volunteer__address">
+        <span class="information">Logradouro:</span>
+        <span class="information__value">{{
+          volunteer.endereco.logradouro
+        }}</span>
+      </div>
+      <div class="volunteer__address">
+        <span class="information">Bairro:</span>
+        <span class="information__value">{{ volunteer.endereco.bairro }}</span>
+      </div>
+      <div class="volunteer__address">
+        <span class="information">Cidade:</span>
+        <span class="information__value">{{ volunteer.endereco.cidade }}</span>
+      </div>
+      <div class="volunteer__address">
+        <span class="information">Estado:</span>
+        <span class="information__value">{{ volunteer.endereco.estado }}</span>
       </div>
     </div>
-    <div class="volunteer-information">
-      <div class="volunteer-content__address">
-        <h3 class="address__title">Endereço</h3>
-        <div class="volunteer__address">
-          <span class="information">CEP:</span>
-          <span class="information__value">06660-460</span>
-        </div>
-        <div class="volunteer__address">
-          <span class="information">Logradouro:</span>
-          <span class="information__value">Avenida José Marcio</span>
-        </div>
-        <div class="volunteer__address">
-          <span class="information">Bairro:</span>
-          <span class="information__value">Jardim Rosa</span>
-        </div>
-        <div class="volunteer__address">
-          <span class="information">Cidade:</span>
-          <span class="information__value">Itapevi</span>
-        </div>
-        <div class="volunteer__address">
-          <span class="information">Estado:</span>
-          <span class="information__value">São Paulo</span>
-        </div>
+    <div class="volunteer-content__contact">
+      <h3 class="contact__title">Contato:</h3>
+      <div class="volunteer__contact">
+        <span class="contact">Telefone:</span>
+        <span class="contact__value">{{ volunteer.telefone }}</span>
       </div>
-      <div class="volunteer-content__contact">
-        <h3 class="contact__title">Contato:</h3>
-        <div class="volunteer__contact">
-          <span class="contact">Telefone:</span>
-          <span class="contact__value">(11)99999-0000</span>
-        </div>
-        <div class="volunteer__contact">
-          <span class="contact">E-mail:</span>
-          <span class="contact__value">cansei@gmail.com</span>
-        </div>
+      <div class="volunteer__contact">
+        <span class="contact">E-mail:</span>
+        <span class="contact__value">{{ volunteer.email }}</span>
       </div>
-      <div class="volunteer-content__reason">
-        <h3 class="information__title">Motivo:</h3>
-        <p class="volunteer-reason__text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, rem laudantium. Reprehenderit
-          quod,
-          nobis incidunt sint eum minus rem quisquam corrupti mollitia doloremque, obcaecati eius
-          voluptatibus.
-          Accusantium quos iure expedita!
-        </p>
-      </div>
-      <div class="volunteer-content__experience">
-        <h3 class="information__title">Experiência:</h3>
-        <span class="volunteer__experience">
-          -1 ano
-        </span>
-      </div>
-
-      <div class="volunteer-content__helps">
-        <h3 class="information__title">Ajudas das quais participou:</h3>
-        <ul class="help-list">
-          <li class="help">
-            <router-link to="">
-              <span class="help__name">Ajuda 03</span>
-            </router-link>
-          </li>
-          <li class="help">
-            <router-link to="">
-              <span class="help__name">Ajuda 03</span>
-            </router-link>
-          </li>
-          <li class="help">
-            <router-link to="">
-              <span class="help__name">Ajuda 03</span>
-            </router-link>
-          </li>
-        </ul>
-      </div>
-
+    </div>
+    <div class="volunteer-content__reason">
+      <h3 class="information__title">Motivo:</h3>
+      <p class="volunteer-reason__text">
+        {{ volunteer.motivo }}
+      </p>
+    </div>
+    <div class="volunteer-content__experience">
+      <h3 class="information__title">Experiência:</h3>
+      <span class="volunteer__experience"> {{ volunteer.experiencia }}</span>
     </div>
 
-
-    <div class="content-buttons">
-      <router-link class="update-data__link" to="/update-administrator">
-        <button class="update-data__button">Atualizar dados</button>
-      </router-link>
-      <button class="delete__button">Excluir</button>
+    <div class="volunteer-content__helps">
+      <h3 class="information__title">Ajudas das quais participou:</h3>
+      <ul class="help-list">
+        <li class="help">
+          <router-link to="">
+            <span class="help__name">Ajuda 03</span>
+          </router-link>
+        </li>
+        <li class="help">
+          <router-link to="">
+            <span class="help__name">Ajuda 03</span>
+          </router-link>
+        </li>
+        <li class="help">
+          <router-link to="">
+            <span class="help__name">Ajuda 03</span>
+          </router-link>
+        </li>
+      </ul>
     </div>
-  </main>
+  </div>
+
+  <div class="content-buttons">
+    <router-link class="update-data__link" to="/update-administrator">
+      <button class="update-data__button" @click="updateVolunteerData">
+        Atualizar dados
+      </button>
+    </router-link>
+    <button class="delete__button" @click="deleteVolunteer">Excluir</button>
+  </div>
 </template>
 
 <script>
-// import removeRegisterDefault from '../assets/js/home.js'
+import axios from "axios";
 
 export default {
   name: "Volunteer",
   mounted() {
+    this.fillVolunteer();
+  },
+  data() {
+    return {
+      volunteer: {},
+    };
   },
   methods: {
-  }
+    async fillVolunteer() {
+      const volunteerCpf = {
+        cpf: "49346696800",
+      };
+      console.log(volunteerCpf);
+
+      axios
+        .post(
+          "http://127.0.0.1:8080/v5/green-world/get_voluntario_pelo_cpf",
+          volunteerCpf
+        )
+        .then((response) => {
+          this.volunteer = response.data.data;
+          console.log(response.data.data);
+        })
+        .catch((error) => {
+          // Tratar erros na requisição
+          console.error(error);
+        });
+    },
+    deleteVolunteer() {
+      const volunteerCpf = {
+        cpf: this.$store.state.selectedVolunteerCpf,
+      };
+
+      axios
+        .delete(
+          "http://127.0.0.1:8080/v3/green-world/delete_voluntario_pelo_cpf",
+          volunteerCpf
+        )
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          // Tratar erros na requisição
+          console.error(error);
+        });
+    },
+    updateVolunteerData() {},
+  },
 };
 </script>
 

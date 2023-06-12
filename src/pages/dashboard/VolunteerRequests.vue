@@ -53,7 +53,7 @@ export default {
     },
     handleItemClick(item) {
       this.$store.state.selectedVolunteerCpf = item.cpf;
-      console.log(item.cpf); // Exibe o valor do atributo 'id' do item clicado
+      console.log(item.cpf); 
     },
   },
 };

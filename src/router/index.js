@@ -179,7 +179,7 @@ const routes = [
         component: DataVolunteerRequest,
       },
       {
-        path: "/dashboard/volunteer",
+        path: "/dashboard/all-volunteers/volunteer",
         name: "Volunteer",
         component: Volunteer,
       },

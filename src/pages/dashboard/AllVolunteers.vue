@@ -6,11 +6,11 @@
       <i class="fa-solid fa-magnifying-glass" id="search-field__icon"></i>
     </div>
     <ul class="beneficiaries-content">
-      <li v-for="volunteer in volunteers" :key="volunteer.id">
-        <a href="#" class="beneficiarie__item">
+      <li v-for="volunteer in volunteers" :key="volunteer.id" @click="handleItemClick(volunteer)">
+        <router-link class="beneficiarie__item" to="/dashboard/all-volunteers/volunteer">
           <img :src="volunteer.foto" class="beneficiarie__image" />
           <span class="beneficiarie__name">{{ volunteer.nome_completo }}</span>
-        </a>
+        </router-link>
       </li>
     </ul>
   </section>
@@ -35,11 +35,15 @@ export default {
         .get(`http://127.0.0.1:8080/v6/green-world/todos_voluntarios`)
         .then((response) => {
           console.log(response.data.status);
-          this.volunteers = response.data.status
+          this.volunteers = response.data.status;
         })
         .catch((error) => {
           console.error(error);
         });
+    },
+    handleItemClick(item) {
+      this.$store.state.selectedVolunteerCpf = item.cpf;
+      console.log(item.cpf); 
     },
   },
 };

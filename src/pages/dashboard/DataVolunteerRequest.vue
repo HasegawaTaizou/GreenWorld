@@ -28,7 +28,7 @@
         </ul>
       </div>
     </div>
-    <!-- <div class="volunteer-information">
+    <div class="volunteer-information">
       <div class="volunteer-content__address">
         <h3 class="address__title">Endereço</h3>
         <div class="volunteer__address">
@@ -81,12 +81,14 @@
         <h3 class="information__title">Experiência:</h3>
         <span class="volunteer__experience"> {{ volunteer.experiencia }} </span>
       </div>
-    </div> -->
+    </div>
     <div class="content-buttons">
       <router-link class="update-data__link" to="/update-administrator">
-        <button class="update-data__button">Aceitar</button>
+        <button class="update-data__button" @click="acceptVolunteer">
+          Aceitar
+        </button>
       </router-link>
-      <button class="delete__button" >Excluir</button>
+      <button class="delete__button" @click="deleteVolunteer">Excluir</button>
     </div>
   </section>
 </template>
@@ -125,21 +127,42 @@ export default {
           console.error(error);
         });
     },
-    // deleteVolunteer() {
-    //   axios
-    //     .delete(
-    //       "http://127.0.0.1:8080/v5/green-world/get_voluntario_pelo_cpf",
-    //       volunteerCpf
-    //     )
-    //     .then((response) => {
-    //       this.volunteer = response.data.data;
-    //       console.log(response.data.data);
-    //     })
-    //     .catch((error) => {
-    //       // Tratar erros na requisição
-    //       console.error(error);
-    //     });
-    // }
+    deleteVolunteer() {
+      const volunteerCpf = {
+        cpf: this.$store.state.selectedVolunteerCpf,
+      };
+
+      axios
+        .delete(
+          "http://127.0.0.1:8080/v3/green-world/delete_voluntario_pelo_cpf",
+          volunteerCpf
+        )
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          // Tratar erros na requisição
+          console.error(error);
+        });
+    },
+    acceptVolunteer() {
+      const volunteerCpf = {
+        cpf: this.$store.state.selectedVolunteerCpf,
+      };
+      
+      axios
+        .put(
+          "http://127.0.0.1:8080/v4/green-world/altera_status_do_voluntario",
+          volunteerCpf
+        )
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          // Tratar erros na requisição
+          console.error(error);
+        });
+    },
   },
 };
 </script>
