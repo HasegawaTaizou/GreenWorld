@@ -2,7 +2,7 @@
   <div class="volunteer-content">
     <img
       class="volunteer__image"
-      src="./img/volunteer-image.webp"
+      :src="volunteer.foto"
       alt="Volunteer image"
     />
 
@@ -32,26 +32,26 @@
       <h3 class="address__title">Endereço</h3>
       <div class="volunteer__address">
         <span class="information">CEP:</span>
-        <span class="information__value">{{ volunteer.endereco.cep }}</span>
+        <span class="information__value">{{ volunteer.endereco?.cep }}</span>
       </div>
       <div class="volunteer__address">
         <span class="information">Logradouro:</span>
         <span class="information__value">{{
-          volunteer.endereco.logradouro
+          volunteer.endereco?.logradouro
         }}</span>
       </div>
       <div class="volunteer__address">
         <span class="information">Bairro:</span>
-        <span class="information__value">{{ volunteer.endereco.bairro }}</span>
+        <span class="information__value">{{ volunteer.endereco?.bairro }}</span>
       </div>
       <div class="volunteer__address">
         <span class="information">Cidade:</span>
-        <span class="information__value">{{ volunteer.endereco.cidade }}</span>
+        <span class="information__value">{{ volunteer.endereco?.cidade }}</span>
       </div>
       <div class="volunteer__address">
         <span class="information">Estado:</span>
-        <span class="information__value">{{ volunteer.endereco.estado }}</span>
-      </div>
+        <span class="information__value">{{ volunteer.endereco?.estado }}</span>
+      </div> 
     </div>
     <div class="volunteer-content__contact">
       <h3 class="contact__title">Contato:</h3>
@@ -115,6 +115,13 @@ export default {
   mounted() {
     this.fillVolunteer();
   },
+  watch: {
+    "this.$store.state.selectedVolunteerCpf": function (newSelectedVolunteerCpf) {
+      if (newSelectedVolunteerCpf) {
+        this.fillVolunteer();
+      }
+    },
+  },
   data() {
     return {
       volunteer: {},
@@ -123,7 +130,7 @@ export default {
   methods: {
     async fillVolunteer() {
       const volunteerCpf = {
-        cpf: "49346696800",
+        cpf: this.$store.state.selectedVolunteerCpf,
       };
       console.log(volunteerCpf);
 

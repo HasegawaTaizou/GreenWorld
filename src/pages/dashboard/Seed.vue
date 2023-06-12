@@ -1,11 +1,7 @@
 <template>
   <section id="seeds">
     <div class="seed-content">
-      <img
-        class="seed-content__image"
-        :src="seed.foto"
-        alt="Passion fruit"
-      />
+      <img class="seed-content__image" :src="seed.foto" alt="Passion fruit" />
 
       <div class="seed-content__tag-name">
         <span class="seed-content__tag">Semente</span>
@@ -62,11 +58,17 @@ export default {
       seed: {},
     };
   },
+  watch: {
+    "$store.state.id_semente": function (newIdSemente) {
+      if (newIdSemente) {
+        this.fillSeed();
+      }
+    },
+  },
   methods: {
     async fillSeed() {
       const seedId = {
-        // "id_semente": this.$store.state.id_semente,
-        id_semente: 2,
+        id_semente: this.$store.state.id_semente,
       };
       console.log(seedId);
 
