@@ -8,76 +8,10 @@
     </div>
 
     <ul class="seeds-content">
-      <li>
-        <router-link to="/data-volunteer-request" class="seed__item">
-          <span class="filter_ball status-finished">1</span>
-          <span class="seed__name">Marcela Alves</span>
-        </router-link>
-      </li>
-      <li>
-        <router-link to="/data-volunteer-request" class="seed__item">
-          <span class="filter_ball status-finished">2</span>
-          <span class="seed__name">Laís Ferreira</span>
-        </router-link>
-      </li>
-      <li>
-        <router-link to="/data-volunteer-request" class="seed__item">
-          <span class="filter_ball status-finished">3</span>
-          <span class="seed__name">Telma Lima</span>
-        </router-link>
-      </li>
-      <li>
-        <router-link to="/data-volunteer-request" class="seed__item">
-          <span class="filter_ball status-finished">4</span>
-          <span class="seed__name">Matheus Santos</span>
-        </router-link>
-      </li>
-      <li>
-        <router-link to="/data-volunteer-request" class="seed__item">
-          <span class="filter_ball status-finished">1</span>
-          <span class="seed__name">Marcela Alves</span>
-        </router-link>
-      </li>
-      <li>
-        <router-link to="/data-volunteer-request" class="seed__item">
-          <span class="filter_ball status-finished">2</span>
-          <span class="seed__name">Laís Ferreira</span>
-        </router-link>
-      </li>
-      <li>
-        <router-link to="/data-volunteer-request" class="seed__item">
-          <span class="filter_ball status-finished">3</span>
-          <span class="seed__name">Telma Lima</span>
-        </router-link>
-      </li>
-      <li>
-        <router-link to="/data-volunteer-request" class="seed__item">
-          <span class="filter_ball status-finished">4</span>
-          <span class="seed__name">Matheus Santos</span>
-        </router-link>
-      </li>
-      <li>
-        <router-link to="/data-volunteer-request" class="seed__item">
-          <span class="filter_ball status-finished">1</span>
-          <span class="seed__name">Marcela Alves</span>
-        </router-link>
-      </li>
-      <li>
-        <router-link to="/data-volunteer-request" class="seed__item">
-          <span class="filter_ball status-finished">2</span>
-          <span class="seed__name">Laís Ferreira</span>
-        </router-link>
-      </li>
-      <li>
-        <router-link to="/data-volunteer-request" class="seed__item">
-          <span class="filter_ball status-finished">3</span>
-          <span class="seed__name">Telma Lima</span>
-        </router-link>
-      </li>
-      <li>
-        <router-link to="/data-volunteer-request" class="seed__item">
-          <span class="filter_ball status-finished">4</span>
-          <span class="seed__name">Matheus Santos</span>
+      <li v-for="volunteer in filteredVolunteers" :key="volunteer.id" @click="handleItemClick(volunteer)">
+        <router-link to="/dashboard/volunteer-requests/volunteer-request" class="seed__item">
+          <span class="filter_ball status-finished"> {{ volunteer.id }}</span>
+          <span class="seed__name">{{ volunteer.nome_completo }}</span>
         </router-link>
       </li>
     </ul>
@@ -86,11 +20,42 @@
 
 <script>
 // import removeRegisterDefault from '../assets/js/home.js'
+import axios from "axios";
 
 export default {
   name: "VolunteerRequests",
-  mounted() {},
-  methods: {},
+  data() {
+    return {
+      volunteers: [],
+    };
+  },
+  mounted() {
+    this.fillAllVolunteers();
+  },
+  computed: {
+    filteredVolunteers() {
+      return this.volunteers.filter(
+        (volunteer) => volunteer.id_status_cadastro === 1
+      );
+    },
+  },
+  methods: {
+    fillAllVolunteers() {
+      axios
+        .get(`http://127.0.0.1:8080/v6/green-world/todos_voluntarios`)
+        .then((response) => {
+          console.log(response.data.status);
+          this.volunteers = response.data.status;
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    },
+    handleItemClick(item) {
+      this.$store.state.selectedVolunteerCpf = item.cpf;
+      console.log(item.cpf); // Exibe o valor do atributo 'id' do item clicado
+    },
+  },
 };
 </script>
 

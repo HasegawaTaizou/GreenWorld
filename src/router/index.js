@@ -174,7 +174,7 @@ const routes = [
         component: VolunteerRequests,
       },
       {
-        path: "/dashboard/data-volunteer-request",
+        path: "/dashboard/volunteer-requests/volunteer-request",
         name: "DataVolunteerRequest",
         component: DataVolunteerRequest,
       },

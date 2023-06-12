@@ -20,7 +20,6 @@
 </template>
 
 <script>
-// import removeRegisterDefault from '../assets/js/home.js'
 
 export default {
   name: "Seeds",

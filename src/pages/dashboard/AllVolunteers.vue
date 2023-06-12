@@ -6,76 +6,10 @@
       <i class="fa-solid fa-magnifying-glass" id="search-field__icon"></i>
     </div>
     <ul class="beneficiaries-content">
-      <li>
+      <li v-for="volunteer in volunteers" :key="volunteer.id">
         <a href="#" class="beneficiarie__item">
-          <div class="beneficiarie__image"></div>
-          <span class="beneficiarie__name">Maycon Alves Almeida</span>
-        </a>
-      </li>
-      <li>
-        <a href="#" class="beneficiarie__item">
-          <div class="beneficiarie__image"></div>
-          <span class="beneficiarie__name">Maycon Alves Almeida</span>
-        </a>
-      </li>
-      <li>
-        <a href="#" class="beneficiarie__item">
-          <div class="beneficiarie__image"></div>
-          <span class="beneficiarie__name">Maycon Alves Almeida</span>
-        </a>
-      </li>
-      <li>
-        <a href="#" class="beneficiarie__item">
-          <div class="beneficiarie__image"></div>
-          <span class="beneficiarie__name">Maycon Alves Almeida</span>
-        </a>
-      </li>
-      <li>
-        <a href="#" class="beneficiarie__item">
-          <div class="beneficiarie__image"></div>
-          <span class="beneficiarie__name">Maycon Alves Almeida</span>
-        </a>
-      </li>
-      <li>
-        <a href="#" class="beneficiarie__item">
-          <div class="beneficiarie__image"></div>
-          <span class="beneficiarie__name">Maycon Alves Almeida</span>
-        </a>
-      </li>
-      <li>
-        <a href="#" class="beneficiarie__item">
-          <div class="beneficiarie__image"></div>
-          <span class="beneficiarie__name">Maycon Alves Almeida</span>
-        </a>
-      </li>
-      <li>
-        <a href="#" class="beneficiarie__item">
-          <div class="beneficiarie__image"></div>
-          <span class="beneficiarie__name">Maycon Alves Almeida</span>
-        </a>
-      </li>
-      <li>
-        <a href="#" class="beneficiarie__item">
-          <div class="beneficiarie__image"></div>
-          <span class="beneficiarie__name">Maycon Alves Almeida</span>
-        </a>
-      </li>
-      <li>
-        <a href="#" class="beneficiarie__item">
-          <div class="beneficiarie__image"></div>
-          <span class="beneficiarie__name">Maycon Alves Almeida</span>
-        </a>
-      </li>
-      <li>
-        <a href="#" class="beneficiarie__item">
-          <div class="beneficiarie__image"></div>
-          <span class="beneficiarie__name">Maycon Alves Almeida</span>
-        </a>
-      </li>
-      <li>
-        <a href="#" class="beneficiarie__item">
-          <div class="beneficiarie__image"></div>
-          <span class="beneficiarie__name">Maycon Alves Almeida</span>
+          <img :src="volunteer.foto" class="beneficiarie__image" />
+          <span class="beneficiarie__name">{{ volunteer.nome_completo }}</span>
         </a>
       </li>
     </ul>
@@ -83,12 +17,31 @@
 </template>
 
 <script>
-// import removeRegisterDefault from '../assets/js/home.js'
+import axios from "axios";
 
 export default {
   name: "AllVolunteer",
-  mounted() {},
-  methods: {},
+  data() {
+    return {
+      volunteers: [],
+    };
+  },
+  mounted() {
+    this.fillAllVolunteers();
+  },
+  methods: {
+    fillAllVolunteers() {
+      axios
+        .get(`http://127.0.0.1:8080/v6/green-world/todos_voluntarios`)
+        .then((response) => {
+          console.log(response.data.status);
+          this.volunteers = response.data.status
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    },
+  },
 };
 </script>
 
