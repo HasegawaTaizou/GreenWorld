@@ -6,6 +6,8 @@
 .founders-content{
     padding-top: 100px;
     display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
     justify-content: space-around;
 }
 
@@ -55,4 +57,19 @@
     background-color: var(--section-background-color);
     color:#EAEAEA ;
     transform: scale(1.2);
+}
+
+
+@media (max-width: 730px){
+.founders-title{
+     font-size: 2.1rem;
+    text-align: center;
+} 
+   
+}
+@media (max-width: 500px){
+    #founders{
+        background-color: #EAEAEA;
+        padding: 100px 40px;
+    }
 }

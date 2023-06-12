@@ -9,10 +9,18 @@
 
 .partners-content{
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 70px
 }
 
 .partner-text{
     color: black;
     font-size: 1.6rem;
+}
+
+@media (max-width: 500px){
+    #our-partners{
+        padding: 100px 40px; 
+    }
 }

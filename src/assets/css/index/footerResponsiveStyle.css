@@ -3,16 +3,6 @@
         grid-template-columns: auto auto auto;
     }
 
-    .support-content {
-        place-self: center center;
-        min-height: 126px;
-    }
-
-    .contact-content {
-        grid-area: contact;
-        place-self: center center;
-    }
-
 }
 
 @media (max-width: 950px) {
@@ -26,8 +16,7 @@
             "contact"
             "copyright";
         place-items: center;
-        /* place-self: center; */
-        padding: 60px 60px 20px 60px;
+        padding: 60px 30px 20px 30px;
     }
 
     .social-media-container {
@@ -37,19 +26,17 @@
     .support-content {
         padding-bottom: 90px;
         min-width: 350px;
+        place-self: center;
     }
 
     .contact-content {
         padding-bottom: 90px;
         min-width: 350px;
+        place-self: center;
     }
 }
 
-@media (max-width: 570px) {
-    footer {
-        
-        padding: 60px 30px 20px 30px;
-    }
+@media (max-width: 950px) {
     .meaning-of-agriculture__title {
         font-size: 1.9rem;
     }
@@ -83,12 +70,11 @@
         place-self: start;
     }
 
-    .meaning-of-agriculture-content {
+    .meaning-of-agriculture-content{
         place-self: start;
     }
 
     .copyright {
         font-size: 0.9rem;
     }
-
 }
