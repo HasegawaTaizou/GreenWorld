@@ -7,7 +7,7 @@
       <i class="fa-solid fa-magnifying-glass" id="search-field__icon"></i>
     </div>
     <ul class="seeds-content">
-      <li v-for="seed in seeds" :key="seed.id">
+      <li v-for="seed in seeds" :key="seed.id" @click="handleItemClick(seed)">
         <router-link :to="`/dashboard/seeds/seed`" class="seed__item">
           <span class="filter_ball" :class="`status-finished`">{{
             seed.id
@@ -43,6 +43,10 @@ export default {
         .catch((error) => {
           console.error(error);
         });
+    },
+    handleItemClick(item) {
+      this.$store.state.id_semente = item.id;
+      console.log(item.id); 
     },
   },
 };

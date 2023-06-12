@@ -19,7 +19,6 @@
 </template>
 
 <script>
-// import removeRegisterDefault from '../assets/js/home.js'
 import axios from "axios";
 
 export default {
