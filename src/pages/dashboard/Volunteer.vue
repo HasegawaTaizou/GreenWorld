@@ -1,10 +1,6 @@
 <template>
   <div class="volunteer-content">
-    <img
-      class="volunteer__image"
-      :src="volunteer.foto"
-      alt="Volunteer image"
-    />
+    <img class="volunteer__image" :src="volunteer.foto" alt="Volunteer image" />
 
     <div class="volunteer__tag-name-data">
       <span class="volunteer__tag">Voluntário</span>
@@ -51,7 +47,7 @@
       <div class="volunteer__address">
         <span class="information">Estado:</span>
         <span class="information__value">{{ volunteer.endereco?.estado }}</span>
-      </div> 
+      </div>
     </div>
     <div class="volunteer-content__contact">
       <h3 class="contact__title">Contato:</h3>
@@ -116,7 +112,9 @@ export default {
     this.fillVolunteer();
   },
   watch: {
-    "this.$store.state.selectedVolunteerCpf": function (newSelectedVolunteerCpf) {
+    "this.$store.state.selectedVolunteerCpf": function (
+      newSelectedVolunteerCpf
+    ) {
       if (newSelectedVolunteerCpf) {
         this.fillVolunteer();
       }
@@ -156,7 +154,9 @@ export default {
       axios
         .delete(
           "http://127.0.0.1:8080/v3/green-world/delete_voluntario_pelo_cpf",
-          volunteerCpf
+          {
+            data: volunteerCpf,
+          }
         )
         .then((response) => {
           console.log(response);
