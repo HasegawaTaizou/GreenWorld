@@ -67,3 +67,9 @@
 } 
    
 }
+@media (max-width: 500px){
+    #founders{
+        background-color: #EAEAEA;
+        padding: 100px 40px;
+    }
+}

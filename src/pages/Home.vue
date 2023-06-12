@@ -101,20 +101,11 @@
         <article class="who-we-are-content">
           <h3 class="who-we-are__title">Quem somos?</h3>
           <p class="who-we-are__text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-            at finibus diam. Nulla efficitur neque eget est lacinia, pellentesque rhoncus velit porta. Etiam
-            dapibus tempus tellus et volutpat. Curabitur commodo enim bibendum, condimentum augue id,
-            elementum magna. Etiam in lacus placerat, faucibus felis sed, congue elit. Etiam eu lacus sit
-            amet justo sagittis facilisis. Morbi tincidunt et felis eget facilisis. In imperdiet est non
-            eros ornare, auctor congue eros malesuada. Duis sollicitudin turpis sit amet mi sagittis, eu
-            luctus massa posuere.
-            Duis tincidunt dignissim rhoncus.
-            Pellentesque egestas non mi ut venenatis. Sed ac velit feugiat orci efficitur finibus. Phasellus
-            dui lorem, feugiat non tempus et, mattis vel elit. Cras congue nisl ex, id mollis eros bibendum
-            sed. Cras volutpat ante sed euismod condimentum. Mauris nec eros tortor. Pellentesque bibendum,
-            tortor et rhoncus semper, arcu eros volutpat ante, elementum efficitur elit felis ut ligula.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero rem ipsam quo nam in ullam iure, quaerat, minus
-            nobis delectus magni cupiditate omnis ex, recusandae quisquam nulla voluptatibus error aperiam?
+            A Green World é uma empresa agrícola empenhada em fornecer alimentos de alta qualidade para os lares das
+            famílias brasileiras, trazendo alegria e felicidade às suas mesas. Reconhecemos o nosso papel crucial como
+            indústria agrícola no que diz respeito ao meio ambiente e à sustentabilidade.
+            Em consonância com os Objetivos de Desenvolvimento Sustentável (ODS), a Green World criou um projeto com o
+            objetivo de combater a fome por meio da implementação de hortas em lares carentes.
           </p>
         </article>
       </section>
@@ -124,20 +115,13 @@
         <article class="our-cause-content">
           <h3 class="our-cause__title">Nossa causa</h3>
           <p class="our-cause__text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-            at finibus diam. Nulla efficitur neque eget est lacinia, pellentesque rhoncus velit porta. Etiam
-            dapibus tempus tellus et volutpat. Curabitur commodo enim bibendum, condimentum augue id,
-            elementum magna. Etiam in lacus placerat, faucibus felis sed, congue elit. Etiam eu lacus sit
-            amet justo sagittis facilisis. Morbi tincidunt et felis eget facilisis. In imperdiet est non
-            eros ornare, auctor congue eros malesuada. Duis sollicitudin turpis sit amet mi sagittis, eu
-            luctus massa posuere.
-            Duis tincidunt dignissim rhoncus.
-            Pellentesque egestas non mi ut venenatis. Sed ac velit feugiat orci efficitur finibus. Phasellus
-            dui lorem, feugiat non tempus et, mattis vel elit. Cras congue nisl ex, id mollis eros bibendum
-            sed. Cras volutpat ante sed euismod condimentum. Mauris nec eros tortor. Pellentesque bibendum,
-            tortor et rhoncus semper, arcu eros volutpat ante, elementum efficitur elit felis ut ligula.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero rem ipsam quo nam in ullam iure, quaerat, minus
-            nobis delectus magni cupiditate omnis ex, recusandae quisquam nulla voluptatibus error aperiam?
+            A Green World é uma organização comprometida com a causa de trazer alimentos seguros para os brasileiros e garantir o direito fundamental de toda pessoa à alimentação adequada. Reconhecendo a importância da segurança alimentar e nutricional, a Green World busca promover um sistema alimentar sustentável e inclusivo, que atenda às necessidades básicas de todas as pessoas.
+          </p>
+          <p class="our-cause__text">
+            A segurança alimentar é uma questão fundamental que abrange a disponibilidade, o acesso, o consumo e a utilização de alimentos seguros e nutritivos. Infelizmente, apesar do Brasil ser um país rico em recursos naturais e com grande potencial agrícola, muitos brasileiros ainda sofrem com a falta de acesso a alimentos adequados e seguros. A Green World procura enfrentar esse desafio, trabalhando em diversas frentes para garantir que todos tenham acesso a alimentos saudáveis.
+          </p>
+          <p class="our-cause__text">
+            Estamos empenhados em combater o desperdício de alimentos, no Brasil, uma quantidade significativa de alimentos é perdida ou descartada em todas as etapas da cadeia de produção e consumo. A organização trabalha para conscientizar sobre a importância da redução do desperdício de alimentos e promover ações práticas para evitar o descarte necessário. Ao reduzir o desperdício, é possível aproveitar melhor os recursos disponíveis e garantir que mais pessoas tenham acesso a alimentos seguros.
           </p>
         </article>
         <img class="our-cause__image" src="../assets/img/mato1.png" alt="">
@@ -322,8 +306,8 @@
       <div class="support-content">
         <span class="support__title">Suporte</span>
         <div class="support__links">
-          <a class="support__link" href="./faq.html">FAQ</a>
-          <a class="support__link" href="#">Política de privacidade</a>
+          <router-link class="support__link" to="/faq">FAQ</router-link>
+          <router-link class="support__link" to="/policy-privacy">Política de privacidade</router-link>
         </div>
 
       </div>

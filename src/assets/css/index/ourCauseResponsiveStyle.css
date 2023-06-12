@@ -1,11 +1,17 @@
-@media (max-width: 1239px) {
+@media(max-width: 1800px){
     .our-cause__text {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 1546px) {
+    .our-cause__text {
+        font-size: 1.3rem;
     }
 
 }
 
-@media (max-width: 1085px) {
+@media (max-width: 1255px) {
     #our-cause {
         flex-direction: column-reverse;
         align-items: center;

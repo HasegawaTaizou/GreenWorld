@@ -16,7 +16,7 @@
             "contact"
             "copyright";
         place-items: center;
-        padding: 60px 60px 20px 60px;
+        padding: 60px 30px 20px 30px;
     }
 
     .social-media-container {
@@ -26,15 +26,17 @@
     .support-content {
         padding-bottom: 90px;
         min-width: 350px;
+        place-self: center;
     }
 
     .contact-content {
         padding-bottom: 90px;
         min-width: 350px;
+        place-self: center;
     }
 }
 
-@media (max-width: 570px) {
+@media (max-width: 950px) {
     .meaning-of-agriculture__title {
         font-size: 1.9rem;
     }
