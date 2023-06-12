@@ -4,8 +4,8 @@
   /* gap: 90px; */
 }
 
-.who-we-are__title {
-  font-family: "Montserrat";
+.who-we-are__title{
+  font-family: 'Montserrat';
   font-weight: bold;
 }
 
@@ -17,16 +17,15 @@
   justify-content: center;
   gap: 85px;
   width: 55%;
+
 }
 
 .who-we-are__text {
   font-size: 1.55rem;
 }
 
-.who-we-are__image {
+.teste {
   height: 100vh;
-  width: 100%;
+  width: 45%;
   border-radius: 0 10px 10px 0;
-  display: none;
-  vertical-align: middle;
 }
