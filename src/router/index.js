@@ -21,7 +21,7 @@ import PrivacyPolicy from "@/pages/PrivacyPolicy.vue";
 import Faq from "@/pages/Faq.vue";
 //DASHBOARD
 import Dashboard from "@/pages/dashboard/Dashboard.vue";
-import Seeds from '../pages/dashboard/Seeds.vue';
+import Seeds from '@/pages/dashboard/Seeds.vue';
 import Seed from "@/pages/dashboard/Seed.vue";
 import AllHelp from "@/pages/dashboard/AllHelp.vue";
 import AllVolunteers from "@/pages/dashboard/AllVolunteers.vue";
@@ -159,7 +159,7 @@ const routes = [
         component: Seeds,
       },
       {
-        path: "/dashborad/seeds/seed",
+        path: "/dashboard/seeds/seed",
         name: "Seed",
         component: Seed,
       },
@@ -174,12 +174,12 @@ const routes = [
         component: VolunteerRequests,
       },
       {
-        path: "/dashboard/data-volunteer-request",
+        path: "/dashboard/volunteer-requests/volunteer-request",
         name: "DataVolunteerRequest",
         component: DataVolunteerRequest,
       },
       {
-        path: "/dashboard/volunteer",
+        path: "/dashboard/all-volunteers/volunteer",
         name: "Volunteer",
         component: Volunteer,
       },
