@@ -9,7 +9,8 @@
 </template>
   
   <script>
-import { ref, watch } from "vue";
+import { useStore } from "vuex";
+import { computed } from 'vue';
 
 export default {
   name: "NotificationBar",
@@ -20,15 +21,15 @@ export default {
     },
   },
   setup(props) {
-    const notificationVisible = ref(false);
+    const store = useStore();
     const notificationMessage = ref(props.message);
     const progressWidth = ref("100%");
 
-    const showNotification = () => {
-      notificationVisible.value = true;
+    const notificationStatus = computed(() => store.state.showNotification);
 
-      const timeout = setTimeout(() => {
-        notificationVisible.value = false;
+    const showNotification = () => {
+      setTimeout(() => {
+        notificationStatus.value = false;
       }, 3000);
 
       // Iniciar a animação da barra de progresso
@@ -43,20 +44,13 @@ export default {
         }
       };
       requestAnimationFrame(animationFrame);
-
-      // Cancelar a animação da barra de progresso quando a notificação for ocultada manualmente
-      watch(notificationVisible, (value) => {
-        if (!value) {
-          clearTimeout(timeout);
-        }
-      });
     };
 
     return {
       showNotification,
-      notificationVisible,
       notificationMessage,
       progressWidth,
+      notificationStatus,
     };
   },
 };
@@ -70,7 +64,7 @@ export default {
   min-width: 356px;
   min-height: 64px;
   text-align: center;
-  position: fixed;
+  position: fixed !important;
   right: auto;
   left: auto;
   display: flex;
@@ -83,7 +77,7 @@ export default {
   display: flex;
   width: 100%;
   padding-left: 12px;
-  margin-top: 12px;
+  margin-top: 16px !important;
   align-items: center;
 }
 
@@ -95,6 +89,7 @@ export default {
 
 .notification__text {
   font-size: 1.5rem !important;
+  padding-right: 12px;
 }
 
 .progress-bar {

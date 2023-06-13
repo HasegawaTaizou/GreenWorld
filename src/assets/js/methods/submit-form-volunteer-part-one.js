@@ -14,10 +14,13 @@ export default async function submitFormVolunteerPartOne() {
   this.formData.cpf = cleanInput(this.formData.cpf)
 
   this.notificationStatus = true
+  console.log('notification: ', this.notificationStatus);
 
   console.log(this.formData);
 
   this.v$.$touch();
+
+  this.updateNotificationStatus(true);
 
   const isFormCorrect = await this.v$.$validate();
 
@@ -26,7 +29,7 @@ export default async function submitFormVolunteerPartOne() {
     
     this.$store.commit("updateFormData", this.formData);
     this.$store.commit("updateNotificationStatus", this.notificationStatus);
-    // this.$router.push("/volunteer-registration-part-two");
+    this.$router.push("/volunteer-registration-part-two");
   } else {
     for (const field of fieldsVolunteerPartOne) {
       if (this.v$[field.key].$error) {
