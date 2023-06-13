@@ -37,20 +37,23 @@ export default new Vuex.Store({
 
       //SEED DATA
       id_semente: "",
-
-      //NOTIFICATION
-      showNotification: false
     },
+
+    //NOTIFICATION
+    showNotification: false,
   },
   mutations: {
     updateFormData(state, payload) {
       state.formData = { ...state.formData, ...payload };
     },
     updateSeed(state, payload) {
-      state.id_semente = payload;
+      state.formData.id_semente = payload;
     },
     updateVolunteerCpf(state, cpf) {
-      state.selectedVolunteerCpf = cpf;
+      state.formData.selectedVolunteerCpf = cpf;
+    },
+    updateNotificationStatus(state, status) {
+      state.showNotification = status;
     },
   },
 });

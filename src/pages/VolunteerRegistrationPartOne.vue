@@ -189,7 +189,6 @@ import NotificationBar from "../assets/components/NotificationBar.vue";
 export default {
   name: "VolunteerRegistrationPartOne",
   setup() {
-    let showNotification = false;
     return { v$: useVuelidate() };
   },
   components: {

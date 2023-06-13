@@ -19,5 +19,6 @@ export default function dataPartOne(formData) {
       email: formData.email,
       limitacao_fisica: formData.limitacao_fisica,
     },
+    notificationStatus: false
   };
 }
