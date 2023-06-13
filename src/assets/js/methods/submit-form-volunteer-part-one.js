@@ -20,6 +20,7 @@ export default async function submitFormVolunteerPartOne() {
   const isFormCorrect = await this.v$.$validate();
 
   if (isFormCorrect) {
+    this.$store.state.formData.showNotification = true
     this.$store.commit("updateFormData", this.formData);
     this.$router.push("/volunteer-registration-part-two");
   } else {

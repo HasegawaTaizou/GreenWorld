@@ -37,6 +37,9 @@ export default new Vuex.Store({
 
       //SEED DATA
       id_semente: "",
+
+      //NOTIFICATION
+      showNotification: false
     },
   },
   mutations: {

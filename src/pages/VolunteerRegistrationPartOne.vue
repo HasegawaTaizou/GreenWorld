@@ -165,6 +165,7 @@
         >
           Continuar
         </button>
+        <NotificationBar v-if="this.$store.state.formData.showNotification" :message="notificationMessage" />
       </form>
     </main>
     <footer>
@@ -183,10 +184,16 @@ import dataPartOne from "../assets/js/data/data-form-part-one.js";
 import validationsVolunteerPartOne from "../assets/js/validations/validations-volunteer-part-one.js";
 import { useVuelidate } from "@vuelidate/core";
 
+import NotificationBar from "../assets/components/NotificationBar.vue";
+
 export default {
   name: "VolunteerRegistrationPartOne",
   setup() {
+    let showNotification = false;
     return { v$: useVuelidate() };
+  },
+  components: {
+    NotificationBar,
   },
   data() {
     const formData = this.$store.state.formData;

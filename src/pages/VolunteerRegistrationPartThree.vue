@@ -67,6 +67,7 @@
         >
           Continuar
         </button>
+        <NotificationBar v-if="showNotification" :message="notificationMessage" />
       </form>
     </main>
     <footer>
@@ -80,6 +81,7 @@
 <script>
 import submitFormVolunteerPartThree from "../assets/js/methods/submit-form-volunteer-part-three.js";
 import dataFormPartThree from "../assets/js/data/data-form-part-three.js";
+import NotificationBar from '../assets/components/NotificationBar.vue'
 
 export default {
   name: "VolunteerRegistrationPartThree",
@@ -89,6 +91,9 @@ export default {
     return {
       ...data,
     };
+  },
+  components: {
+    NotificationBar
   },
   methods: {
     submitFormVolunteerPartThree,
