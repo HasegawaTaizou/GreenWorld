@@ -86,9 +86,21 @@
           <input
             type="text"
             class="rg__input"
+            id="rg"
             v-mask="'##.###.###-#'"
             v-model="inputRg"
+            :class="{ error: v$.inputRg.$error }"
+            ref="inputRg"
+            @input="v$.inputRg.$touch()"
           />
+          <div v-if="v$.inputRg.$error">
+            <p
+              v-if="v$.inputRg.required && v$.inputRg.minLength"
+              class="error-text"
+            >
+              Preencha o RG!
+            </p>
+          </div>
         </div>
         <div class="form__cpf-container">
           <label for="cpf" class="cpf__label">CPF:</label>
@@ -168,11 +180,8 @@ import submitFormVolunteerPartOne from "../assets/js/methods/submit-form-volunte
 import uploadImage from "../assets/js/methods/input/upload-image.js";
 import onlyLetters from "../assets/js/methods/input/only-letters.js";
 import dataPartOne from "../assets/js/data/data-form-part-one.js";
-import validationsVolunteerPartOne from '../assets/js/validations/validations-volunteer-part-one.js'
+import validationsVolunteerPartOne from "../assets/js/validations/validations-volunteer-part-one.js";
 import { useVuelidate } from "@vuelidate/core";
-
-
-import axios from "axios";
 
 export default {
   name: "VolunteerRegistrationPartOne",
@@ -191,7 +200,7 @@ export default {
   validations() {
     const validations = validationsVolunteerPartOne();
     return {
-      ...validations
+      ...validations,
     };
   },
   methods: {
