@@ -1,5 +1,6 @@
 export default function dataFormPartTwo(formData) {
   return {
+    inputCep: formData.cep,
     formData: {
       cep: formData.cep,
       logradouro: formData.logradouro,
