@@ -38,25 +38,25 @@
         <div class="volunteer__address">
           <span class="information">Logradouro:</span>
           <span class="information__value">{{
-            volunteer.endereco.logradouro
+            volunteer.endereco?.logradouro
           }}</span>
         </div>
         <div class="volunteer__address">
           <span class="information">Bairro:</span>
           <span class="information__value">{{
-            volunteer.endereco.bairro
+            volunteer.endereco?.bairro
           }}</span>
         </div>
         <div class="volunteer__address">
           <span class="information">Cidade:</span>
           <span class="information__value">{{
-            volunteer.endereco.cidade
+            volunteer.endereco?.cidade
           }}</span>
         </div>
         <div class="volunteer__address">
           <span class="information">Estado:</span>
           <span class="information__value">{{
-            volunteer.endereco.estado
+            volunteer.endereco?.estado
           }}</span>
         </div>
       </div>
@@ -106,10 +106,21 @@ export default {
   mounted() {
     this.fillVolunteer();
   },
+  watch: {
+    "$store.state.selectedVolunteerCpf": {
+      immediate: true,
+      handler(newVolunteerCpf) {
+        console.log("Novo CPF voluntario:", newVolunteerCpf);
+        if (newVolunteerCpf) {
+          this.fillVolunteer(newVolunteerCpf);
+        }
+      },
+    },
+  },
   methods: {
-    fillVolunteer() {
+    fillVolunteer(cpf) {
       const volunteerCpf = {
-        cpf: this.$store.state.selectedVolunteerCpf,
+        cpf: cpf,
       };
       console.log(volunteerCpf);
 

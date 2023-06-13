@@ -8,7 +8,7 @@
     </div>
 
     <ul class="seeds-content">
-      <li v-for="volunteer in filteredVolunteers" :key="volunteer.id" @click="handleItemClick(volunteer)">
+      <li v-for="volunteer in filteredVolunteers" :key="volunteer.id" @click="handleVolunteerClick(volunteer)">
         <router-link to="/dashboard/volunteer-requests/volunteer-request" class="seed__item">
           <span class="filter_ball status-finished"> {{ volunteer.id }}</span>
           <span class="seed__name">{{ volunteer.nome_completo }}</span>
@@ -50,9 +50,9 @@ export default {
           console.error(error);
         });
     },
-    handleItemClick(item) {
-      this.$store.state.selectedVolunteerCpf = item.cpf;
-      console.log(item.cpf); 
+    handleVolunteerClick(item) {
+      this.$store.commit("updateVolunteerCpf", item.cpf);
+      console.log(item.cpf);
     },
   },
 };

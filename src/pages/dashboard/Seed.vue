@@ -70,7 +70,7 @@ export default {
     },
   },
   methods: {
-    async fillSeed(idSemente) { 
+    fillSeed(idSemente) { 
       const seedId = {
         id_semente: idSemente, 
       };

@@ -108,17 +108,18 @@ import axios from "axios";
 
 export default {
   name: "Volunteer",
-  async mounted() {
-    await this.fillVolunteer();
+  mounted() {
+    this.fillVolunteer();
   },
   watch: {
-    "$store.state.selectedVolunteerCpf": async function (
-      newSelectedVolunteerCpf
-    ) {
-      if (newSelectedVolunteerCpf) {
-        this.$store.commit("setSelectedVolunteerCpf", newSelectedVolunteerCpf);
-        await this.fillVolunteer();
-      }
+    "$store.state.selectedVolunteerCpf": {
+      immediate: true,
+      handler(newVolunteerCpf) {
+        console.log("Novo CPF voluntario:", newVolunteerCpf);
+        if (newVolunteerCpf) {
+          this.fillVolunteer(newVolunteerCpf);
+        }
+      },
     },
   },
   data() {
@@ -127,25 +128,25 @@ export default {
     };
   },
   methods: {
-    async fillVolunteer() {
+    fillVolunteer(cpf) {
       const volunteerCpf = {
-        cpf: this.$store.state.selectedVolunteerCpf,
+        cpf: cpf,
       };
 
       console.log(volunteerCpf);
 
-      try {
-        const response = await axios.post(
+      axios
+        .post(
           "http://127.0.0.1:8080/v5/green-world/get_voluntario_pelo_cpf",
           volunteerCpf
-        );
-
-        this.volunteer = response.data.data;
-        console.log('this.volunteer: ', this.volunteer);
-      } catch (error) {
-        // Tratar erros na requisição
-        console.error(error);
-      }
+        )
+        .then((response) => {
+          this.volunteer = response.data.data;
+        })
+        .catch((error) => {
+          // Tratar erros na requisição
+          console.error(error);
+        });
     },
     deleteVolunteer() {
       const volunteerCpf = {

@@ -26,6 +26,8 @@ export default new Vuex.Store({
       motivo: "",
       experiencia: "",
 
+      selectedVolunteerCpf: "",
+
       // BENEFICIARY DATA
       amountResidents: "",
       familyIncome: "",
@@ -35,7 +37,6 @@ export default new Vuex.Store({
 
       //SEED DATA
       id_semente: "",
-      
     },
   },
   mutations: {
@@ -44,6 +45,9 @@ export default new Vuex.Store({
     },
     updateSeed(state, payload) {
       state.id_semente = payload;
+    },
+    updateVolunteerCpf(state, cpf) {
+      state.selectedVolunteerCpf = cpf;
     },
   },
 });

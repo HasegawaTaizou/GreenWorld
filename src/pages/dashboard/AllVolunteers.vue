@@ -6,7 +6,7 @@
       <i class="fa-solid fa-magnifying-glass" id="search-field__icon"></i>
     </div>
     <ul class="beneficiaries-content">
-      <li v-for="volunteer in volunteers" :key="volunteer.id" @click="handleItemClick(volunteer)">
+      <li v-for="volunteer in volunteers" :key="volunteer.id" @click="handleVolunteerClick(volunteer)">
         <router-link class="beneficiarie__item" to="/dashboard/all-volunteers/volunteer">
           <img :src="volunteer.foto" class="beneficiarie__image" />
           <span class="beneficiarie__name">{{ volunteer.nome_completo }}</span>
@@ -41,9 +41,9 @@ export default {
           console.error(error);
         });
     },
-    handleItemClick(item) {
-      this.$store.state.selectedVolunteerCpf = item.cpf;
-      console.log(item.cpf); 
+    handleVolunteerClick(item) {
+      this.$store.commit("updateVolunteerCpf", item.cpf);
+      console.log(item.cpf);
     },
   },
 };

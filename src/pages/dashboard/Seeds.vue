@@ -7,7 +7,7 @@
       <i class="fa-solid fa-magnifying-glass" id="search-field__icon"></i>
     </div>
     <ul class="seeds-content">
-      <li v-for="seed in seeds" :key="seed.id" @click="handleItemClick(seed)">
+      <li v-for="seed in seeds" :key="seed.id" @click="handleSeedClick(seed)">
         <router-link to="/dashboard/seeds/seed" class="seed__item">
           <span class="filter_ball" :class="`status-finished`">{{ seed.id }}</span>
           <span class="seed__name">{{ seed.nome }}</span>
@@ -42,7 +42,7 @@ export default {
           console.error(error);
         });
     },
-    handleItemClick(item) {
+    handleSeedClick(item) {
       this.$store.commit("updateSeed", item.id);
       console.log(item.id);
     },
