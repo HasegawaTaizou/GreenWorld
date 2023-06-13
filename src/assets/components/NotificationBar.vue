@@ -1,10 +1,5 @@
-<!-- <div>
-    <button @click="showNotification">Mostrar Notificação</button>
-    <NotificationBar :message="notificationMessage" />
-  </div> -->
-
 <template>
-  <div v-if="notificationVisible" class="notification">
+  <div class="notification">
     <div class="notification-informations">
       <i class="fa-solid fa-circle-exclamation"></i>
       <p class="notification__text">{{ notificationMessage }}</p>
@@ -72,9 +67,12 @@ export default {
   background-color: #e7e7e7;
   border-left: 5px solid #408d7b;
   border-radius: 4px;
-  min-width: 282px;
+  min-width: 356px;
+  min-height: 64px;
   text-align: center;
-  position: absolute;
+  position: fixed;
+  right: auto;
+  left: auto;
   display: flex;
   flex-direction: column;
   top: 60px;
@@ -86,15 +84,17 @@ export default {
   width: 100%;
   padding-left: 12px;
   margin-top: 12px;
+  align-items: center;
 }
 
 .fa-circle-exclamation {
   color: #408d7b;
   padding-right: 12px;
+  font-size: 1.5rem;
 }
 
 .notification__text {
-  font-size: 0.75rem;
+  font-size: 1.5rem !important;
 }
 
 .progress-bar {

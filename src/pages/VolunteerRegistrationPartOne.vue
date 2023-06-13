@@ -165,7 +165,7 @@
         >
           Continuar
         </button>
-        <NotificationBar v-if="this.$store.state.formData.showNotification" :message="notificationMessage" />
+        <NotificationBar :message="'Cadastro realizado com sucesso'" />
       </form>
     </main>
     <footer>

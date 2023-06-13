@@ -26,7 +26,7 @@ export default async function submitFormVolunteerPartOne() {
     
     this.$store.commit("updateFormData", this.formData);
     this.$store.commit("updateNotificationStatus", this.notificationStatus);
-    this.$router.push("/volunteer-registration-part-two");
+    // this.$router.push("/volunteer-registration-part-two");
   } else {
     for (const field of fieldsVolunteerPartOne) {
       if (this.v$[field.key].$error) {
