@@ -32,11 +32,18 @@ export default new Vuex.Store({
       typeResidence: "",
       squareMetersResidence: "",
       comments: "",
+
+      //SEED DATA
+      id_semente: "",
+      
     },
   },
   mutations: {
     updateFormData(state, payload) {
       state.formData = { ...state.formData, ...payload };
+    },
+    updateSeed(state, payload) {
+      state.id_semente = payload;
     },
   },
 });

@@ -8,10 +8,8 @@
     </div>
     <ul class="seeds-content">
       <li v-for="seed in seeds" :key="seed.id" @click="handleItemClick(seed)">
-        <router-link :to="`/dashboard/seeds/seed`" class="seed__item">
-          <span class="filter_ball" :class="`status-finished`">{{
-            seed.id
-          }}</span>
+        <router-link to="/dashboard/seeds/seed" class="seed__item">
+          <span class="filter_ball" :class="`status-finished`">{{ seed.id }}</span>
           <span class="seed__name">{{ seed.nome }}</span>
         </router-link>
       </li>
@@ -26,16 +24,16 @@ export default {
   name: "Seeds",
   data() {
     return {
-      seeds: []
+      seeds: [],
     };
   },
   mounted() {
-    this.findAllSeeds()
+    this.findAllSeeds();
   },
   methods: {
     findAllSeeds() {
       axios
-        .get(`http://127.0.0.1:8080/v5/green-world/todas_sementes`)
+        .get("http://127.0.0.1:8080/v5/green-world/todas_sementes")
         .then((response) => {
           console.log(response.data.data);
           this.seeds = response.data.data;
@@ -45,8 +43,8 @@ export default {
         });
     },
     handleItemClick(item) {
-      this.$store.state.id_semente = item.id;
-      console.log(item.id); 
+      this.$store.commit("updateSeed", item.id);
+      console.log(item.id);
     },
   },
 };
