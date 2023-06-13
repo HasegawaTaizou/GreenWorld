@@ -219,7 +219,7 @@ const routes = [
         component: UpdateBeneficiarie,
       },
       {
-        path: "/dashboard/update-volunteer",
+        path: "/dashboard/all-volunteers/volunteer/update-volunteer",
         name: "UpdateVolunteer",
         component: UpdateVolunteer,
       },

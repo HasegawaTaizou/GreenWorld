@@ -83,11 +83,9 @@
       </div>
     </div>
     <div class="content-buttons">
-      <router-link class="update-data__link" to="/update-administrator">
-        <button class="update-data__button" @click="acceptVolunteer">
-          Aceitar
-        </button>
-      </router-link>
+      <button class="update-data__button" @click="acceptVolunteer">
+        Aceitar
+      </button>
       <button class="delete__button" @click="deleteVolunteer">Excluir</button>
     </div>
   </section>
@@ -146,7 +144,9 @@ export default {
       axios
         .delete(
           "http://127.0.0.1:8080/v3/green-world/delete_voluntario_pelo_cpf",
-          volunteerCpf
+          {
+            data: volunteerCpf,
+          }
         )
         .then((response) => {
           console.log(response);
@@ -160,7 +160,7 @@ export default {
       const volunteerCpf = {
         cpf: this.$store.state.selectedVolunteerCpf,
       };
-      
+
       axios
         .put(
           "http://127.0.0.1:8080/v4/green-world/altera_status_do_voluntario",

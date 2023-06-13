@@ -94,7 +94,7 @@
   </div>
 
   <div class="content-buttons">
-    <router-link class="update-data__link" to="/update-administrator">
+    <router-link class="update-data__link" to="/dashboard/all-volunteers/volunteer/update-volunteer">
       <button class="update-data__button" @click="updateVolunteerData">
         Atualizar dados
       </button>
