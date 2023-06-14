@@ -67,6 +67,14 @@
 
 .be-a-volunteer__text {
     font-size: 1.188rem;
+    padding-top: 20px;
+}
+
+.be-a-volunteer__quote {
+    font-size: 1.3rem;
+    color: var(--section-background-color);
+    font-weight: 700;
+    font-family: "Montserrat", sans-serif;
 }
 
 .be-a-volunteer__button {

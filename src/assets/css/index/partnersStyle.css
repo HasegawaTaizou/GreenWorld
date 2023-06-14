@@ -20,9 +20,16 @@
 }
 
 .partner img{
-    height: 115px;
+    height: 135px;
     width: 165px;
+    transition: all .5s;
 }
+
+
+.partner img:hover{
+    transform: scale(1.1);
+  }
+  
 
 
 @media (max-width: 500px){

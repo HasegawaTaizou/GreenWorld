@@ -188,12 +188,11 @@
           <h3 class="projects-title">Projetos</h3>
 
           <div class="be-a-volunteer-content">
+            <p class="be-a-volunteer__quote">
+              "Ninguém pode fazer tudo, mas todo mundo pode fazer alguma coisa."
+            </p>
             <p class="be-a-volunteer__text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at
-              finibus diam. Nulla efficitur neque eget est lacinia, pellentesque
-              rhoncus velit porta. Etiam dapibus tempus tellus et volutpat.
-              Curabitur commodo enim bibendum, condimentum augue id, elementum
-              magna. Etiam in lacus placerat, faucibus felis sed, congue elit.
+              Ser voluntário é se importar com aquele que tem menos ou quase nada, é ter capacidade de desenvolver empatia e prestar auxílio aos que mais necessitam, principalmente nos momentos de mais dificuldade.
             </p>
             <router-link class="be-a-volunteer__link" to="/volunteers">
               <button class="be-a-volunteer__button">Ser um voluntário</button>

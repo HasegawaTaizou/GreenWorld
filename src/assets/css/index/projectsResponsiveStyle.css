@@ -65,6 +65,11 @@
         font-size: 1rem;
     }
 
+    .be-a-volunteer__quote {
+        width: 45vw;
+        font-size: 1.1rem;
+    }
+
     .projects-title-content {
         gap: 60px;
     }
