@@ -44,7 +44,7 @@
             class="full-name__input"
             id="fullName"
             maxlength="150"
-            v-model.trim="v$.inputFullName.$model"
+            v-model="v$.inputFullName.$model"
             :class="{ error: v$.inputFullName.$error }"
             ref="inputFullName"
             @input="this.inputFullName = onlyLetters(this.inputFullName)"

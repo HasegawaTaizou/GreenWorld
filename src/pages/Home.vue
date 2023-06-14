@@ -59,7 +59,10 @@
                     Log In
                 </button>
             </a> -->
-        <router-link class="sign-up__link" to="/volunteer-registration-part-one">
+        <router-link
+          class="sign-up__link"
+          to="/volunteer-registration-part-one"
+        >
           <button class="sign-up__button">Cadastre-se</button>
         </router-link>
       </div>
@@ -278,6 +281,7 @@
         <div class="founders-content">
          
           <article class="founder-container">
+
             <img
               class="founder__image"
               src="../assets/img/founder2.jpeg"
@@ -285,6 +289,7 @@
             />
             <span class="founder__name">Maycon Kaio</span>
             <span class="founder__office">Diretor Geral</span>
+
             <nav class="social-media-founder-container">
               <ul class="social-media">
                 <li>
@@ -304,6 +309,7 @@
             </nav>
           </article>
           <article class="founder-container">
+
             <img
               class="founder__image"
               src="../assets/img/founder3.jpeg"
@@ -311,6 +317,7 @@
             />
             <span class="founder__name">Mabel Dourado</span>
             <span class="founder__office">Presidente</span>
+
             <nav class="social-media-founder-container">
               <ul class="social-media">
                 <li>
@@ -330,6 +337,7 @@
             </nav>
           </article>
           <article class="founder-container">
+
             <img
               class="founder__image"
               src="../assets/img/founder1.jpeg"
@@ -337,6 +345,7 @@
             />
             <span class="founder__name">Brenda Cardoso</span>
             <span class="founder__office">Coordenadora Geral</span>
+
             <nav class="social-media-founder-container">
               <ul class="social-media">
                 <li>
@@ -392,8 +401,9 @@
         <span class="support__title">Suporte</span>
         <div class="support__links">
           <router-link class="support__link" to="/faq">FAQ</router-link>
-
-          <router-link class="support__link" to="/privacy-policy">Política de privacidade</router-link>
+          <router-link class="support__link" to="/privacy-policy"
+            >Política de privacidade</router-link
+          >
         </div>
       </div>
 
