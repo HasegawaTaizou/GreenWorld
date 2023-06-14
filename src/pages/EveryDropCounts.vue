@@ -27,9 +27,9 @@
     </div>
     <div class="project-images-container">
       <div class="project-images">
-        <img src="../assets/img/irrigacao-por-gotejamento 1.png" alt="Project Image" class="project-image" />
-        <img src="../assets/img/drip-irrigation.png" alt="Project Image" class="project-image" />
-        <img src="../assets/img/tubo_irrigacaowebp 1.png" alt="Project Image" class="project-image" />
+        <img src="../assets/img/drip-irrigation1.png" alt="Project Image" class="project-image" />
+        <img src="../assets/img/drip-irrigation2.png" alt="Project Image" class="project-image" />
+        <img src="../assets/img/drip-irrigation3.png" alt="Project Image" class="project-image" />
       </div>
     </div>
   </main>

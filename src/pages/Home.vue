@@ -283,7 +283,7 @@
               src="../assets/img/founder2.jpeg"
               alt=""
             />
-            <span class="founder__name">Maycon</span>
+            <span class="founder__name">Maycon Kaio</span>
             <span class="founder__office">Diretor Geral</span>
             <nav class="social-media-founder-container">
               <ul class="social-media">
