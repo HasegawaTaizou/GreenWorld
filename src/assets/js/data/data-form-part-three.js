@@ -1,5 +1,5 @@
 import cleanInput from "../input/clean-input.js";
-// import cleanBirthDate from "../input/clean-birth-date.js";
+import cleanBirthDate from "../input/clean-birth-date.js";
 
 export default function dataPartThree(formData) {
   return {
@@ -8,7 +8,7 @@ export default function dataPartThree(formData) {
     formData: {
       nome_completo: formData.nome_completo,
       foto: formData.foto,
-      // data_nascimento: cleanBirthDate(formData.data_nascimento),
+      data_nascimento: cleanBirthDate(formData.data_nascimento),
       limitacao_fisica: formData.limitacao_fisica,
       rg: cleanInput(formData.rg),
       cpf: cleanInput(formData.cpf),
