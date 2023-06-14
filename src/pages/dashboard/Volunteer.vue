@@ -1,106 +1,121 @@
 <template>
-  <div class="volunteer-content">
-    <img class="volunteer__image" :src="volunteer.foto" alt="Volunteer image" />
+  <section id="volunteer-container">
+    <div class="volunteer-content">
+      <img
+        class="volunteer__image"
+        :src="volunteer.foto"
+        alt="Volunteer image"
+      />
 
-    <div class="volunteer__tag-name-data">
-      <span class="volunteer__tag">Voluntário</span>
-      <h1 class="volunteer__name">{{ volunteer.nome_completo }}</h1>
-      <ul class="volunteer__personal-data">
-        <li class="personal-data">
-          <span class="uppercase personal-data__type">cpf:</span>
-          <span class="personal-data__value">{{ volunteer.cpf }}</span>
-        </li>
-        <li class="personal-data">
-          <span class="uppercase personal-data__type">rg:</span>
-          <span class="personal-data__value">{{ volunteer.rg }}</span>
-        </li>
-        <li class="personal-data">
-          <span class="personal-data__type">Data de nascimento:</span>
-          <span class="personal-data__value">{{
-            volunteer.data_nascimento
+      <div class="volunteer__tag-name-data">
+        <span class="volunteer__tag">Voluntário</span>
+        <h1 class="volunteer__name">{{ volunteer.nome_completo }}</h1>
+        <ul class="volunteer__personal-data">
+          <li class="personal-data">
+            <span class="uppercase personal-data__type">cpf:</span>
+            <span class="personal-data__value">{{ volunteer.cpf }}</span>
+          </li>
+          <li class="personal-data">
+            <span class="uppercase personal-data__type">rg:</span>
+            <span class="personal-data__value">{{ volunteer.rg }}</span>
+          </li>
+          <li class="personal-data">
+            <span class="personal-data__type">Data de nascimento:</span>
+            <span class="personal-data__value">{{
+              volunteer.data_nascimento
+            }}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="volunteer-information">
+      <div class="volunteer-content__address">
+        <h3 class="address__title">Endereço</h3>
+        <div class="volunteer__address">
+          <span class="information">CEP:</span>
+          <span class="information__value">{{ volunteer.endereco?.cep }}</span>
+        </div>
+        <div class="volunteer__address">
+          <span class="information">Logradouro:</span>
+          <span class="information__value">{{
+            volunteer.endereco?.logradouro
           }}</span>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="volunteer-information">
-    <div class="volunteer-content__address">
-      <h3 class="address__title">Endereço</h3>
-      <div class="volunteer__address">
-        <span class="information">CEP:</span>
-        <span class="information__value">{{ volunteer.endereco?.cep }}</span>
+        </div>
+        <div class="volunteer__address">
+          <span class="information">Bairro:</span>
+          <span class="information__value">{{
+            volunteer.endereco?.bairro
+          }}</span>
+        </div>
+        <div class="volunteer__address">
+          <span class="information">Cidade:</span>
+          <span class="information__value">{{
+            volunteer.endereco?.cidade
+          }}</span>
+        </div>
+        <div class="volunteer__address">
+          <span class="information">Estado:</span>
+          <span class="information__value">{{
+            volunteer.endereco?.estado
+          }}</span>
+        </div>
       </div>
-      <div class="volunteer__address">
-        <span class="information">Logradouro:</span>
-        <span class="information__value">{{
-          volunteer.endereco?.logradouro
-        }}</span>
+      <div class="volunteer-content__contact">
+        <h3 class="contact__title">Contato:</h3>
+        <div class="volunteer__contact">
+          <span class="contact">Telefone:</span>
+          <span class="contact__value">{{ volunteer.telefone }}</span>
+        </div>
+        <div class="volunteer__contact">
+          <span class="contact">E-mail:</span>
+          <span class="contact__value">{{ volunteer.email }}</span>
+        </div>
       </div>
-      <div class="volunteer__address">
-        <span class="information">Bairro:</span>
-        <span class="information__value">{{ volunteer.endereco?.bairro }}</span>
+      <div class="volunteer-content__reason">
+        <h3 class="information__title">Motivo:</h3>
+        <p class="volunteer-reason__text">
+          {{ volunteer.motivo }}
+        </p>
       </div>
-      <div class="volunteer__address">
-        <span class="information">Cidade:</span>
-        <span class="information__value">{{ volunteer.endereco?.cidade }}</span>
+      <div class="volunteer-content__experience">
+        <h3 class="information__title">Experiência:</h3>
+        <span class="volunteer__experience"> {{ volunteer.experiencia }}</span>
       </div>
-      <div class="volunteer__address">
-        <span class="information">Estado:</span>
-        <span class="information__value">{{ volunteer.endereco?.estado }}</span>
+
+      <div class="volunteer-content__helps">
+        <h3 class="information__title">Ajudas das quais participou:</h3>
+        <ul class="help-list">
+          <li class="help">
+            <router-link to="">
+              <span class="help__name">Ajuda 03</span>
+            </router-link>
+          </li>
+          <li class="help">
+            <router-link to="">
+              <span class="help__name">Ajuda 03</span>
+            </router-link>
+          </li>
+          <li class="help">
+            <router-link to="">
+              <span class="help__name">Ajuda 03</span>
+            </router-link>
+          </li>
+        </ul>
       </div>
-    </div>
-    <div class="volunteer-content__contact">
-      <h3 class="contact__title">Contato:</h3>
-      <div class="volunteer__contact">
-        <span class="contact">Telefone:</span>
-        <span class="contact__value">{{ volunteer.telefone }}</span>
-      </div>
-      <div class="volunteer__contact">
-        <span class="contact">E-mail:</span>
-        <span class="contact__value">{{ volunteer.email }}</span>
-      </div>
-    </div>
-    <div class="volunteer-content__reason">
-      <h3 class="information__title">Motivo:</h3>
-      <p class="volunteer-reason__text">
-        {{ volunteer.motivo }}
-      </p>
-    </div>
-    <div class="volunteer-content__experience">
-      <h3 class="information__title">Experiência:</h3>
-      <span class="volunteer__experience"> {{ volunteer.experiencia }}</span>
     </div>
 
-    <div class="volunteer-content__helps">
-      <h3 class="information__title">Ajudas das quais participou:</h3>
-      <ul class="help-list">
-        <li class="help">
-          <router-link to="">
-            <span class="help__name">Ajuda 03</span>
-          </router-link>
-        </li>
-        <li class="help">
-          <router-link to="">
-            <span class="help__name">Ajuda 03</span>
-          </router-link>
-        </li>
-        <li class="help">
-          <router-link to="">
-            <span class="help__name">Ajuda 03</span>
-          </router-link>
-        </li>
-      </ul>
+    <div class="content-buttons">
+      <router-link
+        class="update-data__link"
+        to="/dashboard/all-volunteers/volunteer/update-volunteer"
+      >
+        <button class="update-data__button" @click="updateVolunteerData">
+          Atualizar dados
+        </button>
+      </router-link>
+      <button class="delete__button" @click="deleteVolunteer">Excluir</button>
     </div>
-  </div>
-
-  <div class="content-buttons">
-    <router-link class="update-data__link" to="/dashboard/all-volunteers/volunteer/update-volunteer">
-      <button class="update-data__button" @click="updateVolunteerData">
-        Atualizar dados
-      </button>
-    </router-link>
-    <button class="delete__button" @click="deleteVolunteer">Excluir</button>
-  </div>
+  </section>
 </template>
 
 <script>
