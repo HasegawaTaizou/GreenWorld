@@ -147,9 +147,6 @@
         width: 90vw;
     }
 
-   
- 
-
 
 }
 
@@ -158,4 +155,15 @@
         padding: 0 35px;
     }
 }
+
+@media (max-width: 378px) {
+
+    .project-content-every-drop-counts,
+    .project-content-seed-of-love,
+    .project-content-food-distribution  {
+        height: 58vh;
+    }
+
+}
+
 

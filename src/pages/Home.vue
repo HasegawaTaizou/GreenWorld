@@ -59,7 +59,10 @@
                     Log In
                 </button>
             </a> -->
-        <router-link class="sign-up__link" to="/volunteer-registration-part-one">
+        <router-link
+          class="sign-up__link"
+          to="/volunteer-registration-part-one"
+        >
           <button class="sign-up__button">Cadastre-se</button>
         </router-link>
       </div>
@@ -274,11 +277,7 @@
 
         <div class="founders-content">
           <article class="founder-container">
-            <img
-              class="founder__image"
-              src="../assets/img/mabel.jpg"
-              alt=""
-            />
+            <img class="founder__image" src="../assets/img/mabel.jpg" alt="" />
             <span class="founder__name">Mabel</span>
             <span class="founder__office">Lorem ipsum dolor sit amet</span>
             <nav class="social-media-founder-container">
@@ -300,11 +299,7 @@
             </nav>
           </article>
           <article class="founder-container">
-            <img
-              class="founder__image"
-              src="../assets/img/maycon.jpg"
-              alt=""
-            />
+            <img class="founder__image" src="../assets/img/maycon.jpg" alt="" />
             <span class="founder__name">Maycon</span>
             <span class="founder__office">Lorem ipsum dolor sit amet</span>
             <nav class="social-media-founder-container">
@@ -326,11 +321,7 @@
             </nav>
           </article>
           <article class="founder-container">
-            <img
-              class="founder__image"
-              src="../assets/img/bremda.jpg"
-              alt=""
-            />
+            <img class="founder__image" src="../assets/img/bremda.jpg" alt="" />
             <span class="founder__name">Brenda</span>
             <span class="founder__office">Lorem ipsum dolor sit amet</span>
             <nav class="social-media-founder-container">

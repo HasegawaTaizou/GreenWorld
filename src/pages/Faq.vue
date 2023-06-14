@@ -19,7 +19,7 @@
       </p>
       <img
         class="privacy-policy__content-text__image"
-        src="../assets/img/privacy-policy.png"
+        src="../assets/img/faq.png"
         alt=""
       />
     </div>
