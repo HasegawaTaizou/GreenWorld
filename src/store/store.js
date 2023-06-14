@@ -55,5 +55,8 @@ export default new Vuex.Store({
     updateNotificationStatus(state, status) {
       state.showNotification = status;
     },
+    hideNotification(state) {
+      state.showNotification = false;
+    },
   },
 });

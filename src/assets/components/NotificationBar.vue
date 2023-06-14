@@ -1,16 +1,16 @@
 <template>
-  <div class="notification">
+  <div v-if="notificationStatus" class="notification">
     <div class="notification-informations">
       <i class="fa-solid fa-circle-exclamation"></i>
-      <p class="notification__text">{{ notificationMessage }}</p>
+      <p class="notification__text">{{ message }}</p>
     </div>
     <div class="progress-bar" :style="{ width: progressWidth }"></div>
   </div>
 </template>
-  
-  <script>
+
+<script>
 import { useStore } from "vuex";
-import { computed } from 'vue';
+import { computed, reactive, onMounted, watch } from 'vue';
 
 export default {
   name: "NotificationBar",
@@ -22,41 +22,53 @@ export default {
   },
   setup(props) {
     const store = useStore();
-    const notificationMessage = ref(props.message);
-    const progressWidth = ref("100%");
+    const notificationState = reactive({
+      progressWidth: "100%",
+    });
 
     const notificationStatus = computed(() => store.state.showNotification);
 
     const showNotification = () => {
       setTimeout(() => {
-        notificationStatus.value = false;
+        store.commit("hideNotification");
       }, 3000);
 
       // Iniciar a animação da barra de progresso
       const startTime = Date.now();
       const animationFrame = () => {
-        const elapsedTime = Date.now() - startTime;
-        const percentage = (elapsedTime / 3000) * 100;
-        progressWidth.value = `${100 - percentage}%`;
+        const currentTime = Date.now();
+        const elapsedTime = currentTime - startTime;
+        const totalTime = 3000;
+        const percentage = (elapsedTime / totalTime) * 100;
+        notificationState.progressWidth = `${84 - percentage}%`;
 
-        if (percentage < 100) {
+        if (currentTime - startTime < totalTime) {
           requestAnimationFrame(animationFrame);
         }
       };
       requestAnimationFrame(animationFrame);
     };
 
+    onMounted(() => {
+      showNotification();
+    });
+
+    watch(notificationStatus, (newValue) => {
+      if (!newValue) {
+        notificationState.progressWidth = "0%";
+      }
+    });
+
     return {
-      showNotification,
-      notificationMessage,
-      progressWidth,
+      message: props.message,
+      progressWidth: computed(() => notificationState.progressWidth),
       notificationStatus,
     };
   },
 };
 </script>
-  
-  <style>
+
+<style>
 .notification {
   background-color: #e7e7e7;
   border-left: 5px solid #408d7b;
@@ -99,4 +111,3 @@ export default {
   transition: width 0.5s linear;
 }
 </style>
-  
