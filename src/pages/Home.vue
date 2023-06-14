@@ -276,7 +276,7 @@
           <article class="founder-container">
             <img
               class="founder__image"
-              src="../assets/img/avatar-woman.png"
+              src="../assets/img/mabel.jpg"
               alt=""
             />
             <span class="founder__name">Mabel</span>
@@ -302,7 +302,7 @@
           <article class="founder-container">
             <img
               class="founder__image"
-              src="../assets/img/avatar-man.png"
+              src="../assets/img/maycon.jpg"
               alt=""
             />
             <span class="founder__name">Maycon</span>
@@ -328,7 +328,7 @@
           <article class="founder-container">
             <img
               class="founder__image"
-              src="../assets/img/avatar-woman.png"
+              src="../assets/img/bremda.jpg"
               alt=""
             />
             <span class="founder__name">Brenda</span>
@@ -388,7 +388,7 @@
         <span class="support__title">Suporte</span>
         <div class="support__links">
           <router-link class="support__link" to="/faq">FAQ</router-link>
-          <router-link class="support__link" to="/policy-privacy"
+          <router-link class="support__link" to="/privacy-policy"
             >Política de privacidade</router-link
           >
         </div>

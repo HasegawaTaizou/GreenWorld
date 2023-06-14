@@ -2,7 +2,7 @@
   <header>
     <div class="food_basket_distribution_project-container">
       <h1 class="food-basket-distribution-project__title">
-        DISTRIBUIÇÃO DE CESTAS BÁSICAS
+        CADA GOTA CONTA
       </h1>
       <router-link class="return__link" to="/"><img src="../assets/img/return-icon.png" alt="Return Icon"
           class="return__icon" /></router-link>
