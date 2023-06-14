@@ -11,6 +11,10 @@ export default function validationsVolunteerPartOne() {
         return regex.test(this.inputDateBirth);
       },
     },
+    inputRg: { required, minLength: minLength(12) },
+    inputCpf: { required, minLength: minLength(14) },
+    selectPhysicalLimitation: { required },
+    inputPhone: { required, minLength: minLength(15) },
     inputEmail: { required, email },
   };
 }

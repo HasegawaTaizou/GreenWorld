@@ -38,25 +38,25 @@
         <div class="volunteer__address">
           <span class="information">Logradouro:</span>
           <span class="information__value">{{
-            volunteer.endereco.logradouro
+            volunteer.endereco?.logradouro
           }}</span>
         </div>
         <div class="volunteer__address">
           <span class="information">Bairro:</span>
           <span class="information__value">{{
-            volunteer.endereco.bairro
+            volunteer.endereco?.bairro
           }}</span>
         </div>
         <div class="volunteer__address">
           <span class="information">Cidade:</span>
           <span class="information__value">{{
-            volunteer.endereco.cidade
+            volunteer.endereco?.cidade
           }}</span>
         </div>
         <div class="volunteer__address">
           <span class="information">Estado:</span>
           <span class="information__value">{{
-            volunteer.endereco.estado
+            volunteer.endereco?.estado
           }}</span>
         </div>
       </div>
@@ -83,11 +83,9 @@
       </div>
     </div>
     <div class="content-buttons">
-      <router-link class="update-data__link" to="/update-administrator">
-        <button class="update-data__button" @click="acceptVolunteer">
-          Aceitar
-        </button>
-      </router-link>
+      <button class="update-data__button" @click="acceptVolunteer">
+        Aceitar
+      </button>
       <button class="delete__button" @click="deleteVolunteer">Excluir</button>
     </div>
   </section>
@@ -106,10 +104,21 @@ export default {
   mounted() {
     this.fillVolunteer();
   },
+  watch: {
+    "$store.state.selectedVolunteerCpf": {
+      immediate: true,
+      handler(newVolunteerCpf) {
+        console.log("Novo CPF voluntario:", newVolunteerCpf);
+        if (newVolunteerCpf) {
+          this.fillVolunteer(newVolunteerCpf);
+        }
+      },
+    },
+  },
   methods: {
-    fillVolunteer() {
+    fillVolunteer(cpf) {
       const volunteerCpf = {
-        cpf: this.$store.state.selectedVolunteerCpf,
+        cpf: cpf,
       };
       console.log(volunteerCpf);
 
@@ -135,7 +144,9 @@ export default {
       axios
         .delete(
           "http://127.0.0.1:8080/v3/green-world/delete_voluntario_pelo_cpf",
-          volunteerCpf
+          {
+            data: volunteerCpf,
+          }
         )
         .then((response) => {
           console.log(response);
@@ -149,7 +160,7 @@ export default {
       const volunteerCpf = {
         cpf: this.$store.state.selectedVolunteerCpf,
       };
-      
+
       axios
         .put(
           "http://127.0.0.1:8080/v4/green-world/altera_status_do_voluntario",

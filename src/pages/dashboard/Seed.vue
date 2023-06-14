@@ -1,7 +1,7 @@
 <template>
   <section id="seeds">
     <div class="seed-content">
-      <img class="seed-content__image" :src="seed.foto" alt="Passion fruit" />
+      <img class="seed-content__image" :src="seed.foto" alt="Seed Image" />
 
       <div class="seed-content__tag-name">
         <span class="seed-content__tag">Semente</span>
@@ -59,24 +59,27 @@ export default {
     };
   },
   watch: {
-    "$store.state.id_semente": function (newIdSemente) {
-      if (newIdSemente) {
-        this.fillSeed();
-      }
+    "$store.state.id_semente": {
+      immediate: true,
+      handler(newIdSemente) {
+        console.log("Novo ID da semente:", newIdSemente);
+        if (newIdSemente) {
+          this.fillSeed(newIdSemente); 
+        }
+      },
     },
   },
   methods: {
-    async fillSeed() {
+    fillSeed(idSemente) { 
       const seedId = {
-        id_semente: this.$store.state.id_semente,
+        id_semente: idSemente, 
       };
-      console.log(seedId);
+      console.log('id quando chama o fill: ', seedId);
 
       axios
         .post("http://127.0.0.1:8080/v5/green-world/semente_por_id", seedId)
         .then((response) => {
           this.seed = response.data.data;
-          console.log(response.data.data);
         })
         .catch((error) => {
           // Tratar erros na requisição
@@ -86,6 +89,7 @@ export default {
   },
 };
 </script>
+
 
 <style scoped>
 @import url("../../assets/css/variables.css");

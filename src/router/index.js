@@ -44,6 +44,7 @@ import Requisicoes from "@/pages/Requisicoes.vue";
 import Firebase from "@/pages/Firebase.vue";
 import Criptografia from "@/pages/Criptografia.vue";
 import Menu from "@/pages/Menu.vue";
+import Notificacao from "@/pages/Notificacao.vue";
 
 const routes = [
   {
@@ -219,7 +220,7 @@ const routes = [
         component: UpdateBeneficiarie,
       },
       {
-        path: "/dashboard/update-volunteer",
+        path: "/dashboard/all-volunteers/volunteer/update-volunteer",
         name: "UpdateVolunteer",
         component: UpdateVolunteer,
       },
@@ -261,6 +262,11 @@ const routes = [
     path: "/menu",
     name: "Menu",
     component: Menu,
+  },
+  {
+    path: "/notificacao",
+    name: "Notificacao",
+    component: Notificacao,
   },
 ];
 

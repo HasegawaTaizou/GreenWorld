@@ -1,7 +1,7 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 import Dashboard from "./pages/dashboard/Dashboard.vue";
-import router from "./router/index.js";
+import router from "./router";
 import store from "./store/store";
 import VueTheMask from 'vue-the-mask';
 import { useVuelidate } from "@vuelidate/core";

@@ -26,17 +26,34 @@ export default new Vuex.Store({
       motivo: "",
       experiencia: "",
 
+      selectedVolunteerCpf: "",
+
       // BENEFICIARY DATA
       amountResidents: "",
       familyIncome: "",
       typeResidence: "",
       squareMetersResidence: "",
       comments: "",
+
+      //SEED DATA
+      id_semente: "",
     },
+
+    //NOTIFICATION
+    showNotification: false,
   },
   mutations: {
     updateFormData(state, payload) {
       state.formData = { ...state.formData, ...payload };
+    },
+    updateSeed(state, payload) {
+      state.formData.id_semente = payload;
+    },
+    updateVolunteerCpf(state, cpf) {
+      state.formData.selectedVolunteerCpf = cpf;
+    },
+    updateNotificationStatus(state, status) {
+      state.showNotification = status;
     },
   },
 });

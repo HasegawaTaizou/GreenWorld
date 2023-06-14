@@ -1,44 +1,47 @@
 <template>
-  <header>
-    <nav>
-      <img @click="openNavFull" src="./img/menu_image.png" alt="Menu" />
-    </nav>
-
-    <div class="container-image-log-out">
-      <img src="./img/profile_administrator.png" alt="Image profile" />
-      <a href="#" class="log-out-content">
-        <button class="log-out__button">
-          <img src="./img/logout_image.png" alt="Image log out" />
-          <span class="log-out__text">Log out</span>
-        </button>
-      </a>
-    </div>
-  </header>
-  <main>
-
+  <section>
     <div class="volunteer-content">
-      <img class="volunteer__image" src="./img/volunteer-image.webp" alt="Volunteer image">
+      <img
+        class="volunteer__image"
+        src="./img/volunteer-image.webp"
+        alt="Volunteer image"
+      />
 
       <div class="volunteer__tag-name-data">
         <span class="volunteer__tag">Voluntário</span>
         <div class="volunteer__title-icon">
-          <h1 class="volunteer__name">Irineu Aparecido</h1>
-          <i @click="update('.personal-data__area')" class="volunteer__icon far fa-edit"></i>
+          <h1 class="volunteer__name">{{ volunteer.nome_completo }}</h1>
+          <i
+            @click="update('.personal-data__area')"
+            class="volunteer__icon far fa-edit"
+          ></i>
         </div>
         <ul class="volunteer__personal-data">
           <li class="personal-data">
             <span class="uppercase personal-data__type">cpf:</span>
-            <input value="549.033.548-32" class="personal-data__area personal-data__value" disabled>
+            <input
+              :value="volunteer.cpf"
+              class="personal-data__area personal-data__value"
+              disabled
+            />
           </li>
           <li class="personal-data">
             <span class="uppercase personal-data__type">rg:</span>
-            <input value="60.222.547-8" class="personal-data__area personal-data__value" disabled>
+            <input
+            :value="volunteer.rg"
+              class="personal-data__area personal-data__value"
+              disabled
+            />
           </li>
           <li class="personal-data">
             <span class="personal-data__type">Data de nascimento:</span>
-            <input value="2001-02-24" type="date" class="personal-data__area personal-data__value" disabled>
+            <input
+              :value="volunteer.birthDate"
+              type="date"
+              class="personal-data__area personal-data__value"
+              disabled
+            />
           </li>
-
         </ul>
       </div>
     </div>
@@ -46,57 +49,101 @@
       <div class="volunteer-content__address">
         <div class="content__title-icon">
           <h3 class="address__title">Endereço</h3>
-          <i @click="update('.address__area')" class="volunteer__icon far fa-edit"></i>
+          <i
+            @click="update('.address__area')"
+            class="volunteer__icon far fa-edit"
+          ></i>
         </div>
 
         <div class="volunteer__address">
           <span class="information">CEP:</span>
-          <input value="06660-460" class="address__area information__value " disabled>
+          <input
+            value="06660-460"
+            class="address__area information__value"
+            disabled
+          />
         </div>
         <div class="volunteer__address">
           <span class="information">Logradouro:</span>
-          <input value="Avenida José Marcio" class="address__area information__value" disabled>
+          <input
+            value="Avenida José Marcio"
+            class="address__area information__value"
+            disabled
+          />
         </div>
         <div class="volunteer__address">
           <span class="information">Bairro:</span>
-          <input value="Jardim Rosa" class="address__area information__value" disabled>
+          <input
+            value="Jardim Rosa"
+            class="address__area information__value"
+            disabled
+          />
         </div>
         <div class="volunteer__address">
           <span class="information">Cidade:</span>
-          <input value="Itapevi" class="address__area information__value" disabled>
+          <input
+            value="Itapevi"
+            class="address__area information__value"
+            disabled
+          />
         </div>
         <div class="volunteer__address">
           <span class="information">Estado:</span>
-          <input value="São Paulo" class="address__area information__value" disabled>
+          <input
+            value="São Paulo"
+            class="address__area information__value"
+            disabled
+          />
         </div>
       </div>
       <div class="volunteer-content__contact">
         <div class="content__title-icon">
           <h3 class="contact__title">Contato</h3>
-          <i @click="update('.contact__area')" class="volunteer__icon far fa-edit"></i>
+          <i
+            @click="update('.contact__area')"
+            class="volunteer__icon far fa-edit"
+          ></i>
         </div>
 
         <div class="volunteer__contact">
           <span class="contact">Telefone:</span>
-          <input value="(11)99999-0000" class="contact__area contact__value" disabled>
+          <input
+            value="(11)99999-0000"
+            class="contact__area contact__value"
+            disabled
+          />
         </div>
         <div class="volunteer__contact">
           <span class="contact">E-mail:</span>
-          <input value="cansei@gmail.com" class="contact__area contact__value" disabled>
+          <input
+            value="cansei@gmail.com"
+            class="contact__area contact__value"
+            disabled
+          />
         </div>
       </div>
       <div class="volunteer-content__reason">
         <div class="content__title-icon">
           <h3 class="information__title">Motivo</h3>
-          <i @click="update('.reason__area')" class="volunteer__icon far fa-edit"></i>
+          <i
+            @click="update('.reason__area')"
+            class="volunteer__icon far fa-edit"
+          ></i>
         </div>
 
-        <input value="não sei" class="reason__area volunteer-reason__text" disabled>
+        <input
+          value="não sei"
+          class="reason__area volunteer-reason__text"
+          disabled
+        />
       </div>
       <div class="volunteer-content__experience">
         <div class="content__title-icon">
           <h3 class="information__title">Experiência</h3>
-          <i @click="update('.experience__area')" class="volunteer__icon far fa-edit"></i>
+          <i
+            @click="update('.experience__area')"
+            class="volunteer__icon far fa-edit"
+          ></i>
         </div>
 
         <span class="experience__area volunteer__experience">
@@ -124,9 +171,7 @@
           </li>
         </ul>
       </div>
-
     </div>
-
 
     <div class="content-buttons">
       <router-link class="update-data__link" to="/update-administrator">
@@ -134,21 +179,55 @@
       </router-link>
       <button class="delete__button">Cancelar</button>
     </div>
-  </main>
+  </section>
 </template>
 
 <script>
+import axios from "axios";
 
 export default {
   name: "UpdateVolunteer",
-  data(){
-   
+  data() {
+    return {
+      volunteer: [],
+    };
   },
   mounted() {
+    this.fillVolunteer();
+  },
+  watch: {
+    "$store.state.selectedVolunteerCpf": {
+      immediate: true,
+      handler(newVolunteerCpf) {
+        console.log("Novo CPF voluntario:", newVolunteerCpf);
+        if (newVolunteerCpf) {
+          this.fillVolunteer(newVolunteerCpf);
+        }
+      },
+    },
   },
   methods: {
-    
-  }
+    fillVolunteer(cpf) {
+      const volunteerCpf = {
+        cpf: cpf,
+      };
+      console.log(volunteerCpf);
+
+      axios
+        .post(
+          "http://127.0.0.1:8080/v5/green-world/get_voluntario_pelo_cpf",
+          volunteerCpf
+        )
+        .then((response) => {
+          this.volunteer = response.data.data;
+          console.log(response.data.data);
+        })
+        .catch((error) => {
+          // Tratar erros na requisição
+          console.error(error);
+        });
+    },
+  },
 };
 </script>
 

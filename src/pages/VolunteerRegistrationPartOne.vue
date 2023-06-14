@@ -86,9 +86,21 @@
           <input
             type="text"
             class="rg__input"
+            id="rg"
             v-mask="'##.###.###-#'"
             v-model="inputRg"
+            :class="{ error: v$.inputRg.$error }"
+            ref="inputRg"
+            @input="v$.inputRg.$touch()"
           />
+          <div v-if="v$.inputRg.$error">
+            <p
+              v-if="v$.inputRg.required && v$.inputRg.minLength"
+              class="error-text"
+            >
+              Preencha o RG!
+            </p>
+          </div>
         </div>
         <div class="form__cpf-container">
           <label for="cpf" class="cpf__label">CPF:</label>
@@ -97,7 +109,18 @@
             class="cpf__input"
             v-mask="'###.###.###-##'"
             v-model="inputCpf"
+            :class="{ error: v$.inputCpf.$error }"
+            ref="inputCpf"
+            @input="v$.inputCpf.$touch()"
           />
+          <div v-if="v$.inputCpf.$error">
+            <p
+              v-if="v$.inputCpf.required && v$.inputCpf.minLength"
+              class="error-text"
+            >
+              Preencha o CPF!
+            </p>
+          </div>
         </div>
         <div class="form__physical-limitation-container">
           <label for="physical-limitation" class="physical-limitation__label"
@@ -106,6 +129,9 @@
           <select
             class="physical-limitation__select"
             v-model="selectPhysicalLimitation"
+            :class="{ error: v$.selectPhysicalLimitation.$error }"
+            ref="selectPhysicalLimitation"
+            @input="v$.selectPhysicalLimitation.$touch()"
           >
             <option class="physical-limitation__default" value>
               Selecione a limitação física
@@ -117,6 +143,14 @@
               Tenho
             </option>
           </select>
+          <div v-if="v$.selectPhysicalLimitation.$error">
+            <p
+              v-if="v$.selectPhysicalLimitation.required"
+              class="error-text"
+            >
+              Selecione uma limitação física!
+            </p>
+          </div>
         </div>
         <div class="form__phone-container">
           <label for="phone" class="phone__label">Telefone:</label>
@@ -125,8 +159,20 @@
             class="phone__input"
             v-mask="'(##) #####-####'"
             v-model="inputPhone"
+            :class="{ error: v$.inputPhone.$error }"
+            ref="inputPhone"
+            @input="v$.inputPhone.$touch()"
           />
+          <div v-if="v$.inputPhone.$error">
+            <p
+              v-if="v$.inputPhone.required && v$.inputPhone.minLength"
+              class="error-text"
+            >
+              Preencha o telefone!
+            </p>
+          </div>
         </div>
+        
         <div class="form__email-container">
           <label for="email" class="email__label">E-mail:</label>
           <input
@@ -153,6 +199,10 @@
         >
           Continuar
         </button>
+        <!-- <NotificationBar
+          v-if="$store.state.showNotification"
+          :message="'Cadastro realizado com sucesso!'"
+        /> -->
       </form>
     </main>
     <footer>
@@ -168,16 +218,20 @@ import submitFormVolunteerPartOne from "../assets/js/methods/submit-form-volunte
 import uploadImage from "../assets/js/methods/input/upload-image.js";
 import onlyLetters from "../assets/js/methods/input/only-letters.js";
 import dataPartOne from "../assets/js/data/data-form-part-one.js";
-import validationsVolunteerPartOne from '../assets/js/validations/validations-volunteer-part-one.js'
+import validationsVolunteerPartOne from "../assets/js/validations/validations-volunteer-part-one.js";
 import { useVuelidate } from "@vuelidate/core";
+import { mapMutations } from "vuex";
 
-
-import axios from "axios";
+import NotificationBar from "../assets/components/NotificationBar.vue";
 
 export default {
   name: "VolunteerRegistrationPartOne",
+
   setup() {
     return { v$: useVuelidate() };
+  },
+  components: {
+    // NotificationBar,
   },
   data() {
     const formData = this.$store.state.formData;
@@ -191,10 +245,11 @@ export default {
   validations() {
     const validations = validationsVolunteerPartOne();
     return {
-      ...validations
+      ...validations,
     };
   },
   methods: {
+    ...mapMutations(["updateNotificationStatus"]),
     uploadImage,
     submitFormVolunteerPartOne,
     onlyLetters,

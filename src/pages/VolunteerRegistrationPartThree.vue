@@ -23,12 +23,22 @@
           <label for="reason" class="reason__label">Motivo:</label>
           <textarea
             name="reason"
-            id
+            id=""
             cols="30"
             rows="10"
             class="reason__textarea"
             v-model="inputReason"
+            :class="{ error: v$.inputReason.$error }"
+            ref="inputReason"
           ></textarea>
+          <div v-if="v$.inputReason.$error">
+            <p
+              v-if="v$.inputReason.required"
+              class="error-text"
+            >
+              Preencha o motivo!
+            </p>
+          </div>
         </div>
         <div class="form__have-experience-container">
           <label for="have-experience" class="have-experience__label"
@@ -37,6 +47,8 @@
           <select
             class="have-experience__select"
             v-model="selectHaveExperience"
+            :class="{ error: v$.selectHaveExperience.$error }"
+            ref="selectHaveExperience"
           >
             <option class="have-experience__default" value>
               Selecione o tempo de experiência
@@ -54,6 +66,14 @@
               Mais de 20 anos
             </option>
           </select>
+          <div v-if="v$.selectHaveExperience.$error">
+            <p
+              v-if="v$.selectHaveExperience.required"
+              class="error-text"
+            >
+              Selecione o tempo de experiência
+            </p>
+          </div>
         </div>
         <router-link to="/volunteer-registration-part-two">
           <button type="button" class="volunteer-registration__button-return">
@@ -67,6 +87,7 @@
         >
           Continuar
         </button>
+        <NotificationBar v-if="showNotification" :message="notificationMessage" />
       </form>
     </main>
     <footer>
@@ -80,14 +101,31 @@
 <script>
 import submitFormVolunteerPartThree from "../assets/js/methods/submit-form-volunteer-part-three.js";
 import dataFormPartThree from "../assets/js/data/data-form-part-three.js";
+import NotificationBar from '../assets/components/NotificationBar.vue'
+import { useVuelidate } from "@vuelidate/core";
+import validationsVolunteerPartThree from '../assets/js/validations/validations-volunteer-part-three.js';
 
 export default {
   name: "VolunteerRegistrationPartThree",
+  setup() {
+    return { v$: useVuelidate() };
+  },
+  components: {
+    // NotificationBar,
+  },
   data() {
     const formData = this.$store.state.formData;
     const data = dataFormPartThree(formData);
+
     return {
+      validDate: true,
       ...data,
+    };
+  },
+  validations() {
+    const validations = validationsVolunteerPartThree();
+    return {
+      ...validations,
     };
   },
   methods: {

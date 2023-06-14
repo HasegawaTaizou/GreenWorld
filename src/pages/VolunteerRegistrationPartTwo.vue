@@ -29,7 +29,19 @@
             v-model="formData.cep"
             @blur="fillAdrress"
             @keydown.enter="fillAdrress"
+            v-model.trim="inputCep"
+            :class="{ error: v$.inputCep.$error }"
+            @input="v$.inputCep.$touch()"
+            ref="inputCep"
           />
+          <div v-if="v$.inputCep.$error">
+            <p
+              v-if="v$.inputCep.required && v$.inputCep.minLength"
+              class="error-text"
+            >
+              Preencha o CEP!
+            </p>
+          </div>
         </div>
         <div class="form__road-container">
           <label for="road" class="road__label">Rua:</label>
@@ -102,14 +114,25 @@
 import fillAdrress from "../assets/js/methods/input/fill-address.js";
 import submitFormVolunteerPartTwo from "../assets/js/methods/submit-form-volunteer-part-two.js";
 import dataFormPartTwo from "../assets/js/data/data-form-part-two.js";
+import { useVuelidate } from "@vuelidate/core";
+import validationsVolunteerPartTwo from "../assets/js/validations/validations-volunteer-part-two.js";
 
 export default {
   name: "VolunteerRegistrationPartTwo",
+  setup() {
+    return { v$: useVuelidate() };
+  },
   data() {
     const formData = this.$store.state.formData;
     const data = dataFormPartTwo(formData);
     return {
       ...data,
+    };
+  },
+  validations() {
+    const validations = validationsVolunteerPartTwo();
+    return {
+      ...validations,
     };
   },
   methods: {

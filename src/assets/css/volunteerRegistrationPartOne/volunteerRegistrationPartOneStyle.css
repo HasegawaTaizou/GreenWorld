@@ -77,12 +77,14 @@ label {
 .form__photo-selected-container {
   grid-area: photo;
   margin: 112px auto;
-  width: 600px;
+  max-width: 280px;
 }
 
 .photo__photo {
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  height: auto; 
+  border-radius: 100%;
+  overflow: hidden; 
 }
 
 .form__full-name-container {

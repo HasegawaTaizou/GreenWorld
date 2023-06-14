@@ -94,7 +94,7 @@
   </div>
 
   <div class="content-buttons">
-    <router-link class="update-data__link" to="/update-administrator">
+    <router-link class="update-data__link" to="/dashboard/all-volunteers/volunteer/update-volunteer">
       <button class="update-data__button" @click="updateVolunteerData">
         Atualizar dados
       </button>
@@ -112,12 +112,14 @@ export default {
     this.fillVolunteer();
   },
   watch: {
-    "this.$store.state.selectedVolunteerCpf": function (
-      newSelectedVolunteerCpf
-    ) {
-      if (newSelectedVolunteerCpf) {
-        this.fillVolunteer();
-      }
+    "$store.state.selectedVolunteerCpf": {
+      immediate: true,
+      handler(newVolunteerCpf) {
+        console.log("Novo CPF voluntario:", newVolunteerCpf);
+        if (newVolunteerCpf) {
+          this.fillVolunteer(newVolunteerCpf);
+        }
+      },
     },
   },
   data() {
@@ -126,10 +128,11 @@ export default {
     };
   },
   methods: {
-    async fillVolunteer() {
+    fillVolunteer(cpf) {
       const volunteerCpf = {
-        cpf: this.$store.state.selectedVolunteerCpf,
+        cpf: cpf,
       };
+
       console.log(volunteerCpf);
 
       axios
@@ -139,7 +142,6 @@ export default {
         )
         .then((response) => {
           this.volunteer = response.data.data;
-          console.log(response.data.data);
         })
         .catch((error) => {
           // Tratar erros na requisição

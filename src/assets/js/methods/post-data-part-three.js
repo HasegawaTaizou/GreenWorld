@@ -1,4 +1,5 @@
 import axios from "axios";
+import sendEmail from './send-email.js'
 
 export default function postData(formData) {
   // Enviar dados para o servidor
@@ -8,8 +9,7 @@ export default function postData(formData) {
       // Manipular a resposta do servidor
       console.log(response.data);
 
-      // Redirecionar para a primeira tela do cadastro
-      this.$router.push("/");
+      sendEmail(formData)
     })
     .catch((error) => {
       // Tratar erros na requisição
