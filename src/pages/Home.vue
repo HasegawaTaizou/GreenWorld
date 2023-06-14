@@ -388,9 +388,8 @@
         <span class="support__title">Suporte</span>
         <div class="support__links">
           <router-link class="support__link" to="/faq">FAQ</router-link>
-          <router-link class="support__link" to="/policy-privacy"
-            >Política de privacidade</router-link
-          >
+
+          <router-link class="support__link" to="/privacy-policy">Política de privacidade</router-link>
         </div>
       </div>
 
