@@ -189,8 +189,10 @@ main {
     font-weight: 500;
 }
 
-.volunteer-content__helps{
-
+input {
+    background-color: #e7e7e7;
+    border-radius: 5px;
+    padding: 8px !important;
 }
 
 /* 

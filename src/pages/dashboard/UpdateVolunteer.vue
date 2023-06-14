@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section id="volunteer-container">
     <div class="volunteer-content">
       <img
         class="volunteer__image"
@@ -12,7 +12,7 @@
         <div class="volunteer__title-icon">
           <h1 class="volunteer__name">{{ volunteer.nome_completo }}</h1>
           <i
-            @click="update('.personal-data__area')"
+            @click="enableVolunteerInput"
             class="volunteer__icon far fa-edit"
           ></i>
         </div>
@@ -22,24 +22,24 @@
             <input
               :value="volunteer.cpf"
               class="personal-data__area personal-data__value"
-              disabled
+              :disabled="disabledVolunteer"
             />
           </li>
           <li class="personal-data">
             <span class="uppercase personal-data__type">rg:</span>
             <input
-            :value="volunteer.rg"
+              :value="volunteer.rg"
               class="personal-data__area personal-data__value"
-              disabled
+              :disabled="disabledVolunteer"
             />
           </li>
           <li class="personal-data">
             <span class="personal-data__type">Data de nascimento:</span>
             <input
-              :value="volunteer.birthDate"
-              type="date"
+              :value="volunteer.data_nascimento"
+              type="text"
               class="personal-data__area personal-data__value"
-              disabled
+              :disabled="disabledVolunteer"
             />
           </li>
         </ul>
@@ -50,7 +50,7 @@
         <div class="content__title-icon">
           <h3 class="address__title">Endereço</h3>
           <i
-            @click="update('.address__area')"
+            @click="enableAddressInput"
             class="volunteer__icon far fa-edit"
           ></i>
         </div>
@@ -58,15 +58,15 @@
         <div class="volunteer__address">
           <span class="information">CEP:</span>
           <input
-            value="06660-460"
+            :value="volunteer.endereco?.cep"
             class="address__area information__value"
-            disabled
+            :disabled="disabledAddress"
           />
         </div>
         <div class="volunteer__address">
           <span class="information">Logradouro:</span>
           <input
-            value="Avenida José Marcio"
+            :value="volunteer.endereco?.logradouro"
             class="address__area information__value"
             disabled
           />
@@ -74,7 +74,7 @@
         <div class="volunteer__address">
           <span class="information">Bairro:</span>
           <input
-            value="Jardim Rosa"
+            :value="volunteer.endereco?.bairro"
             class="address__area information__value"
             disabled
           />
@@ -82,7 +82,7 @@
         <div class="volunteer__address">
           <span class="information">Cidade:</span>
           <input
-            value="Itapevi"
+            :value="volunteer.endereco?.cidade"
             class="address__area information__value"
             disabled
           />
@@ -90,7 +90,7 @@
         <div class="volunteer__address">
           <span class="information">Estado:</span>
           <input
-            value="São Paulo"
+            :value="volunteer.endereco?.estado"
             class="address__area information__value"
             disabled
           />
@@ -100,7 +100,7 @@
         <div class="content__title-icon">
           <h3 class="contact__title">Contato</h3>
           <i
-            @click="update('.contact__area')"
+            @click="enableContactInput"
             class="volunteer__icon far fa-edit"
           ></i>
         </div>
@@ -108,33 +108,30 @@
         <div class="volunteer__contact">
           <span class="contact">Telefone:</span>
           <input
-            value="(11)99999-0000"
+            :value="volunteer.telefone"
             class="contact__area contact__value"
-            disabled
+            :disabled="disabledContact"
           />
         </div>
         <div class="volunteer__contact">
           <span class="contact">E-mail:</span>
           <input
-            value="cansei@gmail.com"
+            :value="volunteer.email"
             class="contact__area contact__value"
-            disabled
+            :disabled="disabledContact"
           />
         </div>
       </div>
       <div class="volunteer-content__reason">
         <div class="content__title-icon">
           <h3 class="information__title">Motivo</h3>
-          <i
-            @click="update('.reason__area')"
-            class="volunteer__icon far fa-edit"
-          ></i>
+          <i @click="enableReasonInput" class="volunteer__icon far fa-edit"></i>
         </div>
 
         <input
-          value="não sei"
+          :value="volunteer.motivo"
           class="reason__area volunteer-reason__text"
-          disabled
+          :disabled="disabledReason"
         />
       </div>
       <div class="volunteer-content__experience">
@@ -174,9 +171,7 @@
     </div>
 
     <div class="content-buttons">
-      <router-link class="update-data__link" to="/update-administrator">
-        <button class="update-data__button">Atualizar dados</button>
-      </router-link>
+        <button class="update-data__button" @click="updateVolunteerData">Atualizar dados</button>
       <button class="delete__button">Cancelar</button>
     </div>
   </section>
@@ -189,6 +184,11 @@ export default {
   name: "UpdateVolunteer",
   data() {
     return {
+      reason: "Valor do motivo",
+      disabledVolunteer: true,
+      disabledAddress: true,
+      disabledContact: true,
+      disabledReason: true,
       volunteer: [],
     };
   },
@@ -207,6 +207,9 @@ export default {
     },
   },
   methods: {
+    updateVolunteerData() {
+      console.log(this.volunteer);
+    },
     fillVolunteer(cpf) {
       const volunteerCpf = {
         cpf: cpf,
@@ -226,6 +229,18 @@ export default {
           // Tratar erros na requisição
           console.error(error);
         });
+    },
+    enableVolunteerInput() {
+      this.disabledVolunteer = false;
+    },
+    enableContactInput() {
+      this.disabledContact = false;
+    },
+    enableAddressInput() {
+      this.disabledAddress = false;
+    },
+    enableReasonInput() {
+      this.disabledReason = false;
     },
   },
 };
