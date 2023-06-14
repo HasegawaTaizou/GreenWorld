@@ -20,7 +20,7 @@
           <li class="personal-data">
             <span class="uppercase personal-data__type">cpf:</span>
             <input
-              :value="volunteer.cpf"
+            v-model="volunteer.cpf"
               class="personal-data__area personal-data__value"
               :disabled="disabledVolunteer"
             />
@@ -28,7 +28,7 @@
           <li class="personal-data">
             <span class="uppercase personal-data__type">rg:</span>
             <input
-              :value="volunteer.rg"
+            v-model="volunteer.rg"
               class="personal-data__area personal-data__value"
               :disabled="disabledVolunteer"
             />
@@ -36,7 +36,7 @@
           <li class="personal-data">
             <span class="personal-data__type">Data de nascimento:</span>
             <input
-              :value="volunteer.data_nascimento"
+            v-model="volunteer.data_nascimento"
               type="text"
               class="personal-data__area personal-data__value"
               :disabled="disabledVolunteer"
@@ -58,7 +58,7 @@
         <div class="volunteer__address">
           <span class="information">CEP:</span>
           <input
-            :value="volunteer.endereco?.cep"
+          v-model="volunteer.endereco.cep"
             class="address__area information__value"
             :disabled="disabledAddress"
           />
@@ -66,7 +66,7 @@
         <div class="volunteer__address">
           <span class="information">Logradouro:</span>
           <input
-            :value="volunteer.endereco?.logradouro"
+          v-model="volunteer.endereco.logradouro"
             class="address__area information__value"
             disabled
           />
@@ -74,7 +74,7 @@
         <div class="volunteer__address">
           <span class="information">Bairro:</span>
           <input
-            :value="volunteer.endereco?.bairro"
+          v-model="volunteer.endereco.bairro"
             class="address__area information__value"
             disabled
           />
@@ -82,7 +82,7 @@
         <div class="volunteer__address">
           <span class="information">Cidade:</span>
           <input
-            :value="volunteer.endereco?.cidade"
+          v-model="volunteer.endereco.cidade"
             class="address__area information__value"
             disabled
           />
@@ -90,7 +90,7 @@
         <div class="volunteer__address">
           <span class="information">Estado:</span>
           <input
-            :value="volunteer.endereco?.estado"
+          v-model="volunteer.endereco.estado"
             class="address__area information__value"
             disabled
           />
@@ -108,7 +108,7 @@
         <div class="volunteer__contact">
           <span class="contact">Telefone:</span>
           <input
-            :value="volunteer.telefone"
+          v-model="volunteer.telefone"
             class="contact__area contact__value"
             :disabled="disabledContact"
           />
@@ -116,7 +116,7 @@
         <div class="volunteer__contact">
           <span class="contact">E-mail:</span>
           <input
-            :value="volunteer.email"
+          v-model="volunteer.email"
             class="contact__area contact__value"
             :disabled="disabledContact"
           />
@@ -129,7 +129,7 @@
         </div>
 
         <input
-          :value="volunteer.motivo"
+          v-model="volunteer.motivo"
           class="reason__area volunteer-reason__text"
           :disabled="disabledReason"
         />
@@ -171,7 +171,9 @@
     </div>
 
     <div class="content-buttons">
-        <button class="update-data__button" @click="updateVolunteerData">Atualizar dados</button>
+      <button class="update-data__button" @click="updateVolunteerData">
+        Atualizar dados
+      </button>
       <button class="delete__button">Cancelar</button>
     </div>
   </section>
@@ -184,7 +186,6 @@ export default {
   name: "UpdateVolunteer",
   data() {
     return {
-      reason: "Valor do motivo",
       disabledVolunteer: true,
       disabledAddress: true,
       disabledContact: true,
