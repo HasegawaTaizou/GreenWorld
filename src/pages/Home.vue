@@ -417,7 +417,7 @@ import showSlides from "../assets/js/slider.js";
 export default {
   name: "Home",
   mounted() {
-    this.runShowSlides();
+    // this.runShowSlides();
     // this.runRegisterDefault();
   },
   methods: {
