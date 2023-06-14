@@ -29,9 +29,9 @@
     </div>
     <div class="project-images-container">
       <div class="project-images">
-        <img src="../assets/img/food_basket_distribution_project-image.png" alt="Project Image" class="project-image" />
-        <img src="../assets/img/food_basket_distribution_project-image.png" alt="Project Image" class="project-image" />
-        <img src="../assets/img/food_basket_distribution_project-image.png" alt="Project Image" class="project-image" />
+        <img src="../assets/img/distribuicao-alimentos3.png" alt="Project Image" class="project-image" />
+        <img src="../assets/img/distribuicao-de-alimentos1.png" alt="Project Image" class="project-image" />
+        <img src="../assets/img/distribuicao-de-alimentos2.png" alt="Project Image" class="project-image" />
       </div>
     </div>
   </main>

@@ -80,7 +80,7 @@
             <button class="know-more-home__button">Saiba mais</button>
           </a>
         </div>
-        <!-- <img class="green-world-logo" src="./img/green-world-logo.png" alt=""> -->
+        <!-- <img class="green-world-logo" src="../assets/img/green-world-logo.png" alt=""> -->
       </section>
 
       <section id="company-management">
@@ -192,7 +192,7 @@
               Curabitur commodo enim bibendum, condimentum augue id, elementum
               magna. Etiam in lacus placerat, faucibus felis sed, congue elit.
             </p>
-            <router-link class="be-a-volunteer__link" to="./volunteers.html">
+            <router-link class="be-a-volunteer__link" to="/volunteers">
               <button class="be-a-volunteer__button">Ser um voluntário</button>
             </router-link>
           </div>
@@ -249,15 +249,18 @@
         <h3 class="our-partners-title">Nossos parceiros</h3>
         <ul class="partners-content">
           <li class="partner">
-            <img src="../assets/img/our-partner-image.png" alt="" />
+            <img src="../assets/img/logo-assai.png" alt="" />
           </li>
 
           <li class="partner">
-            <img src="../assets/img/our-partner-image.png" alt="" />
+            <img src="../assets/img/logo-atacadao.png" alt="" />
           </li>
 
           <li class="partner">
-            <img src="../assets/img/our-partner-image.png" alt="" />
+            <img src="../assets/img/logo-pao-de-acucar.png" alt="" />
+          </li>
+          <li class="partner">
+            <img src="../assets/img/logo-sams-club.png" alt="" />
           </li>
         </ul>
 
@@ -265,7 +268,7 @@
           Está interessado em ser um de nossos parceiros? Clique em “saber
           mais”.
         </p>
-        <a class="partner__link" href="./our_partners.html">
+        <a class="partner__link" href="/our-partners">
           <button class="partner__button">Saber mais</button>
         </a>
       </section>
@@ -273,40 +276,15 @@
         <h3 class="founders-title">Fundadores</h3>
 
         <div class="founders-content">
+         
           <article class="founder-container">
             <img
               class="founder__image"
-              src="../assets/img/avatar-woman.png"
-              alt=""
-            />
-            <span class="founder__name">Mabel</span>
-            <span class="founder__office">Lorem ipsum dolor sit amet</span>
-            <nav class="social-media-founder-container">
-              <ul class="social-media">
-                <li>
-                  <a href="#" class="social"><i class="fab fa-twitter"></i></a>
-                </li>
-                <li>
-                  <a href="#" class="social"
-                    ><i class="fab fa-instagram"></i
-                  ></a>
-                </li>
-                <li>
-                  <a href="#" class="social"
-                    ><i class="fab fa-facebook-f"></i
-                  ></a>
-                </li>
-              </ul>
-            </nav>
-          </article>
-          <article class="founder-container">
-            <img
-              class="founder__image"
-              src="../assets/img/avatar-man.png"
+              src="../assets/img/founder2.jpeg"
               alt=""
             />
             <span class="founder__name">Maycon</span>
-            <span class="founder__office">Lorem ipsum dolor sit amet</span>
+            <span class="founder__office">Diretor Geral</span>
             <nav class="social-media-founder-container">
               <ul class="social-media">
                 <li>
@@ -328,18 +306,44 @@
           <article class="founder-container">
             <img
               class="founder__image"
-              src="../assets/img/avatar-woman.png"
+              src="../assets/img/founder3.jpeg"
               alt=""
             />
-            <span class="founder__name">Brenda</span>
-            <span class="founder__office">Lorem ipsum dolor sit amet</span>
+            <span class="founder__name">Mabel Dourado</span>
+            <span class="founder__office">Presidente</span>
             <nav class="social-media-founder-container">
               <ul class="social-media">
                 <li>
                   <a href="#" class="social"><i class="fab fa-twitter"></i></a>
                 </li>
                 <li>
-                  <a href="#" class="social"
+                  <a href="https://www.instagram.com/douradobel_/" class="social"
+                    ><i class="fab fa-instagram"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="https://www.facebook.com/izabel.douradopais" class="social"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                </li>
+              </ul>
+            </nav>
+          </article>
+          <article class="founder-container">
+            <img
+              class="founder__image"
+              src="../assets/img/founder1.jpeg"
+              alt=""
+            />
+            <span class="founder__name">Brenda Cardoso</span>
+            <span class="founder__office">Coordenadora Geral</span>
+            <nav class="social-media-founder-container">
+              <ul class="social-media">
+                <li>
+                  <a href="#" class="social"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/brendacarddoso_/" class="social"
                     ><i class="fab fa-instagram"></i
                   ></a>
                 </li>

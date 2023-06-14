@@ -19,6 +19,12 @@
     font-size: 1.6rem;
 }
 
+.partner img{
+    height: 115px;
+    width: 165px;
+}
+
+
 @media (max-width: 500px){
     #our-partners{
         padding: 100px 40px; 

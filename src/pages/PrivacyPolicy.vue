@@ -224,6 +224,9 @@
 </template>
       
 <script>
+import plusSign from '@/assets/img/plus-sign-icon.png'
+import minusSign from '@/assets/img/minus-sign-icon.png'
+
 export default {
   name: "PrivacyPolicy",
   methods: {
@@ -233,10 +236,10 @@ export default {
 
       if (display == "block") {
         document.querySelector(element).style.display = "none";
-        img.src = "../../assets/img/plus-sign-icon.png";
+        img.src = plusSign;
       } else {
         document.querySelector(element).style.display = "block";
-        img.src = "../assets/img/minus-sign-icon.png";
+        img.src = minusSign;
       }
     },
   },

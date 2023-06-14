@@ -2,7 +2,7 @@
   <header>
     <div class="food_basket_distribution_project-container">
       <h1 class="food-basket-distribution-project__title">
-        DISTRIBUIÇÃO DE CESTAS BÁSICAS
+        CADA GOTA CONTA
       </h1>
       <router-link class="return__link" to="/"><img src="../assets/img/return-icon.png" alt="Return Icon"
           class="return__icon" /></router-link>
@@ -17,41 +17,19 @@
         desempenha um papel fundamental nesse contexto, pois a água é um recurso valioso e seu uso eficiente é essencial
         para a sustentabilidade agrícola.
       </p>
-      <p>
-        O sistema de irrigação por gotejamento é uma técnica que permite a aplicação precisa e controlada da água
-        diretamente na zona radicular das plantas, em pequenas quantidades e de forma regular. Esse método reduz
-        significativamente o desperdício de água, uma vez que ela é entregue diretamente às plantas, evitando perdas por
-        evaporação e lixiviação.
-      </p>
-
-
+    
     </div>
     <div class="how-is-possible limit">
       <h2 class="how-is-possible__title">Como é possível?</h2>
-      <ul class="how-is-possible__list">
-        <li class="how-is-possible__item">
-          Doar produtos que não passaram no teste de vendas (produtos com a
-          embalagem danificada e bons para o consumo);
-        </li>
-        <li class="how-is-possible__item">
-          Parcerias com supermercados e empresas;
-        </li>
-        <li class="how-is-possible__item">
-          Utilizar alimentos que são considerado sobras para criar novas
-          receitas (SITE);
-        </li>
-        <li class="how-is-possible__item">Utilizar sobras como adubo;</li>
-        <li class="how-is-possible__item">
-          Ter controle da produção para não causar desperdícios e manter o
-          controle de validade de alimentos.
-        </li>
-      </ul>
+      <p class="how-is-possible__text">
+        O sistema de irrigação por gotejamento é uma técnica que permite a aplicação precisa e controlada da água diretamente na zona radicular das plantas, em pequenas quantidades e de forma regular. Esse método reduz significativamente o desperdício de água, uma vez que ela é entregue diretamente às plantas, evitando perdas por evaporação e lixiviação.
+      </p>
     </div>
     <div class="project-images-container">
       <div class="project-images">
-        <img src="../assets/img/food_basket_distribution_project-image.png" alt="Project Image" class="project-image" />
-        <img src="../assets/img/food_basket_distribution_project-image.png" alt="Project Image" class="project-image" />
-        <img src="../assets/img/food_basket_distribution_project-image.png" alt="Project Image" class="project-image" />
+        <img src="../assets/img/irrigacao-por-gotejamento 1.png" alt="Project Image" class="project-image" />
+        <img src="../assets/img/drip-irrigation.png" alt="Project Image" class="project-image" />
+        <img src="../assets/img/tubo_irrigacaowebp 1.png" alt="Project Image" class="project-image" />
       </div>
     </div>
   </main>
