@@ -30,6 +30,7 @@ h3{
 
 .back-top{
   color: var(--subtitle-color);
+  text-shadow: 1px 1px 15px #FFFF;
   position: fixed;
   right: 16px;
   bottom: 16px;

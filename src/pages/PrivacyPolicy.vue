@@ -205,8 +205,8 @@
     <div class="support-content">
       <span class="support__title">Suporte</span>
       <div class="support__links">
-        <a class="support__link" href="./faq.html">FAQ</a>
-        <a class="support__link" href="#">Política de privacidade</a>
+        <a class="support__link" href="/faq">FAQ</a>
+        <a class="support__link" href="/privacy-policy">Política de privacidade</a>
       </div>
     </div>
     <div class="contact-content">
@@ -247,5 +247,6 @@ export default {
 @import url("../assets/css/privacyPolicy/generalStyle.css");
 @import url("../assets/css/privacyPolicy/privacyPolicyStyle.css");
 @import url("../assets/css/privacyPolicy/privacyPolicyResponsiveStyle.css");
+@import url("../assets/css/index/footerResponsiveStyle.css");
 </style>
       
