@@ -199,10 +199,6 @@
         >
           Continuar
         </button>
-        <!-- <NotificationBar
-          v-if="$store.state.showNotification"
-          :message="'Cadastro realizado com sucesso!'"
-        /> -->
       </form>
     </main>
     <footer>
@@ -222,16 +218,11 @@ import validationsVolunteerPartOne from "../assets/js/validations/validations-vo
 import { useVuelidate } from "@vuelidate/core";
 import { mapMutations } from "vuex";
 
-import NotificationBar from "../assets/components/NotificationBar.vue";
-
 export default {
   name: "VolunteerRegistrationPartOne",
 
   setup() {
     return { v$: useVuelidate() };
-  },
-  components: {
-    // NotificationBar,
   },
   data() {
     const formData = this.$store.state.formData;

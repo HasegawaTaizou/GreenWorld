@@ -25,10 +25,7 @@ export default async function submitFormVolunteerPartOne() {
   const isFormCorrect = await this.v$.$validate();
 
   if (isFormCorrect) {
-    console.log('show notification: ', this.notificationStatus);
-    
     this.$store.commit("updateFormData", this.formData);
-    this.$store.commit("updateNotificationStatus", this.notificationStatus);
     this.$router.push("/volunteer-registration-part-two");
   } else {
     for (const field of fieldsVolunteerPartOne) {

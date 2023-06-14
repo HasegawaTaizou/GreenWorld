@@ -68,6 +68,7 @@ export default {
   border-left: 5px solid #408d7b;
   border-radius: 4px;
   min-width: 356px;
+  max-width: 356px;
   min-height: 64px;
   text-align: center;
   position: fixed !important;

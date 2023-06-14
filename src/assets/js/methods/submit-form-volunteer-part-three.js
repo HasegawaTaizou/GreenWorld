@@ -5,7 +5,6 @@ export default async function submitFormVolunteerPartThree() {
   this.formData.motivo = this.inputReason;
   this.formData.experiencia = this.selectHaveExperience;
   this.$store.commit("updateFormData", this.formData);
-
   console.log("form 3: ", this.formData);
 
   this.v$.$touch();
@@ -13,6 +12,9 @@ export default async function submitFormVolunteerPartThree() {
   const isFormCorrect = await this.v$.$validate();
 
   if (isFormCorrect) {
+    //To show notification
+    this.$store.state.showNotification = true
+
     this.$store.commit("updateFormData", this.formData);
     postDataPartThree(this.formData);
   } else {

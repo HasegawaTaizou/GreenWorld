@@ -32,10 +32,7 @@
             ref="inputReason"
           ></textarea>
           <div v-if="v$.inputReason.$error">
-            <p
-              v-if="v$.inputReason.required"
-              class="error-text"
-            >
+            <p v-if="v$.inputReason.required" class="error-text">
               Preencha o motivo!
             </p>
           </div>
@@ -67,10 +64,7 @@
             </option>
           </select>
           <div v-if="v$.selectHaveExperience.$error">
-            <p
-              v-if="v$.selectHaveExperience.required"
-              class="error-text"
-            >
+            <p v-if="v$.selectHaveExperience.required" class="error-text">
               Selecione o tempo de experiência
             </p>
           </div>
@@ -87,8 +81,12 @@
         >
           Continuar
         </button>
-        <NotificationBar v-if="showNotification" :message="notificationMessage" />
       </form>
+      <NotificationBar
+        v-if="$store.state.showNotification"
+        :route="'/'"
+        :message="'Cadastro realizado com sucesso! Verifique seu e-mail'"
+      />
     </main>
     <footer>
       <p class="footer__text">
@@ -101,9 +99,9 @@
 <script>
 import submitFormVolunteerPartThree from "../assets/js/methods/submit-form-volunteer-part-three.js";
 import dataFormPartThree from "../assets/js/data/data-form-part-three.js";
-import NotificationBar from '../assets/components/NotificationBar.vue'
+import NotificationBar from "../assets/components/NotificationBar.vue";
 import { useVuelidate } from "@vuelidate/core";
-import validationsVolunteerPartThree from '../assets/js/validations/validations-volunteer-part-three.js';
+import validationsVolunteerPartThree from "../assets/js/validations/validations-volunteer-part-three.js";
 
 export default {
   name: "VolunteerRegistrationPartThree",
@@ -111,7 +109,7 @@ export default {
     return { v$: useVuelidate() };
   },
   components: {
-    // NotificationBar,
+    NotificationBar,
   },
   data() {
     const formData = this.$store.state.formData;
