@@ -174,7 +174,9 @@
       <button class="update-data__button" @click="updateVolunteerData">
         Atualizar dados
       </button>
+      <router-link to="/dashboard/all-volunteers/volunteer/">
       <button class="delete__button">Cancelar</button>
+    </router-link>
     </div>
   </section>
 </template>
