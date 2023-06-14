@@ -87,6 +87,7 @@
   grid-template-areas: 
   "icon title arrow"
   ". list list";
+  cursor: pointer;
 }
 
 .navigation-field-list img {
