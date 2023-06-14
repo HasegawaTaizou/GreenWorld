@@ -52,11 +52,8 @@ export default new Vuex.Store({
     updateVolunteerCpf(state, cpf) {
       state.formData.selectedVolunteerCpf = cpf;
     },
-    updateNotificationStatus(state, status) {
-      state.showNotification = status;
-    },
-    hideNotification(state) {
-      state.showNotification = false;
+    setShowNotification(state, value) {
+      state.showNotification = value;
     },
   },
 });

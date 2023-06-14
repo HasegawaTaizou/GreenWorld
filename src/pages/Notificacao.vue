@@ -2,7 +2,7 @@
   <div>
     <button @click="$store.state.showNotification = true">Mostrar Notificação</button>
   </div>
-  <notification-bar v-if="$store.state.showNotification" :message="'Cadastro realizado com sucesso!'"></notification-bar>
+  <notification-bar v-if="$store.state.showNotification" :route="'/'" :message="'Cadastro realizado com sucesso!'"></notification-bar>
 </template>
 
 <script>

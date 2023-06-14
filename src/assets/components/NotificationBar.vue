@@ -1,16 +1,19 @@
 <template>
-  <div v-if="notificationStatus" class="notification">
+  <div :class="{ 'notification': notificationStatus, 'hidden': !notificationStatus }">
     <div class="notification-informations">
       <i class="fa-solid fa-circle-exclamation"></i>
       <p class="notification__text">{{ message }}</p>
     </div>
-    <div class="progress-bar" :style="{ width: progressWidth }"></div>
+    <div class="progress-bar-container">
+      <div class="progress-bar" :style="{ width: progressWidth, transition: progressTransition }"></div>
+    </div>
   </div>
 </template>
 
 <script>
 import { useStore } from "vuex";
-import { computed, reactive, onMounted, watch } from 'vue';
+import { onMounted, computed, ref } from "vue";
+import { useRouter } from "vue-router";
 
 export default {
   name: "NotificationBar",
@@ -19,50 +22,41 @@ export default {
       type: String,
       required: true,
     },
+    route: {
+      type: String,
+      default: "",
+    },
   },
   setup(props) {
     const store = useStore();
-    const notificationState = reactive({
-      progressWidth: "100%",
-    });
-
+    const router = useRouter();
     const notificationStatus = computed(() => store.state.showNotification);
 
-    const showNotification = () => {
-      setTimeout(() => {
-        store.commit("hideNotification");
-      }, 3000);
+    const progressWidth = ref("100%");
+    const progressTransition = ref("");
 
-      // Iniciar a animação da barra de progresso
-      const startTime = Date.now();
-      const animationFrame = () => {
-        const currentTime = Date.now();
-        const elapsedTime = currentTime - startTime;
-        const totalTime = 3000;
-        const percentage = (elapsedTime / totalTime) * 100;
-        notificationState.progressWidth = `${84 - percentage}%`;
-
-        if (currentTime - startTime < totalTime) {
-          requestAnimationFrame(animationFrame);
-        }
-      };
-      requestAnimationFrame(animationFrame);
+    const redirectToRoute = () => {
+      if (props.route) {
+        router.push(props.route);
+      }
     };
 
     onMounted(() => {
-      showNotification();
-    });
-
-    watch(notificationStatus, (newValue) => {
-      if (!newValue) {
-        notificationState.progressWidth = "0%";
-      }
+      store.commit("setShowNotification", true);
+      setTimeout(() => {
+        progressTransition.value = "width 3s linear";
+        progressWidth.value = "0%";
+        setTimeout(() => {
+          store.commit("setShowNotification", false);
+          redirectToRoute();
+        }, 3000);
+      }, 100);
     });
 
     return {
-      message: props.message,
-      progressWidth: computed(() => notificationState.progressWidth),
       notificationStatus,
+      progressWidth,
+      progressTransition,
     };
   },
 };
@@ -83,6 +77,12 @@ export default {
   flex-direction: column;
   top: 60px;
   gap: 12px;
+  transition: opacity 0.5s ease-out;
+}
+
+.hidden {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
 }
 
 .notification-informations {
@@ -104,10 +104,16 @@ export default {
   padding-right: 12px;
 }
 
+.progress-bar-container {
+  width: 100%;
+  overflow: hidden;
+}
+
 .progress-bar {
   height: 4px;
   background-color: #6ccdb6;
   width: 100%;
-  transition: width 0.5s linear;
+  transform-origin: right;
+  transition: width 3s linear;
 }
 </style>
