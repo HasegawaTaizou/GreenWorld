@@ -55,7 +55,7 @@ label {
 
 .form__photo-container {
   grid-area: photo;
-  margin: 112px 0px;
+
 }
 
 .form__photo-container input[type="file"] {
@@ -69,6 +69,9 @@ label {
   border-radius: 5px;
   cursor: pointer;
   margin: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .form__photo-container label::after {

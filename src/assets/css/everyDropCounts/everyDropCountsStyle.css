@@ -80,3 +80,10 @@ main {
   display: flex;
   justify-content: space-around;
 }
+
+.project-image{
+  width: 400px;
+  height: 550px;
+  border-radius: 20px;
+
+}

@@ -212,8 +212,8 @@
     <div class="support-content">
       <span class="support__title">Suporte</span>
       <div class="support__links">
-        <a class="support__link" href="./faq.html">FAQ</a>
-        <a class="support__link" href="#">Política de privacidade</a>
+        <a class="support__link" href="/faq">FAQ</a>
+        <a class="support__link" href="/privacy-policy">Política de privacidade</a>
       </div>
     </div>
     <div class="contact-content">
