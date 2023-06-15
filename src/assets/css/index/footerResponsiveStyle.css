@@ -38,7 +38,7 @@
 
 @media (max-width: 500px) {
     footer{
-        padding: 60px 18px 20px 18px ;
+        padding: 60px 3px 20px 18px;
     }
 
     .meaning-of-agriculture__title {
@@ -76,6 +76,7 @@
 
     .meaning-of-agriculture-content{
         place-self: start;
+        max-width: 340px;
     }
 
     .copyright {
