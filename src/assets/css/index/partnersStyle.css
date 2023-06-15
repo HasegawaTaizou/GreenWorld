@@ -36,4 +36,9 @@
     #our-partners{
         padding: 70px 40px; 
     }
+
+    .partner-text{
+        color: black;
+        font-size: 1.4rem;
+    }
 }

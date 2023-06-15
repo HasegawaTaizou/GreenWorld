@@ -99,14 +99,6 @@
 
 }
 
-@media (max-width: 970px) {
-    #family {
-        align-items: center;
-        padding: 70px 0;
-
-    }
-}
-
 @media (max-width: 730px) {
     .projects-title {
         font-size: 2.1rem;
@@ -130,6 +122,8 @@
     }
 
 }
+
+
 
 @media (max-width: 600px) {
 
@@ -173,5 +167,15 @@
 @media (max-width: 500px) {
     .projects-title-content {
         padding: 0 35px;
+    }
+
+    #family {
+        align-items: center;
+        padding: 70px 0;
+        gap: 50px;
+    }
+
+    .family-text{
+        font-size: 1.4rem;
     }
 }
