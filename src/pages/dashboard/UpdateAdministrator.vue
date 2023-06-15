@@ -1,19 +1,5 @@
 <template>
-  <header>
-    <nav>
-      <img @click="openNavFull" src="./img/menu_image.png" alt="Menu" />
-    </nav>
-
-    <div class="container-image-log-out">
-      <img src="./img/profile_administrator.png" alt="Image profile" />
-      <a href="#" class="log-out-content">
-        <button class="log-out__button">
-          <img src="./img/logout_image.png" alt="Image log out" />
-          <span class="log-out__text">Log out</span>
-        </button>
-      </a>
-    </div>
-  </header>
+  
   <main>
 
     <section id="seeds">

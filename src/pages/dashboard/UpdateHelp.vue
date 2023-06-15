@@ -1,19 +1,4 @@
 <template>
-  <header>
-    <nav>
-      <img onclick="openNavFull" src="./img/menu_image.png" alt="Menu" />
-    </nav>
-
-    <div class="container-image-log-out">
-      <img src="./img/profile_administrator.png" alt="Image profile" />
-      <a href="#" class="log-out-content">
-        <button class="log-out__button">
-          <img src="./img/logout_image.png" alt="Image log out" />
-          <span class="log-out__text">Log out</span>
-        </button>
-      </a>
-    </div>
-  </header>
   <main>
     <section id="create-help">
       <div class="help__image-name">
@@ -189,7 +174,7 @@
 
                 <li class="seed__name-img">
                   <span class="seed__name">Melancia</span>
-                  <img src="./img/seed.png" alt="Seed">
+                  <img src="../../assets/img/passion_fruit_image.webp" alt="Seed">
                 </li>
               </ul>
             </div>
@@ -212,24 +197,21 @@
               <ul class="seed__list">
                 <li class="seed__name-img">
                   <span class="seed__name">Melancia</span>
-                  <img src="./img/seed.png" alt="Seed">
+                  <img src="../../assets/img/passion_fruit_image.webp" alt="Seed">
                 </li>
                 <li class="seed__name-img">
                   <span class="seed__name">Melancia</span>
-                  <img src="./img/seed.png" alt="Seed">
+                  <img src="../../assets/img/passion_fruit_image.webp" alt="Seed">
                 </li>
                 <li class="seed__name-img">
                   <span class="seed__name">Melancia</span>
-                  <img src="./img/seed.png" alt="Seed">
+                  <img src="../../assets/img/passion_fruit_image.webp" alt="Seed">
                 </li>
                 <li class="seed__name-img">
                   <span class="seed__name">Melancia</span>
-                  <img src="./img/seed.png" alt="Seed">
+                  <img src="../../assets/img/passion_fruit_image.webp" alt="Seed">
                 </li>
-                <li class="seed__name-img">
-                  <span class="seed__name">Melancia</span>
-                  <img src="./img/seed.png" alt="Seed">
-                </li>
+               
 
               </ul>
             </div>

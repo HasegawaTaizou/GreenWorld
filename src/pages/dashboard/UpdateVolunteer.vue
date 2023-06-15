@@ -3,7 +3,7 @@
     <div class="volunteer-content">
       <img
         class="volunteer__image"
-        src="./img/volunteer-image.webp"
+        src="../../assets/img/volunteers-image.png"
         alt="Volunteer image"
       />
 

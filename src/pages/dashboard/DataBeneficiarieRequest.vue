@@ -1,14 +1,14 @@
 <template>
   <header>
     <nav>
-      <img onclick="openNavFull" src="./img/menu_image.png" alt="Menu" />
+      <img onclick="openNavFull" src="../../assets/img/menu.png" alt="Menu" />
     </nav>
 
     <div class="container-image-log-out">
-      <img src="./img/profile_administrator.png" alt="Image profile" />
+      <img src="../../assets/img/administrator.png" alt="Image profile" />
       <a href="#" class="log-out-content">
         <button class="log-out__button">
-          <img src="./img/logout_image.png" alt="Image log out" />
+          <img src="../../assets/img/logout_image.png" alt="Image log out" />
           <span class="log-out__text">Log out</span>
         </button>
       </a>
@@ -17,7 +17,7 @@
   <main>
 
     <div class="volunteer-content">
-      <img class="volunteer__image" src="./img/beneficiarie-image.png" alt="Volunteer image">
+      <img class="volunteer__image" src="../../assets/img/volunteer-registration-image.png" alt="Volunteer image">
 
       <div class="volunteer__tag-name-data">
         <span class="volunteer__tag">Beneficiado</span>
