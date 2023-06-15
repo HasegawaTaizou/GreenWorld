@@ -45,9 +45,8 @@
             class="have-experience__select"
             v-model="selectHaveExperience"
             :class="{ error: v$.selectHaveExperience.$error }"
-            ref="selectHaveExperience"
           >
-            <option class="have-experience__default" value>
+            <option class="have-experience__default" value="">
               Selecione o tempo de experiência
             </option>
             <option class="have-experiencie__option" value="Menos de 1 ano">

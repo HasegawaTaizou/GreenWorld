@@ -23,6 +23,7 @@
               v-model="volunteer.cpf"
               class="personal-data__area personal-data__value"
               :disabled="disabledVolunteer"
+              :class="{ 'edit-input': !disabledVolunteer }"
             />
           </li>
           <li class="personal-data">
@@ -31,6 +32,7 @@
               v-model="volunteer.rg"
               class="personal-data__area personal-data__value"
               :disabled="disabledVolunteer"
+              :class="{ 'edit-input': !disabledVolunteer }"
             />
           </li>
           <li class="personal-data">
@@ -39,7 +41,7 @@
               v-model="volunteer.data_nascimento"
               type="text"
               class="personal-data__area personal-data__value"
-              :disabled="disabledVolunteer"
+              disabled
             />
           </li>
         </ul>
@@ -61,6 +63,7 @@
             v-model="volunteer.endereco.cep"
             class="address__area information__value"
             :disabled="disabledAddress"
+            :class="{ 'edit-input': !disabledAddress }"
           />
         </div>
         <div class="volunteer__address">
@@ -111,6 +114,7 @@
             v-model="volunteer.telefone"
             class="contact__area contact__value"
             :disabled="disabledContact"
+            :class="{ 'edit-input': !disabledContact }"
           />
         </div>
         <div class="volunteer__contact">
@@ -119,6 +123,7 @@
             v-model="volunteer.email"
             class="contact__area contact__value"
             :disabled="disabledContact"
+            :class="{ 'edit-input': !disabledContact }"
           />
         </div>
       </div>
@@ -132,22 +137,37 @@
           v-model="volunteer.motivo"
           class="reason__area volunteer-reason__text"
           :disabled="disabledReason"
+          :class="{ 'edit-input': !disabledReason }"
         />
       </div>
       <div class="volunteer-content__experience">
         <div class="content__title-icon">
           <h3 class="information__title">Experiência</h3>
           <i
-            @click="update('.experience__area')"
+          @click="enableSelectExperience"
             class="volunteer__icon far fa-edit"
           ></i>
         </div>
-
-        <span class="experience__area volunteer__experience">
-          Menos de 1 ano
-        </span>
+        <select
+          class="have-experience__select"
+          v-model="volunteer.experiencia"
+          :disabled="disabledExperience"
+          :class="{ 'edit-input': !disabledExperience }"
+        >
+          <option class="have-experiencie__option" value="Menos de 1 ano">
+            Menos de 1 ano
+          </option>
+          <option class="have-experiencie__option" value="Entre 1 a 5 anos">
+            Entre 1 a 5 anos
+          </option>
+          <option class="have-experiencie__option" value="Entre 5 a 20 anos">
+            Entre 5 a 20 anos
+          </option>
+          <option class="have-experiencie__option" value="Mais de 20 anos">
+            Mais de 20 anos
+          </option>
+        </select>
       </div>
-
       <div class="volunteer-content__helps">
         <h3 class="information__title">Ajudas das quais participou</h3>
         <ul class="help-list">
@@ -192,6 +212,7 @@ export default {
       disabledAddress: true,
       disabledContact: true,
       disabledReason: true,
+      disabledExperience: true,
       volunteer: [],
     };
   },
@@ -213,8 +234,22 @@ export default {
     postData() {
       const volunteerData = {
         cpf: this.volunteer.cpf,
-        novos_dados: this.volunteer
-      }
+        novos_dados: {
+          cpf: this.volunteer.cpf,
+          email: this.volunteer.email,
+          experiencia: this.volunteer.experiencia,
+          motivo: this.volunteer.motivo,
+          rg: this.volunteer.rg,
+          telefone: this.volunteer.telefone,
+          endereco: {
+            cep: this.volunteer.endereco.cep,
+            bairro: this.volunteer.endereco.bairro,
+            cidade: this.volunteer.endereco.cidade,
+            complemento: this.volunteer.endereco.complemento,
+            estado: this.volunteer.endereco.estado,
+          },
+        },
+      };
 
       console.log(volunteerData);
 
@@ -266,6 +301,9 @@ export default {
     },
     enableReasonInput() {
       this.disabledReason = false;
+    },
+    enableSelectExperience() {
+      this.disabledExperience = false;
     },
   },
 };
