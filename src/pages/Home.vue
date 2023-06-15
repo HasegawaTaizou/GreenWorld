@@ -401,21 +401,17 @@
 
 <script>
 import showSlides from "../assets/js/slider.js";
-// import removeRegisterDefault from '../assets/js/home.js'
+// import  from "../assets/js/menu.js";
 
 export default {
   name: "Home",
   mounted() {
-    this.runShowSlides();
-    // this.runRegisterDefault();
+    this.runShowSlides()
   },
   methods: {
     runShowSlides() {
-      showSlides();
+      showSlides()
     },
-    // runRegisterDefault() {
-    //   removeRegisterDefault()
-    // }
   },
 };
 </script>
