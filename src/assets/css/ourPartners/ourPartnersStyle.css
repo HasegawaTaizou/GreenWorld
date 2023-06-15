@@ -2,7 +2,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 54px 98px 112px 98px;
+  width: 100%;
+  padding: 54px 98px 112px 98px;
 }
 
 .our-partners-images-container {
@@ -77,3 +78,11 @@ header {
   font-family: inherit;
   font-size: 1.25rem;
 }
+
+
+.partner {
+  height: 115px;
+  width: 145px;
+  transition: all .5s;
+}
+

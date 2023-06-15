@@ -41,4 +41,7 @@ h3{
   font-size: 2rem;
 }
 
+.back-top:hover{
+  transform: scale(1.3);
+}
 

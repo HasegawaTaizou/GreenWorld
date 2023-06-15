@@ -15,6 +15,13 @@
     width: 300px;
     height: 300px;
     border-radius: 300px;
+    transition: 0.6s ease-out;
+    box-shadow: 1px 1px 15px #717171;
+    margin-bottom: 20px;
+}
+
+.founder__image:hover{
+    transform: scale(1.1);
 }
 
 .founder-container{
