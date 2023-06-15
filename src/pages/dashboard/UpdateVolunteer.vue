@@ -20,7 +20,7 @@
           <li class="personal-data">
             <span class="uppercase personal-data__type">cpf:</span>
             <input
-            v-model="volunteer.cpf"
+              v-model="volunteer.cpf"
               class="personal-data__area personal-data__value"
               :disabled="disabledVolunteer"
             />
@@ -28,7 +28,7 @@
           <li class="personal-data">
             <span class="uppercase personal-data__type">rg:</span>
             <input
-            v-model="volunteer.rg"
+              v-model="volunteer.rg"
               class="personal-data__area personal-data__value"
               :disabled="disabledVolunteer"
             />
@@ -36,7 +36,7 @@
           <li class="personal-data">
             <span class="personal-data__type">Data de nascimento:</span>
             <input
-            v-model="volunteer.data_nascimento"
+              v-model="volunteer.data_nascimento"
               type="text"
               class="personal-data__area personal-data__value"
               :disabled="disabledVolunteer"
@@ -58,7 +58,7 @@
         <div class="volunteer__address">
           <span class="information">CEP:</span>
           <input
-          v-model="volunteer.endereco.cep"
+            v-model="volunteer.endereco.cep"
             class="address__area information__value"
             :disabled="disabledAddress"
           />
@@ -66,7 +66,7 @@
         <div class="volunteer__address">
           <span class="information">Logradouro:</span>
           <input
-          v-model="volunteer.endereco.logradouro"
+            v-model="volunteer.endereco.logradouro"
             class="address__area information__value"
             disabled
           />
@@ -74,7 +74,7 @@
         <div class="volunteer__address">
           <span class="information">Bairro:</span>
           <input
-          v-model="volunteer.endereco.bairro"
+            v-model="volunteer.endereco.bairro"
             class="address__area information__value"
             disabled
           />
@@ -82,7 +82,7 @@
         <div class="volunteer__address">
           <span class="information">Cidade:</span>
           <input
-          v-model="volunteer.endereco.cidade"
+            v-model="volunteer.endereco.cidade"
             class="address__area information__value"
             disabled
           />
@@ -90,7 +90,7 @@
         <div class="volunteer__address">
           <span class="information">Estado:</span>
           <input
-          v-model="volunteer.endereco.estado"
+            v-model="volunteer.endereco.estado"
             class="address__area information__value"
             disabled
           />
@@ -108,7 +108,7 @@
         <div class="volunteer__contact">
           <span class="contact">Telefone:</span>
           <input
-          v-model="volunteer.telefone"
+            v-model="volunteer.telefone"
             class="contact__area contact__value"
             :disabled="disabledContact"
           />
@@ -116,7 +116,7 @@
         <div class="volunteer__contact">
           <span class="contact">E-mail:</span>
           <input
-          v-model="volunteer.email"
+            v-model="volunteer.email"
             class="contact__area contact__value"
             :disabled="disabledContact"
           />
@@ -171,12 +171,12 @@
     </div>
 
     <div class="content-buttons">
-      <button class="update-data__button" @click="updateVolunteerData">
+      <button class="update-data__button" @click="postData">
         Atualizar dados
       </button>
       <router-link to="/dashboard/all-volunteers/volunteer/">
-      <button class="delete__button">Cancelar</button>
-    </router-link>
+        <button class="delete__button">Cancelar</button>
+      </router-link>
     </div>
   </section>
 </template>
@@ -210,6 +210,28 @@ export default {
     },
   },
   methods: {
+    postData() {
+      const volunteerData = {
+        cpf: this.volunteer.cpf,
+        novos_dados: this.volunteer
+      }
+
+      console.log(volunteerData);
+
+      axios
+        .put(
+          "http://127.0.0.1:8080/v6/green-world/update_voluntario_pelo_cpf",
+          volunteerData
+        )
+        .then((response) => {
+          // Manipular a resposta do servidor
+          console.log(response.data);
+        })
+        .catch((error) => {
+          // Tratar erros na requisição
+          console.error(error);
+        });
+    },
     updateVolunteerData() {
       console.log(this.volunteer);
     },
