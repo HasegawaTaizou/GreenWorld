@@ -7,27 +7,16 @@ main {
     gap: 100px;
 }
 
-header {
+#volunteer-container {
+    max-height: 100vh;
+    height: 100%;
+    overflow-y: scroll;
+    padding: 64px 0px 64px 64px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 32px;
     align-items: center;
-    padding: 20px 30px;
-    height: 10vh;
-
 }
-
-.container-image-log-out {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-}
-
-.close__button {
-    grid-area: close;
-    place-self: start start;
-    padding-left: 30px;
-}
-
 
 .volunteer__image {
     border-radius: 15px;
@@ -186,20 +175,6 @@ header {
     font-size: 1.25rem;
     font-weight: 500;
 }
-
-.volunteer-content__helps{
-
-}
-
-/* 
-.volunteer-content__helps, 
-.volunteer-content__reason,
-.volunteer-content__experience 
-{
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-} */
 
 .volunteer__icon {
     font-size: 1.5rem;
