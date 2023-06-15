@@ -278,9 +278,9 @@
           Está interessado em ser um de nossos parceiros? Clique em “saber
           mais”.
         </p>
-        <a class="partner__link" href="/our-partners">
+        <router-link class="partner__link" to="/our-partners">
           <button class="partner__button">Saber mais</button>
-        </a>
+        </router-link>
       </section>
       <section id="founders">
         <h3 class="founders-title">Fundadores</h3>
