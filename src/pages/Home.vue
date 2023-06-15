@@ -2,39 +2,31 @@
   <div id="body">
     <header>
       <nav class="navigation-container">
-        <img
-          class="menu"
-          onclick="openNavHalf()"
-          id="icon-half-menu"
-          aria-hidden="true"
-          src="../assets/img/menu.png "
-          alt=""
-        />
+        <img class="menu" onclick="openNavHalf()" id="icon-half-menu" aria-hidden="true" src="../assets/img/menu.png "
+          alt="" />
         <ul class="navigations">
           <li class="navigation">
-            <router-link to="#who-we-are">Quem somos?</router-link>
+            <a href="#who-we-are">Quem somos?</a>
           </li>
           <li class="navigation">
-            <router-link to="#our-cause">Nossa causa</router-link>
+            <a href="#our-cause">Nossa causa</a>
           </li>
           <li class="navigation">
-            <router-link to="#projects">Projetos</router-link>
+            <a href="#projects">Projetos</a>
           </li>
           <li class="navigation">
-            <router-link to="#family">Famílias</router-link>
+            <a href="#family">Famílias</a>
           </li>
           <li class="navigation">
-            <router-link to="#our-partners">Parcerias</router-link>
+            <a href="#our-partners">Parcerias</a>
           </li>
           <li class="navigation">
-            <router-link to="/volunteers">Voluntários</router-link>
+            <a href="/volunteers">Voluntários</a>
           </li>
         </ul>
         <ul id="mySidenav" class="sidenav">
           <li>
-            <router-link to="#" class="closebtn" onclick="closeNav()"
-              ><i class="fas fa-times"></i
-            ></router-link>
+            <router-link to="#" class="closebtn" onclick="closeNav()"><i class="fas fa-times"></i></router-link>
           </li>
           <li>
             <router-link to="#casa">Início</router-link>
@@ -59,10 +51,7 @@
                     Log In
                 </button>
             </a> -->
-        <router-link
-          class="sign-up__link"
-          to="/volunteer-registration-part-one"
-        >
+        <router-link class="sign-up__link" to="/volunteer-registration-part-one">
           <button class="sign-up__button">Cadastre-se</button>
         </router-link>
       </div>
@@ -89,11 +78,7 @@
       <section id="company-management">
         <article class="article-mission">
           <div class="article-title">
-            <img
-              class="article-title__icon"
-              src="../assets/img/icon-mission-article.png"
-              alt=""
-            />
+            <img class="article-title__icon" src="../assets/img/icon-mission-article.png" alt="" />
             <span class="article-title__span">Missão</span>
           </div>
           <p class="article-text">
@@ -103,11 +88,7 @@
         </article>
         <article class="article-vision">
           <div class="article-title">
-            <img
-              class="article-title__icon"
-              src="../assets/img/icon-vision-article.png"
-              alt=""
-            />
+            <img class="article-title__icon" src="../assets/img/icon-vision-article.png" alt="" />
             <span class="article-title__span">Visão</span>
           </div>
           <p class="article-text">
@@ -117,11 +98,7 @@
         </article>
         <article class="article-values">
           <div class="article-title">
-            <img
-              class="article-title__icon"
-              src="../assets/img/icon-values-article.png"
-              alt=""
-            />
+            <img class="article-title__icon" src="../assets/img/icon-values-article.png" alt="" />
             <span class="article-title__span">Valores</span>
           </div>
           <p class="article-text">
@@ -132,21 +109,48 @@
       </section>
 
       <section id="who-we-are">
-        <img class="teste" src="../assets/img/mato1.png" alt="" />
+        <div class="who-we-are-images">
+          <img class="who-we-are__image fade" src="../assets/img/teste.jpg" alt />
+          <img class="who-we-are__image" src="../assets/img/vista-frontal-plantacao.jpg" alt />
+          <img class="who-we-are__image fade" src="../assets/img/rufus-o-dea-p3Loavrv6z8-unsplash.jpg" alt />
+          <img class="who-we-are__image" src="../assets/img/trabalhador-dirigindo.jpg" alt />
+          <img class="who-we-are__image fade" src="../assets/img/vista-plantacao.jpg" alt />
+        </div>
         <article class="who-we-are-content">
-          <h3 class="who-we-are__title">Quem somos?</h3>
-          <p class="who-we-are__text">
-            A Green World é uma empresa agrícola empenhada em fornecer alimentos
-            de alta qualidade para os lares das famílias brasileiras, trazendo
-            alegria e felicidade às suas mesas. Reconhecemos o nosso papel
-            crucial como indústria agrícola no que diz respeito ao meio ambiente
-            e à sustentabilidade. Em consonância com os Objetivos de
-            Desenvolvimento Sustentável (ODS), a Green World criou um projeto
-            com o objetivo de combater a fome por meio da implementação de
-            hortas em lares carentes.
-          </p>
+          <div class="who-we-are__container">
+            <h3 class="who-we-are__title">Quem somos?</h3>
+            <p class="who-we-are__text">
+              A Green World é uma empresa agrícola empenhada em fornecer alimentos
+              de alta qualidade para os lares das famílias brasileiras, trazendo
+              alegria e felicidade às suas mesas. Reconhecemos o nosso papel
+              crucial como indústria agrícola no que diz respeito ao meio ambiente
+              e à sustentabilidade. Em consonância com os Objetivos de
+              Desenvolvimento Sustentável (ODS), a Green World criou um projeto
+              com o objetivo de combater a fome por meio da implementação de
+              hortas em lares carentes.
+            </p>
+          </div>
+
+          <div class="content-circles">
+            <div class="responsabilidade">
+              <span class="sustentabilidade__text">Ambientalmente Responsável</span>
+              <i class="icon-pontas fas fa-seedling"></i>
+            </div>
+            <div class="economicamente">
+              <span class="economicamente__text">Economicamente eficaz</span>
+              <i class="icon-center fas fa-coins"></i>
+            </div>
+            <div class="responsabilidade">
+              <span class="sustentabilidade__text">Socialmente Equitativo</span>
+              <i class="icon-pontas fas fa-heart"></i>
+            </div>
+
+
+          </div>
+
         </article>
       </section>
+
 
       <section id="our-cause">
         <article class="our-cause-content">
@@ -180,7 +184,13 @@
             pessoas tenham acesso a alimentos seguros.
           </p>
         </article>
-        <img class="our-cause__image" src="../assets/img/mato1.png" alt="" />
+        <div class="our-cause-images">
+          <img class="our-cause__image fade" src="../assets/img/farmer-image.png" alt />
+          <img class="our-cause__image" src="../assets/img/family1-image.jpg" alt />
+          <img class="our-cause__image fade" src="../assets/img/fazendeiro-maca.jpg" alt />
+          <img class="our-cause__image" src="../assets/img/fazendeiro2.jpg" alt />
+          <img class="our-cause__image fade" src="../assets/img/maos2.jpg" alt />
+        </div>
       </section>
 
       <section id="projects">
@@ -192,7 +202,8 @@
               "Ninguém pode fazer tudo, mas todo mundo pode fazer alguma coisa."
             </p>
             <p class="be-a-volunteer__text">
-              Ser voluntário é se importar com aquele que tem menos ou quase nada, é ter capacidade de desenvolver empatia e prestar auxílio aos que mais necessitam, principalmente nos momentos de mais dificuldade.
+              Ser voluntário é se importar com aquele que tem menos ou quase nada, é ter capacidade de desenvolver empatia
+              e prestar auxílio aos que mais necessitam, principalmente nos momentos de mais dificuldade.
             </p>
             <router-link class="be-a-volunteer__link" to="/volunteers">
               <button class="be-a-volunteer__button">Ser um voluntário</button>
@@ -239,10 +250,7 @@
           <img src="../assets/img/family3.png" alt="" />
         </div>
 
-        <router-link
-          class="family-know-more__link"
-          to="/feedback-beneficiaries"
-        >
+        <router-link class="family-know-more__link" to="/feedback-beneficiaries">
           <button class="family-know-more__button">Saber mais</button>
         </router-link>
       </section>
@@ -278,14 +286,10 @@
         <h3 class="founders-title">Fundadores</h3>
 
         <div class="founders-content">
-         
+
           <article class="founder-container">
 
-            <img
-              class="founder__image"
-              src="../assets/img/founder2.jpeg"
-              alt=""
-            />
+            <img class="founder__image" src="../assets/img/founder2.jpeg" alt="" />
             <span class="founder__name">Maycon Kaio</span>
             <span class="founder__office">Diretor Geral</span>
 
@@ -295,25 +299,17 @@
                   <a href="#" class="social"><i class="fab fa-twitter"></i></a>
                 </li>
                 <li>
-                  <a href="#" class="social"
-                    ><i class="fab fa-instagram"></i
-                  ></a>
+                  <a href="#" class="social"><i class="fab fa-instagram"></i></a>
                 </li>
                 <li>
-                  <a href="#" class="social"
-                    ><i class="fab fa-facebook-f"></i
-                  ></a>
+                  <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
                 </li>
               </ul>
             </nav>
           </article>
           <article class="founder-container">
 
-            <img
-              class="founder__image"
-              src="../assets/img/founder3.jpeg"
-              alt=""
-            />
+            <img class="founder__image" src="../assets/img/founder3.jpeg" alt="" />
             <span class="founder__name">Mabel Dourado</span>
             <span class="founder__office">Presidente</span>
 
@@ -323,25 +319,18 @@
                   <a href="#" class="social"><i class="fab fa-twitter"></i></a>
                 </li>
                 <li>
-                  <a href="https://www.instagram.com/douradobel_/" class="social"
-                    ><i class="fab fa-instagram"></i
-                  ></a>
+                  <a href="https://www.instagram.com/douradobel_/" class="social"><i class="fab fa-instagram"></i></a>
                 </li>
                 <li>
-                  <a href="https://www.facebook.com/izabel.douradopais" class="social"
-                    ><i class="fab fa-facebook-f"></i
-                  ></a>
+                  <a href="https://www.facebook.com/izabel.douradopais" class="social"><i
+                      class="fab fa-facebook-f"></i></a>
                 </li>
               </ul>
             </nav>
           </article>
           <article class="founder-container">
 
-            <img
-              class="founder__image"
-              src="../assets/img/founder1.jpeg"
-              alt=""
-            />
+            <img class="founder__image" src="../assets/img/founder1.jpeg" alt="" />
             <span class="founder__name">Brenda Cardoso</span>
             <span class="founder__office">Coordenadora Geral</span>
 
@@ -351,14 +340,10 @@
                   <a href="#" class="social"><i class="fab fa-twitter"></i></a>
                 </li>
                 <li>
-                  <a href="https://www.instagram.com/brendacarddoso_/" class="social"
-                    ><i class="fab fa-instagram"></i
-                  ></a>
+                  <a href="https://www.instagram.com/brendacarddoso_/" class="social"><i class="fab fa-instagram"></i></a>
                 </li>
                 <li>
-                  <a href="#" class="social"
-                    ><i class="fab fa-facebook-f"></i
-                  ></a>
+                  <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
                 </li>
               </ul>
             </nav>
@@ -379,19 +364,13 @@
       <nav class="social-media-container">
         <ul class="social-media__footer">
           <li>
-            <a href="#" class="social__footer"
-              ><i class="fab fa-twitter"></i
-            ></a>
+            <a href="#" class="social__footer"><i class="fab fa-twitter"></i></a>
           </li>
           <li>
-            <a href="#" class="social__footer"
-              ><i class="fab fa-instagram"></i
-            ></a>
+            <a href="#" class="social__footer"><i class="fab fa-instagram"></i></a>
           </li>
           <li>
-            <a href="#" class="social__footer"
-              ><i class="fab fa-facebook-f"></i
-            ></a>
+            <a href="#" class="social__footer"><i class="fab fa-facebook-f"></i></a>
           </li>
         </ul>
       </nav>
@@ -400,9 +379,7 @@
         <span class="support__title">Suporte</span>
         <div class="support__links">
           <router-link class="support__link" to="/faq">FAQ</router-link>
-          <router-link class="support__link" to="/privacy-policy"
-            >Política de privacidade</router-link
-          >
+          <router-link class="support__link" to="/privacy-policy">Política de privacidade</router-link>
         </div>
       </div>
 
@@ -429,7 +406,7 @@ import showSlides from "../assets/js/slider.js";
 export default {
   name: "Home",
   mounted() {
-    // this.runShowSlides();
+    this.runShowSlides();
     // this.runRegisterDefault();
   },
   methods: {
