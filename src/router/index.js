@@ -45,6 +45,7 @@ import Firebase from "@/pages/Firebase.vue";
 import Criptografia from "@/pages/Criptografia.vue";
 import Menu from "@/pages/Menu.vue";
 import Notificacao from "@/pages/Notificacao.vue";
+import PopUp from "@/pages/PopUp.vue";
 
 const routes = [
   {
@@ -267,6 +268,11 @@ const routes = [
     path: "/notificacao",
     name: "Notificacao",
     component: Notificacao,
+  },
+  {
+    path: "/popup",
+    name: "PopUp",
+    component: PopUp,
   },
 ];
 
