@@ -134,6 +134,7 @@
     .be-a-volunteer__text {
         align-self: center;
         width: 100%;
+        padding-top: 0px;
     }
 
     .projects-title-content {
@@ -158,6 +159,10 @@
 @media (max-width: 500px) {
     .projects-title-content {
         padding: 0 35px;
+    }
+
+    #projects{
+        padding-top: 70px;
     }
 }
 

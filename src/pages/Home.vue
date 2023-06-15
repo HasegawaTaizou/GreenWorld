@@ -92,8 +92,9 @@
             <span class="article-title__span">Visão</span>
           </div>
           <p class="article-text">
-            A missão da Green World é transformar lares, trazendo o conforto de
-            ter o alimento em sua casa de forma segura.
+            Ser uma empresa
+            sustentável que é
+            reconhecida pelo país.
           </p>
         </article>
         <article class="article-values">
@@ -102,8 +103,10 @@
             <span class="article-title__span">Valores</span>
           </div>
           <p class="article-text">
-            A missão da Green World é transformar lares, trazendo o conforto de
-            ter o alimento em sua casa de forma segura.
+            Buscar agir de forma
+            correta,respeitando
+            sempre o meio
+            ambiente e as pessoas.
           </p>
         </article>
       </section>
