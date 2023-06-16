@@ -92,8 +92,9 @@
             <span class="article-title__span">Visão</span>
           </div>
           <p class="article-text">
-            A missão da Green World é transformar lares, trazendo o conforto de
-            ter o alimento em sua casa de forma segura.
+            Ser uma empresa
+            sustentável que é
+            reconhecida pelo país.
           </p>
         </article>
         <article class="article-values">
@@ -102,8 +103,10 @@
             <span class="article-title__span">Valores</span>
           </div>
           <p class="article-text">
-            A missão da Green World é transformar lares, trazendo o conforto de
-            ter o alimento em sua casa de forma segura.
+            Buscar agir de forma
+            correta,respeitando
+            sempre o meio
+            ambiente e as pessoas.
           </p>
         </article>
       </section>
@@ -278,9 +281,9 @@
           Está interessado em ser um de nossos parceiros? Clique em “saber
           mais”.
         </p>
-        <a class="partner__link" href="/our-partners">
+        <router-link class="partner__link" to="/our-partners">
           <button class="partner__button">Saber mais</button>
-        </a>
+        </router-link>
       </section>
       <section id="founders">
         <h3 class="founders-title">Fundadores</h3>
@@ -401,21 +404,17 @@
 
 <script>
 import showSlides from "../assets/js/slider.js";
-// import removeRegisterDefault from '../assets/js/home.js'
+// import  from "../assets/js/menu.js";
 
 export default {
   name: "Home",
   mounted() {
-    this.runShowSlides();
-    // this.runRegisterDefault();
+    this.runShowSlides()
   },
   methods: {
     runShowSlides() {
-      showSlides();
+      showSlides()
     },
-    // runRegisterDefault() {
-    //   removeRegisterDefault()
-    // }
   },
 };
 </script>

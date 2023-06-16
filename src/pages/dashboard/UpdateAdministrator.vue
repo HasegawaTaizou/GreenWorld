@@ -4,7 +4,7 @@
 
     <section id="seeds">
       <div class="seed-content">
-        <img class="seed-content__image" src="../assets/img/administrator.png" alt="Passion fruit">
+        <img class="seed-content__image" src="../../assets/img/administrator.png" alt="Passion fruit">
 
         <div class="seed-content__tag-name">
           <span class="seed-content__tag">Administrador</span>

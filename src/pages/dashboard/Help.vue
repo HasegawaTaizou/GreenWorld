@@ -151,5 +151,5 @@ export default {
 @import url("../../assets/css/dashboard/reset.css");
 @import url("../../assets/css/generalStyle.css");
 @import url("../../assets/css/dashboard/help/helpStyle.css");
-@import url("../../assets/css/dashboard/help/updatehelpStyle.css");
+@import url("../../assets/css/dashboard/help/updateHelpStyle.css");
 </style>

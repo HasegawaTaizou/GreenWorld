@@ -1,10 +1,12 @@
 @media (max-width: 1600px) {
+
     .project-content-every-drop-counts,
     .project-content-seed-of-love,
     .project-content-food-distribution {
         height: 46vw;
     }
 }
+
 @media (max-width: 1510px) {
     .project__name {
         font-size: 1.6rem;
@@ -23,7 +25,7 @@
     .project-content-seed-of-love,
     .project-content-food-distribution {
         width: 330px;
-       
+
     }
 }
 
@@ -65,7 +67,7 @@
         font-size: 1rem;
     }
 
-    .be-a-volunteer__quote{
+    .be-a-volunteer__quote {
         width: 45vw;
         font-size: 1.2rem;
     }
@@ -82,7 +84,7 @@
 
 
 @media (max-width: 970px) {
-    
+
     #family {
         align-items: center;
         padding: 100px 0;
@@ -113,12 +115,15 @@
         width: 300px;
     }
 
-    .family-title, .our-partners-title {
+    .family-title,
+    .our-partners-title {
         font-size: 2.1rem;
         text-align: center;
     }
 
 }
+
+
 
 @media (max-width: 600px) {
 
@@ -137,7 +142,7 @@
         width: 100%;
     }
 
-    .be-a-volunteer__quote{
+    .be-a-volunteer__quote {
         align-self: center;
         width: 100%;
     }
@@ -163,5 +168,14 @@
     .projects-title-content {
         padding: 0 35px;
     }
-}
 
+    #family {
+        align-items: center;
+        padding: 70px 0;
+        gap: 50px;
+    }
+
+    .family-text{
+        font-size: 1.4rem;
+    }
+}
