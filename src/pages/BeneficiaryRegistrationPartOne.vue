@@ -15,8 +15,8 @@
     <main>
       <img
         src="../assets/img/beneficiary-registration-image.png"
-        alt="Volunteer Registration Image"
-        class="volunteer-registration__image"
+        alt="beneficiary Registration Image"
+        class="beneficiary-registration__image"
       />
       <form class="beneficiary-registration-part-one-form">
         <div v-if="!isSelectedImage" class="form__photo-container">

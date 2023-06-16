@@ -15,7 +15,7 @@
     <main>
       <img
         src="../assets/img/beneficiary-registration-image.png"
-        alt="Volunteer Registration Image"
+        alt="beneficiary Registration Image"
         class="beneficiary-registration__image"
       />
       <form class="beneficiary-registration-part-two-form">
@@ -27,9 +27,20 @@
             id="cep"
             v-mask="'#####-###'"
             v-model="formData.cep"
-            @blur="getData()"
-            @keydown.enter="getData()"
+            @blur="() => { fillAdrress(); v$.inputCep.$touch(); }"
+            @keydown.enter="fillAdrress"
+            v-model.trim="inputCep"
+            :class="{ error: v$.inputCep.$error }"
+            ref="inputCep"
           />
+          <div v-if="v$.inputCep.$error">
+            <p
+              v-if="v$.inputCep.required && v$.inputCep.minLength"
+              class="error-text"
+            >
+              Preencha o CEP!
+            </p>
+          </div>
         </div>
         <div class="form__road-container">
           <label for="road" class="road__label">Rua:</label>
@@ -37,7 +48,7 @@
             type="text"
             class="road__input"
             disabled
-            v-model="formData.road"
+            v-model="formData.logradouro"
           />
         </div>
         <div class="form__neighborhood-container">
@@ -46,7 +57,7 @@
             type="text"
             class="neighborhood__input"
             disabled
-            v-model="formData.neighborhood"
+            v-model="formData.bairro"
           />
         </div>
         <div class="form__complement-container">
@@ -55,7 +66,7 @@
             type="text"
             class="complement__input"
             disabled
-            v-model="formData.complement"
+            v-model="formData.complemento"
           />
         </div>
         <div class="form__state-container">
@@ -64,7 +75,7 @@
             type="text"
             class="state__input"
             disabled
-            v-model="formData.state"
+            v-model="formData.estado"
           />
         </div>
         <div class="form__city-container">
@@ -73,7 +84,7 @@
             type="text"
             class="city__input"
             disabled
-            v-model="formData.city"
+            v-model="formData.cidade"
           />
         </div>
         <router-link to="/beneficiary-registration-part-one">
@@ -83,7 +94,7 @@
         </router-link>
         <button
           type="button"
-          @click="submitForm"
+          @click="submitFormBeneficiaryPartTwo"
           class="beneficiary-registration__button"
         >
           Continuar
@@ -97,52 +108,40 @@
     </footer>
   </div>
 </template>
-  
+
 <script>
-import axios from "axios";
+import fillAdrress from "../assets/js/methods/input/fill-address.js";
+import submitFormBeneficiaryPartTwo from "../assets/js/methods/submit-form-beneficiary-part-two.js";
+import dataFormPartTwo from "../assets/js/data/data-form-part-two.js";
+import { useVuelidate } from "@vuelidate/core";
+import validationsBeneficiaryPartTwo from "../assets/js/validations/validations-beneficiary-part-two.js";
 
 export default {
   name: "BeneficiaryRegistrationPartTwo",
+  setup() {
+    return { v$: useVuelidate() };
+  },
   data() {
+    const formData = this.$store.state.formData;
+    const data = dataFormPartTwo(formData);
     return {
-      formData: {
-        cep: "",
-        road: "",
-        neighborhood: "",
-        complement: "",
-        state: "",
-        city: "",
-      },
+      ...data,
+    };
+  },
+  validations() {
+    const validations = validationsBeneficiaryPartTwo();
+    return {
+      ...validations,
     };
   },
   methods: {
-    getData() {
-      //Remove the "-" from CEP input
-      this.formData.cep = this.formData.cep.replace("-", "");
-
-      axios
-        .get(`https://viacep.com.br/ws/${this.formData.cep}/json/`)
-        .then((response) => {
-          this.formData.road = response.data.logradouro;
-          this.formData.neighborhood = response.data.bairro;
-          this.formData.complement = response.data.complemento;
-          this.formData.state = response.data.uf;
-          this.formData.city = response.data.localidade;
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-    },
-    submitForm() {
-      this.$store.commit("updateFormData", { fullName: this.inputFullName });
-      console.log("formdata", this.formData);
-      this.$router.push("/beneficiary-registration-part-three");
-    },
+    fillAdrress,
+    submitFormBeneficiaryPartTwo,
   },
 };
 </script>
-  
-  <style scoped>
+
+<style scoped>
 @import url("../assets/css/beneficiaryRegistrationPartTwo/generalStyle.css");
 @import url("../assets/css/beneficiaryRegistrationPartTwo/limitsSizeStyle.css");
 @import url("../assets/css/beneficiaryRegistrationPartTwo/beneficiaryRegistrationPartTwoStyle.css");
@@ -150,4 +149,3 @@ export default {
 @import url("../assets/css/beneficiaryRegistrationPartTwo/copyrightStyle.css");
 @import url("../assets/css/beneficiaryRegistrationPartTwo/copyrightResponsiveStyle.css");
 </style>
-  
