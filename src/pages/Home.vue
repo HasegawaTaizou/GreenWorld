@@ -104,7 +104,7 @@
           </div>
           <p class="article-text">
             Buscar agir de forma
-            correta,respeitando
+            correta, respeitando
             sempre o meio
             ambiente e as pessoas.
           </p>
@@ -414,7 +414,8 @@ export default {
   methods: {
     runShowSlides() {
       showSlides()
-    },
+    }
+   
   },
 };
 </script>
