@@ -42,6 +42,10 @@ export default new Vuex.Store({
 
     //NOTIFICATION STATUS
     showNotification: false,
+    
+    //POPUP STATUS
+    showPopUp: false,
+
   },
   mutations: {
     updateFormData(state, payload) {
@@ -55,6 +59,9 @@ export default new Vuex.Store({
     },
     setShowNotification(state, value) {
       state.showNotification = value;
+    },
+    setShowPopUp(state, value) {
+      state.showPopUp = value;
     },
   },
 });

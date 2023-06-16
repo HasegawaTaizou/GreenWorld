@@ -1,54 +1,37 @@
 <template>
   <div>
-    <button @click="openPopup">Abrir Popup</button>
-
-    <div v-if="showPopup" class="popup-container">
-      <h2 class="popup__title">Tem certeza?</h2>
-      <p class="popup__text">Os dados serão modificados</p>
-      <div class="popup__buttons">
-        <button class="button__deny" @click="closePopup">Não</button>
-        <button class="button__accept" @click="acceptAction">Sim</button>
-      </div>
-    </div>
+    <button @click="teste">Abrir Popup</button>
+    <div>
+    <PopUp :message="popupMessage" :acceptFunction="customFunction" />
+  </div>
   </div>
 </template>
   
   <script>
+import PopUp from '../assets/components/PopUp.vue'
+
 export default {
-  name: "PopUp",
+  name: "PopUpTeste",
+  components: {
+    PopUp,
+  },
   data() {
     return {
-      showPopup: false,
+      popupMessage: "Deseja executar a ação?",
     };
   },
   methods: {
-    openPopup() {
-      this.showPopup = true;
+    teste() {
+      this.$store.commit('setShowPopUp', true)
+      console.log(this.$store.state.showPopUp);
     },
-    closePopup() {
-      this.showPopup = false;
-    },
-    acceptAction() {
-      // Ação a ser executada ao clicar em "Aceitar"
-      // Exemplo: exibindo uma mensagem no console
-      console.log("Ação executada!");
-      this.closePopup();
+    customFunction() {
+      console.log("Função personalizada chamada!");
     },
   },
 };
 </script>
   
-  <style>
-.popup-container {
-  border: 1px solid #ccc;
-  min-width: 320px;
-  max-width: 320px;
-  width: 100%;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
+<style>
 </style>
   
