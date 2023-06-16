@@ -21,6 +21,7 @@ import PrivacyPolicy from "@/pages/PrivacyPolicy.vue";
 import Faq from "@/pages/Faq.vue";
 //DASHBOARD
 import Dashboard from "@/pages/dashboard/Dashboard.vue";
+import HomeDashboard from "@/pages/dashboard/HomeDashboard.vue";
 import Seeds from '@/pages/dashboard/Seeds.vue';
 import Seed from "@/pages/dashboard/Seed.vue";
 import AllHelp from "@/pages/dashboard/AllHelp.vue";
@@ -150,6 +151,15 @@ const routes = [
     name: "Dashboard",
     component: Dashboard,
     children: [
+      {
+        path: "",
+        redirect: "/dashboard/home",
+      },
+      {
+        path: "/dashboard/home",
+        name: "HomeDashboard",
+        component: HomeDashboard,
+      },
       {
         path: "/dashboard/all-help",
         name: "AllHelp",

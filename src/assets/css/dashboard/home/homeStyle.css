@@ -59,6 +59,13 @@ main {
     font-weight: 600;
 }
 
+#home-dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    align-items: center;
+}
+
 .welcome__title {
     color: var(--text-color);
     font-weight: 400;
