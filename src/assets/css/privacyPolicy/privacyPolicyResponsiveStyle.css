@@ -64,7 +64,7 @@
   }
 
   .privacy-policy__question[data-v-4489ba78] {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
   }
 
   .privacy-policy__text[data-v-4489ba78] {
@@ -86,6 +86,10 @@
   .plus-sign__icon {
     height: 22px;
     width: 22px;
+  }
+
+  .privacy-policy-container{
+    gap: 20px;
   }
 }
 
