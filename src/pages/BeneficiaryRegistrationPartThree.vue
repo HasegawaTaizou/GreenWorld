@@ -38,13 +38,27 @@
             type="text"
             class="per-capita-income__input"
             v-model="inputFamilyIncome"
+            :class="{ error: v$.inputFamilyIncome.$error }"
+            ref="inputFamilyIncome"
+            @blur="v$.inputFamilyIncome.$touch()"
           />
+          <div v-if="v$.inputFamilyIncome.$error">
+            <p v-if="v$.inputFamilyIncome.required" class="error-text">
+              Preencha a renda!
+            </p>
+          </div>
         </div>
         <div class="form__type-residence-container">
           <label for="type-residence" class="type-residence__label"
             >Tipo de residência:</label
           >
-          <select class="type-residence__select" v-model="selectTypeResidence">
+          <select
+            class="type-residence__select"
+            v-model="selectTypeResidence"
+            :class="{ error: v$.selectTypeResidence.$error }"
+            ref="selectTypeResidence"
+            @blur="v$.selectTypeResidence.$touch()"
+          >
             <option class="type-residence__default" value>
               Selecione o tipo de residência
             </option>
@@ -53,6 +67,11 @@
               Fazenda
             </option>
           </select>
+          <div v-if="v$.selectTypeResidence.$error">
+            <p v-if="v$.selectTypeResidence.required" class="error-text">
+              Selecione um tipo de residência
+            </p>
+          </div>
         </div>
         <div class="form__square-meters-residence-container">
           <label
@@ -64,7 +83,15 @@
             type="text"
             class="square-meters-residence__input"
             v-model="inputSquareMetersResidence"
+            :class="{ error: v$.inputSquareMetersResidence.$error }"
+            ref="inputSquareMetersResidence"
+            @blur="v$.inputSquareMetersResidence.$touch()"
           />
+          <div v-if="v$.inputSquareMetersResidence.$error">
+            <p v-if="v$.inputSquareMetersResidence.required" class="error-text">
+              Preencha os metros quadrados!
+            </p>
+          </div>
         </div>
         <div class="form__comments-container">
           <label for="comments" class="comments__label">Observações:</label>
@@ -75,6 +102,7 @@
             rows="10"
             class="comments__textarea"
             v-model="textareaComments"
+            ref="textareaComments"
           ></textarea>
         </div>
         <router-link to="/beneficiary-registration-part-two">
@@ -84,7 +112,7 @@
         </router-link>
         <button
           type="button"
-          @click="submitForm"
+          @click="submitFormBeneficiaryPartThree()"
           class="beneficiary-registration__button"
         >
           Continuar
@@ -100,74 +128,40 @@
 </template>
 
 <script>
-import axios from "axios";
+import submitFormBeneficiaryPartThree from "../assets/js/methods/submit-form-beneficiary-part-three.js";
+import uploadImage from "../assets/js/methods/input/upload-image.js";
+import onlyLetters from "../assets/js/methods/input/only-letters.js";
+import dataPartThree from "../assets/js/data/data-form-part-three.js";
+import validationsBeneficiaryPartThree from "../assets/js/validations/validations-beneficiary-part-three.js";
+import { useVuelidate } from "@vuelidate/core";
+import { mapMutations } from "vuex";
 
 export default {
   name: "BeneficiaryRegistrationPartThree",
+
+  setup() {
+    return { v$: useVuelidate() };
+  },
   data() {
+    const formData = this.$store.state.formData;
+    const data = dataPartThree(formData);
+
     return {
-      inputAmountResidents: "",
-      inputFamilyIncome: "",
-      selectTypeResidence: "",
-      inputSquareMetersResidence: "",
-      textareaComments: "",
-      formData: {
-        userData: {
-          photo: this.$store.state.formData.photo,
-          dateBirth: this.$store.state.formData.dateBirth,
-          rg: this.$store.state.formData.rg,
-          cpf: this.$store.state.formData.cpf,
-          phone: this.$store.state.formData.phone,
-          email: this.$store.state.formData.email,
-        },
-        addressData: {
-          cep: this.$store.state.formData.cep,
-          road: this.$store.state.formData.road,
-          neighborhood: this.$store.state.formData.neighborhood,
-          complement: this.$store.state.formData.complement,
-          state: this.$store.state.formData.state,
-          city: this.$store.state.formData.city,
-        },
-        additionalData: {
-          amountResidents: "",
-          familyIncome: "",
-          typeResidence: "",
-          squareMetersResidence: "",
-          comments: "",
-        },
-      },
+      validDate: true,
+      ...data,
+    };
+  },
+  validations() {
+    const validations = validationsBeneficiaryPartThree();
+    return {
+      ...validations,
     };
   },
   methods: {
-    submitForm() {
-      this.formData.additionalData.amountResidents = this.inputAmountResidents;
-      this.formData.additionalData.familyIncome = this.inputFamilyIncome;
-      this.formData.additionalData.typeResidence = this.selectTypeResidence;
-      this.formData.additionalData.squareMetersResidence = this.inputSquareMetersResidence;
-      this.formData.additionalData.comments = this.textareaComments;
-
-      console.log("form 3: ", this.formData);
-
-      this.$store.commit("updateFormData", this.formData);
-
-      // Enviar dados para o servidor
-      axios
-        .post("http://seuservidor.com/endpoint", this.formData)
-        .then((response) => {
-          // Manipular a resposta do servidor
-          console.log(response.data);
-
-          // Limpar dados do formulário ou reiniciar o cadastro
-          this.formData.address = "";
-
-          // Redirecionar para a primeira tela do cadastro
-          this.$router.push("/");
-        })
-        .catch((error) => {
-          // Tratar erros na requisição
-          console.error(error);
-        });
-    },
+    ...mapMutations(["updateNotificationStatus"]),
+    uploadImage,
+    submitFormBeneficiaryPartThree,
+    onlyLetters,
   },
 };
 </script>
