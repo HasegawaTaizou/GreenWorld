@@ -45,6 +45,7 @@
 
     .title-home {
         font-size: 3.6rem;
+        
     }
 
     .caption-home {
@@ -90,6 +91,12 @@
 
     .caption-home {
         max-width: 70vw;
+        text-align: center;
+        font-size: 1.5rem;
+    }
+
+    .title-home{
+        text-align: center;
     }
 }
 
@@ -116,9 +123,9 @@
     }
 
     .caption-home {
-        font-size: 1.5rem;
+    
         width: 100vw;
-        text-align: center;
+       
     }
 
     .know-more-home__button {
