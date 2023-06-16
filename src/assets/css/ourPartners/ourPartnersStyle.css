@@ -1,9 +1,41 @@
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
   padding: 54px 98px 112px 98px;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  background-image: url(../../img/be-header-partners.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 600px;
+  width: 100%;
+  margin: 0;
+}
+
+.title-page {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px;
+}
+
+.limit {
+  max-width: 1440px;
+}
+
+main{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.return__icon {
+  filter: brightness(0) invert(1);
+}
+
+.our-partners__title {
+  color: #fff;
 }
 
 .our-partners-images-container {
@@ -11,6 +43,7 @@ header {
   justify-content: space-around;
   background-color: #eaeaea;
   padding: 118px 0px;
+  width: 100%;
 }
 
 .why-contribute {

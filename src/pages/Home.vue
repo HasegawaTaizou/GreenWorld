@@ -21,7 +21,7 @@
             <a href="#our-partners">Parcerias</a>
           </li>
           <li class="navigation">
-            <a href="/volunteers">Voluntários</a>
+            <a href="#founders">Fundadores</a>
           </li>
         </ul>
         <ul id="mySidenav" class="sidenav">
@@ -104,7 +104,7 @@
           </div>
           <p class="article-text">
             Buscar agir de forma
-            correta,respeitando
+            correta, respeitando
             sempre o meio
             ambiente e as pessoas.
           </p>
@@ -414,7 +414,8 @@ export default {
   methods: {
     runShowSlides() {
       showSlides()
-    },
+    }
+   
   },
 };
 </script>

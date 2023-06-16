@@ -91,6 +91,7 @@ export default {
 @import url("../assets/css/foodBasketDistribution/limitsSizeStyle.css");
 @import url("../assets/css/foodBasketDistribution/foodBasketDistributionStyle.css");
 @import url("../assets/css/foodBasketDistribution/foodBasketDistributionResponsiveStyle.css");
-@import url("../assets/css/footer/footerResponsiveStyle.css");
 @import url("../assets/css/footer/footerStyle.css");
+@import url("../assets/css/footer/footerResponsiveStyle.css");
+
 </style>

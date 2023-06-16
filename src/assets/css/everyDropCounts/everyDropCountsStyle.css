@@ -88,3 +88,8 @@ main {
   border-radius: 200px;
 
 }
+
+.project-goal__title,
+  .how-is-possible__title{
+   font-weight: bolder;
+  }

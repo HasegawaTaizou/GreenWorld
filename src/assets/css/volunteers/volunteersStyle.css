@@ -1,13 +1,39 @@
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
   padding: 54px 98px 112px 98px;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  background-image: url(../../img/terra.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 600px;
+  width: 100%;
+  margin: 0;
+
+}
+
+.title-page {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px;
+}
+
+main {
+  max-width: 1440px;
+}
+
+.return__icon {
+  filter: brightness(0) invert(1);
+}
+
+.volunteers__title {
+  color: #fff;
 }
 
 .why-contribute {
-  margin: 100px 100px 164px 100px;
+  margin: 100px 100px 0 100px;
   display: grid;
   grid-template-columns: auto auto;
   grid-template-rows: auto auto;
