@@ -66,7 +66,7 @@
             v-model="inputDateBirth"
             :class="{ error: v$.inputDateBirth.$error }"
             ref="inputDateBirth"
-            @input="v$.inputDateBirth.$touch()"
+            @blur="v$.inputDateBirth.$touch()"
           />
           <div v-if="v$.inputDateBirth.$error">
             <p
@@ -91,7 +91,7 @@
             v-model="inputRg"
             :class="{ error: v$.inputRg.$error }"
             ref="inputRg"
-            @input="v$.inputRg.$touch()"
+            @blur="v$.inputRg.$touch()"
           />
           <div v-if="v$.inputRg.$error">
             <p
@@ -111,7 +111,7 @@
             v-model="inputCpf"
             :class="{ error: v$.inputCpf.$error }"
             ref="inputCpf"
-            @input="v$.inputCpf.$touch()"
+            @blur="v$.inputCpf.$touch()"
           />
           <div v-if="v$.inputCpf.$error">
             <p
@@ -131,7 +131,7 @@
             v-model="selectPhysicalLimitation"
             :class="{ error: v$.selectPhysicalLimitation.$error }"
             ref="selectPhysicalLimitation"
-            @input="v$.selectPhysicalLimitation.$touch()"
+            @blur="v$.selectPhysicalLimitation.$touch()"
           >
             <option class="physical-limitation__default" value>
               Selecione a limitação física
@@ -144,10 +144,7 @@
             </option>
           </select>
           <div v-if="v$.selectPhysicalLimitation.$error">
-            <p
-              v-if="v$.selectPhysicalLimitation.required"
-              class="error-text"
-            >
+            <p v-if="v$.selectPhysicalLimitation.required" class="error-text">
               Selecione uma limitação física!
             </p>
           </div>
@@ -161,7 +158,7 @@
             v-model="inputPhone"
             :class="{ error: v$.inputPhone.$error }"
             ref="inputPhone"
-            @input="v$.inputPhone.$touch()"
+            @blur="v$.inputPhone.$touch()"
           />
           <div v-if="v$.inputPhone.$error">
             <p
@@ -172,7 +169,7 @@
             </p>
           </div>
         </div>
-        
+
         <div class="form__email-container">
           <label for="email" class="email__label">E-mail:</label>
           <input
@@ -181,6 +178,7 @@
             maxlength="256"
             v-model.trim="v$.inputEmail.$model"
             :class="{ error: v$.inputEmail.$error }"
+            @blur="v$.inputEmail.$touch()"
             ref="inputEmail"
           />
           <div v-if="v$.inputEmail.$error">

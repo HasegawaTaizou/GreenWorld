@@ -23,7 +23,6 @@ import fillAllVolunteers from '../../assets/js/methods/fill-all-volunteers.js'
 import handleVolunteerClick from '../../assets/js/methods/handle-click/handle-volunteer-click.js'
 import filteredVolunteers from '../../assets/js/computed/filtered-volunteers.js'
 
-
 export default {
   name: "VolunteerRequests",
   data() {

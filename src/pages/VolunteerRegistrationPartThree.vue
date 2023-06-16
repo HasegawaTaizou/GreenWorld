@@ -29,6 +29,7 @@
             class="reason__textarea"
             v-model="inputReason"
             :class="{ error: v$.inputReason.$error }"
+            @blur="v$.inputReason.$touch();"
             ref="inputReason"
           ></textarea>
           <div v-if="v$.inputReason.$error">
@@ -45,6 +46,7 @@
             class="have-experience__select"
             v-model="selectHaveExperience"
             :class="{ error: v$.selectHaveExperience.$error }"
+            @blur="v$.selectHaveExperience.$touch();"
           >
             <option class="have-experience__default" value="">
               Selecione o tempo de experiência

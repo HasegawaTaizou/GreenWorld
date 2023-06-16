@@ -27,11 +27,10 @@
             id="cep"
             v-mask="'#####-###'"
             v-model="formData.cep"
-            @blur="fillAdrress"
+            @blur="() => { fillAdrress(); v$.inputCep.$touch(); }"
             @keydown.enter="fillAdrress"
             v-model.trim="inputCep"
             :class="{ error: v$.inputCep.$error }"
-            @input="v$.inputCep.$touch()"
             ref="inputCep"
           />
           <div v-if="v$.inputCep.$error">
