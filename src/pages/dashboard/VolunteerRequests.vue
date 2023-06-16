@@ -19,7 +19,10 @@
 </template>
 
 <script>
-import axios from "axios";
+import fillAllVolunteers from '../../assets/js/methods/fill-all-volunteers.js'
+import handleVolunteerClick from '../../assets/js/methods/handle-click/handle-volunteer-click.js'
+import filteredVolunteers from '../../assets/js/computed/filtered-volunteers.js'
+
 
 export default {
   name: "VolunteerRequests",
@@ -32,28 +35,11 @@ export default {
     this.fillAllVolunteers();
   },
   computed: {
-    filteredVolunteers() {
-      return this.volunteers.filter(
-        (volunteer) => volunteer.id_status_cadastro === 1
-      );
-    },
+    filteredVolunteers
   },
   methods: {
-    fillAllVolunteers() {
-      axios
-        .get(`http://127.0.0.1:8080/v6/green-world/todos_voluntarios`)
-        .then((response) => {
-          console.log(response.data.status);
-          this.volunteers = response.data.status;
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-    },
-    handleVolunteerClick(item) {
-      this.$store.commit("updateVolunteerCpf", item.cpf);
-      console.log(item.cpf);
-    },
+    fillAllVolunteers,
+    handleVolunteerClick,
   },
 };
 </script>
