@@ -47,9 +47,12 @@
 
 @media (max-width: 570px) {
     footer {
-        
-        padding: 60px 30px 20px 30px;
+
+
+        padding: 60px 10px 20px 10px;
+
     }
+
     .meaning-of-agriculture__title {
         font-size: 1.9rem;
     }

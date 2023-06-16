@@ -5,7 +5,7 @@
       <router-link class="return__link" to="/"><img src="../assets/img/return-icon.png" alt="Return Icon"
           class="return__icon" /></router-link>
     </div>
-    <img src="../assets/img/seed-of-love-logo.png" alt="Seed of love logo" class="seed-of-logo__logo" />
+    <!-- <img src="../assets/img/seed-of-love-logo.png" alt="Seed of love logo" class="seed-of-logo__logo" /> -->
   </header>
   <main>
     <div class="project-goal limit">
