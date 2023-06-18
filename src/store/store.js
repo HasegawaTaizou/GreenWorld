@@ -28,10 +28,10 @@ export default new Vuex.Store({
 
       // BENEFICIARY DATA
       amountResidents: "",
-      familyIncome: "",
+      renda: "",
       typeResidence: "",
       squareMetersResidence: "",
-      comments: "",
+      observacao: "",
     },
 
     //SEED DATA

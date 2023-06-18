@@ -3,11 +3,11 @@ import cleanBirthDate from "../input/clean-birth-date.js";
 
 export default function dataPartThree(formData) {
   return {
-    inputAmountResidents: formData.amountResidents,
-    inputFamilyIncome: formData.familyIncome,
-    selectTypeResidence: formData.typeResidence,
-    inputSquareMetersResidence: formData.squareMetersResidence,
-    textareaComments: formData.comments,
+    // inputAmountResidents: formData.amountResidents,
+    inputFamilyIncome: formData.renda,
+    // selectTypeResidence: formData.typeResidence,
+    // inputSquareMetersResidence: formData.squareMetersResidence,
+    textareaComments: formData.observacao,
     formData: {
       nome_completo: formData.nome_completo,
       foto: formData.foto,
@@ -17,11 +17,9 @@ export default function dataPartThree(formData) {
       telefone: cleanInput(formData.telefone),
       email: formData.email,
       cep: cleanInput(formData.cep),
-      amountResidents: "",
-      familyIncome: "",
-      typeResidence: "",
-      squareMetersResidence: "",
-      comments: "",
+      renda: "",
+      observacao: "",
+      id_especificacoes_moradia: "1",
     },
   };
 }

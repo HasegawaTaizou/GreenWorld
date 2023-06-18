@@ -72,12 +72,12 @@ export default {
   methods: {
     fillSeed(idSemente) { 
       const seedId = {
-        id_semente: idSemente, 
+        id: idSemente, 
       };
       console.log('id quando chama o fill: ', seedId);
 
       axios
-        .post("http://127.0.0.1:8080/v5/green-world/semente_por_id", seedId)
+        .post("http://127.0.0.1:8080/v4/green-world/pegar_semente", seedId)
         .then((response) => {
           this.seed = response.data.data;
         })

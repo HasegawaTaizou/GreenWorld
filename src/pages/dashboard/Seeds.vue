@@ -33,7 +33,7 @@ export default {
   methods: {
     findAllSeeds() {
       axios
-        .get("http://127.0.0.1:8080/v5/green-world/todas_sementes")
+        .get("http://127.0.0.1:8080/v4/green-world/pegar_todas_sementes")
         .then((response) => {
           console.log(response.data.data);
           this.seeds = response.data.data;

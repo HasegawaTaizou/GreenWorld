@@ -29,6 +29,20 @@
             v-mask="'###'"
             v-model="inputAmountResidents"
           />
+          <!-- <input
+            type="text"
+            class="amount-residents__input"
+            v-mask="'###'"
+            v-model="inputAmountResidents"
+            ref="inputAmountResidents"
+            :class="{ error: v$.inputAmountResidents.$error }"
+            @blur="v$.inputAmountResidents.$touch()"
+          /> -->
+          <!-- <div v-if="v$.inputAmountResidents.$error">
+            <p v-if="v$.inputAmountResidents.required" class="error-text">
+              Preencha a quantidade de moradores!
+            </p>
+          </div> -->
         </div>
         <div class="form__per-capita-income-container">
           <label for="per-capita-income" class="per-capita-income__label"
@@ -55,6 +69,18 @@
           <select
             class="type-residence__select"
             v-model="selectTypeResidence"
+          >
+            <option class="type-residence__default" value>
+              Selecione o tipo de residência
+            </option>
+            <option class="type-residence__option" value="Casa">Casa</option>
+            <option class="type-residence__option" value="Fazenda">
+              Fazenda
+            </option>
+          </select>
+          <!-- <select
+            class="type-residence__select"
+            v-model="selectTypeResidence"
             :class="{ error: v$.selectTypeResidence.$error }"
             ref="selectTypeResidence"
             @blur="v$.selectTypeResidence.$touch()"
@@ -66,12 +92,12 @@
             <option class="type-residence__option" value="Fazenda">
               Fazenda
             </option>
-          </select>
-          <div v-if="v$.selectTypeResidence.$error">
+          </select> -->
+          <!-- <div v-if="v$.selectTypeResidence.$error">
             <p v-if="v$.selectTypeResidence.required" class="error-text">
               Selecione um tipo de residência
             </p>
-          </div>
+          </div> -->
         </div>
         <div class="form__square-meters-residence-container">
           <label
@@ -83,15 +109,20 @@
             type="text"
             class="square-meters-residence__input"
             v-model="inputSquareMetersResidence"
+          />
+          <!-- <input
+            type="text"
+            class="square-meters-residence__input"
+            v-model="inputSquareMetersResidence"
             :class="{ error: v$.inputSquareMetersResidence.$error }"
             ref="inputSquareMetersResidence"
             @blur="v$.inputSquareMetersResidence.$touch()"
-          />
-          <div v-if="v$.inputSquareMetersResidence.$error">
+          /> -->
+          <!-- <div v-if="v$.inputSquareMetersResidence.$error">
             <p v-if="v$.inputSquareMetersResidence.required" class="error-text">
               Preencha os metros quadrados!
             </p>
-          </div>
+          </div> -->
         </div>
         <div class="form__comments-container">
           <label for="comments" class="comments__label">Observações:</label>
@@ -131,7 +162,7 @@
 import submitFormBeneficiaryPartThree from "../assets/js/methods/submit-form-beneficiary-part-three.js";
 import uploadImage from "../assets/js/methods/input/upload-image.js";
 import onlyLetters from "../assets/js/methods/input/only-letters.js";
-import dataPartThree from "../assets/js/data/data-form-part-three.js";
+import dataPartThree from "../assets/js/data/data-form-beneficiary-part-three.js";
 import validationsBeneficiaryPartThree from "../assets/js/validations/validations-beneficiary-part-three.js";
 import { useVuelidate } from "@vuelidate/core";
 import { mapMutations } from "vuex";
