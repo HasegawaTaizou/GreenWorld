@@ -250,6 +250,7 @@ export default {
 @import url("../assets/css/privacyPolicy/generalStyle.css");
 @import url("../assets/css/privacyPolicy/privacyPolicyStyle.css");
 @import url("../assets/css/privacyPolicy/privacyPolicyResponsiveStyle.css");
-@import url("../assets/css/index/footerResponsiveStyle.css");
+@import url("../assets/css/footer/footerStyle.css");
+@import url("../assets/css/footer/footerResponsiveStyle.css");
 </style>
       

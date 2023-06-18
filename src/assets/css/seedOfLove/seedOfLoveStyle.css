@@ -85,29 +85,33 @@ main {
 
 .speeches__image {
   padding-top: 64px;
-  padding-bottom: 32px;
   width: fit-content;
   height: fit-content;
 }
 
 .types-of-planting-container {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+
 .types-of-planting__title {
-  padding-left: 128px;
   padding-bottom: 98px;
 }
 
 .types-of-planting {
   width: 100%;
-  background-image: linear-gradient(
-    #fff 45%,
-    var(--section-background-color) 20%
-  );
-  padding-bottom: 96px;
+  background-image: linear-gradient(#fff 45%,
+      var(--section-background-color) 20%);
+
   display: flex;
+  flex-wrap: wrap;
+  gap: 70px;
   justify-content: space-around;
+  padding: 0 70px 70px 70px;
+
 }
 
 .floor {
@@ -127,7 +131,7 @@ main {
   content: "As hortas no solo são uma forma tradicional e eficaz de cultivar alimentos, proporcionando uma conexão direta com a terra e uma maneira sustentável de obter alimentos frescos e saudáveis. Nesse método de cultivo, as plantas são cultivadas diretamente no solo, utilizando-se técnicas de manejo e cuidado para garantir um ambiente favorável ao crescimento das plantas.";
   transform: translateY(40%);
   font-size: 1.3rem;
-  transition: transform 0.5s; 
+  transition: transform 0.5s;
 }
 
 .type-of-planting__title {
@@ -152,7 +156,9 @@ main {
 
 }
 
-.box::before, .floor::before, .pet-bottle::before {
+.box::before,
+.floor::before,
+.pet-bottle::before {
   background: rgba(64, 141, 123, 0.8);
   width: 100%;
   height: 100%;
@@ -160,18 +166,18 @@ main {
   text-align: center;
   padding-top: 50px;
   transform: translateY(100%);
-  transition: transform 0.5s; 
+  transition: transform 0.5s;
   color: #fff;
   font-size: 1.75rem;
   border-radius: 0 0 20px 20px;
-  
+
 }
 
 .box:hover::before {
   content: "As hortas em caixa são uma maneira conveniente e versátil de cultivar alimentos em espaços reduzidos ou em áreas onde o solo não é adequado para o plantio direto. Essa abordagem de jardinagem permite que você crie uma horta em recipientes retangulares, como caixas de madeira, vasos de plantas ou recipientes de plástico, adaptando-se facilmente a varandas, pátios, terraços e até mesmo áreas internas.";
   transform: translateY(40%);
   font-size: 1.3rem;
-  transition: transform 0.5s; 
+  transition: transform 0.5s;
 }
 
 
@@ -193,5 +199,5 @@ main {
   content: "As hortas suspensas são uma opção prática e criativa para quem deseja cultivar alimentos em espaços limitados ou sem acesso a um jardim tradicional. Essa forma de cultivo vertical permite aproveitar o espaço vertical disponível, como varandas, terraços, paredes e até mesmo áreas internas, para produzir alimentos frescos e saudáveis.";
   transform: translateY(40%);
   font-size: 1.3rem;
-  transition: transform 0.5s; 
+  transition: transform 0.5s;
 }

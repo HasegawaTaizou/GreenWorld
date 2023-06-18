@@ -2,8 +2,13 @@
   <div id="body">
     <header>
       <nav class="navigation-container">
-        <img class="menu" onclick="openNavHalf()" id="icon-half-menu" aria-hidden="true" src="../assets/img/menu.png "
-          alt="" />
+        <!-- <img class="menu" onclick="openNavHalf()" id="icon-half-menu" aria-hidden="true" src="../assets/img/menu.png "
+          alt="" /> -->
+        <div class="mobile-menu">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
         <ul class="navigations">
           <li class="navigation">
             <a href="#who-we-are">Quem somos?</a>
@@ -21,27 +26,7 @@
             <a href="#our-partners">Parcerias</a>
           </li>
           <li class="navigation">
-            <a href="/volunteers">Voluntários</a>
-          </li>
-        </ul>
-        <ul id="mySidenav" class="sidenav">
-          <li>
-            <router-link to="#" class="closebtn" onclick="closeNav()"><i class="fas fa-times"></i></router-link>
-          </li>
-          <li>
-            <router-link to="#casa">Início</router-link>
-          </li>
-          <li>
-            <router-link to="#especies">Espécies</router-link>
-          </li>
-          <li>
-            <router-link to="#fenomenos">Fenômenos</router-link>
-          </li>
-          <li>
-            <router-link to="#poluicao">Poluição</router-link>
-          </li>
-          <li>
-            <router-link to="#informacoes">Informações</router-link>
+            <a href="#founders">Fundadores</a>
           </li>
         </ul>
       </nav>
@@ -104,7 +89,7 @@
           </div>
           <p class="article-text">
             Buscar agir de forma
-            correta,respeitando
+            correta, respeitando
             sempre o meio
             ambiente e as pessoas.
           </p>
@@ -404,17 +389,28 @@
 
 <script>
 import showSlides from "../assets/js/slider.js";
-// import  from "../assets/js/menu.js";
+import MobileNavBar from "../assets/js/menu.js"
 
 export default {
   name: "Home",
   mounted() {
-    this.runShowSlides()
+    this.runShowSlides();
+    document.addEventListener("DOMContentLoaded", () => {
+      const mobileNavBar = new MobileNavBar(
+        ".mobile-menu",
+        ".navigations",
+        ".navigation"
+      );
+      console.log(mobileNavBar);
+      mobileNavBar.init();
+    })
+
   },
   methods: {
     runShowSlides() {
       showSlides()
-    },
+    }
+
   },
 };
 </script>

@@ -1,19 +1,23 @@
 <template>
   <!-- <div class="content"> -->
-    <header>
+  <header>
+    <div class="title-page">
       <h1 class="our-partners__title">Nossos Parceiros</h1>
       <router-link class="return__link" to="/">
         <img src="../assets/img/return-icon.png" alt="Return Icon" class="return__icon" />
       </router-link>
-    </header>
-    <main>
-      <div class="our-partners-images-container">
-        <img class="partner" src="../assets/img/logo-assai.png" alt="" />
-        <img class="partner" src="../assets/img/logo-atacadao.png" alt="" />
-        <img class="partner" src="../assets/img/logo-pao-de-acucar.png" alt="" />
-        <img class="partner" src="../assets/img/logo-sams-club.png" alt="" />
-      </div>
-      <div class="why-contribute">
+    </div>
+  </header>
+  <main>
+    <div class="our-partners-images-container">
+      <img class="partner" src="../assets/img/logo-assai.png" alt="" />
+      <img class="partner" src="../assets/img/logo-atacadao.png" alt="" />
+      <img class="partner" src="../assets/img/logo-pao-de-acucar.png" alt="" />
+      <img class="partner" src="../assets/img/logo-sams-club.png" alt="" />
+    </div>
+    <div class="limit">
+
+      <div class="why-contribute ">
         <h2 class="why-contribute__title">Por que contribuir?</h2>
         <p class="why-contribute__text">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at
@@ -46,7 +50,8 @@
           <button class="how-contribute__button">Estou interessado</button>
         </a>
       </div>
-    </main>
+    </div>
+  </main>
 
   <!-- </div> -->
   <footer>

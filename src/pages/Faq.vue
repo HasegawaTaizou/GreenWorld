@@ -257,5 +257,7 @@ export default {
 @import url("../assets/css/faq/generalStyle.css");
 @import url("../assets/css/faq/faqStyle.css");
 @import url("../assets/css/faq/faqResponsiveStyle.css");
+@import url("../assets/css/footer/footerStyle.css");
+@import url("../assets/css/footer/footerResponsiveStyle.css");
 </style>
       

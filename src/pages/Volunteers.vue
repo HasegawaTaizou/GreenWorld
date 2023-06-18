@@ -1,8 +1,11 @@
 <template>
   <header>
-    <h1 class="volunteers__title">Voluntários</h1>
+    <div class="title-page">
+         <h1 class="volunteers__title">Voluntários</h1>
     <router-link class="return__link" to="/"><img src="../assets/img/return-icon.png" alt="Return Icon"
         class="return__icon" /></router-link>
+    </div>
+ 
   </header>
   <main>
     <div class="why-contribute">
