@@ -6,89 +6,51 @@
       <i class="fa-solid fa-magnifying-glass" id="search-field__icon"></i>
     </div>
     <ul class="beneficiaries-content">
-      <li>
-        <a href="#" class="beneficiarie__item">
-          <div class="beneficiarie__image"></div>
-          <span class="beneficiarie__name">Maycon Alves Almeida</span>
-        </a>
-      </li>
-      <li>
-        <a href="#" class="beneficiarie__item">
-          <div class="beneficiarie__image"></div>
-          <span class="beneficiarie__name">Maycon Alves Almeida</span>
-        </a>
-      </li>
-      <li>
-        <a href="#" class="beneficiarie__item">
-          <div class="beneficiarie__image"></div>
-          <span class="beneficiarie__name">Maycon Alves Almeida</span>
-        </a>
-      </li>
-      <li>
-        <a href="#" class="beneficiarie__item">
-          <div class="beneficiarie__image"></div>
-          <span class="beneficiarie__name">Maycon Alves Almeida</span>
-        </a>
-      </li>
-      <li>
-        <a href="#" class="beneficiarie__item">
-          <div class="beneficiarie__image"></div>
-          <span class="beneficiarie__name">Maycon Alves Almeida</span>
-        </a>
-      </li>
-      <li>
-        <a href="#" class="beneficiarie__item">
-          <div class="beneficiarie__image"></div>
-          <span class="beneficiarie__name">Maycon Alves Almeida</span>
-        </a>
-      </li>
-      <li>
-        <a href="#" class="beneficiarie__item">
-          <div class="beneficiarie__image"></div>
-          <span class="beneficiarie__name">Maycon Alves Almeida</span>
-        </a>
-      </li>
-      <li>
-        <a href="#" class="beneficiarie__item">
-          <div class="beneficiarie__image"></div>
-          <span class="beneficiarie__name">Maycon Alves Almeida</span>
-        </a>
-      </li>
-      <li>
-        <a href="#" class="beneficiarie__item">
-          <div class="beneficiarie__image"></div>
-          <span class="beneficiarie__name">Maycon Alves Almeida</span>
-        </a>
-      </li>
-      <li>
-        <a href="#" class="beneficiarie__item">
-          <div class="beneficiarie__image"></div>
-          <span class="beneficiarie__name">Maycon Alves Almeida</span>
-        </a>
-      </li>
-      <li>
-        <a href="#" class="beneficiarie__item">
-          <div class="beneficiarie__image"></div>
-          <span class="beneficiarie__name">Maycon Alves Almeida</span>
-        </a>
-      </li>
-      <li>
-        <a href="#" class="beneficiarie__item">
-          <div class="beneficiarie__image"></div>
-          <span class="beneficiarie__name">Maycon Alves Almeida</span>
-        </a>
+      <li v-for="beneficiary in filteredBeneficiariesApproved" :key="beneficiary.id" @click="handleBeneficiaryClick(beneficiary)">
+        <router-link class="beneficiarie__item" to="/dashboard/all-volunteers/volunteer">
+          <img :src="beneficiary.foto" class="beneficiarie__image" />
+          <span class="beneficiarie__name">{{ beneficiary.nome_completo }}</span>
+        </router-link>
       </li>
     </ul>
   </section>
 </template>
 
 <script>
-// import removeRegisterDefault from '../assets/js/home.js'
+import axios from "axios";
+
+import filteredBeneficiariesApproved from "../../assets/js/computed/filtered-beneficiaries-approved.js";
 
 export default {
   name: "AllBeneficiaries",
-  mounted() {},
-  methods: {},
+  data() {
+    return {
+      beneficiaries: [],
+    };
+  },
+  mounted() {
+    this.fillAllBeneficiaries();
+  },
+  computed: {
+    filteredBeneficiariesApproved,
+  },
+  methods: {
+    fillAllBeneficiaries() {
+      axios
+        .get(`http://127.0.0.1:8080/v6/green-world/get_all_beneficiados`)
+        .then((response) => {
+          console.log(response.data.data[1]);
+          this.beneficiaries = response.data.data[1];
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    },
+    handleBeneficiaryClick(item) {
+      this.$store.commit("updateBeneficiaryCpf", item.cpf);
+      console.log(item.cpf);
+    },
+  },
 };
 </script>
 
