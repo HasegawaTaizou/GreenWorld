@@ -149,6 +149,11 @@
           Continuar
         </button>
       </form>
+      <NotificationBar
+        v-if="$store.state.showNotification"
+        :route="'/'"
+        :message="'Cadastro realizado com sucesso! Verifique seu e-mail'"
+      />
     </main>
     <footer>
       <p class="footer__text">
@@ -166,12 +171,16 @@ import dataPartThree from "../assets/js/data/data-form-beneficiary-part-three.js
 import validationsBeneficiaryPartThree from "../assets/js/validations/validations-beneficiary-part-three.js";
 import { useVuelidate } from "@vuelidate/core";
 import { mapMutations } from "vuex";
+import NotificationBar from "../assets/components/NotificationBar.vue";
 
 export default {
   name: "BeneficiaryRegistrationPartThree",
 
   setup() {
     return { v$: useVuelidate() };
+  },
+  components: {
+    NotificationBar,
   },
   data() {
     const formData = this.$store.state.formData;

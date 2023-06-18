@@ -18,7 +18,9 @@ export default async function submitFormBeneficiaryPartThree() {
 
   if (isFormCorrect) {
     //To show notification
+    console.log('correto: ', this.$store.state.showNotification);
     this.$store.state.showNotification = true;
+    console.log('correto: ', this.$store.state.showNotification);
 
     this.$store.commit("updateFormData", this.formData);
     postDataBeneficiaryPartThree(this.formData);

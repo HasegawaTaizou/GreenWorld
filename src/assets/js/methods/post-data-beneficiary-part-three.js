@@ -9,7 +9,7 @@ export default function postData(formData) {
       // Manipular a resposta do servidor
       console.log(response.data);
 
-      sendEmail(formData)
+      // sendEmail(formData)
     })
     .catch((error) => {
       // Tratar erros na requisição

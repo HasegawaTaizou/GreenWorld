@@ -10,7 +10,7 @@ export default new Vuex.Store({
       isSelectedImage: false,
       foto: "",
       nome_completo: "",
-      data_nascimento: "",
+      data_nascimento: "11/11/1111",
       rg: "",
       cpf: "",
       telefone: "",
