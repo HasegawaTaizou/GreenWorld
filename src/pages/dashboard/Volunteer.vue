@@ -119,20 +119,31 @@
           Atualizar dados
         </button>
       </router-link>
-      <button class="delete__button" @click="deleteVolunteer">Excluir</button>
+      <button
+        class="delete__button"
+        @click="this.$store.commit('setShowPopUp', true)"
+      >
+        Excluir
+      </button>
     </div>
   </section>
+  <PopUp
+    :message="'Os dados do voluntário serão excluídos'"
+    :acceptFunction="deleteVolunteer"
+  />
 </template>
 
 <script>
 import axios from "axios";
-import defaultUserImage from "../../assets/img/seeds_icon.png";
+
+import PopUp from "../../assets/components/PopUp.vue";
 
 export default {
   name: "Volunteer",
   mounted() {
     this.fillVolunteer();
   },
+  components: { PopUp },
   watch: {
     "$store.state.selectedVolunteerCpf": {
       immediate: true,

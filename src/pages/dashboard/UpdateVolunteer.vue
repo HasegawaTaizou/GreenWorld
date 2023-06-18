@@ -197,7 +197,7 @@
     </div>
 
     <div class="content-buttons">
-      <button class="update-data__button" @click="postData">
+      <button class="update-data__button" @click="this.$store.commit('setShowPopUp', true)">
         Atualizar dados
       </button>
       <router-link to="/dashboard/all-volunteers/volunteer/">
@@ -205,10 +205,15 @@
       </router-link>
     </div>
   </section>
+  <PopUp
+    :message="'Os dados do voluntário serão atualizados'"
+    :acceptFunction="postData"
+  />
 </template>
 
 <script>
 import axios from "axios";
+import PopUp from "../../assets/components/PopUp.vue";
 
 export default {
   name: "UpdateVolunteer",
@@ -222,6 +227,7 @@ export default {
       volunteer: [],
     };
   },
+  components: { PopUp },
   mounted() {
     this.fillVolunteer();
   },

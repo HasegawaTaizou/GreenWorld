@@ -6,9 +6,27 @@
       <i class="fa-solid fa-magnifying-glass" id="search-field__icon"></i>
     </div>
     <ul class="beneficiaries-content">
-      <li v-for="volunteer in filteredVolunteersApproved" :key="volunteer.id" @click="handleVolunteerClick(volunteer)">
-        <router-link class="beneficiarie__item" to="/dashboard/all-volunteers/volunteer">
-          <img :src="volunteer.foto" class="beneficiarie__image" />
+      <li
+        v-for="volunteer in filteredVolunteersApproved"
+        :key="volunteer.id"
+        @click="handleVolunteerClick(volunteer)"
+      >
+        <router-link
+          class="beneficiarie__item"
+          to="/dashboard/all-volunteers/volunteer"
+        >
+          <img
+            class="beneficiarie__image"
+            v-if="volunteer.foto"
+            :src="volunteer.foto"
+            alt="Volunteer image"
+          />
+          <img
+            class="beneficiarie__image"
+            v-else
+            src="../../assets/img/user-default-image.svg"
+            alt="Volunteer image"
+          />
           <span class="beneficiarie__name">{{ volunteer.nome_completo }}</span>
         </router-link>
       </li>
@@ -32,7 +50,7 @@ export default {
     this.fillAllVolunteers();
   },
   computed: {
-    filteredVolunteersApproved
+    filteredVolunteersApproved,
   },
   methods: {
     fillAllVolunteers() {
