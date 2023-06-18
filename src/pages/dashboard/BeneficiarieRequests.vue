@@ -8,88 +8,38 @@
     </div>
 
     <ul class="seeds-content">
-      <li>
-        <router-link to="/data-beneficiarie-request" class="seed__item">
-          <span class="filter_ball status-finished">1</span>
-          <span class="seed__name">Marcela Alves</span>
-        </router-link>
-      </li>
-      <li>
-        <router-link to="/data-beneficiarie-request" class="seed__item">
-          <span class="filter_ball status-finished">2</span>
-          <span class="seed__name">Laís Ferreira</span>
-        </router-link>
-      </li>
-      <li>
-        <router-link to="/data-beneficiarie-request" class="seed__item">
-          <span class="filter_ball status-finished">3</span>
-          <span class="seed__name">Telma Lima</span>
-        </router-link>
-      </li>
-      <li>
-        <router-link to="/data-beneficiarie-request" class="seed__item">
-          <span class="filter_ball status-finished">4</span>
-          <span class="seed__name">Matheus Santos</span>
-        </router-link>
-      </li>
-      <li>
-        <router-link to="/data-beneficiarie-request" class="seed__item">
-          <span class="filter_ball status-finished">1</span>
-          <span class="seed__name">Marcela Alves</span>
-        </router-link>
-      </li>
-      <li>
-        <router-link to="/data-beneficiarie-request" class="seed__item">
-          <span class="filter_ball status-finished">2</span>
-          <span class="seed__name">Laís Ferreira</span>
-        </router-link>
-      </li>
-      <li>
-        <router-link to="/data-beneficiarie-request" class="seed__item">
-          <span class="filter_ball status-finished">3</span>
-          <span class="seed__name">Telma Lima</span>
-        </router-link>
-      </li>
-      <li>
-        <router-link to="/data-beneficiarie-request" class="seed__item">
-          <span class="filter_ball status-finished">4</span>
-          <span class="seed__name">Matheus Santos</span>
-        </router-link>
-      </li>
-      <li>
-        <router-link to="/data-beneficiarie-request" class="seed__item">
-          <span class="filter_ball status-finished">1</span>
-          <span class="seed__name">Marcela Alves</span>
-        </router-link>
-      </li>
-      <li>
-        <router-link to="/data-beneficiarie-request" class="seed__item">
-          <span class="filter_ball status-finished">2</span>
-          <span class="seed__name">Laís Ferreira</span>
-        </router-link>
-      </li>
-      <li>
-        <router-link to="/data-volunteer-request" class="seed__item">
-          <span class="filter_ball status-finished">3</span>
-          <span class="seed__name">Telma Lima</span>
-        </router-link>
-      </li>
-      <li>
-        <router-link to="/data-beneficiarie-request" class="seed__item">
-          <span class="filter_ball status-finished">4</span>
-          <span class="seed__name">Matheus Santos</span>
+      <li v-for="beneficiary in filteredBeneficiaries" :key="beneficiary.id" @click="handleBeneficiaryClick(beneficiary)">
+        <router-link to="/dashboard/volunteer-requests/volunteer-request" class="seed__item">
+          <span class="filter_ball status-finished"> {{ beneficiary.id }}</span>
+          <span class="seed__name">{{ beneficiary.nome_completo }}</span>
         </router-link>
       </li>
     </ul>
   </section>
 </template>
+
 <script>
-// import removeRegisterDefault from '../assets/js/home.js'
+import fillAllBeneficiaries from '../../assets/js/methods/fill-all-beneficiaries.js'
+import handleBeneficiaryClick from '../../assets/js/methods/handle-click/handle-beneficiary-click.js'
+import filteredBeneficiaries from '../../assets/js/computed/filtered-beneficiaries.js'
 
 export default {
   name: "BeneficiarieRequests",
-  mounted() {},
-  methods: {},
+  data() {
+    return {
+      beneficiaries: [],
+    };
+  },
+  mounted() {
+    this.fillAllBeneficiaries();
+  },
+  computed: {
+    filteredBeneficiaries
+  },
+  methods: {
+    fillAllBeneficiaries,
+    handleBeneficiaryClick,
+  },
 };
 </script>
 

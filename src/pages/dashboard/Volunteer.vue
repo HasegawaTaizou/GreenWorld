@@ -3,10 +3,16 @@
     <div class="volunteer-content">
       <img
         class="volunteer__image"
+        v-if="volunteer.foto"
         :src="volunteer.foto"
         alt="Volunteer image"
       />
-
+      <img
+        class="volunteer__image"
+        v-else
+        src="../../assets/img/user-default-image.svg"
+        alt="Volunteer image"
+      />
       <div class="volunteer__tag-name-data">
         <span class="volunteer__tag">Voluntário</span>
         <h1 class="volunteer__name">{{ volunteer.nome_completo }}</h1>
@@ -120,6 +126,7 @@
 
 <script>
 import axios from "axios";
+import defaultUserImage from "../../assets/img/seeds_icon.png";
 
 export default {
   name: "Volunteer",

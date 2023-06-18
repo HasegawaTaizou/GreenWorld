@@ -3,10 +3,16 @@
     <div class="volunteer-content">
       <img
         class="volunteer__image"
-        src="../../assets/img/volunteers-image.png"
+        v-if="volunteer.foto"
+        :src="volunteer.foto"
         alt="Volunteer image"
       />
-
+      <img
+        class="volunteer__image"
+        v-else
+        src="../../assets/img/user-default-image.svg"
+        alt="Volunteer image"
+      />
       <div class="volunteer__tag-name-data">
         <span class="volunteer__tag">Voluntário</span>
         <div class="volunteer__title-icon">
@@ -286,7 +292,6 @@ export default {
           console.log(response.data.data);
         })
         .catch((error) => {
-          // Tratar erros na requisição
           console.error(error);
         });
     },
