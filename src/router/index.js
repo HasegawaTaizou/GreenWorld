@@ -206,12 +206,12 @@ const routes = [
         component: BeneficiarieRequests,
       },
       {
-        path: "/dashboard/data-beneficiarie-request",
+        path: "/dashboard/beneficiarie-requests/data-beneficiarie-request",
         name: "DataBeneficiarieRequest",
         component: DataBeneficiarieRequest,
       },
       {
-        path: "/dashboard/beneficiarie",
+        path: "/dashboard/all-beneficiaries/beneficiary",
         name: "Beneficiarie",
         component: Beneficiarie,
       },

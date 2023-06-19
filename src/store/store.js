@@ -10,7 +10,7 @@ export default new Vuex.Store({
       isSelectedImage: false,
       foto: "",
       nome_completo: "",
-      data_nascimento: "",
+      data_nascimento: "11/11/1111",
       rg: "",
       cpf: "",
       telefone: "",
@@ -27,10 +27,10 @@ export default new Vuex.Store({
       experiencia: "",
 
       // BENEFICIARY DATA
-      amountResidents: "",
+      quantidade_moradores: "",
       renda: "",
-      typeResidence: "",
-      squareMetersResidence: "",
+      // typeResidence: "",
+      metros_quadrados: "",
       observacao: "",
     },
 
@@ -39,6 +39,9 @@ export default new Vuex.Store({
 
     //VOLUNTEER CPF
     selectedVolunteerCpf: "",
+
+    //BENEFICIARY ID
+    selectedBeneficiaryId: "",
 
     //NOTIFICATION STATUS
     showNotification: false,
@@ -56,6 +59,9 @@ export default new Vuex.Store({
     },
     updateVolunteerCpf(state, cpf) {
       state.selectedVolunteerCpf = cpf;
+    },
+    updateBeneficiaryId(state, id) {
+      state.selectedBeneficiaryId = id;
     },
     setShowNotification(state, value) {
       state.showNotification = value;

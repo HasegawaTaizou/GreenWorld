@@ -2,10 +2,10 @@ import postDataBeneficiaryPartThree from "./post-data-beneficiary-part-three.js"
 import fieldsBeneficiaryPartThree from "../validations/fields/fields-beneficiary-part-three.js";
 
 export default async function submitFormBeneficiaryPartThree() {
-  // this.formData.amountResidents = this.inputAmountResidents;
+  this.formData.quantidade_moradores = this.inputAmountResidents;
   this.formData.renda = this.inputFamilyIncome;
   // this.formData.typeResidence = this.selectTypeResidence;
-  // this.formData.squareMetersResidence = this.inputSquareMetersResidence;
+  this.formData.metros_quadrados = this.inputSquareMetersResidence;
   this.formData.observacao = this.textareaComments;
 
   this.$store.commit("updateFormData", this.formData);
