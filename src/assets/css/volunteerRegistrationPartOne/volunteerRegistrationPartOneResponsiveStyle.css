@@ -1,3 +1,10 @@
+@media (max-width: 790px) {
+  .form__photo-container label {
+    margin: 0px;
+  }
+}
+
+
 @media (max-width: 762px) {
   header {
     padding: 48px 20px;
@@ -25,6 +32,15 @@
 }
 
 @media (max-width: 420px) {
+  .form__photo-container label {
+    width: 75vw;
+    height: 180px;
+  }
+ 
+
+  .physical-limitation__select{
+    width: 75vw;
+      }
   .volunteer-registration__image {
     max-width: 65vw;
     max-height: 62vh;

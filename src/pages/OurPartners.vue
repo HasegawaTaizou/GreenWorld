@@ -46,9 +46,9 @@
           malesuada. Duis sollicitudin turpis sit amet mi sagittis, eu luctus
           massa posuere. Duis tincidunt dignissim rhoncus.
         </p>
-        <a href="#" class="how-contribute__link">
+        <router-link to="/beneficiary-registration-part-one" class="how-contribute__link">
           <button class="how-contribute__button">Estou interessado</button>
-        </a>
+        </router-link>
       </div>
     </div>
   </main>
