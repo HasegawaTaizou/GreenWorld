@@ -14,7 +14,7 @@
         alt="Volunteer image"
       />
       <div class="volunteer__tag-name-data">
-        <span class="volunteer__tag">Voluntário</span>
+        <span class="volunteer__tag">Beneficiado</span>
         <h1 class="volunteer__name">{{ volunteer.nome_completo }}</h1>
         <ul class="volunteer__personal-data">
           <li class="personal-data">
@@ -145,7 +145,7 @@ export default {
   },
   components: { PopUp },
   watch: {
-    "$store.state.selectedVolunteerCpf": {
+    "$store.state.selectedBeneficiaryId": {
       immediate: true,
       handler(newVolunteerCpf) {
         console.log("Novo CPF voluntario:", newVolunteerCpf);
@@ -161,17 +161,17 @@ export default {
     };
   },
   methods: {
-    fillVolunteer(cpf) {
-      const volunteerCpf = {
-        cpf: cpf,
+    fillVolunteer(id) {
+      const beneficiaryId = {
+        id: id,
       };
 
-      console.log(volunteerCpf);
+      console.log(beneficiaryId);
 
       axios
         .post(
-          "http://127.0.0.1:8080/v5/green-world/get_voluntario_pelo_cpf",
-          volunteerCpf
+          "http://localhost:8080/v6/green-world/beneficiado_por_id",
+          beneficiaryId
         )
         .then((response) => {
           this.volunteer = response.data.data;
@@ -182,15 +182,15 @@ export default {
         });
     },
     deleteVolunteer() {
-      const volunteerCpf = {
-        cpf: this.$store.state.selectedVolunteerCpf,
+      const beneficiaryId = {
+        id: id,
       };
 
       axios
         .delete(
           "http://127.0.0.1:8080/v3/green-world/delete_voluntario_pelo_cpf",
           {
-            data: volunteerCpf,
+            data: beneficiaryId,
           }
         )
         .then((response) => {

@@ -135,8 +135,6 @@ header {
 #help {
     display: flex;
     flex-direction: column;
-
-    width: 80vw;
     gap: 80px;
     padding: 30px 100px 50px 100px;
     height: auto;

@@ -10,7 +10,6 @@ main {
 #volunteer-container {
   max-height: 100vh;
   height: 100%;
-  overflow-y: scroll;
   padding: 64px 0px 64px 64px;
   display: flex;
   flex-direction: column;
