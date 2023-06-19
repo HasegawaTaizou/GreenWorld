@@ -1,41 +1,30 @@
 <template>
-  <header>
-    <nav>
-      <img onclick="openNavFull" src="../../assets/img/menu.png" alt="Menu" />
-    </nav>
-
-    <div class="container-image-log-out">
-      <img src="../../assets/img/administrator.png" alt="Image profile" />
-      <a href="#" class="log-out-content">
-        <button class="log-out__button">
-          <img src="../../assets/img/logout_image.png" alt="Image log out" />
-          <span class="log-out__text">Log out</span>
-        </button>
-      </a>
-    </div>
-  </header>
-  <main>
-
+  <section id="volunteer-container">
     <div class="volunteer-content">
-      <img class="volunteer__image" src="../../assets/img/volunteer-registration-image.png" alt="Volunteer image">
+      <img
+        class="volunteer__image"
+        :src="volunteer.foto"
+        alt="Volunteer image"
+      />
 
       <div class="volunteer__tag-name-data">
-        <span class="volunteer__tag">Beneficiado</span>
-        <h1 class="volunteer__name">Carmen Aparecida</h1>
+        <span class="volunteer__tag">Voluntário</span>
+        <h1 class="volunteer__name">{{ volunteer.nome_completo }}</h1>
         <ul class="volunteer__personal-data">
           <li class="personal-data">
             <span class="uppercase personal-data__type">cpf:</span>
-            <span class="personal-data__value">549.033.548-32</span>
+            <span class="personal-data__value">{{ volunteer.cpf }}</span>
           </li>
           <li class="personal-data">
             <span class="uppercase personal-data__type">rg:</span>
-            <span class="personal-data__value">60.222.547-8</span>
+            <span class="personal-data__value">{{ volunteer.rg }}</span>
           </li>
           <li class="personal-data">
             <span class="personal-data__type">Data de nascimento:</span>
-            <span class="personal-data__value">24/02/2001</span>
+            <span class="personal-data__value">{{
+              volunteer.data_nascimento
+            }}</span>
           </li>
-
         </ul>
       </div>
     </div>
@@ -44,87 +33,148 @@
         <h3 class="address__title">Endereço</h3>
         <div class="volunteer__address">
           <span class="information">CEP:</span>
-          <span class="information__value">06660-460</span>
+          <span class="information__value">{{ volunteer.cep }}</span>
         </div>
         <div class="volunteer__address">
           <span class="information">Logradouro:</span>
-          <span class="information__value">Avenida José Marcio</span>
+          <span class="information__value">{{
+            volunteer.endereco?.logradouro
+          }}</span>
         </div>
         <div class="volunteer__address">
           <span class="information">Bairro:</span>
-          <span class="information__value">Jardim Rosa</span>
+          <span class="information__value">{{
+            volunteer.endereco?.bairro
+          }}</span>
         </div>
         <div class="volunteer__address">
           <span class="information">Cidade:</span>
-          <span class="information__value">Itapevi</span>
+          <span class="information__value">{{
+            volunteer.endereco?.cidade
+          }}</span>
         </div>
         <div class="volunteer__address">
           <span class="information">Estado:</span>
-          <span class="information__value">São Paulo</span>
+          <span class="information__value">{{
+            volunteer.endereco?.estado
+          }}</span>
         </div>
       </div>
       <div class="volunteer-content__contact">
         <h3 class="contact__title">Contato:</h3>
         <div class="volunteer__contact">
           <span class="contact">Telefone:</span>
-          <span class="contact__value">(11)99999-0000</span>
+          <span class="contact__value">{{ volunteer.telefone }}</span>
         </div>
         <div class="volunteer__contact">
           <span class="contact">E-mail:</span>
-          <span class="contact__value">cansei@gmail.com</span>
-        </div>
-      </div>
-      <div class="volunteer-content__address">
-        <h3 class="address__title">Dados pessoais</h3>
-        <div class="volunteer__address">
-          <span class="information">Renda familiar:</span>
-          <span class="information__value">1.500,00</span>
-        </div>
-        <div class="volunteer__address">
-          <span class="information">Quantidade de moradores:</span>
-          <span class="information__value">9</span>
-        </div>
-        <div class="volunteer__address">
-          <span class="information">Tipo de residência:</span>
-          <span class="information__value">Casa</span>
-        </div>
-        <div class="volunteer__address">
-          <span class="information">Metros quadrados da residência:</span>
-          <span class="information__value">22</span>
+          <span class="contact__value">{{ volunteer.email }}</span>
         </div>
       </div>
       <div class="volunteer-content__reason">
-        <h3 class="information__title">Observações:</h3>
+        <h3 class="information__title">Motivo:</h3>
         <p class="volunteer-reason__text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, rem laudantium. Reprehenderit
-          quod,
-          nobis incidunt sint eum minus rem quisquam corrupti mollitia doloremque, obcaecati eius
-          voluptatibus.
-          Accusantium quos iure expedita!
+          {{ volunteer.motivo }}
         </p>
       </div>
-
+      <div class="volunteer-content__experience">
+        <h3 class="information__title">Experiência:</h3>
+        <span class="volunteer__experience"> {{ volunteer.experiencia }} </span>
+      </div>
     </div>
-
-
     <div class="content-buttons">
-      <router-link class="update-data__link" to="/update-administrator">
-        <button class="update-data__button">Aceitar</button>
-      </router-link>
-      <button class="delete__button">Excluir</button>
+      <button class="update-data__button" @click="acceptVolunteer">
+        Aceitar
+      </button>
+      <button class="delete__button" @click="deleteVolunteer">Excluir</button>
     </div>
-  </main>
+  </section>
 </template>
 
 <script>
-// import removeRegisterDefault from '../assets/js/home.js'
+import axios from "axios";
 
 export default {
-  name: "DataBeneficiarieRequest",
+  name: "DataBeneficiaryRequest",
+  data() {
+    return {
+      volunteer: [],
+    };
+  },
   mounted() {
+    this.fillVolunteer();
+  },
+  watch: {
+    "$store.state.selectedBeneficiaryId": {
+      immediate: true,
+      handler(newVolunteerCpf) {
+        console.log("Novo CPF voluntario:", newVolunteerCpf);
+        if (newVolunteerCpf) {
+          this.fillVolunteer(newVolunteerCpf);
+        }
+      },
+    },
   },
   methods: {
-  }
+    fillVolunteer(cpf) {
+      const beneficiaryId = {
+        id: this.$store.state.selectedBeneficiaryId,
+      };
+      console.log(beneficiaryId);
+
+      axios
+        .post(
+          "http://localhost:8080/v6/green-world/beneficiado_por_id",
+          beneficiaryId
+        )
+        .then((response) => {
+          this.volunteer = response.data.data;
+          console.log(response.data.data);
+        })
+        .catch((error) => {
+          // Tratar erros na requisição
+          console.error(error);
+        });
+    },
+    deleteVolunteer() {
+      const beneficiaryId = {
+        id: this.$store.state.selectedBeneficiaryId,
+      };
+
+      axios
+        .delete(
+          "http://127.0.0.1:8080/v3/green-world/delete_voluntario_pelo_cpf",
+          {
+            data: beneficiaryId,
+          }
+        )
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          // Tratar erros na requisição
+          console.error(error);
+        });
+    },
+    acceptVolunteer() {
+      const beneficiaryId = {
+        id: this.$store.state.selectedBeneficiaryId,
+      };
+
+      axios
+        .put(
+          "http://127.0.0.1:8080/v3/green-world/trocar_status_beneficiado",
+          beneficiaryId
+        )
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          // Tratar erros na requisição
+          console.error(error);
+        });
+    },
+  },
 };
 </script>
 
@@ -132,5 +182,5 @@ export default {
 @import url("../../assets/css/variables.css");
 @import url("../../assets/css/dashboard/reset.css");
 @import url("../../assets/css/generalStyle.css");
-@import url("../../assets/css/dashboard/beneficiarie/updateBeneficiarieStyle.css");
+@import url("../../assets/css/dashboard/volunteer/updateVolunteerStyle.css");
 </style>

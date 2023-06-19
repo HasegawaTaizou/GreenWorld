@@ -9,7 +9,7 @@
 
     <ul class="seeds-content">
       <li v-for="beneficiary in filteredBeneficiaries" :key="beneficiary.id" @click="handleBeneficiaryClick(beneficiary)">
-        <router-link to="/dashboard/volunteer-requests/volunteer-request" class="seed__item">
+        <router-link to="/dashboard/beneficiarie-requests/data-beneficiarie-request" class="seed__item">
           <span class="filter_ball status-finished"> {{ beneficiary.id }}</span>
           <span class="seed__name">{{ beneficiary.nome_completo }}</span>
         </router-link>

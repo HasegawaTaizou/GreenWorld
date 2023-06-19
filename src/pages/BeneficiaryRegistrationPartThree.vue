@@ -1,15 +1,9 @@
 <template>
   <div class="content">
     <header>
-      <h1 class="beneficiary-registration-part-three__title">
-        CADASTRO BENEFICIADO
-      </h1>
+      <h1 class="beneficiary-registration-part-three__title">CADASTRO BENEFICIADO</h1>
       <router-link class="return__link" to="/beneficiary-registration-part-two">
-        <img
-          src="../assets/img/return-icon.png"
-          alt="Return Icon"
-          class="return__icon"
-        />
+        <img src="../assets/img/return-icon.png" alt="Return Icon" class="return__icon" />
       </router-link>
     </header>
     <main>
@@ -20,16 +14,14 @@
       />
       <form class="beneficiary-registration-part-three-form">
         <div class="form__amount-residents-container">
-          <label for="amount-residents" class="amount-residents__label"
-            >Quantidade de moradores:</label
-          >
-          <input
+          <label for="amount-residents" class="amount-residents__label">Quantidade de moradores:</label>
+          <!-- <input
             type="text"
             class="amount-residents__input"
             v-mask="'###'"
             v-model="inputAmountResidents"
-          />
-          <!-- <input
+          /> -->
+          <input
             type="text"
             class="amount-residents__input"
             v-mask="'###'"
@@ -37,17 +29,16 @@
             ref="inputAmountResidents"
             :class="{ error: v$.inputAmountResidents.$error }"
             @blur="v$.inputAmountResidents.$touch()"
-          /> -->
-          <!-- <div v-if="v$.inputAmountResidents.$error">
-            <p v-if="v$.inputAmountResidents.required" class="error-text">
-              Preencha a quantidade de moradores!
-            </p>
-          </div> -->
+          />
+          <div v-if="v$.inputAmountResidents.$error">
+            <p
+              v-if="v$.inputAmountResidents.required"
+              class="error-text"
+            >Preencha a quantidade de moradores!</p>
+          </div>
         </div>
         <div class="form__per-capita-income-container">
-          <label for="per-capita-income" class="per-capita-income__label"
-            >Renda familiar:</label
-          >
+          <label for="per-capita-income" class="per-capita-income__label">Renda familiar:</label>
           <input
             type="text"
             class="per-capita-income__input"
@@ -57,26 +48,15 @@
             @blur="v$.inputFamilyIncome.$touch()"
           />
           <div v-if="v$.inputFamilyIncome.$error">
-            <p v-if="v$.inputFamilyIncome.required" class="error-text">
-              Preencha a renda!
-            </p>
+            <p v-if="v$.inputFamilyIncome.required" class="error-text">Preencha a renda!</p>
           </div>
         </div>
         <div class="form__type-residence-container">
-          <label for="type-residence" class="type-residence__label"
-            >Tipo de residência:</label
-          >
-          <select
-            class="type-residence__select"
-            v-model="selectTypeResidence"
-          >
-            <option class="type-residence__default" value>
-              Selecione o tipo de residência
-            </option>
+          <label for="type-residence" class="type-residence__label">Tipo de residência:</label>
+          <select class="type-residence__select" v-model="selectTypeResidence">
+            <option class="type-residence__default" value>Selecione o tipo de residência</option>
             <option class="type-residence__option" value="Casa">Casa</option>
-            <option class="type-residence__option" value="Fazenda">
-              Fazenda
-            </option>
+            <option class="type-residence__option" value="Fazenda">Fazenda</option>
           </select>
           <!-- <select
             class="type-residence__select"
@@ -92,37 +72,32 @@
             <option class="type-residence__option" value="Fazenda">
               Fazenda
             </option>
-          </select> -->
+          </select>-->
           <!-- <div v-if="v$.selectTypeResidence.$error">
             <p v-if="v$.selectTypeResidence.required" class="error-text">
               Selecione um tipo de residência
             </p>
-          </div> -->
+          </div>-->
         </div>
         <div class="form__square-meters-residence-container">
           <label
             for="square-meters-residence"
             class="square-meters-residence__label"
-            >Metros quadrados da residência:</label
-          >
+          >Metros quadrados da residência:</label>
           <input
-            type="text"
-            class="square-meters-residence__input"
-            v-model="inputSquareMetersResidence"
-          />
-          <!-- <input
             type="text"
             class="square-meters-residence__input"
             v-model="inputSquareMetersResidence"
             :class="{ error: v$.inputSquareMetersResidence.$error }"
             ref="inputSquareMetersResidence"
             @blur="v$.inputSquareMetersResidence.$touch()"
-          /> -->
-          <!-- <div v-if="v$.inputSquareMetersResidence.$error">
-            <p v-if="v$.inputSquareMetersResidence.required" class="error-text">
-              Preencha os metros quadrados!
-            </p>
-          </div> -->
+          />
+          <div v-if="v$.inputSquareMetersResidence.$error">
+            <p
+              v-if="v$.inputSquareMetersResidence.required"
+              class="error-text"
+            >Preencha os metros quadrados!</p>
+          </div>
         </div>
         <div class="form__comments-container">
           <label for="comments" class="comments__label">Observações:</label>
@@ -137,17 +112,13 @@
           ></textarea>
         </div>
         <router-link to="/beneficiary-registration-part-two">
-          <button type="button" class="beneficiary-registration__button-return">
-            Voltar
-          </button>
+          <button type="button" class="beneficiary-registration__button-return">Voltar</button>
         </router-link>
         <button
           type="button"
           @click="submitFormBeneficiaryPartThree()"
           class="beneficiary-registration__button"
-        >
-          Continuar
-        </button>
+        >Continuar</button>
       </form>
       <NotificationBar
         v-if="$store.state.showNotification"
@@ -156,9 +127,7 @@
       />
     </main>
     <footer>
-      <p class="footer__text">
-        Copyright © 2023 | Todos os direitos reservados Green World
-      </p>
+      <p class="footer__text">Copyright © 2023 | Todos os direitos reservados Green World</p>
     </footer>
   </div>
 </template>
@@ -180,7 +149,7 @@ export default {
     return { v$: useVuelidate() };
   },
   components: {
-    NotificationBar,
+    NotificationBar
   },
   data() {
     const formData = this.$store.state.formData;
@@ -188,21 +157,21 @@ export default {
 
     return {
       validDate: true,
-      ...data,
+      ...data
     };
   },
   validations() {
     const validations = validationsBeneficiaryPartThree();
     return {
-      ...validations,
+      ...validations
     };
   },
   methods: {
     ...mapMutations(["updateNotificationStatus"]),
     uploadImage,
     submitFormBeneficiaryPartThree,
-    onlyLetters,
-  },
+    onlyLetters
+  }
 };
 </script>
 

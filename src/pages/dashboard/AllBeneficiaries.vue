@@ -7,7 +7,7 @@
     </div>
     <ul class="beneficiaries-content">
       <li v-for="beneficiary in filteredBeneficiariesApproved" :key="beneficiary.id" @click="handleBeneficiaryClick(beneficiary)">
-        <router-link class="beneficiarie__item" to="/dashboard/all-volunteers/volunteer">
+        <router-link class="beneficiarie__item" to="/dashboard/all-beneficiaries/beneficiary">
           <img :src="beneficiary.foto" class="beneficiarie__image" />
           <span class="beneficiarie__name">{{ beneficiary.nome_completo }}</span>
         </router-link>
@@ -47,8 +47,8 @@ export default {
         });
     },
     handleBeneficiaryClick(item) {
-      this.$store.commit("updateBeneficiaryCpf", item.cpf);
-      console.log(item.cpf);
+      this.$store.commit("updateBeneficiaryId", item.id);
+      console.log(item.id);
     },
   },
 };

@@ -79,6 +79,8 @@ export default {
       axios
         .post("http://127.0.0.1:8080/v4/green-world/pegar_semente", seedId)
         .then((response) => {
+          console.log(response);
+          
           this.seed = response.data.data;
         })
         .catch((error) => {

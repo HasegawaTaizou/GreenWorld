@@ -1,4 +1,4 @@
 export default function handleBeneficiaryClick(item) {
-  this.$store.commit("updateBeneficiaryCpf", item.cpf);
-  console.log(item.cpf);
+  this.$store.commit("updateBeneficiaryId", item.id);
+  console.log(item.id);
 }

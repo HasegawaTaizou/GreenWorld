@@ -3,10 +3,10 @@ import cleanBirthDate from "../input/clean-birth-date.js";
 
 export default function dataPartThree(formData) {
   return {
-    // inputAmountResidents: formData.amountResidents,
+    inputAmountResidents: formData.quantidade_moradores,
     inputFamilyIncome: formData.renda,
     // selectTypeResidence: formData.typeResidence,
-    // inputSquareMetersResidence: formData.squareMetersResidence,
+    inputSquareMetersResidence: formData.metros_quadrados,
     textareaComments: formData.observacao,
     formData: {
       nome_completo: formData.nome_completo,
@@ -17,9 +17,11 @@ export default function dataPartThree(formData) {
       telefone: cleanInput(formData.telefone),
       email: formData.email,
       cep: cleanInput(formData.cep),
-      renda: "",
-      observacao: "",
-      id_especificacoes_moradia: "1",
+      observacao: formData.observacao,
+      renda: formData.renda,
+      quantidade_moradores: formData.quantidade_moradores,
+      metros_quadrados: formData.metros_quadrados,
+      id_tipo_moradia: 1,
     },
   };
 }
